@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-archivo: 'Archivo Black', sans-serif;
+    --font-inter: 'Inter', sans-serif;
+  }
+  
+  * {
+    @apply border-outline-variant;
+  }
+  
+  body {
+    @apply bg-surface text-surface-on-surface font-inter antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-archivo;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}

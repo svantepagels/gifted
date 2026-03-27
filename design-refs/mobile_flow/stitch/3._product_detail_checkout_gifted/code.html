@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@800;900&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container-low": "#f2f4f6",
+              "tertiary-container": "#002109",
+              "tertiary-fixed": "#7ffc97",
+              "secondary-fixed": "#dbe1ff",
+              "on-secondary-container": "#fefcff",
+              "on-error-container": "#93000a",
+              "surface-container-highest": "#e0e3e5",
+              "outline-variant": "#c6c6cd",
+              "on-tertiary": "#ffffff",
+              "tertiary-fixed-dim": "#62df7d",
+              "tertiary": "#000000",
+              "on-tertiary-container": "#009842",
+              "primary-fixed-dim": "#bec6e0",
+              "primary": "#000000",
+              "on-tertiary-fixed": "#002109",
+              "surface-container-high": "#e6e8ea",
+              "on-secondary": "#ffffff",
+              "primary-container": "#131b2e",
+              "background": "#f7f9fb",
+              "outline": "#76777d",
+              "surface-container-lowest": "#ffffff",
+              "surface-tint": "#565e74",
+              "on-secondary-fixed-variant": "#003ea8",
+              "on-primary-fixed-variant": "#3f465c",
+              "on-error": "#ffffff",
+              "primary-fixed": "#dae2fd",
+              "on-tertiary-fixed-variant": "#005320",
+              "secondary-container": "#316bf3",
+              "surface-bright": "#f7f9fb",
+              "surface-dim": "#d8dadc",
+              "on-primary-fixed": "#131b2e",
+              "inverse-on-surface": "#eff1f3",
+              "surface-container": "#eceef0",
+              "secondary-fixed-dim": "#b4c5ff",
+              "on-background": "#191c1e",
+              "on-surface-variant": "#45464d",
+              "on-primary-container": "#7c839b",
+              "on-surface": "#191c1e",
+              "error-container": "#ffdad6",
+              "on-secondary-fixed": "#00174b",
+              "error": "#ba1a1a",
+              "secondary": "#0051d5",
+              "on-primary": "#ffffff",
+              "inverse-primary": "#bec6e0",
+              "surface": "#f7f9fb",
+              "surface-variant": "#e0e3e5",
+              "inverse-surface": "#2d3133"
+            },
+            fontFamily: {
+              "headline": ["Archivo", "sans-serif"],
+              "body": ["Inter", "sans-serif"],
+              "label": ["Inter", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        .branding-text { font-family: 'Archivo', sans-serif; font-weight: 900; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface flex flex-col min-h-screen">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-white dark:bg-slate-950">
+<div class="flex justify-between items-center px-6 py-4 w-full max-w-[1440px] mx-auto">
+<div class="branding-text text-2xl text-[#0F172A] dark:text-white uppercase tracking-tighter">GIFTED</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-slate-500 dark:text-slate-400 font-medium hover:text-[#0051D5] transition-colors duration-200 uppercase text-xs tracking-tight" href="#">Explore</a>
+<a class="text-slate-500 dark:text-slate-400 font-medium hover:text-[#0051D5] transition-colors duration-200 uppercase text-xs tracking-tight" href="#">My Gifts</a>
+<a class="text-[#0051D5] dark:text-[#3b82f6] font-semibold uppercase text-xs tracking-tight" href="#">Checkout</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="scale-95 active:scale-90 transition-transform text-slate-500 hover:text-[#0051D5]">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+</button>
+<button class="scale-95 active:scale-90 transition-transform text-slate-500 hover:text-[#0051D5]">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+</button>
+</div>
+</div>
+<div class="bg-[#F2F4F6] dark:bg-slate-900 h-[1px] w-full absolute bottom-0"></div>
+</nav>
+<!-- Main Content -->
+<main class="flex-grow pt-24 pb-16 px-6 max-w-[1440px] mx-auto w-full">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+<!-- Left Column: Product Selection -->
+<div class="lg:col-span-8 space-y-12">
+<!-- Product Header -->
+<section class="bg-surface-container-lowest p-10 rounded-xl">
+<div class="flex flex-col md:flex-row gap-8 items-start">
+<div class="w-32 h-32 flex-shrink-0 bg-white border border-outline-variant/30 rounded-lg flex items-center justify-center p-4">
+<img alt="Amazon Logo" class="w-full object-contain" data-alt="Clean minimal Amazon logo on a white background with subtle shadow and precise alignment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWE954E1JRPv74VFZ_ikf1BO4C5E4vBbss9OptrlkAvocmo4W5OYJDxSGFkpwPZdQsEgmyWjHo-ng190dl1kTRQ7hQJjRtQYMsJA5YIGTazDoT95mQ5ca5A6GMG3dor3nhbDWuzj5vXrD6yCKmjDHW3VsuRlYM2DKaGj41_9uxeOzX2RCCEmh35nin9DGmU6KfPxFCZlic2d_oWom0tn9JnmS-LDMCJNDl7MTqa3POwQwCzA8hKyZAnbT6e7fxGopdLLfJcTeAJwE"/>
+</div>
+<div class="space-y-2">
+<h1 class="branding-text text-4xl uppercase tracking-tighter text-primary">Amazon.com Gift Card</h1>
+<div class="flex items-center gap-2">
+<div class="bg-surface-container-high px-3 py-1 rounded-full text-[10px] font-bold tracking-widest text-on-primary-container uppercase">United States (USD)</div>
+<span class="text-on-surface-variant text-sm font-medium">Digital Delivery</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Denomination Selection -->
+<section class="space-y-6">
+<h2 class="branding-text text-xl uppercase tracking-tight text-primary">Select Amount</h2>
+<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
+<button class="py-4 px-2 rounded-lg bg-surface-container-lowest border-2 border-transparent hover:border-secondary transition-all text-center group">
+<span class="block text-xs font-bold text-on-surface-variant group-hover:text-secondary uppercase">USD</span>
+<span class="text-xl font-bold">$10</span>
+</button>
+<button class="py-4 px-2 rounded-lg bg-surface-container-lowest border-2 border-secondary text-center group">
+<span class="block text-xs font-bold text-secondary uppercase">USD</span>
+<span class="text-xl font-bold">$25</span>
+</button>
+<button class="py-4 px-2 rounded-lg bg-surface-container-lowest border-2 border-transparent hover:border-secondary transition-all text-center group">
+<span class="block text-xs font-bold text-on-surface-variant group-hover:text-secondary uppercase">USD</span>
+<span class="text-xl font-bold">$50</span>
+</button>
+<button class="py-4 px-2 rounded-lg bg-surface-container-lowest border-2 border-transparent hover:border-secondary transition-all text-center group">
+<span class="block text-xs font-bold text-on-surface-variant group-hover:text-secondary uppercase">USD</span>
+<span class="text-xl font-bold">$100</span>
+</button>
+<button class="py-4 px-2 rounded-lg bg-surface-container-low border-2 border-transparent hover:border-secondary transition-all text-center group">
+<span class="block text-xs font-bold text-on-surface-variant uppercase">Custom</span>
+<span class="text-xl font-bold">$...</span>
+</button>
+</div>
+</section>
+<!-- Recipient Details -->
+<section class="space-y-8 bg-surface-container-lowest p-10 rounded-xl">
+<div class="space-y-4">
+<h2 class="branding-text text-xl uppercase tracking-tight text-primary">Delivery Method</h2>
+<div class="flex gap-4">
+<button class="flex-1 py-3 px-6 rounded-md bg-primary-container text-white text-sm font-bold tracking-tight uppercase">For Me</button>
+<button class="flex-1 py-3 px-6 rounded-md bg-surface-container-high text-on-surface-variant text-sm font-bold tracking-tight uppercase">Send as Gift</button>
+</div>
+</div>
+<div class="space-y-4">
+<label class="block text-xs font-bold tracking-widest text-on-surface-variant uppercase">Recipient Email</label>
+<input class="w-full bg-surface-container-low border-outline-variant/20 focus:border-secondary focus:ring-0 rounded-lg p-4 text-primary font-medium transition-all" placeholder="email@address.com" type="email"/>
+<p class="text-xs text-on-surface-variant">The gift card code will be sent instantly to this address after payment.</p>
+</div>
+</section>
+<!-- Terms -->
+<section class="pt-8 border-t border-surface-container-high">
+<div class="flex flex-wrap gap-x-8 gap-y-2 text-[10px] font-bold tracking-widest text-on-surface-variant uppercase">
+<a class="hover:text-secondary transition-colors" href="#">Terms of Service</a>
+<a class="hover:text-secondary transition-colors" href="#">Usage Policy</a>
+<a class="hover:text-secondary transition-colors" href="#">Refund Policy</a>
+</div>
+</section>
+</div>
+<!-- Right Column: Order Summary (Sticky) -->
+<div class="lg:col-span-4">
+<div class="sticky top-28 space-y-6">
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-[0px_12px_32px_rgba(15,23,42,0.06)]">
+<h3 class="branding-text text-lg uppercase tracking-tight text-primary mb-8">Order Summary</h3>
+<div class="space-y-4 mb-8">
+<div class="flex justify-between items-center text-sm">
+<span class="text-on-surface-variant font-medium">Amazon.com Gift Card</span>
+<span class="text-primary font-bold">$25.00</span>
+</div>
+<div class="flex justify-between items-center text-sm">
+<span class="text-on-surface-variant font-medium">Service Fee</span>
+<span class="text-tertiary-fixed-dim font-bold uppercase tracking-widest">FREE</span>
+</div>
+<div class="h-[1px] bg-surface-container-high w-full"></div>
+<div class="flex justify-between items-end">
+<span class="text-xs font-bold uppercase tracking-widest text-on-surface-variant pb-1">Total</span>
+<span class="text-3xl branding-text text-primary">$25.00 <span class="text-xs font-normal tracking-normal text-on-surface-variant">USD</span></span>
+</div>
+</div>
+<div class="space-y-3">
+<button class="w-full bg-secondary text-white py-4 rounded-lg font-bold tracking-tight uppercase hover:opacity-90 active:scale-[0.98] transition-all">
+                                Continue as Guest
+                            </button>
+<button class="w-full bg-surface-container-high text-primary py-4 rounded-lg font-bold tracking-tight uppercase hover:bg-surface-container-highest active:scale-[0.98] transition-all">
+                                Sign In
+                            </button>
+</div>
+<div class="mt-8 space-y-4">
+<p class="text-[10px] text-center font-bold tracking-widest text-on-surface-variant uppercase">Secure Payments</p>
+<div class="flex justify-center gap-3 opacity-40 grayscale">
+<img alt="Visa" class="h-4" data-alt="Visa payment processor logo monochrome" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfbeFC991mjoHXFqAPl66kTst7OQafuyS8Dh0U26Cl5wjwrzRw3dLPFbsCiUkpKXsRCWymiB_V6lvO7Clta_NPwz4AjW6ZuMkcChVSMhfIFSYXNRoV3ES4Hjn8788mo3gU8KLyneV70ItqKQ4TJxe0oGZltGMmE2d-Id93hKgzuRuEN7EggJR_RP3TnHS8LaNpSWHLN1Oan02QFYgL7ZT_TFFQnLsIyTIsnxt6VTdhkFIQteIaAtbioYOB82LnvrGbY7NK-TPOqOQ"/>
+<img alt="MC" class="h-4" data-alt="Mastercard payment processor logo monochrome" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-0tmzniHR-m43rEexINbwwZvtrUl4_-c_n77Vi8IY4W4pZEdDQMbQ5qyY_jvQ58wsY9TPIHQH9oNWvaX1g_DOE3V2FsJf9LCo_0Jyl7tdAsJ_sGiHiOeWhwGNwWK_zTn09Mjj50u2ePXs2yr9_xjXhxtsWqgEsbr9Cley2WTkMe1GdqccmhMALXu41jYn0S0vPXwP7YO8mE59NVq1VQqYnIQONPSfJdUlJahOMYCbNdjhjSt8g44BpPMC2yYRlBn7H7v9NypHXJw"/>
+<img alt="PayPal" class="h-4" data-alt="PayPal payment processor logo monochrome" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjWT0W_jNvoSWaUJ4stVp-NbIL3tzFDci34sRguC5almrBNbndsJpic-epJKviV9VRXGfgAk2sNaTzhFDZhRlTHcSuTxBPg8ykQz-AEZ8hru3JO2LAMUHXLfvShTtMDRceCPmG5DKo98QaTm4sSzWuisa-BZTesCxRrTNjnOlHOvnYy-HBvKNdAHbIITg_euMwCYdvy91Z-jtH03qZM5bqa_yTGPSoAtLkNXoDGONog7yvde2tMkj92UwQWhSgMAn87gDk2gMTkmc"/>
+<img alt="Apple Pay" class="h-4" data-alt="Apple Pay payment processor logo monochrome" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_tSbLohf-AY6kSwRcf7t-Kn0dMueQ2MkxRcLandnXgW2cFdDdDNoFs_lO4ueuha8oQgw_YVg4B4dosyYriyfzGA-sWhCthhpjsjtS8hEw30yqH7OkrlsSMHc2xAcPrG83rND0tzWPw-WB74Odcsw0pyVZNeMdRtgibsbTmkZKp_BkH28aZTqKoyVLAPPxPbJBd_Jaz6MGcJEe45R3CLN98LkCKGAb1YxOcoJsuMTUKsntcQRifKlWV2C-oCiY25BjXwcejdv37m8"/>
+</div>
+</div>
+</div>
+<div class="bg-primary-container p-6 rounded-xl text-white">
+<div class="flex gap-4 items-center">
+<span class="material-symbols-outlined text-secondary" data-icon="verified_user">verified_user</span>
+<div class="space-y-1">
+<p class="text-xs font-bold uppercase tracking-widest">Guaranteed Delivery</p>
+<p class="text-[11px] text-on-primary-container leading-relaxed">Your digital assets are delivered via encrypted protocols immediately after verification.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-[#F7F9FB] dark:bg-slate-950 w-full py-12 px-6 mt-auto border-t border-slate-200/20">
+<div class="max-w-[1440px] mx-auto flex flex-col md:flex-row justify-between items-center gap-8 w-full">
+<div class="flex flex-col gap-2 items-center md:items-start">
+<div class="branding-text text-lg text-[#0F172A] dark:text-white uppercase tracking-tighter">GIFTED</div>
+<p class="text-slate-500 dark:text-slate-400 text-[10px] font-medium tracking-tight uppercase">© 2024 GIFTED. PRECISION COMMERCE.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="text-slate-500 dark:text-slate-400 text-xs font-medium uppercase tracking-tight hover:text-[#0051D5] transition-all" href="#">Support</a>
+<a class="text-slate-500 dark:text-slate-400 text-xs font-medium uppercase tracking-tight hover:text-[#0051D5] transition-all" href="#">Terms of Service</a>
+<a class="text-slate-500 dark:text-slate-400 text-xs font-medium uppercase tracking-tight hover:text-[#0051D5] transition-all" href="#">Privacy Policy</a>
+<a class="text-slate-500 dark:text-slate-400 text-xs font-medium uppercase tracking-tight hover:text-[#0051D5] transition-all" href="#">Contact</a>
+</div>
+</div>
+</footer>
+</body></html>

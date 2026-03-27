@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GIFTED - Buy Digital Gift Cards Instantly</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@800;900&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-container-low": "#f2f4f6",
+                        "tertiary-container": "#002109",
+                        "tertiary-fixed": "#7ffc97",
+                        "secondary-fixed": "#dbe1ff",
+                        "on-secondary-container": "#fefcff",
+                        "on-error-container": "#93000a",
+                        "surface-container-highest": "#e0e3e5",
+                        "outline-variant": "#c6c6cd",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-fixed-dim": "#62df7d",
+                        "tertiary": "#000000",
+                        "on-tertiary-container": "#009842",
+                        "primary-fixed-dim": "#bec6e0",
+                        "primary": "#000000",
+                        "on-tertiary-fixed": "#002109",
+                        "surface-container-high": "#e6e8ea",
+                        "on-secondary": "#ffffff",
+                        "primary-container": "#131b2e",
+                        "background": "#f7f9fb",
+                        "outline": "#76777d",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-tint": "#565e74",
+                        "on-secondary-fixed-variant": "#003ea8",
+                        "on-primary-fixed-variant": "#3f465c",
+                        "on-error": "#ffffff",
+                        "primary-fixed": "#dae2fd",
+                        "on-tertiary-fixed-variant": "#005320",
+                        "secondary-container": "#316bf3",
+                        "surface-bright": "#f7f9fb",
+                        "surface-dim": "#d8dadc",
+                        "on-primary-fixed": "#131b2e",
+                        "inverse-on-surface": "#eff1f3",
+                        "surface-container": "#eceef0",
+                        "secondary-fixed-dim": "#b4c5ff",
+                        "on-background": "#191c1e",
+                        "on-surface-variant": "#45464d",
+                        "on-primary-container": "#7c839b",
+                        "on-surface": "#191c1e",
+                        "error-container": "#ffdad6",
+                        "on-secondary-fixed": "#00174b",
+                        "error": "#ba1a1a",
+                        "secondary": "#0051d5",
+                        "on-primary": "#ffffff",
+                        "inverse-primary": "#bec6e0",
+                        "surface": "#f7f9fb",
+                        "surface-variant": "#e0e3e5",
+                        "inverse-surface": "#2d3133"
+                    },
+                    fontFamily: {
+                        "headline": ["Archivo", "sans-serif"],
+                        "body": ["Inter", "sans-serif"],
+                        "label": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "1rem",
+                        "xl": "1.25rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        .branding-text { font-family: 'Archivo', sans-serif; font-weight: 900; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<nav class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-outline-variant/10">
+<div class="flex justify-between items-center px-6 py-4 w-full max-w-[1440px] mx-auto">
+<div class="flex items-center gap-10">
+<span class="text-2xl font-black text-primary uppercase tracking-tighter branding-text">GIFTED</span>
+<div class="hidden md:flex items-center gap-2 px-4 py-2 bg-surface-container-high rounded-full hover:bg-surface-container-highest transition-all cursor-pointer group border border-outline-variant/20">
+<img alt="USA Flag" class="w-5 h-3.5 rounded-sm object-cover" data-alt="Small crisp rectangular United States national flag with stars and stripes" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWHP9oB9h1482QrscEsMBalrrqTUP8MVbQ9Nxvs-LRaEdvWtm0eFfwUIF-Lqn1FrX70TSQlCXob3LTrtFOnLOr3BB8nbyaNkSwn-XDoctolk2SdrDQJSieNm5NVUbgtmfJT9Y0ld6fdOKTWxyY9zpR0VzYMTQ4uHNSmmC-V3B4cyz2gLodjlMCKd9v5Ta36fEcSxPGn741FaVm3_eiXm8g-6u7L_NfI3giVzFH3YaVt4mx41d5gX-ALz4xz1jx1bTbeB-UNFAm8ns"/>
+<span class="text-xs font-bold uppercase tracking-tight font-label">United States</span>
+<span class="text-[10px] opacity-60 font-bold tracking-widest">USD</span>
+<span class="material-symbols-outlined text-sm">expand_more</span>
+</div>
+</div>
+<div class="flex items-center gap-8">
+<div class="hidden lg:flex gap-8">
+<a class="text-primary font-bold transition-colors duration-200 uppercase text-xs tracking-widest" href="#">Browse</a>
+<a class="text-slate-500 font-bold hover:text-primary transition-colors duration-200 uppercase text-xs tracking-widest" href="#">Deals</a>
+<a class="text-slate-500 font-bold hover:text-primary transition-colors duration-200 uppercase text-xs tracking-widest" href="#">My Cards</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-slate-500 hover:text-primary">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+</button>
+<button class="text-slate-500 hover:text-primary relative">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+<span class="absolute -top-1 -right-1 w-4 h-4 bg-secondary text-white text-[10px] flex items-center justify-center rounded-full font-bold">2</span>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<main class="pt-24 pb-20">
+<!-- Definitive Hero Section -->
+<section class="max-w-[1440px] mx-auto px-6 mb-12">
+<div class="bg-surface-container-lowest pt-20 pb-24 px-6 rounded-3xl flex flex-col items-center text-center">
+<h1 class="text-5xl md:text-8xl branding-text text-primary uppercase tracking-tighter mb-12 leading-[0.9] max-w-4xl">
+                    BUY DIGITAL GIFT CARDS INSTANTLY.
+                </h1>
+<!-- Primary Search Focus -->
+<div class="w-full max-w-3xl relative">
+<div class="absolute inset-y-0 left-6 flex items-center pointer-events-none text-primary">
+<span class="material-symbols-outlined text-2xl">search</span>
+</div>
+<input class="w-full pl-16 pr-8 py-7 bg-surface-container border border-outline-variant/30 focus:border-primary focus:ring-0 rounded-2xl text-xl font-medium transition-all placeholder:text-slate-400 shadow-sm" placeholder="Search 2,000+ brands or categories..." type="text"/>
+<div class="absolute right-4 inset-y-0 flex items-center">
+<button class="bg-primary text-white px-8 py-3 rounded-xl font-bold uppercase tracking-widest text-sm hover:bg-slate-800 transition-colors">Search</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Category Navigation -->
+<section class="max-w-[1440px] mx-auto px-6 mb-16">
+<div class="flex items-center gap-3 overflow-x-auto pb-4 no-scrollbar">
+<button class="px-8 py-3 bg-primary text-white rounded-full text-sm font-bold uppercase tracking-widest whitespace-nowrap">All Popular</button>
+<button class="px-8 py-3 bg-white hover:bg-surface-container-high border border-outline-variant/20 text-on-surface rounded-full text-sm font-bold uppercase tracking-widest whitespace-nowrap transition-colors">Gaming</button>
+<button class="px-8 py-3 bg-white hover:bg-surface-container-high border border-outline-variant/20 text-on-surface rounded-full text-sm font-bold uppercase tracking-widest whitespace-nowrap transition-colors">Shopping</button>
+<button class="px-8 py-3 bg-white hover:bg-surface-container-high border border-outline-variant/20 text-on-surface rounded-full text-sm font-bold uppercase tracking-widest whitespace-nowrap transition-colors">Food &amp; Drink</button>
+<button class="px-8 py-3 bg-white hover:bg-surface-container-high border border-outline-variant/20 text-on-surface rounded-full text-sm font-bold uppercase tracking-widest whitespace-nowrap transition-colors">Entertainment</button>
+<button class="px-8 py-3 bg-white hover:bg-surface-container-high border border-outline-variant/20 text-on-surface rounded-full text-sm font-bold uppercase tracking-widest whitespace-nowrap transition-colors">Travel</button>
+</div>
+</section>
+<!-- Sticky Content Header -->
+<div class="sticky top-20 z-40 bg-surface/90 backdrop-blur-md mb-8 border-y border-outline-variant/10">
+<div class="max-w-[1440px] mx-auto px-6 py-5 flex justify-between items-center">
+<h2 class="branding-text text-2xl uppercase tracking-tight">Popular in USA</h2>
+<div class="flex items-center gap-6">
+<button class="flex items-center gap-2 text-xs font-black uppercase tracking-widest text-slate-500 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-lg">filter_list</span> Filter
+                    </button>
+<div class="h-4 w-[1px] bg-outline-variant/30"></div>
+<button class="flex items-center gap-2 text-xs font-black uppercase tracking-widest text-slate-500 hover:text-primary transition-colors">
+                        Sort By: Trending <span class="material-symbols-outlined text-lg">expand_more</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Grid -->
+<section class="max-w-[1440px] mx-auto px-6 mb-24">
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+<!-- Card 1: Amazon -->
+<div class="group bg-white rounded-2xl p-6 flex flex-col items-center text-center transition-all hover:shadow-[0px_20px_40px_rgba(0,0,0,0.08)] border border-outline-variant/10">
+<div class="w-24 h-24 flex items-center justify-center mb-6 bg-white border border-outline-variant/20 rounded-xl p-4">
+<img alt="Amazon Logo" class="w-full object-contain" data-alt="Official Amazon arrow smile logo in black and orange on a clean white background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDU_B9LJqqxeOYxlfTImz0nx9s_wcXio-6NdTiE75Q0jmEPX368uxGkU6yZ9Du68OcNHmAONyKmn_OK6H3ZSoypEOHjeaAjPxpXb8NHmfM26a6KEB5VJypflzyohDX8wmFTOS5qcJ_YbjYNMDLuyibCONZ1-gktDPcEBnO7LVedPEzV5CAgS6JlAFLdBJP1FNSUqcd7LS5Xs6CTCIv5HnrCa7GzqGauZdtJzxca6fcFKkZfsIqoqO0-xkohO_-5rzCznX2tKMNb4ok"/>
+</div>
+<h3 class="font-bold text-lg mb-1">Amazon</h3>
+<p class="text-[10px] text-slate-400 uppercase font-black tracking-[0.2em] mb-6">From $10</p>
+<button class="w-full py-3 bg-primary text-white rounded-lg font-bold text-xs uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">Buy Now</button>
+</div>
+<!-- Card 2: Apple -->
+<div class="group bg-white rounded-2xl p-6 flex flex-col items-center text-center transition-all hover:shadow-[0px_20px_40px_rgba(0,0,0,0.08)] border border-outline-variant/10">
+<div class="w-24 h-24 flex items-center justify-center mb-6 bg-white border border-outline-variant/20 rounded-xl p-4">
+<img alt="Apple Logo" class="w-12 object-contain" data-alt="Minimalist black Apple logo icon centered on a white professional background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZbd7nyyjRZ_NGvMGhtTtno3-1_jrdgsDZh9gEYcb_BaXGqCguYgIud1kZ5ItSMApY7ekisNVLSFkoE3GUCslijixAI17JNwIJoLzHvEE5j9Bw8Nv1HKGrFvXPPNpzCvoqt7_zkhP2JcgZ3OS1G7pe4PBH4LQnHAMFqNwEey4WZvt80AhSXC0DGXbJ5PmXhvcTvxv6Q7OWC5bAFVMV6RF59bkUxHzDNkJVplvLILlzES8wjQKMS_8Pl5c0jb9x27bqsWiBCq0698Q"/>
+</div>
+<h3 class="font-bold text-lg mb-1">Apple</h3>
+<p class="text-[10px] text-slate-400 uppercase font-black tracking-[0.2em] mb-6">From $10</p>
+<button class="w-full py-3 bg-primary text-white rounded-lg font-bold text-xs uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">Buy Now</button>
+</div>
+<!-- Card 3: Netflix -->
+<div class="group bg-white rounded-2xl p-6 flex flex-col items-center text-center transition-all hover:shadow-[0px_20px_40px_rgba(0,0,0,0.08)] border border-outline-variant/10">
+<div class="w-24 h-24 flex items-center justify-center mb-6 bg-white border border-outline-variant/20 rounded-xl p-4">
+<img alt="Netflix Logo" class="w-full object-contain" data-alt="Classic red Netflix wordmark logo on white studio background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhDT4zjuyqnpdLez3tO7u1cUMoi5oyZRFdseUP0an3zhzMiK-o41YakBB_AVmzXS8_zrrilGL6GfnjLinSZQtXJXYXQDImc572W67Ckabp6lAO9APgricoX45Fa_nBC6S7BXyeTE4C9Q5jXabtoIWoJABNhmWzRe_gZLzVGp6f7AgVKQDxNGZQhsydvuZ3cmAJ96hdquV_g0vs6hauqEGkZGZcXW_3WZdTGNi2HyqJTlTOjDbt0UIPjP2lilot2vQqYVSvuw_GgjU"/>
+</div>
+<h3 class="font-bold text-lg mb-1">Netflix</h3>
+<p class="text-[10px] text-slate-400 uppercase font-black tracking-[0.2em] mb-6">From $15</p>
+<button class="w-full py-3 bg-primary text-white rounded-lg font-bold text-xs uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">Buy Now</button>
+</div>
+<!-- Card 4: Uber -->
+<div class="group bg-white rounded-2xl p-6 flex flex-col items-center text-center transition-all hover:shadow-[0px_20px_40px_rgba(0,0,0,0.08)] border border-outline-variant/10">
+<div class="w-24 h-24 flex items-center justify-center mb-6 bg-white border border-outline-variant/20 rounded-xl p-4">
+<img alt="Uber Logo" class="w-full px-2 object-contain" data-alt="Modern black Uber typography logo in a sleek minimalist format" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDITnCX3IB9NdVl6ZdqB5Pwg0gEI2CR-JUysTSgoBa8aWr_Ysi7HnqAJcCZd94sWPvSakBOye4k5O17aJoWvrQ11JPtsAGcGJ_h6hXfU0ALdE48_Y5XXruI6I6Acg9VmnoIA-YgSYJEhPQQgWc4O4AK8_smGj1_RqFpxBOPyjJa-8dZDSQVXWsU6RJBxu3smqAOtKhbPmm8yGnvuGD2Vzy2ua8My2AzANfcgEEYUgPMpBhRXcrtLBQUOowpC6oOa4MZd1gDiIwXmQ8"/>
+</div>
+<h3 class="font-bold text-lg mb-1">Uber</h3>
+<p class="text-[10px] text-slate-400 uppercase font-black tracking-[0.2em] mb-6">From $10</p>
+<button class="w-full py-3 bg-primary text-white rounded-lg font-bold text-xs uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">Buy Now</button>
+</div>
+<!-- Card 5: Roblox -->
+<div class="group bg-white rounded-2xl p-6 flex flex-col items-center text-center transition-all hover:shadow-[0px_20px_40px_rgba(0,0,0,0.08)] border border-outline-variant/10">
+<div class="w-24 h-24 flex items-center justify-center mb-6 bg-white border border-outline-variant/20 rounded-xl p-4">
+<img alt="Roblox Logo" class="w-12 object-contain" data-alt="The square Roblox Tilt icon in solid black against a clean white backdrop" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdy7So1Z1IHQMV9tw45HOirzYcAyHmBwbEVoJj5bUSpi8VLGn4BoSRmB3Ka6c9k_v6du9XJgS1MiunUrXY5iII7I67fX7lWkcRiEzdcabltlj-hXWGNca4mFN0MGoPxchR9nbF0wGv53igKAG1IsT7jaoVJoUuz3qUw2jCvlh1v4i-R-wXHEMdDL-FKHpn7hSnjLrYfityh9zvgURr2UtGEEWoe_LCEEr3fU9dhlyUYLDoC9jZGOx0UmAqRUEW_xi6fqperIvBkwc"/>
+</div>
+<h3 class="font-bold text-lg mb-1">Roblox</h3>
+<p class="text-[10px] text-slate-400 uppercase font-black tracking-[0.2em] mb-6">From $10</p>
+<button class="w-full py-3 bg-primary text-white rounded-lg font-bold text-xs uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">Buy Now</button>
+</div>
+<!-- Card 6: Starbucks -->
+<div class="group bg-white rounded-2xl p-6 flex flex-col items-center text-center transition-all hover:shadow-[0px_20px_40px_rgba(0,0,0,0.08)] border border-outline-variant/10">
+<div class="w-24 h-24 flex items-center justify-center mb-6 bg-white border border-outline-variant/20 rounded-xl p-4">
+<img alt="Starbucks Logo" class="w-16 object-contain" data-alt="Green and white Starbucks siren circular logo isolated on a neutral background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBELHw-VOzX-n2OMOOqw0zWJ5YsuTTPd58uDraktBsXz3Q1UFxRKUWTs3fMtyoasp-uCZWihz6qi9CjocJZmY86CC9PmkYpGEfvt7fPZChAMTQ1Q7YvF9j3toW1FphkSlE8HqaYfFFxdMXrpvlD9gnwfPvR4zWjK_VuKcoU5OFns4tVUGaCJSuNxKLf0UkeDapoP5jJz98K5RkPgp3DT1U3Nczlv4Xaoz1YTNBKELn0irRTvGehgFmvefDU2vE9ZemZfrm6Gby5nMk"/>
+</div>
+<h3 class="font-bold text-lg mb-1">Starbucks</h3>
+<p class="text-[10px] text-slate-400 uppercase font-black tracking-[0.2em] mb-6">From $10</p>
+<button class="w-full py-3 bg-primary text-white rounded-lg font-bold text-xs uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">Buy Now</button>
+</div>
+</div>
+</section>
+<!-- Trust Section -->
+<section class="w-full bg-surface-container py-24">
+<div class="max-w-[1440px] mx-auto px-6">
+<h2 class="branding-text text-3xl uppercase tracking-tighter mb-16 text-center">Engineered for Reliability</h2>
+<div class="grid md:grid-cols-3 gap-16">
+<div class="flex flex-col items-center text-center">
+<div class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mb-6 shadow-sm text-primary">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">bolt</span>
+</div>
+<h4 class="font-bold text-xl mb-3">Instant Delivery</h4>
+<p class="text-slate-500 text-sm leading-relaxed">Codes are sent to your inbox within seconds of purchase. No waiting, no delays.</p>
+</div>
+<div class="flex flex-col items-center text-center">
+<div class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mb-6 shadow-sm text-primary">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+</div>
+<h4 class="font-bold text-xl mb-3">Secure Transactions</h4>
+<p class="text-slate-500 text-sm leading-relaxed">Bank-level encryption and fraud protection for every single transaction you make.</p>
+</div>
+<div class="flex flex-col items-center text-center">
+<div class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mb-6 shadow-sm text-primary">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">support_agent</span>
+</div>
+<h4 class="font-bold text-xl mb-3">Global Support</h4>
+<p class="text-slate-500 text-sm leading-relaxed">Our dedicated team is available 24/7 to assist with any redemption or payment issues.</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-16 px-6 mt-auto bg-white border-t border-outline-variant/10">
+<div class="max-w-[1440px] mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-12 w-full">
+<div class="flex flex-col gap-6">
+<span class="text-2xl font-black text-primary uppercase branding-text">GIFTED</span>
+<p class="text-slate-400 text-[10px] uppercase tracking-[0.2em] font-bold">© 2024 GIFTED. PRECISION COMMERCE.</p>
+</div>
+<div class="flex flex-wrap gap-x-12 gap-y-6">
+<a class="text-slate-600 text-xs uppercase tracking-widest font-bold hover:text-primary transition-all" href="#">Help Center</a>
+<a class="text-slate-600 text-xs uppercase tracking-widest font-bold hover:text-primary transition-all" href="#">Terms of Service</a>
+<a class="text-slate-600 text-xs uppercase tracking-widest font-bold hover:text-primary transition-all" href="#">Privacy Policy</a>
+<a class="text-slate-600 text-xs uppercase tracking-widest font-bold hover:text-primary transition-all" href="#">Partnerships</a>
+</div>
+<div class="flex gap-4">
+<div class="w-10 h-10 rounded-xl bg-surface-container flex items-center justify-center hover:bg-surface-container-high transition-all cursor-pointer">
+<img alt="LinkedIn" class="w-5 h-5 grayscale" data-alt="LinkedIn minimalist logo icon small grayscale circle" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBORGYAqi0RDGoDxXPV2u1DhzjWcGAPmbKEobvbnfspdX8NEPVMYUFr9Y-U82YTdFduncv0wTjneo_Be5WzPJgvl_hJ7YliGSKVLoLpgt8xnWxFYfgQOQ6NnCiWsOPTq056RTr7dKsydWjpUe0WVn6IodptcTTb2pgvkZSY0eGNGQMz_5RFlM5k66frp7Rp93amDInAmHgzNtVVDoces1zZJD4K4jzdxBchDBBwqeK_gPw9aCsy8EA9C-ThfeHps0a9zo14Qe2VOto"/>
+</div>
+<div class="w-10 h-10 rounded-xl bg-surface-container flex items-center justify-center hover:bg-surface-container-high transition-all cursor-pointer">
+<img alt="Instagram" class="w-5 h-5 grayscale" data-alt="Instagram camera lens logo icon small grayscale circle" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbAzxBZVRiVOUwIE-uOJimwCdgdLKbC187Y23NUb6pv7I8PdA-ZVEqZGkUkSwc7ueeMqmgKpPfZqGX5_uXx3SQH6WtKnfGSTfu5eGJ2rOWVPub3uN6XQ7yJySw4MzZ9A3prbdnZ8GV__3hEkgR2EZs4jxU4wyZsUjWSQQzTf0r-PXNaDH6v304Ss21U6Y5hLZsbwU-nCi8V-VdgnGuzgXZPPigUB9R6miZ_27-ROuZBGxev1H695aRkuJsv68tNvUJE4zilabd1Kc"/>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

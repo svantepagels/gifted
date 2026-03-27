@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GIFTED - Buy Digital Gift Cards Instantly</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@800;900&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "tertiary": "#000000",
+              "secondary-fixed-dim": "#b4c5ff",
+              "on-surface": "#191c1e",
+              "on-secondary-fixed": "#00174b",
+              "on-primary-fixed-variant": "#3f465c",
+              "outline-variant": "#c6c6cd",
+              "primary-fixed": "#dae2fd",
+              "on-tertiary-fixed-variant": "#005320",
+              "surface-container-lowest": "#ffffff",
+              "on-primary": "#ffffff",
+              "error": "#ba1a1a",
+              "on-secondary": "#ffffff",
+              "inverse-on-surface": "#eff1f3",
+              "secondary": "#0051d5",
+              "tertiary-fixed": "#7ffc97",
+              "inverse-surface": "#2d3133",
+              "on-surface-variant": "#45464d",
+              "primary": "#000000",
+              "surface-tint": "#565e74",
+              "on-error": "#ffffff",
+              "surface-container-highest": "#e0e3e5",
+              "surface-container-high": "#e6e8ea",
+              "primary-container": "#131b2e",
+              "on-primary-container": "#7c839b",
+              "surface-variant": "#e0e3e5",
+              "surface-dim": "#d8dadc",
+              "tertiary-fixed-dim": "#62df7d",
+              "inverse-primary": "#bec6e0",
+              "tertiary-container": "#002109",
+              "secondary-fixed": "#dbe1ff",
+              "surface-container-low": "#f2f4f6",
+              "on-secondary-fixed-variant": "#003ea8",
+              "primary-fixed-dim": "#bec6e0",
+              "on-tertiary-fixed": "#002109",
+              "on-tertiary": "#ffffff",
+              "secondary-container": "#316bf3",
+              "surface-bright": "#f7f9fb",
+              "on-error-container": "#93000a",
+              "on-background": "#191c1e",
+              "on-tertiary-container": "#009842",
+              "surface": "#f7f9fb",
+              "surface-container": "#eceef0",
+              "error-container": "#ffdad6",
+              "on-primary-fixed": "#131b2e",
+              "background": "#f7f9fb",
+              "outline": "#76777d",
+              "on-secondary-container": "#fefcff"
+            },
+            fontFamily: {
+              "headline": ["Archivo", "sans-serif"],
+              "body": ["Inter", "sans-serif"],
+              "label": ["Inter", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        .archivo-black { font-family: 'Archivo', sans-serif; font-weight: 900; }
+        .scrollbar-hide::-webkit-scrollbar { display: none; }
+        .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface min-h-screen pb-24">
+<!-- Top Navigation -->
+<header class="bg-white sticky top-0 z-50 border-b border-outline-variant/20">
+<div class="px-6 py-4 flex justify-between items-center max-w-screen-xl mx-auto">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-slate-900" data-icon="menu">menu</span>
+<span class="text-2xl font-black tracking-tighter text-slate-900 archivo-black">GIFTED</span>
+</div>
+<!-- Country Selector -->
+<button class="bg-surface-container-high h-9 px-3 flex items-center gap-2 rounded-full border border-outline-variant/30">
+<div class="w-5 h-5 rounded-full overflow-hidden flex-shrink-0">
+<img alt="USA Flag" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbgFmzlj1YWVa5BGQVzSdkZctjhxKcfa93qrpBxkR4iX61wHI-OYbf_ZhWoYImY672B5q7K7jiccvNR__UPsJC2TurnphM2M44uPUvOTDQVmK0zQfgWXaj2_ZgPd78AMpY-6d69DK43R4iNJMJQXMcvaaICDRdcCsvAUdLxTJBlDj5PH247DHZ3TaJTjxzO8AnfGs_rqd_3n_VpYmoRMCm9Jblo1ulOm9C5t78bhpYCJ0ar0qeoeRsnqigOs-cZ63OxssXWXHmUDM"/>
+</div>
+<span class="text-xs font-bold tracking-tight text-on-surface">US · USD</span>
+</button>
+</div>
+</header>
+<main class="max-w-screen-xl mx-auto">
+<!-- Hero Section -->
+<section class="px-6 pt-10 pb-8 text-center bg-white">
+<h1 class="archivo-black text-4xl leading-[1.1] tracking-tight text-primary mb-6 uppercase">
+                BUY DIGITAL <br/>GIFT CARDS <br/>INSTANTLY.
+            </h1>
+<!-- Prominent Search -->
+<div class="relative max-w-md mx-auto">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline" data-icon="search">search</span>
+<input class="w-full h-14 pl-12 pr-4 bg-surface-container-low border-2 border-primary rounded-xl focus:ring-0 outline-none placeholder:text-outline text-base font-medium" placeholder="Search brands or categories" type="text"/>
+</div>
+</section>
+<!-- Sticky Category Filters -->
+<div class="sticky top-[69px] z-40 bg-surface/95 backdrop-blur-md py-4 px-6 border-b border-outline-variant/10">
+<div class="flex gap-2 overflow-x-auto scrollbar-hide">
+<button class="whitespace-nowrap h-10 px-6 rounded-full bg-primary text-on-primary text-sm font-bold tracking-tight">All</button>
+<button class="whitespace-nowrap h-10 px-6 rounded-full bg-white border border-outline-variant/50 text-on-surface-variant text-sm font-semibold">Gaming</button>
+<button class="whitespace-nowrap h-10 px-6 rounded-full bg-white border border-outline-variant/50 text-on-surface-variant text-sm font-semibold">Shopping</button>
+<button class="whitespace-nowrap h-10 px-6 rounded-full bg-white border border-outline-variant/50 text-on-surface-variant text-sm font-semibold">Food</button>
+<button class="whitespace-nowrap h-10 px-6 rounded-full bg-white border border-outline-variant/50 text-on-surface-variant text-sm font-semibold">Streaming</button>
+</div>
+</div>
+<!-- Brands Grid -->
+<section class="px-6 grid grid-cols-2 gap-3 mt-6">
+<!-- Amazon -->
+<div class="bg-white rounded-xl p-5 flex flex-col items-center text-center border border-outline-variant/20 shadow-sm active:bg-surface-container-low transition-colors">
+<div class="w-16 h-16 flex items-center justify-center mb-4">
+<img alt="Amazon Logo" class="w-full h-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCE8RzB1VSxYu9L_JOlMCUo5PogX_yQEucBka9znVIrBteIaIjbkelgtf2p_LhYBPYB8dNbTN7GmAwmEG9Ko67zMruszDH-RDvxgrIL92HUardjAU6vww0YHVQr_4T_7XWjnw2JHvA56vYmR3xR_vNRw8uotLNPyzWWMnY6gzgF8SN0epFbMuKCXiQpUmMIRyrrMXIcZ4Kl630EsRL7MnzYuiDjP302FKF59oHtZsbQWufZUj79bkCZglFhx9TGIc3ok79Nbz5eIOg"/>
+</div>
+<h3 class="archivo-black text-[13px] tracking-tight mb-1 text-on-surface uppercase">Amazon</h3>
+<p class="text-xs font-semibold text-on-surface-variant">From $10</p>
+</div>
+<!-- Apple -->
+<div class="bg-white rounded-xl p-5 flex flex-col items-center text-center border border-outline-variant/20 shadow-sm active:bg-surface-container-low transition-colors">
+<div class="w-16 h-16 flex items-center justify-center mb-4">
+<img alt="Apple Logo" class="w-11 h-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhKD8Qh9SETLKX4WYHDFHOuSQMzeqmVvbsyGquScR-i9wGglvZES8i-l4SeqTOewUVSX1dNwp59prftRzI8uixYxg8ZletZ4o8MOqT6aEvXNKrScYHvPNLEb1vpic0NR3oKELtXDVik9ue5ruc_2jf0KmopsfdWxILfrrJLzKoI3KU-QxDm-4Xcz7IMw9UXvZcFO8h73BtuGn2qfwnMcE613IwrhKadoo7jYOJ_BVOQygg1WEZ4rMGHt-3sYDZby3HcJUJrCdKBDw"/>
+</div>
+<h3 class="archivo-black text-[13px] tracking-tight mb-1 text-on-surface uppercase">Apple</h3>
+<p class="text-xs font-semibold text-on-surface-variant">From $10</p>
+</div>
+<!-- Netflix -->
+<div class="bg-white rounded-xl p-5 flex flex-col items-center text-center border border-outline-variant/20 shadow-sm active:bg-surface-container-low transition-colors">
+<div class="w-16 h-16 flex items-center justify-center mb-4">
+<img alt="Netflix Logo" class="w-full h-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB56PLWqgZZ-JeBMORpKLgMKGOG6KgT3MLT2lAfnY5n5zW2uZR3udg1qV9LgHQ4WR_sEuPz-fAUDHA9f14AaRSgBonHAp1DynMuS9yP9vxxIHdosogSXqI5yxL3huJfJWwkihuuUsy_Db8Td3SruIQXhK2NO-bj7jGm6WA-u7KLlqTHyeQ8ub3HlfyJrVUTKlj1hcuoBTy7OyWGZMfNWAZkFEroWTfoW7dXX4aZA2ZscG5ElEn-rmhFe5lrJIxPB_uK1_3bsh6R0Zo"/>
+</div>
+<h3 class="archivo-black text-[13px] tracking-tight mb-1 text-on-surface uppercase">Netflix</h3>
+<p class="text-xs font-semibold text-on-surface-variant">From $15</p>
+</div>
+<!-- Starbucks -->
+<div class="bg-white rounded-xl p-5 flex flex-col items-center text-center border border-outline-variant/20 shadow-sm active:bg-surface-container-low transition-colors">
+<div class="w-16 h-16 flex items-center justify-center mb-4">
+<img alt="Starbucks Logo" class="w-12 h-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCG3iNG_soBpHq28KZwE4jbU9U8-f9sz69za8ZK02VQJ--r69TLaSLOu3KV62LlXLYtTi3yH0vi3bVrfayOSjvkLCxr8PByEuvGsDw_x6pGMAmj7XtUdLQIQxSbN9hF5nVVTwjeNqonEdoYPZkAz6f2m3810MdbVzoRh2FjFWH2ezQfywLeh5hvh1BmtIFRY4iuqj1bMtvFdMgokKJkBsCg21GQ7kCey7uUgh9Bqg2M3U6jqf_T0d2At0Cx0HMqH8sxQjtAzx7mDnk"/>
+</div>
+<h3 class="archivo-black text-[13px] tracking-tight mb-1 text-on-surface uppercase">Starbucks</h3>
+<p class="text-xs font-semibold text-on-surface-variant">From $5</p>
+</div>
+<!-- Nike -->
+<div class="bg-white rounded-xl p-5 flex flex-col items-center text-center border border-outline-variant/20 shadow-sm active:bg-surface-container-low transition-colors">
+<div class="w-16 h-16 flex items-center justify-center mb-4">
+<img alt="Nike Logo" class="w-full h-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBY6i29Kt1mpT9T27R0S0SwfTFsqcnA7-sj20WOeRwbrTmqU5f4Nq4HkCvZEWvghk2vlRlEdPjIXcr1oon4OIVhY9xw-BYNeSoOSak4P1848W4r_BMgi58L2ZbID8HWnxqfv1q_WdNPFNglDFfsBfZNmX5qiWHRSbENnveuKXTo8e2adXQc_Aqy4OaHfZ1zy4bkjIliQrdrxsD837miSBCybtCygfVu12Xhlv8vRhQhBiIw_DAvlXHVSjRe5eznilsWBMngE5GUugA"/>
+</div>
+<h3 class="archivo-black text-[13px] tracking-tight mb-1 text-on-surface uppercase">Nike</h3>
+<p class="text-xs font-semibold text-on-surface-variant">From $25</p>
+</div>
+<!-- Uber -->
+<div class="bg-white rounded-xl p-5 flex flex-col items-center text-center border border-outline-variant/20 shadow-sm active:bg-surface-container-low transition-colors">
+<div class="w-16 h-16 flex items-center justify-center mb-4">
+<img alt="Uber Logo" class="w-full h-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOpayBLezJbCj_DiFNi0ZS4h83YKRCNdXh0FQojb-M45aw46MVQVSc78ztRgVpp3ViGZlA6zCjyofyy5AWK3mRbeR18PvHOJjnC48XOepxrOzKZieHU2mfjiNfgT6iBZTrhow0zGTRzGmLryTZa4QCnrW3H5XYlgOyTMIuGQLA6xHD7DvyzLdCiECdHwo5TliMF-0mRjix52vES09Ro2c3wrR1hVUP5TPsKyUw7xJVwf9TpbY7GGSEdEOFdoyZO1VIsrmzHKuB89k"/>
+</div>
+<h3 class="archivo-black text-[13px] tracking-tight mb-1 text-on-surface uppercase">Uber</h3>
+<p class="text-xs font-semibold text-on-surface-variant">From $10</p>
+</div>
+</section>
+<!-- Footer -->
+<footer class="w-full px-8 py-16 flex flex-col items-center text-center space-y-8 mt-12">
+<span class="text-lg font-black text-slate-900 archivo-black">GIFTED</span>
+<nav class="flex flex-wrap justify-center gap-6">
+<a class="text-slate-400 hover:text-primary transition-colors text-sm font-medium" href="#">Privacy</a>
+<a class="text-slate-400 hover:text-primary transition-colors text-sm font-medium" href="#">Terms</a>
+<a class="text-slate-400 hover:text-primary transition-colors text-sm font-medium" href="#">Support</a>
+<a class="text-slate-400 hover:text-primary transition-colors text-sm font-medium" href="#">Refunds</a>
+</nav>
+<p class="text-[10px] font-bold text-slate-400 tracking-widest uppercase">© 2024 GIFTED GIFT CO. ALL RIGHTS RESERVED.</p>
+</footer>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pb-6 pt-3 bg-white/95 backdrop-blur-md z-50 border-t border-outline-variant/20 shadow-lg">
+<a class="flex flex-col items-center justify-center text-primary bg-primary/5 rounded-xl px-4 py-1.5 transition-transform active:scale-90" href="#">
+<span class="material-symbols-outlined !text-[26px]" data-icon="storefront" style="font-variation-settings: 'FILL' 1;">storefront</span>
+<span class="text-[10px] font-bold uppercase tracking-wider mt-1">Shop</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 active:text-primary transition-transform active:scale-90" href="#">
+<span class="material-symbols-outlined !text-[26px]" data-icon="confirmation_number">confirmation_number</span>
+<span class="text-[10px] font-bold uppercase tracking-wider mt-1">Cards</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 active:text-primary transition-transform active:scale-90" href="#">
+<span class="material-symbols-outlined !text-[26px]" data-icon="shopping_bag">shopping_bag</span>
+<span class="text-[10px] font-bold uppercase tracking-wider mt-1">Cart</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 active:text-primary transition-transform active:scale-90" href="#">
+<span class="material-symbols-outlined !text-[26px]" data-icon="person">person</span>
+<span class="text-[10px] font-bold uppercase tracking-wider mt-1">Account</span>
+</a>
+</nav>
+</body></html>
