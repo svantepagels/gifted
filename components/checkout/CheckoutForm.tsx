@@ -41,8 +41,8 @@ export function CheckoutForm({ onSubmit }: CheckoutFormProps) {
   return (
     <form onSubmit={handleSubmit(handleFormSubmit)} className="space-y-6">
       <div className="bg-surface-container-lowest rounded-lg p-6 space-y-4">
-        <h2 className="font-archivo text-title-lg text-surface-on-surface mb-4">
-          Your Information
+        <h2 className="text-[18px] font-bold uppercase tracking-[1.5px] text-primary mb-4">
+          YOUR INFORMATION
         </h2>
         
         <Input

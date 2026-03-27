@@ -19,11 +19,17 @@ export function SuccessSummary({ order }: SuccessSummaryProps) {
     <div className="max-w-2xl mx-auto">
       {/* Success Header */}
       <div className="text-center mb-8">
-        <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-tertiary-fixed-dim/20 mb-4">
-          <CheckCircle className="h-12 w-12 text-tertiary-container" />
+        <div className="relative inline-flex items-center justify-center w-24 h-24 mb-4">
+          {/* Halo effect - radial gradient ring */}
+          <div className="absolute inset-0 rounded-full bg-gradient-radial from-[#62DF7D]/20 via-[#62DF7D]/10 to-transparent"></div>
+          <div className="absolute inset-2 rounded-full bg-gradient-radial from-[#62DF7D]/30 via-[#62DF7D]/15 to-transparent"></div>
+          {/* Inner circle */}
+          <div className="relative flex items-center justify-center w-16 h-16 rounded-full bg-[#62DF7D]/20">
+            <CheckCircle className="h-10 w-10 text-[#009842]" strokeWidth={2.5} />
+          </div>
         </div>
-        <h1 className="font-archivo text-display-sm text-surface-on-surface mb-2">
-          Your Gift Card is Ready!
+        <h1 className="font-archivo-black text-[2.25rem] leading-[1.2] tracking-[-0.02em] text-surface-on-surface mb-2 uppercase">
+          YOUR GIFT CARD IS READY!
         </h1>
         <p className="text-body-lg text-surface-on-surface-variant">
           Order #{order.id}

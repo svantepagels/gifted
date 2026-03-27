@@ -53,8 +53,9 @@ const config: Config = {
         },
       },
       fontFamily: {
-        archivo: ['var(--font-archivo)', 'sans-serif'],
-        inter: ['var(--font-inter)', 'sans-serif'],
+        'archivo-black': ['var(--font-archivo-black)', 'sans-serif'],
+        'archivo': ['var(--font-archivo-black)', 'sans-serif'], // Alias for backward compatibility
+        'inter': ['var(--font-inter)', 'sans-serif'],
       },
       fontSize: {
         // Display

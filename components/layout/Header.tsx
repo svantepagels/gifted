@@ -16,7 +16,7 @@ export function Header() {
           {/* Logo */}
           <Link 
             href="/"
-            className="text-display-sm sm:text-display-md font-archivo text-primary hover:opacity-80 transition-opacity"
+            className="font-archivo-black text-[16px] leading-none tracking-tighter text-primary uppercase hover:opacity-80 transition-opacity"
           >
             GIFTED
           </Link>
@@ -25,15 +25,15 @@ export function Header() {
           <nav className="hidden md:flex items-center gap-8">
             <Link 
               href="/"
-              className="text-body-md text-surface-on-surface hover:text-secondary transition-colors"
+              className="text-[12px] font-medium uppercase tracking-[1px] text-surface-on-surface hover:text-secondary transition-colors"
             >
-              Browse
+              BROWSE
             </Link>
             <Link 
               href="/?category=Featured"
-              className="text-body-md text-surface-on-surface hover:text-secondary transition-colors"
+              className="text-[12px] font-medium uppercase tracking-[1px] text-surface-on-surface hover:text-secondary transition-colors"
             >
-              Deals
+              DEALS
             </Link>
           </nav>
           

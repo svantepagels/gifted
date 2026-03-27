@@ -49,10 +49,10 @@ export function AmountSelector({
   if (product.denominationType === 'FIXED' && product.fixedDenominations) {
     return (
       <div>
-        <label className="block text-title-md font-archivo text-surface-on-surface mb-4">
-          Select Amount
+        <label className="block text-[18px] font-bold uppercase tracking-[1.5px] text-primary mb-4">
+          SELECT AMOUNT
         </label>
-        <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+        <div className="grid grid-cols-5 gap-3">
           {product.fixedDenominations.map((denom) => {
             const isSelected = selectedAmount === denom.value
             
@@ -61,7 +61,7 @@ export function AmountSelector({
                 key={denom.value}
                 onClick={() => onAmountChange(denom.value)}
                 className={`
-                  p-4 rounded-lg border-2 transition-all duration-200
+                  flex flex-col items-center justify-center p-4 rounded-lg border-2 transition-all duration-200
                   ${isSelected
                     ? 'border-secondary bg-secondary/5'
                     : 'border-outline-variant hover:border-surface-on-surface-variant'
@@ -69,9 +69,10 @@ export function AmountSelector({
                 `}
                 whileTap={{ scale: 0.95 }}
               >
-                <div className="text-headline-sm font-archivo text-surface-on-surface">
-                  {formatCurrency(denom.value, currency)}
-                </div>
+                <span className="text-xs uppercase text-surface-on-surface-variant mb-1">USD</span>
+                <span className="text-2xl font-bold text-surface-on-surface">
+                  ${denom.value}
+                </span>
               </motion.button>
             )
           })}
@@ -83,8 +84,8 @@ export function AmountSelector({
   if (product.denominationType === 'RANGE' && product.denominationRange) {
     return (
       <div>
-        <label className="block text-title-md font-archivo text-surface-on-surface mb-2">
-          Enter Amount
+        <label className="block text-[18px] font-bold uppercase tracking-[1.5px] text-primary mb-2">
+          ENTER AMOUNT
         </label>
         <p className="text-label-md text-surface-on-surface-variant mb-4">
           Between {formatCurrency(product.denominationRange.min, currency)} and{' '}

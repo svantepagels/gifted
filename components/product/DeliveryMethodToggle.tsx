@@ -17,8 +17,8 @@ export function DeliveryMethodToggle({ value, onChange }: DeliveryMethodTogglePr
   
   return (
     <div>
-      <label className="block text-title-md font-archivo text-surface-on-surface mb-4">
-        Who is this for?
+      <label className="block text-[18px] font-bold uppercase tracking-[1.5px] text-primary mb-4">
+        DELIVERY METHOD
       </label>
       <div className="grid grid-cols-2 gap-3">
         {options.map((option) => {

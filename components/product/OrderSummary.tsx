@@ -36,8 +36,8 @@ export function OrderSummary({
   
   return (
     <div className={`bg-surface-container-lowest rounded-lg p-6 ${sticky ? 'sticky top-24' : ''}`}>
-      <h2 className="font-archivo text-title-lg text-surface-on-surface mb-4">
-        Order Summary
+      <h2 className="text-[18px] font-bold uppercase tracking-[1.5px] text-primary mb-4">
+        ORDER SUMMARY
       </h2>
       
       <div className="space-y-3 mb-6 pb-6 border-b border-outline-variant">
@@ -61,9 +61,9 @@ export function OrderSummary({
         </div>
       </div>
       
-      <div className="flex justify-between text-title-md font-archivo mb-6">
-        <span className="text-surface-on-surface">Total</span>
-        <span className="text-surface-on-surface">
+      <div className="flex justify-between items-baseline mb-6">
+        <span className="text-[18px] font-bold uppercase tracking-[1.5px] text-primary">TOTAL</span>
+        <span className="text-[36px] font-extrabold text-primary">
           {amount ? formatCurrency(total, currency) : '—'}
         </span>
       </div>

@@ -100,15 +100,15 @@ function CheckoutContent() {
               Back to Product
             </Link>
             
-            <h1 className="font-archivo text-display-sm text-surface-on-surface mb-8">
-              Checkout
+            <h1 className="font-archivo-black text-[2.25rem] leading-[1.2] tracking-[-0.02em] text-surface-on-surface mb-8 uppercase">
+              CHECKOUT
             </h1>
             
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               {/* Order Review */}
               <div className="bg-surface-container-lowest rounded-lg p-6">
-                <h2 className="font-archivo text-title-lg text-surface-on-surface mb-4">
-                  Order Review
+                <h2 className="text-[18px] font-bold uppercase tracking-[1.5px] text-primary mb-4">
+                  ORDER REVIEW
                 </h2>
                 
                 <div className="flex items-start gap-4 mb-6 pb-6 border-b border-outline-variant">

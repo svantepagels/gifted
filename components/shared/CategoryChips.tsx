@@ -34,11 +34,11 @@ export function CategoryChips({ categories }: CategoryChipsProps) {
             key={category}
             onClick={() => handleCategoryClick(category)}
             className={`
-              px-6 py-2 rounded-full text-label-lg whitespace-nowrap
+              px-6 py-2.5 rounded-full text-[13px] font-medium uppercase tracking-[0.5px] whitespace-nowrap
               transition-colors duration-200
               ${isActive
-                ? 'bg-primary text-surface-container-lowest'
-                : 'bg-surface-container-low text-surface-on-surface hover:bg-surface-container'
+                ? 'bg-primary text-white'
+                : 'bg-white border border-[#D0D5DD] text-surface-on-surface hover:bg-surface-container-low'
               }
             `}
             whileTap={{ scale: 0.95 }}

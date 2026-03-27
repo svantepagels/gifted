@@ -1,13 +1,10 @@
 export function HeroSection() {
   return (
-    <section className="py-12 sm:py-16 lg:py-24">
-      <div className="text-center max-w-4xl mx-auto px-4">
-        <h1 className="font-archivo text-display-md sm:text-display-lg text-primary mb-6 text-balance">
-          Digital Gifts That Arrive Instantly
+    <section className="py-12 sm:py-16 lg:py-20 px-4 bg-[#F2F4F7] rounded-[16px] mx-4 my-6">
+      <div className="text-center max-w-3xl mx-auto">
+        <h1 className="font-archivo-black text-[2.5rem] sm:text-[4rem] lg:text-[5rem] leading-[0.95] tracking-[-0.02em] text-primary mb-0 uppercase">
+          BUY DIGITAL GIFT CARDS INSTANTLY.
         </h1>
-        <p className="text-body-lg sm:text-title-lg text-surface-on-surface-variant max-w-2xl mx-auto text-balance">
-          Choose from hundreds of brands. Send via email. No shipping, no waiting.
-        </p>
       </div>
     </section>
   )

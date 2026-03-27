@@ -6,7 +6,7 @@ import { AppProvider } from '@/contexts/AppContext'
 const archivoBlack = Archivo_Black({
   weight: '400',
   subsets: ['latin'],
-  variable: '--font-archivo',
+  variable: '--font-archivo-black',
   display: 'swap',
 })
 

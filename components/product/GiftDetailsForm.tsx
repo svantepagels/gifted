@@ -31,13 +31,17 @@ export function GiftDetailsForm({ onChange }: GiftDetailsFormProps) {
   
   return (
     <div className="space-y-4">
-      <Input
-        label="Recipient's Email"
-        type="email"
-        placeholder="friend@example.com"
-        error={errors.recipientEmail?.message}
-        {...register('recipientEmail')}
-      />
+      <div>
+        <label className="block text-[18px] font-bold uppercase tracking-[1.5px] text-primary mb-4">
+          RECIPIENT EMAIL
+        </label>
+        <Input
+          type="email"
+          placeholder="friend@example.com"
+          error={errors.recipientEmail?.message}
+          {...register('recipientEmail')}
+        />
+      </div>
       
       <div>
         <label className="block text-label-md text-surface-on-surface mb-2">
