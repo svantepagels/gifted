@@ -9,13 +9,13 @@ import { ProductHero } from '@/components/product/ProductHero'
 import { AmountSelector } from '@/components/product/AmountSelector'
 import { DeliveryMethodToggle } from '@/components/product/DeliveryMethodToggle'
 import { GiftDetailsForm } from '@/components/product/GiftDetailsForm'
-import { OrderSummary } from '@/components/product/OrderSummary'
 import { giftCardService } from '@/lib/giftcards/service'
 import { GiftCardProduct } from '@/lib/giftcards/types'
 import { useApp } from '@/contexts/AppContext'
 import { DeliveryMethod } from '@/lib/orders/types'
 import { orderRepository } from '@/lib/orders/mock-repository'
-import { calculateServiceFee } from '@/lib/utils/currency'
+import { calculateServiceFee, formatCurrency } from '@/lib/utils/currency'
+import { ArrowRight } from 'lucide-react'
 
 export default function ProductDetailPage() {
   const params = useParams()
@@ -127,56 +127,71 @@ export default function ProductDetailPage() {
     return null
   }
   
+  const totalAmount = selectedAmount ? selectedAmount + calculateServiceFee(selectedAmount) : null
+  const canContinue = product && selectedAmount && (deliveryMethod === 'self' || recipientEmail)
+  
   return (
     <>
       <Header />
-      <main className="min-h-screen pb-20 md:pb-0">
+      <main className="min-h-screen pb-32 md:pb-8">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {/* Main Content */}
-            <div className="lg:col-span-2 space-y-8">
-              <ProductHero product={product} countryName={selectedCountry.name} />
+          <div className="max-w-4xl mx-auto space-y-8">
+            <ProductHero product={product} countryName={selectedCountry.name} />
+            
+            <div className="bg-surface-container-lowest rounded-lg p-6 space-y-6">
+              <AmountSelector
+                product={product}
+                currency={selectedCountry.currency}
+                selectedAmount={selectedAmount}
+                onAmountChange={handleAmountChange}
+              />
               
-              <div className="bg-surface-container-lowest rounded-lg p-6 space-y-6">
-                <AmountSelector
-                  product={product}
-                  currency={selectedCountry.currency}
-                  selectedAmount={selectedAmount}
-                  onAmountChange={handleAmountChange}
-                />
-                
-                <DeliveryMethodToggle
-                  value={deliveryMethod}
-                  onChange={handleDeliveryMethodChange}
-                />
-                
-                {deliveryMethod === 'gift' && (
-                  <GiftDetailsForm onChange={handleGiftDetailsChange} />
-                )}
-              </div>
+              <DeliveryMethodToggle
+                value={deliveryMethod}
+                onChange={handleDeliveryMethodChange}
+              />
+              
+              {deliveryMethod === 'gift' && (
+                <GiftDetailsForm onChange={handleGiftDetailsChange} />
+              )}
             </div>
             
-            {/* Order Summary - Desktop */}
-            <div className="hidden lg:block">
-              <OrderSummary
-                productName={product.brandName}
-                amount={selectedAmount}
-                currency={selectedCountry.currency}
-                onContinue={handleContinue}
-                sticky
-              />
+            {/* Desktop Continue Button */}
+            <div className="hidden md:flex justify-end">
+              <button
+                onClick={handleContinue}
+                disabled={!canContinue}
+                className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-surface-on-primary rounded-full font-archivo-black text-[14px] uppercase tracking-[1.5px] hover:bg-primary-hover transition-all disabled:bg-surface-container-high disabled:text-surface-on-surface-variant disabled:cursor-not-allowed shadow-lg disabled:shadow-none"
+              >
+                Continue to Checkout
+                {totalAmount && (
+                  <span className="ml-2 px-3 py-1 bg-surface-on-primary/10 rounded-full">
+                    {formatCurrency(totalAmount, selectedCountry.currency)}
+                  </span>
+                )}
+                <ArrowRight className="h-5 w-5" />
+              </button>
             </div>
           </div>
         </div>
         
-        {/* Order Summary - Mobile Fixed Bottom */}
-        <div className="lg:hidden fixed bottom-16 left-0 right-0 p-4 bg-surface-container-lowest/95 backdrop-blur border-t border-outline-variant z-30">
-          <OrderSummary
-            productName={product.brandName}
-            amount={selectedAmount}
-            currency={selectedCountry.currency}
-            onContinue={handleContinue}
-          />
+        {/* Mobile Sticky CTA */}
+        <div className="md:hidden fixed bottom-16 left-0 right-0 p-4 bg-surface-container-lowest/95 backdrop-blur border-t border-outline-variant z-30">
+          <button
+            onClick={handleContinue}
+            disabled={!canContinue}
+            className="w-full flex items-center justify-between px-6 py-4 bg-primary text-surface-on-primary rounded-full font-archivo-black text-[14px] uppercase tracking-[1.5px] hover:bg-primary-hover transition-all disabled:bg-surface-container-high disabled:text-surface-on-surface-variant disabled:cursor-not-allowed shadow-lg disabled:shadow-none"
+          >
+            <span>Continue</span>
+            <div className="flex items-center gap-2">
+              {totalAmount && (
+                <span className="px-3 py-1 bg-surface-on-primary/10 rounded-full">
+                  {formatCurrency(totalAmount, selectedCountry.currency)}
+                </span>
+              )}
+              <ArrowRight className="h-5 w-5" />
+            </div>
+          </button>
         </div>
       </main>
       <Footer />
