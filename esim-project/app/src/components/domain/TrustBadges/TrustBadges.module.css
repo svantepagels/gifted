@@ -1,0 +1,43 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  justify-content: center;
+  align-items: center;
+  padding: var(--space-6) 0;
+}
+
+.badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--color-stone);
+  font-size: var(--text-body);
+  line-height: 1.4;
+}
+
+.badge svg {
+  color: var(--color-fg);
+  flex-shrink: 0;
+}
+
+.text {
+  white-space: nowrap;
+}
+
+.text strong {
+  color: var(--color-fg);
+  font-weight: 500;
+}
+
+@media (max-width: 640px) {
+  .container {
+    flex-direction: column;
+    gap: var(--space-4);
+    align-items: flex-start;
+  }
+  
+  .badge {
+    font-size: var(--text-body);
+  }
+}
