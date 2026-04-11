@@ -27,6 +27,13 @@ export interface GiftCardProduct {
   termsUrl?: string
   isDigital: boolean
   estimatedDeliveryMinutes: number
+  _meta?: {
+    reloadlyProductId?: number
+    reloadlyBrandId?: number
+    senderFee?: number
+    discountPercentage?: number
+    global?: boolean
+  }
 }
 
 export interface GiftCardFilters {

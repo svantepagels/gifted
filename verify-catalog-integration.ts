@@ -80,7 +80,7 @@ async function verify() {
     const testData = { foo: 'bar' };
     
     productCache.set(testKey, testData);
-    const cached = productCache.get(testKey, 1000);
+    const cached = productCache.get<typeof testData>(testKey, 1000);
     
     if (cached && cached.foo === 'bar') {
       console.log('   ✅ Cache module working');
@@ -118,7 +118,7 @@ async function verify() {
   // Test 5: Try to import new service
   console.log('\n5️⃣  Checking service integration...');
   try {
-    const serviceModule = await import('./lib/giftcards/service.js');
+    const serviceModule = await import('./lib/giftcards/service.js') as any;
     const service = serviceModule.giftCardService || serviceModule.default;
     
     if (!service) {
