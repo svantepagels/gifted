@@ -4,6 +4,7 @@ import type {
   OrderRequest,
   OrderResponse,
   RedeemInstructionsResponse,
+  PaginatedResponse,
 } from './types';
 
 export class ReloadlyClient {
@@ -148,6 +149,48 @@ export class ReloadlyClient {
     
     // Return products from paginated response
     return data.content || [];
+  }
+
+  /**
+   * Get products with pagination support AND metadata
+   * Returns full response structure to check pagination state
+   * 
+   * @param page Page number (0-indexed)
+   * @param size Page size (max 200)
+   * @returns Paginated response with products and metadata
+   */
+  async getAllProductsPaginatedWithMeta(
+    page: number = 0,
+    size: number = 200
+  ): Promise<PaginatedResponse<Product>> {
+    const token = await this.getAccessToken();
+
+    const response = await fetch(
+      `${this.baseUrl}/products?page=${page}&size=${Math.min(size, 200)}`,
+      {
+        method: 'GET',
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
+
+    if (!response.ok) {
+      const error = await response.text();
+      throw new Error(`Failed to fetch products page ${page}: ${error}`);
+    }
+
+    const data = await response.json();
+    
+    // Return full response with metadata
+    return {
+      content: data.content || [],
+      pageable: data.pageable || { pageNumber: page, pageSize: size },
+      totalElements: data.totalElements || 0,
+      totalPages: data.totalPages || 1,
+      last: data.last ?? true,
+      first: data.first ?? (page === 0),
+    };
   }
 
   /**

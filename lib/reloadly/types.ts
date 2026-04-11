@@ -89,3 +89,18 @@ export interface RedeemInstructionsResponse {
   concise: string;
   verbose: string;
 }
+
+/**
+ * Pagination response structure from Reloadly API
+ */
+export interface PaginatedResponse<T> {
+  content: T[];
+  pageable: {
+    pageNumber: number;
+    pageSize: number;
+  };
+  totalElements: number;
+  totalPages: number;
+  last: boolean;
+  first: boolean;
+}

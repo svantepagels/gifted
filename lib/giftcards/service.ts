@@ -15,10 +15,11 @@ export class GiftCardService {
   /**
    * Get products with optional filters
    * Uses caching to minimize API calls
+   * FIXED: Now deduplicates by brand to avoid showing multiple country variants
    */
   async getProducts(filters?: GiftCardFilters): Promise<GiftCardProduct[]> {
     try {
-      // If filtering by country, fetch country-specific products
+      // If filtering by country, fetch country-specific products (no deduplication needed)
       if (filters?.countryCode) {
         return await this.getCountryProducts(filters.countryCode, filters);
       }
@@ -27,7 +28,12 @@ export class GiftCardService {
       const allProducts = await this.getAllProductsCached();
       
       // Apply filters
-      return this.filterProducts(allProducts, filters);
+      let filtered = this.filterProducts(allProducts, filters);
+      
+      // DEDUPLICATE by brand (keep first occurrence of each brand)
+      filtered = this.deduplicateByBrand(filtered);
+      
+      return filtered;
       
     } catch (error) {
       console.error('Failed to fetch products:', error);
@@ -106,25 +112,30 @@ export class GiftCardService {
   
   /**
    * Fetch all products from Reloadly with pagination
+   * FIXED: Properly detects end of pagination using API response metadata
    */
   private async fetchAllReloadlyProducts(): Promise<any[]> {
     let allProducts: any[] = [];
     let page = 0;
     let hasMore = true;
-    const maxPages = 50; // Safety limit: 50 pages × 200 = 10,000 products
+    const maxPages = 100; // Safety limit increased to 100 pages (was 50)
     
     while (hasMore && page < maxPages) {
       try {
         console.log(`[Reloadly] Fetching page ${page + 1}...`);
         
-        // Fetch page (using enhanced client with pagination)
-        const products = await reloadlyClient.getAllProductsPaginated(page, 200);
+        // Fetch page with pagination metadata
+        const response = await reloadlyClient.getAllProductsPaginatedWithMeta(page, 200);
         
-        allProducts = allProducts.concat(products);
+        allProducts = allProducts.concat(response.content);
         
-        // If we got less than page size, we're done
-        hasMore = products.length === 200;
+        // Check if this is the last page using pagination metadata
+        hasMore = !response.last && response.content.length > 0;
         page++;
+        
+        console.log(`[Reloadly] Page ${page}: fetched ${response.content.length} products, ` +
+                    `total so far: ${allProducts.length}, ` +
+                    `hasMore: ${hasMore}`);
         
       } catch (error) {
         console.error(`[Reloadly] Failed to fetch page ${page}:`, error);
@@ -135,6 +146,8 @@ export class GiftCardService {
     if (page >= maxPages) {
       console.warn(`[Reloadly] Stopped at page ${maxPages} (safety limit)`);
     }
+    
+    console.log(`[Reloadly] Finished! Total products fetched: ${allProducts.length} across ${page} pages`);
     
     return allProducts;
   }
@@ -172,9 +185,36 @@ export class GiftCardService {
     
     return filtered;
   }
+
+  /**
+   * Deduplicate products by brand, keeping only one variant per brand
+   * Prioritizes products with more country coverage (more versatile)
+   */
+  private deduplicateByBrand(products: GiftCardProduct[]): GiftCardProduct[] {
+    const brandMap = new Map<string, GiftCardProduct>();
+    
+    products.forEach(product => {
+      const brandKey = product.brandName.toLowerCase().trim();
+      
+      // If brand not seen yet, add it
+      if (!brandMap.has(brandKey)) {
+        brandMap.set(brandKey, product);
+      }
+      // If we've seen this brand, keep the variant with more countries (more versatile)
+      else {
+        const existing = brandMap.get(brandKey)!;
+        if (product.countryCodes.length > existing.countryCodes.length) {
+          brandMap.set(brandKey, product);
+        }
+      }
+    });
+    
+    return Array.from(brandMap.values());
+  }
   
   /**
    * Get product by slug
+   * FIXED: Added comprehensive logging for debugging blank page issues
    */
   async getProductBySlug(slug: string): Promise<GiftCardProduct | null> {
     const cacheKey = CacheKeys.product(slug);
@@ -186,12 +226,20 @@ export class GiftCardService {
       return cached;
     }
     
-    // Get all products and find by slug
-    const products = await this.getProducts();
-    const product = products.find(p => p.slug === slug) || null;
+    console.log(`[Cache] Miss: product ${slug} - searching in all products`);
     
-    // Cache if found
-    if (product) {
+    // Get all products and find by slug (use getAllProductsCached directly to include all variants)
+    const allProducts = await this.getAllProductsCached();
+    console.log(`[getProductBySlug] Searching for '${slug}' in ${allProducts.length} products`);
+    
+    const product = allProducts.find(p => p.slug === slug) || null;
+    
+    if (!product) {
+      console.error(`[getProductBySlug] Product not found for slug: ${slug}`);
+      console.log('[getProductBySlug] Sample slugs:', allProducts.slice(0, 5).map(p => p.slug));
+    } else {
+      console.log(`[getProductBySlug] Found: ${product.brandName}`);
+      // Cache if found
       productCache.set(cacheKey, product);
     }
     

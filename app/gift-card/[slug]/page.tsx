@@ -34,16 +34,26 @@ export default function ProductDetailPage() {
     async function loadProduct() {
       try {
         const slug = params.slug as string
+        console.log('[ProductDetail] Loading product with slug:', slug)
+        
         const data = await giftCardService.getProductBySlug(slug)
         
         if (!data) {
+          console.error('[ProductDetail] Product not found for slug:', slug)
+          alert(`Product not found: ${slug}`)
           router.push('/')
           return
         }
         
+        console.log('[ProductDetail] Product loaded:', data.brandName)
+        
         // Check if product is available in selected country
         if (!data.countryCodes.includes(selectedCountry.code)) {
-          alert(`${data.brandName} is not available in ${selectedCountry.name}. Please select a different country.`)
+          console.warn(
+            `[ProductDetail] Product ${data.brandName} not available in ${selectedCountry.name}`
+          )
+          alert(`${data.brandName} is not available in ${selectedCountry.name}. ` +
+                `Please select a different country.`)
           router.push('/')
           return
         }
@@ -51,7 +61,8 @@ export default function ProductDetailPage() {
         setProduct(data)
         setCartProduct(data)
       } catch (error) {
-        console.error('Failed to load product:', error)
+        console.error('[ProductDetail] Failed to load product:', error)
+        alert('Failed to load product. Please try again.')
         router.push('/')
       } finally {
         setIsLoading(false)
