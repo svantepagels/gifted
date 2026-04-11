@@ -1,18 +1,23 @@
 import type { Metadata } from 'next'
-import { Archivo_Black, Inter } from 'next/font/google'
+import { Archivo, Inter, Playfair_Display } from 'next/font/google'
 import './globals.css'
 import { AppProvider } from '@/contexts/AppContext'
 
-const archivoBlack = Archivo_Black({
-  weight: '400',
+const archivo = Archivo({
   subsets: ['latin'],
-  variable: '--font-archivo-black',
+  variable: '--font-archivo',
   display: 'swap',
 })
 
 const inter = Inter({
   subsets: ['latin'],
   variable: '--font-inter',
+  display: 'swap',
+})
+
+const playfair = Playfair_Display({
+  subsets: ['latin'],
+  variable: '--font-playfair',
   display: 'swap',
 })
 
@@ -28,7 +33,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${archivoBlack.variable} ${inter.variable}`}>
+    <html lang="en" className={`${archivo.variable} ${inter.variable} ${playfair.variable}`}>
       <body>
         <AppProvider>
           {children}
