@@ -96,6 +96,7 @@ export class ReloadlyClient {
 
   /**
    * Get all products globally (across all countries)
+   * Note: This returns PAGINATED results. Use getAllProductsPaginated() for pagination support.
    */
   async getAllProducts(): Promise<Product[]> {
     const token = await this.getAccessToken();
@@ -112,7 +113,63 @@ export class ReloadlyClient {
       throw new Error(`Failed to fetch all products: ${error}`);
     }
 
-    return await response.json();
+    const data = await response.json();
+    
+    // Handle paginated response - return first page content
+    return Array.isArray(data) ? data : (data.content || []);
+  }
+
+  /**
+   * Get products with pagination support
+   * 
+   * @param page Page number (0-indexed)
+   * @param size Page size (max 200)
+   * @returns Array of products for the requested page
+   */
+  async getAllProductsPaginated(page: number = 0, size: number = 200): Promise<Product[]> {
+    const token = await this.getAccessToken();
+
+    const response = await fetch(
+      `${this.baseUrl}/products?page=${page}&size=${Math.min(size, 200)}`,
+      {
+        method: 'GET',
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
+
+    if (!response.ok) {
+      const error = await response.text();
+      throw new Error(`Failed to fetch products page ${page}: ${error}`);
+    }
+
+    const data = await response.json();
+    
+    // Return products from paginated response
+    return data.content || [];
+  }
+
+  /**
+   * Get ALL products across all pages (use with caution - can be slow)
+   * Fetches all pages sequentially until no more results
+   * 
+   * @returns Complete array of all products
+   */
+  async getAllProductsComplete(): Promise<Product[]> {
+    let allProducts: Product[] = [];
+    let page = 0;
+    let hasMore = true;
+    const maxPages = 50; // Safety limit
+    
+    while (hasMore && page < maxPages) {
+      const products = await this.getAllProductsPaginated(page, 200);
+      allProducts = allProducts.concat(products);
+      hasMore = products.length === 200;
+      page++;
+    }
+    
+    return allProducts;
   }
 
   /**
