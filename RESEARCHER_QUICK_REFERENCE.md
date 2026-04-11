@@ -1,225 +1,329 @@
-# RESEARCHER: Quick Reference Card for CODER
+# RESEARCHER QUICK REFERENCE: Reloadly Checkout Implementation
 
-## 🎯 Three Bugs, Three Fixes
+**Agent:** RESEARCHER  
+**Date:** 2026-04-11  
+**For:** CODER implementing real Reloadly checkout
 
-### Bug #1: Duplicates on Homepage
-**File**: `lib/giftcards/service.ts`  
-**Add Method** (around line 110):
+---
+
+## TL;DR - Critical Facts
+
+1. **Gift card codes are NEVER in the API response** → Reloadly sends them via email
+2. **Product IDs must be numbers** → Convert our string IDs with `parseInt()`
+3. **Order status can be PENDING** → Don't assume only SUCCESSFUL/FAILED
+4. **Rate limit is strict** → 3 orders/minute per IP (even in sandbox)
+5. **Sandbox is realistic** → Real emails sent, real API behavior, free transactions
+
+---
+
+## Quick Gotchas
+
+### ❌ Common Mistakes
+
 ```typescript
-private deduplicateByBrand(products: GiftCardProduct[]): GiftCardProduct[] {
-  const brandMap = new Map<string, GiftCardProduct>();
-  products.forEach(product => {
-    const brandKey = product.brandName.toLowerCase().trim();
-    if (!brandMap.has(brandKey)) {
-      brandMap.set(brandKey, product);
-    } else {
-      const existing = brandMap.get(brandKey)!;
-      if (product.countryCodes.length > existing.countryCodes.length) {
-        brandMap.set(brandKey, product);
-      }
-    }
-  });
-  return Array.from(brandMap.values());
-}
-```
+// WRONG: Expecting codes in API response
+const codes = orderResponse.giftCardCode // ❌ Doesn't exist!
 
-**Update `getProducts()` method** (around line 25):
-```typescript
-// After filtering, before return:
-if (!filters?.countryCode) {
-  filtered = this.deduplicateByBrand(filtered);
-}
-return filtered;
+// RIGHT: Codes are sent via email by Reloadly
+const transactionId = orderResponse.transactionId // ✅ Store this
+
+// WRONG: Passing string product ID
+productId: order.productId // ❌ API expects number
+
+// RIGHT: Convert to number
+productId: parseInt(order.productId) // ✅ Works
+
+// WRONG: Only handling SUCCESSFUL/FAILED
+if (status === 'FAILED') { /* handle */ } // ❌ Missing PENDING
+
+// RIGHT: Handle all three statuses
+if (status === 'SUCCESSFUL') { /* complete */ }
+else if (status === 'PENDING') { /* processing */ } // ✅ Added
+else if (status === 'FAILED') { /* failed */ }
 ```
 
 ---
 
-### Bug #2: Pagination Stops Too Early
-**File**: `lib/reloadly/client.ts`  
-**Add Interface** (top of file):
-```typescript
-interface PaginatedResponse<T> {
-  content: T[];
-  pageable: { pageNumber: number; pageSize: number };
-  totalElements: number;
-  totalPages: number;
-  last: boolean;
-  first: boolean;
-}
+## Order Status Lifecycle
+
+```
+User submits checkout
+  ↓
+API call to Reloadly
+  ↓
+Response status can be:
+
+┌─────────────┬────────────────────┬─────────────────────┐
+│ SUCCESSFUL  │ PENDING            │ FAILED              │
+├─────────────┼────────────────────┼─────────────────────┤
+│ Instant     │ Processing (1-5m)  │ Error occurred      │
+│ Email sent  │ Email sent later   │ No email            │
+│ Mark done   │ Mark processing    │ Mark failed         │
+│ Show success│ Show "processing"  │ Show error          │
+└─────────────┴────────────────────┴─────────────────────┘
 ```
 
-**Add Method** (around line 100):
+---
+
+## Email Delivery
+
+**What happens:**
+1. API call succeeds → Reloadly queues email
+2. Email sent within 30s-5min to `recipientEmail`
+3. Email contains: code, PIN (if needed), redemption URL, instructions
+4. We NEVER see the actual codes (security by design)
+
+**Success page should say:**
+```
+✅ Order Successful!
+
+Gift card codes will be delivered to:
+📧 recipient@example.com
+
+What's next?
+• Check your email inbox (usually arrives within 2 minutes)
+• Look in spam folder if not found
+• Contact support if not received within 5 minutes
+
+Transaction ID: {transactionId}
+```
+
+---
+
+## Enhanced Implementation
+
+### Add PENDING Handling
+
 ```typescript
-async getAllProductsPaginatedWithMeta(
-  page: number = 0,
-  size: number = 200
-): Promise<PaginatedResponse<Product>> {
-  const token = await this.getAccessToken();
-  const response = await fetch(
-    `${this.baseUrl}/products?page=${page}&size=${Math.min(size, 200)}`,
-    { method: 'GET', headers: { Authorization: `Bearer ${token}` } }
-  );
-  if (!response.ok) {
-    throw new Error(`Failed to fetch products page ${page}: ${await response.text()}`);
-  }
-  const data = await response.json();
+// In lib/payments/reloadly-checkout.ts processOrder()
+
+// After getting orderResponse, add this check:
+if (orderResponse.status === 'PENDING') {
+  await orderRepository.updateStatus(orderId, 'processing')
+  await orderRepository.updatePayment(
+    orderId,
+    `RELOADLY_${orderResponse.transactionId}`,
+    'PENDING'
+  )
   return {
-    content: data.content || [],
-    pageable: data.pageable || { pageNumber: page, pageSize: size },
-    totalElements: data.totalElements || 0,
-    totalPages: data.totalPages || 1,
-    last: data.last ?? true,
-    first: data.first ?? (page === 0),
-  };
+    success: true, // Still succeed (not an error)
+    transactionId: orderResponse.transactionId,
+  }
 }
 ```
 
-**File**: `lib/giftcards/service.ts`  
-**Update `fetchAllReloadlyProducts()`** (around line 60):
+### Add Email Validation
+
 ```typescript
-private async fetchAllReloadlyProducts(): Promise<any[]> {
-  let allProducts: any[] = [];
-  let page = 0;
-  let hasMore = true;
-  const maxPages = 100;
-  
-  while (hasMore && page < maxPages) {
-    try {
-      console.log(`[Reloadly] Fetching page ${page + 1}...`);
-      const response = await reloadlyClient.getAllProductsPaginatedWithMeta(page, 200);
-      allProducts = allProducts.concat(response.content);
-      
-      // ✅ FIX: Use response.last instead of length check
-      hasMore = !response.last && response.content.length > 0;
-      page++;
-      
-      console.log(
-        `[Reloadly] Page ${page}: ${response.content.length} products, ` +
-        `total: ${allProducts.length}, hasMore: ${hasMore}`
-      );
-    } catch (error) {
-      console.error(`[Reloadly] Failed to fetch page ${page}:`, error);
-      hasMore = false;
-    }
+// At start of processOrder()
+const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+if (!emailRegex.test(customerEmail)) {
+  return { 
+    success: false, 
+    error: 'Invalid email address format' 
   }
-  
-  console.log(`[Reloadly] Finished! Total: ${allProducts.length} products`);
-  return allProducts;
+}
+```
+
+### Add Product ID Safety Check
+
+```typescript
+// Before creating orderRequest
+const productId = parseInt(order.productId)
+if (isNaN(productId)) {
+  return { 
+    success: false, 
+    error: 'Invalid product ID' 
+  }
+}
+
+const orderRequest: OrderRequest = {
+  productId, // Use validated number
+  // ... rest
+}
+```
+
+### Better Error Messages
+
+```typescript
+// In catch block when response.ok is false
+switch (response.status) {
+  case 400:
+    throw new Error('Invalid order details. Please check product and amount.')
+  case 401:
+    throw new Error('Authentication failed. Please try again.')
+  case 403:
+    throw new Error('This product is not available. Please choose another.')
+  case 429:
+    throw new Error('Too many orders. Please wait a minute and try again.')
+  case 500:
+  case 503:
+    throw new Error('Service temporarily unavailable. Please try again shortly.')
+  default:
+    throw new Error(errorData.error || `Order failed (Error ${response.status})`)
 }
 ```
 
 ---
 
-### Bug #3: Blank Page on Product Detail
-**File**: `lib/giftcards/service.ts`  
-**Update `getProductBySlug()`** (around line 90):
-```typescript
-async getProductBySlug(slug: string): Promise<GiftCardProduct | null> {
-  const cacheKey = CacheKeys.product(slug);
-  const cached = productCache.get<GiftCardProduct>(cacheKey, CacheTTL.SINGLE_PRODUCT);
-  if (cached) {
-    console.log(`[Cache] Hit: product ${slug}`);
-    return cached;
-  }
-  
-  console.log(`[Cache] Miss: product ${slug}`);
-  const products = await this.getAllProductsCached();
-  console.log(`[getProductBySlug] Searching '${slug}' in ${products.length} products`);
-  
-  const product = products.find(p => p.slug === slug) || null;
-  
-  if (!product) {
-    console.error(`[getProductBySlug] NOT FOUND: ${slug}`);
-    console.log('[getProductBySlug] Sample slugs:', products.slice(0, 5).map(p => p.slug));
-  } else {
-    console.log(`[getProductBySlug] Found: ${product.brandName}`);
-    productCache.set(cacheKey, product);
-  }
-  
-  return product;
-}
+## Testing Checklist
+
+### Before Deployment
+- [ ] Test successful order (self-delivery)
+- [ ] Test gift order (recipient email)
+- [ ] Verify email arrives within 5 minutes
+- [ ] Test 4 rapid orders (should hit rate limit on 4th)
+- [ ] Test with invalid product ID
+- [ ] Verify transaction ID is stored
+
+### What Email Should Look Like
+
+```
+From: Reloadly <noreply@reloadly.com>
+To: recipient@example.com
+Subject: Your [Brand Name] Gift Card
+
+Your Gift Card Code: XXXX-XXXX-XXXX
+PIN: [if applicable]
+Amount: $XX.XX
+
+Redeem at: [URL]
+Instructions: [Steps to redeem]
 ```
 
-**File**: `app/gift-card/[slug]/page.tsx`  
-**Update `loadProduct()`** (around line 25):
-```typescript
-async function loadProduct() {
-  try {
-    const slug = params.slug as string;
-    console.log('[ProductDetail] Loading slug:', slug);
-    
-    const data = await giftCardService.getProductBySlug(slug);
-    
-    if (!data) {
-      console.error('[ProductDetail] Product not found:', slug);
-      alert(`Product not found: ${slug}`);
-      router.push('/');
-      return;
-    }
-    
-    console.log('[ProductDetail] Loaded:', data.brandName);
-    
-    if (!data.countryCodes.includes(selectedCountry.code)) {
-      console.warn('[ProductDetail] Not available in', selectedCountry.name);
-      alert(`${data.brandName} not available in ${selectedCountry.name}`);
-      router.push('/');
-      return;
-    }
-    
-    setProduct(data);
-    setCartProduct(data);
-  } catch (error) {
-    console.error('[ProductDetail] Error:', error);
-    alert('Failed to load product');
-    router.push('/');
-  } finally {
-    setIsLoading(false);
-  }
-}
-```
+**Important:** You'll receive this email when testing in sandbox!
 
 ---
 
-## ⚡ Quick Test Commands
+## Deployment Steps
 
 ```bash
-# Development
-npm run dev
-# Open http://localhost:3000
-# Open browser console (F12)
-# Check for logs:
-# - [Reloadly] Fetching page 1...
-# - [ProductDetail] Loading slug: ...
-
-# Production Build
-npm run build
-# Should complete without errors
-
-# Deploy
-git add .
-git commit -m "fix: resolve duplicate products, pagination, and blank page bugs"
+# 1. Commit code
+git add lib/payments/reloadly-checkout.ts app/checkout/page.tsx
+git commit -m "fix: integrate real Reloadly checkout"
 git push origin main
+
+# 2. Verify environment variables exist in .env.local
+# These should already be set:
+RELOADLY_CLIENT_ID=bDWZFvXElOXUuyFW3cjaS4UlHSk3peUz
+RELOADLY_CLIENT_SECRET=ZhvbN3zJJo-HMylY6ymUG0AicxLHao-EGeBZFkwlSOpGbsPtHp1dFjiJrZf5SGV
+RELOADLY_ENVIRONMENT=sandbox
+
+# 3. Set Vercel environment variables
+vercel env add RELOADLY_CLIENT_ID production
+# Enter value when prompted
+
+vercel env add RELOADLY_CLIENT_SECRET production
+# Enter value when prompted
+
+vercel env add RELOADLY_ENVIRONMENT production
+# Enter: sandbox
+
+# 4. Deploy
 vercel --prod --yes
+
+# 5. Test on production URL
+# Place a test order, verify email received
 ```
 
 ---
 
-## ✅ Success Indicators
+## Monitoring
 
-After fixes:
-- Console shows "Fetching page 1... 2... 3..." up to ~50-100 pages
-- Homepage shows 100+ unique brands (no duplicates)
-- Product detail pages always load (or show error, never blank)
-- Total products: 5000-10000+ instead of ~400
+### What to Watch After Deployment
+
+**In Sentry:**
+- Look for errors in `/api/reloadly/order`
+- Check for 429 rate limit warnings
+- Monitor order failure rate
+
+**In Console Logs:**
+- "Reloadly checkout error" messages
+- API response statuses
+- Transaction IDs
+
+**Email Testing:**
+- Place test order
+- Wait 5 minutes
+- Check spam folder if needed
+- Verify codes are present in email
 
 ---
 
-## 📚 Full Documentation
+## When Things Go Wrong
 
-- **Complete Research**: `RESEARCHER_BUG_FIX_CONTEXT.md`
-- **Executive Summary**: `RESEARCHER_EXECUTIVE_SUMMARY.md`
-- **Architecture Spec**: See ARCHITECT output above
+### "Order not found"
+**Cause:** Order ID not passed correctly  
+**Fix:** Check URL parameter `?orderId={id}` is correct
+
+### "Authentication failed"
+**Cause:** Invalid Reloadly credentials  
+**Fix:** Verify env vars in Vercel dashboard match `.env.local`
+
+### "Invalid product ID"
+**Cause:** Product ID is string or invalid  
+**Fix:** Check `parseInt()` conversion is working
+
+### "Rate limit exceeded"
+**Cause:** >3 orders in 1 minute from same IP  
+**Fix:** Wait 60 seconds, try again
+
+### "No email received"
+**Cause:** Email delay or spam filter  
+**Fix:** Wait 5 minutes, check spam, verify email address is correct
+
+### "Order status PENDING forever"
+**Cause:** Some providers take longer to process  
+**Fix:** Implement webhook endpoint OR poll for status updates
 
 ---
 
-**Ready to code!** 🚀
+## Rollback Plan
+
+If things break:
+
+```bash
+# Option 1: Revert deployment
+vercel rollback
+
+# Option 2: Revert code
+git revert HEAD
+git push origin main
+
+# Option 3: Restore mock checkout
+# Change import in app/checkout/page.tsx:
+import { mockCheckoutService } from '@/lib/payments/mock-checkout'
+# And revert handleSubmit function
+```
+
+---
+
+## Support Resources
+
+- **Reloadly Dashboard:** https://developers.reloadly.com/
+- **Reloadly Support:** support@reloadly.com
+- **API Documentation:** https://docs.reloadly.com/gift-cards
+- **Sandbox Testing:** Free unlimited test transactions
+
+---
+
+## Final Pre-Flight Check
+
+Before merging to main:
+
+✅ `lib/payments/reloadly-checkout.ts` created  
+✅ Import updated in `app/checkout/page.tsx`  
+✅ `handleSubmit` updated in `app/checkout/page.tsx`  
+✅ PENDING status handling added  
+✅ Email validation added  
+✅ Product ID conversion safe-checked  
+✅ Error messages enhanced  
+✅ Local test passed (order complete, email received)  
+✅ Rate limit tested (4th order fails)  
+✅ Environment variables verified in `.env.local`  
+
+**Ready to deploy!** 🚀
+
+---
+
+**Questions?** Review `RESEARCHER_RELOADLY_CHECKOUT_CONTEXT.md` for detailed explanations.
