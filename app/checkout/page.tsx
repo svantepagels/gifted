@@ -7,7 +7,7 @@ import { Footer } from '@/components/layout/Footer'
 import { MobileBottomNav } from '@/components/layout/MobileBottomNav'
 import { CheckoutForm } from '@/components/checkout/CheckoutForm'
 import { orderRepository } from '@/lib/orders/mock-repository'
-import { mockCheckoutService } from '@/lib/payments/mock-checkout'
+import { reloadlyCheckoutService } from '@/lib/payments/reloadly-checkout'
 import { Order } from '@/lib/orders/types'
 import { formatCurrency } from '@/lib/utils/currency'
 import { ArrowLeft, Shield } from 'lucide-react'
@@ -50,19 +50,14 @@ function CheckoutContent() {
   const handleSubmit = async (email: string) => {
     if (!order) return
     
-    // Update order with customer email
-    order.customerEmail = email
-    
-    // Process payment
-    // TODO: Replace with Lemon Squeezy checkout
-    // This mock version simulates payment processing
-    const result = await mockCheckoutService.processPayment(order.id)
+    // Process order with Reloadly
+    const result = await reloadlyCheckoutService.processOrder(order.id, email)
     
     if (result.success) {
       // Redirect to success page
       router.push(`/success?orderId=${order.id}`)
     } else {
-      throw new Error(result.error || 'Payment failed')
+      throw new Error(result.error || 'Order processing failed')
     }
   }
   
