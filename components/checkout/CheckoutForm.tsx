@@ -3,18 +3,25 @@
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { checkoutSchema } from '@/lib/utils/validation'
+import { z } from 'zod'
 import { Input } from '@/components/shared/Input'
 import { Button } from '@/components/shared/Button'
-import { z } from 'zod'
+import { Mail } from 'lucide-react'
 
-type CheckoutFormData = z.infer<typeof checkoutSchema>
+// Simplified schema - no confirm email needed
+const buyerEmailSchema = z.object({
+  email: z.string().email('Please enter a valid email address'),
+})
+
+type BuyerEmailFormData = z.infer<typeof buyerEmailSchema>
 
 interface CheckoutFormProps {
   onSubmit: (email: string) => Promise<void>
+  isGift?: boolean
+  recipientEmail?: string
 }
 
-export function CheckoutForm({ onSubmit }: CheckoutFormProps) {
+export function CheckoutForm({ onSubmit, isGift = false, recipientEmail }: CheckoutFormProps) {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [error, setError] = useState<string | null>(null)
   
@@ -22,11 +29,11 @@ export function CheckoutForm({ onSubmit }: CheckoutFormProps) {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<CheckoutFormData>({
-    resolver: zodResolver(checkoutSchema),
+  } = useForm<BuyerEmailFormData>({
+    resolver: zodResolver(buyerEmailSchema),
   })
   
-  const handleFormSubmit = async (data: CheckoutFormData) => {
+  const handleFormSubmit = async (data: BuyerEmailFormData) => {
     try {
       setError(null)
       setIsSubmitting(true)
@@ -45,21 +52,33 @@ export function CheckoutForm({ onSubmit }: CheckoutFormProps) {
           YOUR INFORMATION
         </h2>
         
-        <Input
-          label="Email Address"
-          type="email"
-          placeholder="your@email.com"
-          error={errors.email?.message}
-          {...register('email')}
-        />
+        {/* Show recipient email reminder if this is a gift */}
+        {isGift && recipientEmail && (
+          <div className="p-4 rounded-md bg-secondary/5 border border-secondary/20 mb-4">
+            <div className="flex items-start gap-3">
+              <Mail className="h-5 w-5 text-secondary flex-shrink-0 mt-0.5" />
+              <div>
+                <p className="text-label-md font-medium text-surface-on-surface mb-1">
+                  Sending gift to:
+                </p>
+                <p className="text-body-md text-secondary">
+                  {recipientEmail}
+                </p>
+              </div>
+            </div>
+          </div>
+        )}
         
-        <Input
-          label="Confirm Email"
-          type="email"
-          placeholder="your@email.com"
-          error={errors.confirmEmail?.message}
-          {...register('confirmEmail')}
-        />
+        <div>
+          <Input
+            label={isGift ? "Your Email (for order confirmation)" : "Your Email"}
+            type="email"
+            placeholder="your@email.com"
+            error={errors.email?.message}
+            helperText={isGift ? "We'll send the receipt to this address" : "We'll send your gift card to this address"}
+            {...register('email')}
+          />
+        </div>
         
         {error && (
           <div className="p-4 rounded-md bg-error-container text-error-on-container text-body-md">
@@ -76,7 +95,7 @@ export function CheckoutForm({ onSubmit }: CheckoutFormProps) {
         loading={isSubmitting}
         disabled={isSubmitting}
       >
-        Complete Purchase
+        {isSubmitting ? 'Processing...' : 'Complete Purchase'}
       </Button>
       
       <p className="text-center text-label-md text-surface-on-surface-variant">

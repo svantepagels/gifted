@@ -6,7 +6,7 @@ import { ChevronDown, Zap } from 'lucide-react';
 
 export function HeroSection() {
   return (
-    <section className="relative py-20 sm:py-28 lg:py-36 px-4 overflow-hidden">
+    <section className="relative py-12 sm:py-16 lg:py-20 px-4 overflow-hidden">
       {/* Mesh Gradient Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-purple-50 via-pink-50 to-blue-50 opacity-60" />
       <div 
@@ -60,20 +60,19 @@ export function HeroSection() {
           Easy, secure, and always ready to send.
         </motion.p>
 
-        {/* Scroll Indicator */}
+        {/* Scroll Indicator - subtle */}
         <motion.div
           initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
+          animate={{ opacity: 0.6, y: 0 }}
           transition={{
             delay: 0.8,
-            duration: 0.6,
+            duration: 1.2,
             repeat: Infinity,
             repeatType: 'reverse',
           }}
-          className="inline-flex flex-col items-center gap-2 text-surface-on-surface-variant"
+          className="inline-flex flex-col items-center gap-1 text-surface-on-surface-variant"
         >
-          <span className="text-label-sm uppercase tracking-wider">Explore</span>
-          <ChevronDown className="w-5 h-5" />
+          <ChevronDown className="w-4 h-4" />
         </motion.div>
       </div>
     </section>

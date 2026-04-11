@@ -179,7 +179,11 @@ function CheckoutContent() {
               
               {/* Checkout Form */}
               <div>
-                <CheckoutForm onSubmit={handleSubmit} />
+                <CheckoutForm 
+                  onSubmit={handleSubmit}
+                  isGift={order.deliveryMethod === 'gift'}
+                  recipientEmail={order.recipientEmail}
+                />
               </div>
             </div>
           </div>

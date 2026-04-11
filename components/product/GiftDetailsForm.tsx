@@ -32,13 +32,17 @@ export function GiftDetailsForm({ onChange }: GiftDetailsFormProps) {
   return (
     <div className="space-y-4">
       <div>
-        <label className="block text-[18px] font-bold uppercase tracking-[1.5px] text-primary mb-4">
-          RECIPIENT EMAIL
+        <label className="block text-[18px] font-bold uppercase tracking-[1.5px] text-primary mb-2">
+          GIFT RECIPIENT
         </label>
+        <p className="text-label-sm text-surface-on-surface-variant mb-3">
+          Who should receive this gift card?
+        </p>
         <Input
           type="email"
           placeholder="friend@example.com"
           error={errors.recipientEmail?.message}
+          helperText="The gift card will be sent to this email address"
           {...register('recipientEmail')}
         />
       </div>
