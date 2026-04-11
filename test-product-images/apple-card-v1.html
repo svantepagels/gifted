@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html><head><style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { width: 2400px; height: 1600px; overflow: hidden; }
+
+.scene {
+  width: 2400px; height: 1600px;
+  position: relative;
+  background: radial-gradient(ellipse 80% 75% at 48% 42%, #1a1a2e 0%, #0f0f1a 50%, #060610 100%);
+  display: flex; align-items: center; justify-content: center;
+  perspective: 1000px;
+}
+
+.light1 {
+  position: absolute; top: -8%; right: 5%;
+  width: 1000px; height: 800px;
+  background: radial-gradient(ellipse, rgba(255,255,255,0.05) 0%, transparent 65%);
+}
+.light2 {
+  position: absolute; bottom: 0; left: 3%;
+  width: 700px; height: 600px;
+  background: radial-gradient(ellipse, rgba(120,140,255,0.03) 0%, transparent 65%);
+}
+.light-accent {
+  position: absolute; top: 30%; left: 38%;
+  width: 800px; height: 550px;
+  background: radial-gradient(ellipse, rgba(100,180,255,0.03) 0%, transparent 55%);
+}
+
+.vignette {
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 72% 68% at 50% 48%, transparent 35%, rgba(0,0,0,0.65) 100%);
+  z-index: 10; pointer-events: none;
+}
+
+.card-wrapper {
+  transform: rotateY(-22deg) rotateX(7deg) rotateZ(-2deg);
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+.card-shadow {
+  position: absolute;
+  width: 1200px; height: 758px;
+  top: 55px; left: 35px;
+  background: rgba(0,0,0,0.7);
+  border-radius: 28px;
+  filter: blur(75px);
+  transform: skewX(-4deg);
+  z-index: -2;
+}
+
+.card {
+  width: 1200px; height: 758px;
+  border-radius: 28px;
+  position: relative; overflow: hidden;
+  background: linear-gradient(135deg, #f5f5f7 0%, #e8e8ed 50%, #d2d2d7 100%);
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,0.3),
+    inset 0 1px 0 rgba(255,255,255,0.6),
+    inset 0 -1px 0 rgba(0,0,0,0.08),
+    0 30px 90px rgba(0,0,0,0.55),
+    0 10px 35px rgba(0,0,0,0.35);
+}
+
+/* Colorful gradient overlay like Apple's gift cards */
+.card-gradient {
+  position: absolute; inset: 0;
+  background: 
+    radial-gradient(ellipse 60% 80% at 15% 85%, rgba(255,59,48,0.15) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 60% at 85% 20%, rgba(0,122,255,0.12) 0%, transparent 55%),
+    radial-gradient(ellipse 40% 50% at 50% 50%, rgba(88,86,214,0.08) 0%, transparent 50%),
+    radial-gradient(ellipse 45% 55% at 20% 20%, rgba(255,149,0,0.1) 0%, transparent 55%),
+    radial-gradient(ellipse 50% 60% at 80% 80%, rgba(52,199,89,0.1) 0%, transparent 55%);
+  pointer-events: none;
+}
+
+.card-shine {
+  position: absolute; inset: 0;
+  background: linear-gradient(128deg, 
+    transparent 28%, rgba(255,255,255,0.15) 40%, 
+    rgba(255,255,255,0.3) 44%, rgba(255,255,255,0.15) 48%, 
+    transparent 58%);
+  pointer-events: none;
+}
+
+.logo-area {
+  position: absolute;
+  top: 44%; left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex; flex-direction: column; align-items: center; gap: 20px;
+}
+
+.apple-logo {
+  width: 120px; height: 148px;
+  filter: drop-shadow(0 4px 20px rgba(0,0,0,0.1));
+}
+
+.apple-logo svg { width: 100%; height: 100%; }
+
+.apple-text {
+  font-family: -apple-system, 'SF Pro Display', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 52px; font-weight: 600;
+  letter-spacing: 2px;
+  color: #1d1d1f;
+  opacity: 0; /* Logo only - keeping minimal */
+}
+
+.logo-glow {
+  position: absolute;
+  top: 35%; left: 50%; transform: translate(-50%, -50%);
+  width: 400px; height: 350px;
+  background: radial-gradient(ellipse, rgba(0,0,0,0.03) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.card-bottom {
+  position: absolute;
+  bottom: 42px; left: 60px; right: 60px;
+  display: flex; justify-content: space-between; align-items: flex-end;
+}
+
+.gift-label {
+  font-family: -apple-system, 'SF Pro Display', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 17px; font-weight: 500;
+  letter-spacing: 5px;
+  color: rgba(29,29,31,0.25);
+  text-transform: uppercase;
+}
+
+.dots-group { display: flex; gap: 14px; }
+.dot-set { display: flex; gap: 5px; }
+.dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: rgba(29,29,31,0.12);
+}
+</style></head>
+<body>
+<div class="scene">
+  <div class="light1"></div>
+  <div class="light2"></div>
+  <div class="light-accent"></div>
+  <div class="vignette"></div>
+  
+  <div class="card-wrapper">
+    <div class="card-shadow"></div>
+    <div style="position:absolute; bottom:-60px; left:-200px; right:-200px; height:1px; background:linear-gradient(90deg, transparent, rgba(255,255,255,0.04) 30%, rgba(255,255,255,0.06) 50%, rgba(255,255,255,0.04) 70%, transparent); z-index:-1;"></div>
+    <div class="card">
+      <div class="card-gradient"></div>
+      <div class="card-shine"></div>
+      <div class="logo-glow"></div>
+      <div class="logo-area">
+        <div class="apple-logo">
+          <svg viewBox="0 0 170 210" xmlns="http://www.w3.org/2000/svg">
+            <path d="M150.4 71.4c-1-0.8-18.1-10.4-18.1-31 0-17.6 14.3-25.9 15-26.4-8.2-12.1-20.9-13.5-25.4-13.7-10.8-1.1-21.1 6.4-26.6 6.4-5.5 0-14-6.2-23.1-6.1-11.9 0.2-22.8 6.9-28.9 17.5-12.4 21.4-3.2 53.2 8.8 70.6 5.9 8.5 12.8 18 22 17.7 8.8-0.4 12.2-5.7 22.8-5.7 10.7 0 13.7 5.7 23.1 5.5 9.5-0.2 15.5-8.6 21.3-17.2 6.7-9.8 9.5-19.4 9.6-19.9-0.2-0.1-18.5-7.1-18.5-28.2zM132.4 0c-1.7 0-11.5 6.8-22.2 19.3-9.5 11.1-17.8 24.8-15.5 39.5 1.4 0.1 2.8 0.2 4.3 0.2 10.4 0 21.6-10.1 28.2-20.3C133.4 29.3 138.3 15.2 132.4 0z" 
+            fill="#1d1d1f"/>
+          </svg>
+        </div>
+      </div>
+      <div class="card-bottom">
+        <div class="gift-label">Gift Card</div>
+        <div class="dots-group">
+          <div class="dot-set"><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+          <div class="dot-set"><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+          <div class="dot-set"><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+          <div class="dot-set"><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body></html>

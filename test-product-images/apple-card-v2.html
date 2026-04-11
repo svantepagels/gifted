@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html><head><style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { width: 2400px; height: 1600px; overflow: hidden; }
+
+.scene {
+  width: 2400px; height: 1600px;
+  position: relative;
+  background: radial-gradient(ellipse 80% 75% at 48% 42%, #1a1c2a 0%, #0f1018 50%, #060608 100%);
+  display: flex; align-items: center; justify-content: center;
+  perspective: 1000px;
+}
+
+.light1 {
+  position: absolute; top: -8%; right: 5%;
+  width: 1000px; height: 800px;
+  background: radial-gradient(ellipse, rgba(255,245,230,0.06) 0%, transparent 65%);
+}
+.light2 {
+  position: absolute; bottom: 0; left: 3%;
+  width: 700px; height: 600px;
+  background: radial-gradient(ellipse, rgba(160,180,240,0.035) 0%, transparent 65%);
+}
+.light-apple {
+  position: absolute; top: 30%; left: 33%;
+  width: 850px; height: 600px;
+  background: radial-gradient(ellipse, rgba(180,200,255,0.03) 0%, transparent 55%);
+}
+
+.vignette {
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 72% 68% at 50% 48%, transparent 35%, rgba(0,0,0,0.65) 100%);
+  z-index: 10; pointer-events: none;
+}
+
+.card-wrapper {
+  transform: rotateY(-22deg) rotateX(7deg) rotateZ(-2deg);
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+.card-shadow {
+  position: absolute;
+  width: 1200px; height: 758px;
+  top: 55px; left: 35px;
+  background: rgba(0,0,0,0.7);
+  border-radius: 28px;
+  filter: blur(75px);
+  transform: skewX(-4deg);
+  z-index: -2;
+}
+
+.card {
+  width: 1200px; height: 758px;
+  border-radius: 28px;
+  position: relative; overflow: hidden;
+  background: linear-gradient(155deg, #ffffff 0%, #f8f8fa 25%, #f0f0f5 50%, #e8eaf0 75%, #e0e2ea 100%);
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,0.3),
+    inset 0 1px 0 rgba(255,255,255,0.9),
+    inset 0 -1px 0 rgba(0,0,0,0.05),
+    0 30px 90px rgba(0,0,0,0.55),
+    0 10px 35px rgba(0,0,0,0.35);
+}
+
+/* Iridescent gradient overlay */
+.card-iridescent {
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg, 
+    rgba(255,100,100,0.06) 0%, 
+    rgba(255,180,60,0.05) 15%,
+    rgba(255,230,80,0.04) 25%,
+    rgba(100,220,120,0.05) 40%,
+    rgba(80,180,255,0.06) 55%,
+    rgba(140,100,255,0.05) 70%,
+    rgba(220,80,200,0.05) 85%,
+    rgba(255,100,120,0.04) 100%);
+  pointer-events: none;
+}
+
+/* Subtle rainbow band across card */
+.card-rainbow {
+  position: absolute; inset: 0;
+  background: linear-gradient(110deg,
+    transparent 20%,
+    rgba(255,59,48,0.04) 30%,
+    rgba(255,149,0,0.04) 35%,
+    rgba(255,204,0,0.04) 40%,
+    rgba(52,199,89,0.04) 45%,
+    rgba(0,122,255,0.05) 50%,
+    rgba(88,86,214,0.04) 55%,
+    rgba(175,82,222,0.04) 60%,
+    transparent 70%);
+  pointer-events: none;
+}
+
+.card-shine {
+  position: absolute; inset: 0;
+  background: linear-gradient(128deg, 
+    transparent 28%, rgba(255,255,255,0.15) 40%, 
+    rgba(255,255,255,0.25) 44%, rgba(255,255,255,0.15) 48%, 
+    transparent 58%);
+  pointer-events: none;
+}
+
+.logo-area {
+  position: absolute;
+  top: 42%; left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex; flex-direction: column; align-items: center; gap: 24px;
+}
+
+.apple-logo {
+  width: 400px; height: 480px;
+  position: relative;
+  filter: drop-shadow(0 4px 20px rgba(0,0,0,0.08));
+}
+
+.apple-logo svg { width: 100%; height: 100%; }
+
+.apple-text {
+  font-family: -apple-system, 'SF Pro Display', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 48px; font-weight: 300;
+  letter-spacing: 2px;
+  color: rgba(0,0,0,0.7);
+}
+
+.logo-glow {
+  position: absolute;
+  top: 33%; left: 50%; transform: translate(-50%, -50%);
+  width: 500px; height: 400px;
+  background: radial-gradient(ellipse, rgba(120,140,180,0.06) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.card-bottom {
+  position: absolute;
+  bottom: 42px; left: 60px; right: 60px;
+  display: flex; justify-content: space-between; align-items: flex-end;
+}
+
+.gift-label {
+  font-family: -apple-system, 'SF Pro Display', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 17px; font-weight: 400;
+  letter-spacing: 5px;
+  color: rgba(0,0,0,0.2);
+  text-transform: uppercase;
+}
+
+.dots-group { display: flex; gap: 14px; }
+.dot-set { display: flex; gap: 5px; }
+.dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: rgba(0,0,0,0.1);
+}
+</style></head>
+<body>
+<div class="scene">
+  <div class="light1"></div>
+  <div class="light2"></div>
+  <div class="light-apple"></div>
+  <div class="vignette"></div>
+  
+  <div class="card-wrapper">
+    <div class="card-shadow"></div>
+    <div style="position:absolute; bottom:-60px; left:-200px; right:-200px; height:1px; background:linear-gradient(90deg, transparent, rgba(255,255,255,0.04) 30%, rgba(255,255,255,0.06) 50%, rgba(255,255,255,0.04) 70%, transparent); z-index:-1;"></div>
+    <div class="card">
+      <div class="card-iridescent"></div>
+      <div class="card-rainbow"></div>
+      <div class="card-shine"></div>
+      <div class="logo-glow"></div>
+      <div class="logo-area">
+        <div class="apple-logo">
+          <svg viewBox="0 0 170 200" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="appleGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#333333"/>
+                <stop offset="100%" stop-color="#1d1d1f"/>
+              </linearGradient>
+            </defs>
+            <!-- Apple logo path - accurate recreation -->
+            <path d="M141.04,153.11c-3.52,7.7-7.72,14.8-12.62,21.32c-6.66,8.86-12.12,14.98-16.34,18.38
+              c-6.52,5.58-13.52,8.44-20.98,8.58c-5.36,0-11.82-1.52-19.34-4.6c-7.54-3.06-14.48-4.58-20.82-4.58
+              c-6.66,0-13.8,1.52-21.44,4.58c-7.66,3.08-13.82,4.68-18.54,4.84c-7.14,0.3-14.3-2.64-21.48-8.84
+              c-4.56-3.72-10.26-10.1-17.08-19.14C-34.7,163.92-40.5,152.42-45.1,139.42c-4.92-14.04-7.4-27.64-7.4-40.8
+              c0-15.08,3.26-28.08,9.76-39.02c5.12-8.78,11.94-15.7,20.46-20.78c8.52-5.08,17.74-7.66,27.66-7.82
+              c5.68,0,13.14,1.76,22.4,5.22c9.24,3.48,15.18,5.24,17.82,5.24c1.96,0,8.6-2.06,19.86-6.18
+              c10.64-3.82,19.62-5.4,27,-4.74c19.94,1.6,34.94,9.52,44.92,23.82c-17.84,10.8-26.66,25.94-26.48,45.38
+              c0.16,15.14,5.66,27.74,16.46,37.76c4.9,4.64,10.36,8.24,16.42,10.78c-1.32,3.82-2.7,7.48-4.18,10.98z
+              M99.22,7.46c0,11.86-4.34,22.94-12.98,33.18c-10.42,12.22-23.04,19.28-36.72,18.16
+              c-0.18-1.5-0.28-3.08-0.28-4.72c0-11.38,4.96-23.56,13.76-33.52c4.4-5.04,9.98-9.24,16.76-12.58
+              C86.54,5,93,2.86,99.06,2.42c0.18,1.68,0.16,3.36,0.16,5.04z"
+              transform="translate(45,0) scale(0.85)"
+              fill="url(#appleGrad)"/>
+          </svg>
+        </div>
+      </div>
+      <div class="card-bottom">
+        <div class="gift-label">Gift Card</div>
+        <div class="dots-group">
+          <div class="dot-set"><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+          <div class="dot-set"><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+          <div class="dot-set"><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+          <div class="dot-set"><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body></html>

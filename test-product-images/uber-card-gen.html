@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+* { margin: 0; padding: 0; }
+body { width: 2400px; height: 1600px; background: #0a0a0a; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+.scene { width: 2400px; height: 1600px; perspective: 1800px; display: flex; align-items: center; justify-content: center; }
+.card {
+  width: 87%;
+  aspect-ratio: 1.586;
+  border-radius: 36px;
+  background: linear-gradient(145deg, #ffffff 0%, #f0f0f0 40%, #e8e8e8 100%);
+  transform: rotateY(-8deg) rotateX(4deg);
+  box-shadow: 
+    0 60px 120px rgba(0,0,0,0.7),
+    0 20px 60px rgba(0,0,0,0.5),
+    0 0 0 1px rgba(255,255,255,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+.card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(ellipse at 30% 20%, rgba(255,255,255,0.4) 0%, transparent 50%);
+  pointer-events: none;
+}
+.card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  background: linear-gradient(180deg, transparent 60%, rgba(0,0,0,0.03) 100%);
+  pointer-events: none;
+}
+.uber-logo {
+  font-family: -apple-system, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 420px;
+  font-weight: 700;
+  color: #000000;
+  letter-spacing: -4px;
+  margin-top: -20px;
+  z-index: 1;
+  text-align: center;
+}
+/* Reflection */
+.reflection {
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 87%;
+  height: 80px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.06) 0%, transparent 100%);
+  filter: blur(20px);
+  border-radius: 50%;
+}
+</style>
+</head>
+<body>
+  <div class="scene">
+    <div class="card">
+      <div class="uber-logo">Uber</div>
+    </div>
+  </div>
+  <div class="reflection"></div>
+</body>
+</html>

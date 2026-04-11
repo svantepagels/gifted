@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html><head><style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { width: 2400px; height: 1600px; overflow: hidden; }
+
+.scene {
+  width: 2400px; height: 1600px;
+  position: relative;
+  background: radial-gradient(ellipse 80% 75% at 48% 42%, #1a1c2a 0%, #0f1018 50%, #060608 100%);
+  display: flex; align-items: center; justify-content: center;
+  perspective: 1000px;
+}
+
+.light1 {
+  position: absolute; top: -8%; right: 5%;
+  width: 1000px; height: 800px;
+  background: radial-gradient(ellipse, rgba(255,245,230,0.06) 0%, transparent 65%);
+}
+.light2 {
+  position: absolute; bottom: 0; left: 3%;
+  width: 700px; height: 600px;
+  background: radial-gradient(ellipse, rgba(160,180,240,0.035) 0%, transparent 65%);
+}
+
+.vignette {
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 72% 68% at 50% 48%, transparent 35%, rgba(0,0,0,0.65) 100%);
+  z-index: 10; pointer-events: none;
+}
+
+.card-wrapper {
+  transform: rotateY(-16deg) rotateX(6deg) rotateZ(-1.5deg);
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+.card-shadow {
+  position: absolute;
+  width: 1200px; height: 758px;
+  top: 55px; left: 35px;
+  background: rgba(0,0,0,0.7);
+  border-radius: 28px;
+  filter: blur(75px);
+  transform: skewX(-4deg);
+  z-index: -2;
+}
+
+.card {
+  width: 1200px; height: 758px;
+  border-radius: 28px;
+  position: relative; overflow: hidden;
+  background: linear-gradient(155deg, #ffffff 0%, #f8f8fa 25%, #f0f0f5 50%, #e8eaf0 75%, #e0e2ea 100%);
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,0.3),
+    inset 0 1px 0 rgba(255,255,255,0.9),
+    inset 0 -1px 0 rgba(0,0,0,0.05),
+    0 30px 90px rgba(0,0,0,0.55),
+    0 10px 35px rgba(0,0,0,0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-iridescent {
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg, 
+    rgba(255,100,100,0.06) 0%, 
+    rgba(255,180,60,0.05) 15%,
+    rgba(255,230,80,0.04) 25%,
+    rgba(100,220,120,0.05) 40%,
+    rgba(80,180,255,0.06) 55%,
+    rgba(140,100,255,0.05) 70%,
+    rgba(220,80,200,0.05) 85%,
+    rgba(255,100,120,0.04) 100%);
+  pointer-events: none;
+}
+
+.card-rainbow {
+  position: absolute; inset: 0;
+  background: linear-gradient(110deg,
+    transparent 20%,
+    rgba(255,59,48,0.04) 30%,
+    rgba(255,149,0,0.04) 35%,
+    rgba(255,204,0,0.04) 40%,
+    rgba(52,199,89,0.04) 45%,
+    rgba(0,122,255,0.05) 50%,
+    rgba(88,86,214,0.04) 55%,
+    rgba(175,82,222,0.04) 60%,
+    transparent 70%);
+  pointer-events: none;
+}
+
+.card-shine {
+  position: absolute; inset: 0;
+  background: linear-gradient(128deg, 
+    transparent 28%, rgba(255,255,255,0.15) 40%, 
+    rgba(255,255,255,0.25) 44%, rgba(255,255,255,0.15) 48%, 
+    transparent 58%);
+  pointer-events: none;
+}
+
+/* Logo centered using flexbox on .card - no absolute positioning */
+.logo-container {
+  position: absolute;
+  /* Place logo at exact visual center, compensating for 3D perspective */
+  left: 55%;
+  top: 52%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+}
+
+.apple-logo {
+  width: 200px; height: 240px; /* ~30% of card height to hit 20-25% visible */
+  filter: drop-shadow(0 4px 20px rgba(0,0,0,0.08));
+}
+
+.apple-logo svg { width: 100%; height: 100%; }
+
+.card-bottom {
+  position: absolute;
+  bottom: 42px; left: 60px; right: 60px;
+  display: flex; justify-content: space-between; align-items: flex-end;
+  z-index: 5;
+}
+
+.gift-label {
+  font-family: -apple-system, 'SF Pro Display', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 17px; font-weight: 400;
+  letter-spacing: 5px;
+  color: rgba(0,0,0,0.2);
+  text-transform: uppercase;
+}
+
+.dots-group { display: flex; gap: 14px; }
+.dot-set { display: flex; gap: 5px; }
+.dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: rgba(0,0,0,0.1);
+}
+
+/* Debug crosshairs - remove after verification */
+.debug-center {
+  position: absolute;
+  inset: 0;
+  z-index: 100;
+  pointer-events: none;
+  display: none; /* set to flex to debug */
+}
+</style></head>
+<body>
+<div class="scene">
+  <div class="light1"></div>
+  <div class="light2"></div>
+  <div class="vignette"></div>
+  
+  <div class="card-wrapper">
+    <div class="card-shadow"></div>
+    <div class="card">
+      <div class="card-iridescent"></div>
+      <div class="card-rainbow"></div>
+      <div class="card-shine"></div>
+      
+      <div class="logo-container">
+        <div class="apple-logo">
+          <svg viewBox="18 23 167 200" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="appleGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#333"/>
+                <stop offset="100%" stop-color="#1d1d1f"/>
+              </linearGradient>
+            </defs>
+            <path d="M156.77 127.05c-.24-25.27 20.58-37.41 21.5-38.01-11.7-17.12-29.95-19.47-36.45-19.74-15.52-1.57-30.29 9.14-38.18 9.14-7.89 0-20.11-8.92-33.05-8.68-17 .24-32.67 9.89-41.42 25.11-17.66 30.63-4.52 76 12.68 100.88 8.41 12.16 18.44 25.83 31.6 25.34 12.68-.5 17.47-8.2 32.8-8.2s19.63 8.2 33.05 7.94c13.64-.24 22.24-12.4 30.4-24.66 9.58-14.15 13.52-27.86 13.76-28.58-.3-.12-26.39-10.12-26.69-40.14zM131.97 57.49c6.99-8.47 11.71-20.22 10.42-31.95-10.07.41-22.26 6.71-29.49 15.17-6.48 7.51-12.16 19.5-10.64 31.01 11.23.87 22.68-5.71 29.71-14.23z" fill="url(#appleGrad)"/>
+          </svg>
+        </div>
+      </div>
+
+      <div class="card-bottom">
+        <div class="gift-label">Gift Card</div>
+        <div class="dots-group">
+          <div class="dot-set"><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+          <div class="dot-set"><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+          <div class="dot-set"><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+          <div class="dot-set"><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body></html>
