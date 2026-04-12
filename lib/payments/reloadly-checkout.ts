@@ -1,6 +1,7 @@
 import { orderRepository } from '@/lib/orders/mock-repository'
 import { OrderFulfillment } from '@/lib/orders/types'
 import type { OrderRequest, OrderResponse } from '@/lib/reloadly/types'
+import { safeJsonParse } from '@/lib/utils/safe-json'
 
 /**
  * Real Reloadly checkout service
@@ -79,23 +80,49 @@ export class ReloadlyCheckoutService {
         recipientEmail: order.recipientEmail || customerEmail,
       }
 
-      // 6. Call Reloadly order API
-      const response = await fetch('/api/reloadly/order', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(orderRequest),
-      })
+      // 6. Call Reloadly order API with timeout
+      const controller = new AbortController()
+      const timeoutId = setTimeout(() => controller.abort(), 30000) // 30 second timeout
+
+      let response: Response
+      try {
+        response = await fetch('/api/reloadly/order', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(orderRequest),
+          signal: controller.signal,
+        })
+      } catch (fetchError) {
+        clearTimeout(timeoutId)
+        
+        if (fetchError instanceof Error && fetchError.name === 'AbortError') {
+          throw new Error('Request timed out. Please check your connection and try again.')
+        }
+        
+        throw new Error('Network error. Please check your connection and try again.')
+      } finally {
+        clearTimeout(timeoutId)
+      }
 
       if (!response.ok) {
         // Enhanced error messages based on HTTP status
-        const errorData = await response.json()
-        
+        let errorData: any
         let errorMessage: string
+        
+        try {
+          // Try to parse error response as JSON
+          errorData = await safeJsonParse<any>(response, 'checkout-error')
+        } catch {
+          // Fallback to text if not JSON
+          const text = await response.text()
+          errorData = { error: text || `HTTP ${response.status}` }
+        }
+        
         switch (response.status) {
           case 400:
-            errorMessage = 'Invalid order details. Please check the product and amount.'
+            errorMessage = errorData.error || 'Invalid order details. Please check the product and amount.'
             break
           case 401:
             errorMessage = 'Authentication failed. Please try again or contact support.'
@@ -104,7 +131,7 @@ export class ReloadlyCheckoutService {
             errorMessage = 'This product is currently unavailable. Please choose another.'
             break
           case 429:
-            errorMessage = 'Too many orders. Please wait a minute and try again.'
+            errorMessage = errorData.error || 'Too many orders. Please wait a minute and try again.'
             break
           case 500:
           case 503:
@@ -114,10 +141,23 @@ export class ReloadlyCheckoutService {
             errorMessage = errorData.error || `Order failed (Error ${response.status})`
         }
         
+        console.error('[ReloadlyCheckout] API error:', {
+          status: response.status,
+          errorData,
+          errorMessage,
+        })
+        
         throw new Error(errorMessage)
       }
 
-      const orderResponse: OrderResponse = await response.json()
+      // Parse success response with validation
+      let orderResponse: OrderResponse
+      try {
+        orderResponse = await safeJsonParse<OrderResponse>(response, 'checkout-success')
+      } catch (parseError) {
+        console.error('[ReloadlyCheckout] Failed to parse order response:', parseError)
+        throw new Error('Invalid response from payment processor. Please try again or contact support.')
+      }
 
       // 7. Handle FAILED status
       if (orderResponse.status === 'FAILED') {

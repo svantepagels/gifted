@@ -6,6 +6,7 @@ import type {
   RedeemInstructionsResponse,
   PaginatedResponse,
 } from './types';
+import { safeJsonParse } from '@/lib/utils/safe-json';
 
 export class ReloadlyClient {
   private accessToken: string | null = null;
@@ -55,7 +56,7 @@ export class ReloadlyClient {
       throw new Error(`Reloadly authentication failed: ${error}`);
     }
 
-    const data: AuthResponse = await response.json();
+    const data = await safeJsonParse<AuthResponse>(response, 'authenticate');
     this.accessToken = data.access_token;
     // Set expiry time (current time + expires_in - 60 second buffer)
     this.tokenExpiry = Date.now() + (data.expires_in - 60) * 1000;
@@ -92,7 +93,7 @@ export class ReloadlyClient {
       throw new Error(`Failed to fetch products: ${error}`);
     }
 
-    return await response.json();
+    return await safeJsonParse<Product[]>(response, 'getProducts');
   }
 
   /**
@@ -114,7 +115,7 @@ export class ReloadlyClient {
       throw new Error(`Failed to fetch all products: ${error}`);
     }
 
-    const data = await response.json();
+    const data = await safeJsonParse<any>(response, 'getAllProducts');
     
     // Handle paginated response - return first page content
     return Array.isArray(data) ? data : (data.content || []);
@@ -145,7 +146,7 @@ export class ReloadlyClient {
       throw new Error(`Failed to fetch products page ${page}: ${error}`);
     }
 
-    const data = await response.json();
+    const data = await safeJsonParse<any>(response, `getAllProductsPaginated:${page}`);
     
     // Return products from paginated response
     return data.content || [];
@@ -180,7 +181,7 @@ export class ReloadlyClient {
       throw new Error(`Failed to fetch products page ${page}: ${error}`);
     }
 
-    const data = await response.json();
+    const data = await safeJsonParse<any>(response, `getAllProductsPaginatedWithMeta:${page}`);
     
     // Return full response with metadata
     return {
@@ -221,6 +222,12 @@ export class ReloadlyClient {
   async placeOrder(orderData: OrderRequest): Promise<OrderResponse> {
     const token = await this.getAccessToken();
 
+    console.log('[ReloadlyClient] Placing order:', {
+      productId: orderData.productId,
+      countryCode: orderData.countryCode,
+      recipientEmail: orderData.recipientEmail,
+    });
+
     const response = await fetch(`${this.baseUrl}/orders`, {
       method: 'POST',
       headers: {
@@ -233,10 +240,22 @@ export class ReloadlyClient {
 
     if (!response.ok) {
       const error = await response.text();
+      console.error('[ReloadlyClient] Order failed:', {
+        status: response.status,
+        statusText: response.statusText,
+        error: error.substring(0, 500),
+      });
       throw new Error(`Failed to place order: ${error}`);
     }
 
-    return await response.json();
+    const orderResponse = await safeJsonParse<OrderResponse>(response, 'placeOrder');
+    
+    console.log('[ReloadlyClient] Order placed:', {
+      transactionId: orderResponse.transactionId,
+      status: orderResponse.status,
+    });
+    
+    return orderResponse;
   }
 
   /**
@@ -257,7 +276,7 @@ export class ReloadlyClient {
       throw new Error(`Failed to fetch redeem instructions: ${error}`);
     }
 
-    return await response.json();
+    return await safeJsonParse<RedeemInstructionsResponse>(response, 'getRedeemInstructions');
   }
 
   /**
@@ -278,7 +297,7 @@ export class ReloadlyClient {
       throw new Error(`Failed to fetch product: ${error}`);
     }
 
-    return await response.json();
+    return await safeJsonParse<Product>(response, 'getProductById');
   }
 }
 

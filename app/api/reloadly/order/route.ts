@@ -69,6 +69,23 @@ export async function POST(request: NextRequest) {
 
     const order = await reloadlyClient.placeOrder(orderData);
 
+    // Validate response has required fields
+    if (!order || typeof order !== 'object') {
+      console.error('[API] Invalid order response:', order);
+      throw new Error('Invalid response from payment provider');
+    }
+
+    if (!order.transactionId || !order.status) {
+      console.error('[API] Order missing required fields:', order);
+      throw new Error('Incomplete response from payment provider');
+    }
+
+    console.log('[API] Order placed successfully:', {
+      transactionId: order.transactionId,
+      status: order.status,
+      customIdentifier: orderData.customIdentifier,
+    });
+
     return NextResponse.json(order, {
       headers: {
         'X-RateLimit-Limit': limit.toString(),
