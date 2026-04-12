@@ -13,6 +13,7 @@ class OrderRepository {
       updatedAt: new Date(),
       status: 'pending',
       productId: input.productId,
+      reloadlyProductId: input.reloadlyProductId, // Numeric Reloadly API product ID
       productName: input.productName,
       productLogoUrl: input.productLogoUrl,
       amount: input.amount,

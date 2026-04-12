@@ -16,6 +16,7 @@ export interface Order {
   
   // Product info
   productId: string
+  reloadlyProductId: number // Numeric Reloadly API product ID
   productName: string
   productLogoUrl: string
   
@@ -45,6 +46,7 @@ export interface Order {
 
 export interface CreateOrderInput {
   productId: string
+  reloadlyProductId: number // Required for Reloadly API integration
   productName: string
   productLogoUrl: string
   amount: number

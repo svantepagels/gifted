@@ -13,6 +13,7 @@ import { GiftCardProduct } from '@/lib/giftcards/types'
 import { useApp } from '@/contexts/AppContext'
 import { DeliveryMethod } from '@/lib/orders/types'
 import { orderRepository } from '@/lib/orders/mock-repository'
+import { browserOrderStorage } from '@/lib/orders/browser-storage'
 import { calculateServiceFee, formatCurrency } from '@/lib/utils/currency'
 import { ArrowRight, Loader2 } from 'lucide-react'
 
@@ -60,11 +61,20 @@ export function ProductDetailClient({ product }: ProductDetailClientProps) {
       return
     }
     
+    // Extract numeric Reloadly product ID from product metadata
+    const reloadlyProductId = product._meta?.reloadlyProductId
+    if (!reloadlyProductId) {
+      console.error('[ProductDetail] Missing reloadlyProductId for product:', product.id)
+      alert('Product configuration error. Please try another product.')
+      return
+    }
+    
     // Create order
     setIsCreatingOrder(true)
     try {
       const order = await orderRepository.create({
         productId: product.id,
+        reloadlyProductId, // Store numeric Reloadly product ID
         productName: product.brandName,
         productLogoUrl: product.logoUrl,
         amount: selectedAmount,
@@ -76,6 +86,9 @@ export function ProductDetailClient({ product }: ProductDetailClientProps) {
         giftMessage: deliveryMethod === 'gift' ? giftMessage : undefined,
         countryCode: selectedCountry.code,
       })
+      
+      // Save to browser storage (survives page refresh)
+      browserOrderStorage.save(order)
       
       router.push(`/checkout?orderId=${order.id}`)
     } catch (error) {

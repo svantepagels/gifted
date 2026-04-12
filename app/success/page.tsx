@@ -6,6 +6,7 @@ import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
 import { SuccessSummary } from '@/components/success/SuccessSummary'
 import { orderRepository } from '@/lib/orders/mock-repository'
+import { browserOrderStorage } from '@/lib/orders/browser-storage'
 import { Order } from '@/lib/orders/types'
 
 function SuccessContent() {
@@ -24,15 +25,32 @@ function SuccessContent() {
       }
       
       try {
-        const orderData = await orderRepository.getById(orderId)
+        // Try repository first (contains completed order status)
+        let orderData = await orderRepository.getById(orderId)
+        
+        // Fallback to browser storage if repository doesn't have it
+        // (Can happen during page refresh right after checkout completion)
+        if (!orderData) {
+          console.log('[Success] Order not in repository, trying browser storage')
+          orderData = browserOrderStorage.load()
+          
+          // Validate order ID matches
+          if (orderData && orderData.id !== orderId) {
+            console.warn('[Success] Order ID mismatch')
+            orderData = null
+          }
+        }
+        
         if (!orderData || orderData.status !== 'completed') {
+          console.error('[Success] Order not found or not completed:', orderId)
           router.push('/')
           return
         }
         
+        console.log('[Success] Order loaded:', orderData.id)
         setOrder(orderData)
       } catch (error) {
-        console.error('Failed to load order:', error)
+        console.error('[Success] Failed to load order:', error)
         router.push('/')
       } finally {
         setIsLoading(false)

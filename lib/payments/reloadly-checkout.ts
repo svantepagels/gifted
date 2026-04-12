@@ -56,14 +56,17 @@ export class ReloadlyCheckoutService {
       // 3. Update order with customer email
       order.customerEmail = customerEmail
       
-      // 4. Validate and convert product ID to number
-      const productId = parseInt(order.productId)
-      if (isNaN(productId)) {
+      // 4. Get numeric Reloadly product ID (already a number, no conversion needed)
+      const productId = order.reloadlyProductId
+      if (!productId || typeof productId !== 'number') {
+        console.error('[ReloadlyCheckout] Invalid reloadlyProductId:', order.reloadlyProductId)
         return { 
           success: false, 
-          error: 'Invalid product. Please try selecting the product again.' 
+          error: 'Product configuration error. Please try again or contact support.' 
         }
       }
+      
+      console.log('[ReloadlyCheckout] Processing order with productId:', productId)
 
       // 5. Map order to Reloadly OrderRequest
       const orderRequest: OrderRequest = {

@@ -7,6 +7,7 @@ import { Footer } from '@/components/layout/Footer'
 import { MobileBottomNav } from '@/components/layout/MobileBottomNav'
 import { CheckoutForm } from '@/components/checkout/CheckoutForm'
 import { orderRepository } from '@/lib/orders/mock-repository'
+import { browserOrderStorage } from '@/lib/orders/browser-storage'
 import { reloadlyCheckoutService } from '@/lib/payments/reloadly-checkout'
 import { Order } from '@/lib/orders/types'
 import { formatCurrency } from '@/lib/utils/currency'
@@ -24,20 +25,46 @@ function CheckoutContent() {
   useEffect(() => {
     async function loadOrder() {
       if (!orderId) {
+        console.warn('[Checkout] No orderId provided')
         router.push('/')
         return
       }
       
       try {
-        const orderData = await orderRepository.getById(orderId)
+        // Try loading from browser storage first (faster, more reliable)
+        let orderData = browserOrderStorage.load()
+        console.log('[Checkout] Loaded from browser storage:', orderData?.id)
+        
+        // Validate order ID matches the URL parameter
+        if (orderData && orderData.id !== orderId) {
+          console.warn('[Checkout] Order ID mismatch, fetching from repository')
+          orderData = null
+        }
+        
+        // Fallback to repository if not in browser storage
         if (!orderData) {
+          console.log('[Checkout] Falling back to repository')
+          orderData = await orderRepository.getById(orderId)
+        }
+        
+        if (!orderData) {
+          console.error('[Checkout] Order not found:', orderId)
           router.push('/')
           return
         }
         
+        // Validate order has reloadlyProductId
+        if (!orderData.reloadlyProductId) {
+          console.error('[Checkout] Order missing reloadlyProductId:', orderId)
+          alert('Product configuration error. Please try selecting the product again.')
+          router.push('/')
+          return
+        }
+        
+        console.log('[Checkout] Order loaded successfully:', orderData.id, 'reloadlyProductId:', orderData.reloadlyProductId)
         setOrder(orderData)
       } catch (error) {
-        console.error('Failed to load order:', error)
+        console.error('[Checkout] Failed to load order:', error)
         router.push('/')
       } finally {
         setIsLoading(false)
@@ -54,6 +81,10 @@ function CheckoutContent() {
     const result = await reloadlyCheckoutService.processOrder(order.id, email)
     
     if (result.success) {
+      // Clear browser storage on successful checkout
+      browserOrderStorage.clear()
+      console.log('[Checkout] Order processed successfully, cleared browser storage')
+      
       // Redirect to success page
       router.push(`/success?orderId=${order.id}`)
     } else {
