@@ -12,44 +12,73 @@ export const dynamic = 'force-dynamic';
  * STRICT RATE LIMIT: 3 requests per minute
  */
 export async function POST(request: NextRequest) {
-  // Strict rate limiting for order endpoint
   const ip = getIP(request);
-  const { success, limit, remaining, reset } = await rateLimitCheck(ip, true);
   
-  if (!success) {
-    Sentry.captureMessage('Rate limit exceeded on order endpoint', {
-      level: 'warning',
-      tags: {
-        endpoint: '/api/reloadly/order',
-        ip,
-      }
-    });
-    
-    return NextResponse.json(
-      { 
-        error: 'Too many order requests. Please wait before trying again.',
-        limit,
-        remaining: 0,
-        reset,
-      },
-      { 
-        status: 429,
-        headers: {
-          'X-RateLimit-Limit': limit.toString(),
-          'X-RateLimit-Remaining': '0',
-          'X-RateLimit-Reset': reset.toString(),
-        }
-      }
-    );
-  }
-
   try {
-    const orderData: OrderRequest = await request.json();
+    // Rate limit check with error handling
+    let rateLimitResult;
+    try {
+      rateLimitResult = await rateLimitCheck(ip, true);
+    } catch (error) {
+      console.error('Rate limit check failed, allowing request:', error);
+      Sentry.captureException(error, {
+        tags: { component: 'rate-limit', endpoint: '/api/reloadly/order' }
+      });
+      // Allow request to proceed if rate limiting fails
+      rateLimitResult = {
+        success: true,
+        limit: 999,
+        remaining: 999,
+        reset: Math.floor(Date.now() / 1000) + 60,
+      };
+    }
+    
+    if (!rateLimitResult.success) {
+      Sentry.captureMessage('Rate limit exceeded on order endpoint', {
+        level: 'warning',
+        tags: {
+          endpoint: '/api/reloadly/order',
+          ip,
+        }
+      });
+      
+      return NextResponse.json(
+        { 
+          error: 'Too many order requests. Please wait before trying again.',
+          limit: rateLimitResult.limit,
+          remaining: 0,
+          reset: rateLimitResult.reset,
+        },
+        { 
+          status: 429,
+          headers: {
+            'X-RateLimit-Limit': rateLimitResult.limit.toString(),
+            'X-RateLimit-Remaining': '0',
+            'X-RateLimit-Reset': rateLimitResult.reset.toString(),
+          }
+        }
+      );
+    }
+
+    // Parse and validate request body
+    let orderData: OrderRequest;
+    try {
+      orderData = await request.json();
+    } catch (error) {
+      console.error('Invalid JSON in request body:', error);
+      return NextResponse.json(
+        { error: 'Invalid request body', details: 'Request body must be valid JSON' },
+        { status: 400 }
+      );
+    }
 
     // Validate required fields
     if (!orderData.productId || !orderData.countryCode || !orderData.recipientEmail) {
       return NextResponse.json(
-        { error: 'Missing required fields' },
+        { 
+          error: 'Missing required fields',
+          details: 'productId, countryCode, and recipientEmail are required'
+        },
         { status: 400 }
       );
     }
@@ -58,7 +87,7 @@ export async function POST(request: NextRequest) {
     Sentry.captureMessage('Gift card order placed', {
       level: 'info',
       tags: {
-        productId: orderData.productId,
+        productId: orderData.productId.toString(),
         country: orderData.countryCode,
       },
       extra: {
@@ -88,9 +117,9 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json(order, {
       headers: {
-        'X-RateLimit-Limit': limit.toString(),
-        'X-RateLimit-Remaining': remaining.toString(),
-        'X-RateLimit-Reset': reset.toString(),
+        'X-RateLimit-Limit': rateLimitResult.limit.toString(),
+        'X-RateLimit-Remaining': rateLimitResult.remaining.toString(),
+        'X-RateLimit-Reset': rateLimitResult.reset.toString(),
       }
     });
   } catch (error) {
@@ -108,13 +137,21 @@ export async function POST(request: NextRequest) {
     
     console.error('Reloadly order error:', error);
     const errorMessage = error instanceof Error ? error.message : 'Unknown error';
+    
+    // ALWAYS return a valid JSON response
     return NextResponse.json(
       { 
         error: 'Failed to place order',
         details: errorMessage,
-        timestamp: new Date().toISOString()
+        timestamp: new Date().toISOString(),
+        requestId: crypto.randomUUID(),
       },
-      { status: 500 }
+      { 
+        status: 500,
+        headers: {
+          'Content-Type': 'application/json',
+        }
+      }
     );
   }
 }
