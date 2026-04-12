@@ -1,7 +1,6 @@
 import Link from 'next/link'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
-import { MobileBottomNav } from '@/components/layout/MobileBottomNav'
 import { Home, Search } from 'lucide-react'
 
 /**
@@ -52,7 +51,6 @@ export default function ProductNotFound() {
         </div>
       </main>
       <Footer />
-      <MobileBottomNav />
     </>
   )
 }

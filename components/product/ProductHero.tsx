@@ -10,7 +10,7 @@ export function ProductHero({ product, countryName }: ProductHeroProps) {
   return (
     <div className="bg-surface-container-lowest rounded-lg p-8">
       {/* Logo */}
-      <div className="w-32 h-32 mx-auto mb-6 rounded-lg bg-surface-container flex items-center justify-center">
+      <div className="w-32 h-32 mx-auto mb-6 rounded-lg bg-white border border-outline-variant flex items-center justify-center">
         <span className="text-display-sm font-archivo text-surface-on-surface-variant">
           {product.brandName[0]}
         </span>

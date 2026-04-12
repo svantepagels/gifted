@@ -4,7 +4,6 @@ import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
-import { MobileBottomNav } from '@/components/layout/MobileBottomNav'
 import { ProductHero } from '@/components/product/ProductHero'
 import { AmountSelector } from '@/components/product/AmountSelector'
 import { DeliveryMethodToggle } from '@/components/product/DeliveryMethodToggle'
@@ -104,7 +103,7 @@ export function ProductDetailClient({ product }: ProductDetailClientProps) {
   return (
     <>
       <Header />
-      <main className="min-h-screen pb-36 md:pb-8">
+      <main className="min-h-screen pb-32 md:pb-8 bg-surface">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="max-w-4xl mx-auto space-y-8">
             <ProductHero product={product} countryName={selectedCountry.name} />
@@ -156,7 +155,7 @@ export function ProductDetailClient({ product }: ProductDetailClientProps) {
         </div>
         
         {/* Mobile Sticky CTA */}
-        <div className="md:hidden fixed bottom-16 left-0 right-0 p-4 bg-surface-container-lowest/95 backdrop-blur border-t border-outline-variant z-30">
+        <div className="md:hidden fixed bottom-0 left-0 right-0 p-4 bg-surface-container-lowest/95 backdrop-blur border-t border-outline-variant z-30">
           <button
             onClick={handleContinue}
             disabled={!canContinue}
@@ -184,7 +183,6 @@ export function ProductDetailClient({ product }: ProductDetailClientProps) {
         </div>
       </main>
       <Footer />
-      <MobileBottomNav />
     </>
   )
 }

@@ -69,9 +69,9 @@ export function AmountSelector({
                 `}
                 whileTap={{ scale: 0.95 }}
               >
-                <span className="text-xs uppercase text-surface-on-surface-variant mb-1">USD</span>
+                <span className="text-xs uppercase text-surface-on-surface-variant mb-1">{currency}</span>
                 <span className="text-2xl font-bold text-surface-on-surface">
-                  ${denom.value}
+                  {formatCurrency(denom.value, currency)}
                 </span>
               </motion.button>
             )

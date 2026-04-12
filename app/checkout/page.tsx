@@ -4,7 +4,6 @@ import { useState, useEffect, Suspense } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
-import { MobileBottomNav } from '@/components/layout/MobileBottomNav'
 import { CheckoutForm } from '@/components/checkout/CheckoutForm'
 import { orderRepository } from '@/lib/orders/mock-repository'
 import { browserOrderStorage } from '@/lib/orders/browser-storage'
@@ -102,7 +101,6 @@ function CheckoutContent() {
             <p className="text-body-lg text-surface-on-surface-variant">Loading...</p>
           </div>
         </main>
-        <MobileBottomNav />
       </>
     )
   }
@@ -114,7 +112,7 @@ function CheckoutContent() {
   return (
     <>
       <Header />
-      <main className="min-h-screen pb-20 md:pb-8">
+      <main className="min-h-screen pb-8 md:pb-8">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="max-w-3xl mx-auto">
             {/* Back Button */}
@@ -216,7 +214,6 @@ function CheckoutContent() {
         </div>
       </main>
       <Footer />
-      <MobileBottomNav />
     </>
   )
 }
@@ -232,7 +229,6 @@ export default function CheckoutPage() {
             <p className="text-body-lg text-surface-on-surface-variant">Loading...</p>
           </div>
         </main>
-        <MobileBottomNav />
       </>
     }>
       <CheckoutContent />

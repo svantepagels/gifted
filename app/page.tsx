@@ -1,7 +1,6 @@
 import { Suspense } from 'react'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
-import { MobileBottomNav } from '@/components/layout/MobileBottomNav'
 import { HeroSection } from '@/components/browse/HeroSection'
 import { SearchBar } from '@/components/shared/SearchBar'
 import { CategoryChips } from '@/components/shared/CategoryChips'
@@ -34,7 +33,7 @@ export default async function HomePage({
   return (
     <>
       <Header />
-      <main className="min-h-screen pb-20 md:pb-0">
+      <main className="min-h-screen pb-8 md:pb-0">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <HeroSection />
           
@@ -58,7 +57,6 @@ export default async function HomePage({
         </div>
       </main>
       <Footer />
-      <MobileBottomNav />
     </>
   )
 }
