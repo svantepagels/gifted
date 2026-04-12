@@ -17,6 +17,7 @@ class MemoryRateLimiter {
   private requests = new Map<string, { count: number; resetAt: number }>();
   private maxRequests: number;
   private windowMs: number;
+  private readonly MAX_ENTRIES = 10000; // ✅ FIX 2: Cap map size to prevent memory leaks
 
   constructor(limit: number, windowMs: number) {
     this.maxRequests = limit;
@@ -25,12 +26,19 @@ class MemoryRateLimiter {
 
   async limit(identifier: string): Promise<RateLimitResult> {
     const now = Date.now();
-    const entry = this.requests.get(identifier);
     
-    // Clean up stale entries periodically
-    if (Math.random() < 0.01) {
-      this.cleanup(now);
+    // ✅ FIX 2: Always cleanup (not probabilistic)
+    this.cleanup(now);
+    
+    // ✅ FIX 2: Enforce hard limit on map size
+    if (this.requests.size >= this.MAX_ENTRIES) {
+      const firstKey = this.requests.keys().next().value;
+      if (firstKey) {
+        this.requests.delete(firstKey);
+      }
     }
+    
+    const entry = this.requests.get(identifier);
     
     if (!entry || now >= entry.resetAt) {
       // First request or window expired
@@ -83,13 +91,13 @@ function detectMode(): RateLimitMode {
     return 'redis';
   }
   
-  // Production without Redis - use in-memory fallback
+  // ✅ FIX 3: Don't use broken in-memory in production (serverless = separate memory per instance)
   if (process.env.NODE_ENV === 'production') {
-    console.warn('⚠️ Redis not configured - using in-memory rate limiting');
-    return 'memory';
+    console.warn('⚠️ Redis not configured - rate limiting DISABLED in production');
+    return 'disabled'; // NOT 'memory'
   }
   
-  // Development - disable rate limiting
+  // Safe default for development
   return 'disabled';
 }
 
@@ -183,7 +191,12 @@ export function getIP(request: Request): string {
   
   if (cfConnecting) return cfConnecting;
   if (realIP) return realIP;
-  if (forwarded) return forwarded.split(",")[0].trim();
+  
+  // ✅ FIX 1: Use LAST IP (added by Vercel), not first (client can spoof)
+  if (forwarded) {
+    const ips = forwarded.split(",").map(ip => ip.trim());
+    return ips[ips.length - 1] || "unknown";
+  }
   
   return "unknown";
 }
