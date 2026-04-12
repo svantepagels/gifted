@@ -203,7 +203,7 @@ describe('Attack Scenario Tests', () => {
   
   test('should handle malicious X-Forwarded-For payloads', () => {
     const maliciousPayloads = [
-      '1.1.1.1'.repeat(1000), // Very long IP
+      '1.1.1.1, '.repeat(100) + '203.0.113.1', // Very long chain
       ';;;DROP TABLE users;--, 203.0.113.1', // SQL injection attempt
       '<script>alert(1)</script>, 203.0.113.1', // XSS attempt
       '../../etc/passwd, 203.0.113.1', // Path traversal
@@ -214,7 +214,7 @@ describe('Attack Scenario Tests', () => {
         headers: { 'x-forwarded-for': payload },
       });
       
-      // Should safely extract last IP
+      // Should safely extract last IP (Vercel-added)
       const ip = getIP(request);
       expect(ip).toBe('203.0.113.1');
     });
