@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { 
+  width: 2400px; height: 1600px; overflow: hidden;
+  background: radial-gradient(ellipse at 50% 40%, #1c1c1e 0%, #0a0a0a 50%, #000 100%);
+  display: flex; align-items: center; justify-content: center;
+}
+.scene {
+  width: 2400px; height: 1600px;
+  perspective: 2200px;
+  display: flex; align-items: center; justify-content: center;
+  position: relative;
+}
+.card {
+  width: 2088px; /* 87% of 2400 */
+  height: 1316px; /* 2088 / 1.586 */
+  border-radius: 36px;
+  position: relative;
+  transform: rotateY(-6deg) rotateX(3deg) rotateZ(-1deg);
+  transform-style: preserve-3d;
+  /* Card surface */
+  background: linear-gradient(155deg, #ffffff 0%, #fafafa 25%, #f2f2f2 50%, #eaeaea 75%, #e2e2e2 100%);
+  /* Shadow layers */
+  box-shadow:
+    0 4px 6px rgba(0,0,0,0.1),
+    0 12px 24px rgba(0,0,0,0.15),
+    0 40px 80px rgba(0,0,0,0.4),
+    0 80px 160px rgba(0,0,0,0.6),
+    10px 60px 100px rgba(0,0,0,0.5);
+}
+/* Specular highlight - upper left */
+.card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 36px;
+  background: radial-gradient(ellipse at 28% 22%, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0.15) 30%, transparent 60%);
+  pointer-events: none;
+  z-index: 2;
+}
+/* Subtle bottom darkening */
+.card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 36px;
+  background: linear-gradient(180deg, transparent 50%, rgba(0,0,0,0.05) 100%);
+  pointer-events: none;
+  z-index: 2;
+}
+/* Logo container - absolute center */
+.logo-container {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+.uber-text {
+  font-family: 'UberMoveMedium', -apple-system, 'SF Pro Display', system-ui, 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 700;
+  font-size: 290px; /* ~22% of 1316px card height */
+  color: #000000;
+  letter-spacing: -2px;
+  line-height: 1;
+  /* Optical vertical centering correction for cap-height vs bounding box */
+  padding-bottom: 16px;
+}
+</style>
+</head>
+<body>
+  <div class="scene">
+    <div class="card">
+      <div class="logo-container">
+        <div class="uber-text">Uber</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

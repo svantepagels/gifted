@@ -96,7 +96,7 @@ export function inferCategory(brandName: string): string {
   
   // Entertainment (Streaming, Music, Media)
   if (/spotify|netflix|hulu|disney|hbo|apple music|youtube|paramount|deezer|pandora|tidal|soundcloud/i.test(name)) {
-    return 'Entertainment';
+    return 'Media';
   }
   
   // Gaming (Platforms, Games, In-game Currency)
@@ -111,7 +111,7 @@ export function inferCategory(brandName: string): string {
   
   // Food & Drink (Restaurants, Coffee, Food Delivery)
   if (/starbucks|mcdonald|burger|subway|domino|pizza|dunkin|chipotle|panera|uber eats|doordash|grubhub|seamless/i.test(name)) {
-    return 'Food & Drink';
+    return 'Food';
   }
   
   // Travel (Rideshare, Hotels, Airlines, Booking)
@@ -121,12 +121,12 @@ export function inferCategory(brandName: string): string {
   
   // Beauty & Fashion (Cosmetics, Apparel, Footwear)
   if (/sephora|ulta|nike|adidas|foot locker|gap|old navy|abercrombie|h&m|zara|macy|nordstrom/i.test(name)) {
-    return 'Beauty & Fashion';
+    return 'Beauty';
   }
   
   // Tech & Apps (App Stores, Digital Services, Crypto)
   if (/app store|itunes|google play|paypal|crypto|apple|microsoft|samsung|huawei/i.test(name)) {
-    return 'Tech & Apps';
+    return 'Tech';
   }
   
   // Default category for unrecognized brands

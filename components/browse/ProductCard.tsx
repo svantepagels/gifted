@@ -16,7 +16,7 @@ interface ProductCardProps {
 // Category Icon Mapping
 const categoryIcons: Record<string, React.ElementType> = {
   shopping: ShoppingBag,
-  entertainment: Film,
+  media: Film,
   food: Utensils,
   travel: Plane,
   gaming: Gamepad2,
@@ -30,7 +30,7 @@ const categoryColors: Record<string, { bg: string; text: string; gradient: strin
     text: 'text-category-shopping',
     gradient: 'from-category-shopping to-blue-400',
   },
-  entertainment: {
+  media: {
     bg: 'bg-category-entertainment/10',
     text: 'text-category-entertainment',
     gradient: 'from-category-entertainment to-purple-400',
@@ -112,20 +112,20 @@ export function ProductCard({ product, index = 0 }: ProductCardProps) {
 
           {/* Product Info */}
           <div className="p-5 flex-1 flex flex-col">
-            {/* Brand Name & Category */}
-            <div className="flex items-start justify-between gap-3 mb-3">
-              <h3 className="font-archivo text-title-lg text-surface-on-surface group-hover:text-secondary transition-colors duration-300 font-semibold">
-                {product.brandName}
-              </h3>
-              
-              {/* Category Badge with Icon */}
-              <div className={`flex items-center gap-1.5 px-2.5 py-1 rounded-full ${categoryStyle.bg}`}>
-                <CategoryIcon className={`w-3.5 h-3.5 ${categoryStyle.text}`} />
-                <span className={`text-[11px] font-medium ${categoryStyle.text} capitalize`}>
+            {/* Category Badge with Icon */}
+            <div className="mb-2 flex items-start">
+              <div className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full ${categoryStyle.bg} whitespace-nowrap`}>
+                <CategoryIcon className={`w-3.5 h-3.5 ${categoryStyle.text} flex-shrink-0`} />
+                <span className={`text-[11px] font-medium ${categoryStyle.text}`}>
                   {product.category}
                 </span>
               </div>
             </div>
+
+            {/* Brand Name */}
+            <h3 className="font-archivo text-title-lg text-surface-on-surface group-hover:text-secondary transition-colors duration-300 font-semibold mb-3">
+              {product.brandName}
+            </h3>
 
             {/* Price Display */}
             <p className="text-headline-sm font-archivo text-primary mb-3">

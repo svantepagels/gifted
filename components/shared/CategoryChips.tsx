@@ -20,7 +20,7 @@ const categoryConfig: Record<string, { icon: React.ElementType; color: string; b
     color: 'text-category-shopping',
     bg: 'bg-category-shopping hover:bg-category-shopping/90',
   },
-  entertainment: {
+  media: {
     icon: Film,
     color: 'text-category-entertainment',
     bg: 'bg-category-entertainment hover:bg-category-entertainment/90',

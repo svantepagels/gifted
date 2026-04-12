@@ -21,8 +21,8 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/?category=Entertainment" className="text-label-lg hover:text-surface-container-lowest transition-colors">
-                  Entertainment
+                <Link href="/?category=Media" className="text-label-lg hover:text-surface-container-lowest transition-colors">
+                  Media
                 </Link>
               </li>
             </ul>
