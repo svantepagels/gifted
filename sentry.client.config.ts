@@ -1,31 +1,55 @@
 import * as Sentry from "@sentry/nextjs";
 
+/**
+ * Keys we consider PII and strip from Sentry events as defense-in-depth.
+ */
+const PII_KEYS = new Set([
+  'email',
+  'recipientEmail',
+  'customerEmail',
+  'senderEmail',
+  'phone',
+  'phoneNumber',
+  'ip',
+  'ipAddress',
+]);
+
+function scrubPII<T extends Record<string, any>>(obj: T | undefined): T | undefined {
+  if (!obj || typeof obj !== 'object') return obj;
+  for (const key of Object.keys(obj)) {
+    if (PII_KEYS.has(key)) {
+      delete obj[key];
+    }
+  }
+  return obj;
+}
+
 Sentry.init({
   dsn: process.env.NEXT_PUBLIC_SENTRY_DSN,
-  
-  // Set tracesSampleRate to 1.0 to capture 100% of transactions for performance monitoring.
-  // Adjust this value in production for cost optimization
-  tracesSampleRate: 0.1, // 10% of transactions in production
-  
-  // Capture Replay for 10% of all sessions,
-  // plus 100% of sessions with an error
+
+  tracesSampleRate: 0.1,
+
   replaysSessionSampleRate: 0.1,
   replaysOnErrorSampleRate: 1.0,
-  
-  // Filter out sensitive data
+
   beforeSend(event) {
-    // Remove sensitive env vars from breadcrumbs
-    if (event.breadcrumbs) {
-      event.breadcrumbs = event.breadcrumbs.map(breadcrumb => {
-        if (breadcrumb.data) {
-          delete breadcrumb.data.RELOADLY_CLIENT_ID;
-          delete breadcrumb.data.RELOADLY_CLIENT_SECRET;
-        }
-        return breadcrumb;
-      });
+    scrubPII(event.extra);
+    if (event.contexts) {
+      scrubPII(event.contexts as Record<string, any>);
     }
+    if (event.breadcrumbs) {
+      for (const crumb of event.breadcrumbs) {
+        const data = crumb.data as Record<string, any> | undefined;
+        if (data) {
+          delete data.RELOADLY_CLIENT_ID;
+          delete data.RELOADLY_CLIENT_SECRET;
+          scrubPII(data);
+        }
+      }
+    }
+
     return event;
   },
-  
+
   environment: process.env.NODE_ENV,
 });
