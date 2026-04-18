@@ -247,6 +247,15 @@ export class GiftCardService {
   }
   
   /**
+   * Get a product by its numeric Reloadly product ID.
+   * Used by the order API route to server-validate denominations.
+   */
+  async getProductByReloadlyId(reloadlyProductId: number): Promise<GiftCardProduct | null> {
+    const allProducts = await this.getAllProductsCached();
+    return allProducts.find(p => p._meta?.reloadlyProductId === reloadlyProductId) || null;
+  }
+
+  /**
    * Get list of all categories
    */
   async getCategories(): Promise<string[]> {

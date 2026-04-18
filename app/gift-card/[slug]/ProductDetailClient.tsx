@@ -11,7 +11,7 @@ import { GiftDetailsForm } from '@/components/product/GiftDetailsForm'
 import { GiftCardProduct } from '@/lib/giftcards/types'
 import { useApp } from '@/contexts/AppContext'
 import { DeliveryMethod } from '@/lib/orders/types'
-import { orderRepository } from '@/lib/orders/mock-repository'
+import { createOrder } from '@/lib/orders/api'
 import { browserOrderStorage } from '@/lib/orders/browser-storage'
 import { calculateServiceFee, formatCurrency } from '@/lib/utils/currency'
 import { ArrowRight, Loader2 } from 'lucide-react'
@@ -68,12 +68,12 @@ export function ProductDetailClient({ product }: ProductDetailClientProps) {
       return
     }
     
-    // Create order
+    // Create order server-side
     setIsCreatingOrder(true)
     try {
-      const order = await orderRepository.create({
+      const order = await createOrder({
         productId: product.id,
-        reloadlyProductId, // Store numeric Reloadly product ID
+        reloadlyProductId, // Numeric Reloadly product ID
         productName: product.brandName,
         productLogoUrl: product.logoUrl,
         amount: selectedAmount,
@@ -85,14 +85,14 @@ export function ProductDetailClient({ product }: ProductDetailClientProps) {
         giftMessage: deliveryMethod === 'gift' ? giftMessage : undefined,
         countryCode: selectedCountry.code,
       })
-      
-      // Save to browser storage (survives page refresh)
+
+      // Optimistic client-side cache so /checkout can render instantly.
+      // The server remains the source of truth.
       browserOrderStorage.save(order)
-      
+
       router.push(`/checkout?orderId=${order.id}`)
     } catch (error) {
-      console.error('Failed to create order:', error)
-      alert('Failed to create order. Please try again.')
+      alert(error instanceof Error ? error.message : 'Failed to create order. Please try again.')
       setIsCreatingOrder(false)
     }
   }

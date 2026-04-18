@@ -5,8 +5,8 @@ import { useRouter, useSearchParams } from 'next/navigation'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
 import { SuccessSummary } from '@/components/success/SuccessSummary'
-import { orderRepository } from '@/lib/orders/mock-repository'
 import { browserOrderStorage } from '@/lib/orders/browser-storage'
+import { fetchOrder } from '@/lib/orders/api'
 import { Order } from '@/lib/orders/types'
 
 function SuccessContent() {
@@ -23,40 +23,29 @@ function SuccessContent() {
         router.push('/')
         return
       }
-      
+
       try {
-        // Try repository first (contains completed order status)
-        let orderData = await orderRepository.getById(orderId)
-        
-        // Fallback to browser storage if repository doesn't have it
-        // (Can happen during page refresh right after checkout completion)
-        if (!orderData) {
-          console.log('[Success] Order not in repository, trying browser storage')
-          orderData = browserOrderStorage.load()
-          
-          // Validate order ID matches
-          if (orderData && orderData.id !== orderId) {
-            console.warn('[Success] Order ID mismatch')
-            orderData = null
-          }
-        }
-        
-        if (!orderData || orderData.status !== 'completed') {
-          console.error('[Success] Order not found or not completed:', orderId)
+        const orderData = await fetchOrder(orderId)
+
+        // Accept both 'completed' (SUCCESSFUL) and 'processing' (PENDING at
+        // Reloadly). Redoing this cleanly requires webhooks; for now we tell
+        // the user the card is on the way either way.
+        if (!orderData || (orderData.status !== 'completed' && orderData.status !== 'processing')) {
           router.push('/')
           return
         }
-        
-        console.log('[Success] Order loaded:', orderData.id)
+
+        // Clear any leftover cache
+        browserOrderStorage.clear()
+
         setOrder(orderData)
-      } catch (error) {
-        console.error('[Success] Failed to load order:', error)
+      } catch {
         router.push('/')
       } finally {
         setIsLoading(false)
       }
     }
-    
+
     loadOrder()
   }, [orderId, router])
   
