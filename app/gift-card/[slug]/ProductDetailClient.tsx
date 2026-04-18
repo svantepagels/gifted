@@ -131,7 +131,7 @@ export function ProductDetailClient({ product }: ProductDetailClientProps) {
               <button
                 onClick={handleContinue}
                 disabled={!canContinue}
-                className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-surface-on-primary rounded-full font-archivo-black text-[14px] uppercase tracking-[1.5px] hover:bg-primary-hover transition-all disabled:bg-surface-container-high disabled:text-surface-on-surface-variant disabled:cursor-not-allowed shadow-lg disabled:shadow-none"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-secondary text-secondary-on-secondary rounded-full font-archivo-black text-[14px] uppercase tracking-[1.5px] hover:bg-secondary-hover transition-all disabled:bg-surface-container-high disabled:text-surface-on-surface-variant disabled:cursor-not-allowed shadow-lg disabled:shadow-none"
               >
                 {isCreatingOrder ? (
                   <>
@@ -142,7 +142,7 @@ export function ProductDetailClient({ product }: ProductDetailClientProps) {
                   <>
                     Continue to Checkout
                     {totalAmount && (
-                      <span className="ml-2 px-3 py-1 bg-surface-on-primary/10 rounded-full">
+                      <span className="ml-2 px-3 py-1 bg-white/15 rounded-full">
                         {formatCurrency(totalAmount, selectedCountry.currency)}
                       </span>
                     )}
@@ -159,7 +159,7 @@ export function ProductDetailClient({ product }: ProductDetailClientProps) {
           <button
             onClick={handleContinue}
             disabled={!canContinue}
-            className="w-full flex items-center justify-between px-6 py-4 bg-primary text-surface-on-primary rounded-full font-archivo-black text-[14px] uppercase tracking-[1.5px] hover:bg-primary-hover transition-all disabled:bg-surface-container-high disabled:text-surface-on-surface-variant disabled:cursor-not-allowed shadow-lg disabled:shadow-none"
+            className="w-full flex items-center justify-between px-6 py-4 bg-secondary text-secondary-on-secondary rounded-full font-archivo-black text-[14px] uppercase tracking-[1.5px] hover:bg-secondary-hover transition-all disabled:bg-surface-container-high disabled:text-surface-on-surface-variant disabled:cursor-not-allowed shadow-lg disabled:shadow-none"
           >
             {isCreatingOrder ? (
               <>
@@ -171,7 +171,7 @@ export function ProductDetailClient({ product }: ProductDetailClientProps) {
                 <span>Continue to Checkout</span>
                 <div className="flex items-center gap-2">
                   {totalAmount && (
-                    <span className="px-3 py-1 bg-surface-on-primary/10 rounded-full text-[12px]">
+                    <span className="px-3 py-1 bg-white/15 rounded-full text-[12px]">
                       {formatCurrency(totalAmount, selectedCountry.currency)}
                     </span>
                   )}

@@ -34,7 +34,7 @@ export default function ProductNotFound() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
             <Link
               href="/"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-primary text-surface-on-primary rounded-full font-archivo-black text-[14px] uppercase tracking-[1.5px] hover:bg-primary-hover transition-all shadow-lg"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-secondary text-secondary-on-secondary rounded-full font-archivo-black text-[14px] uppercase tracking-[1.5px] hover:bg-secondary-hover transition-all shadow-lg"
             >
               <Home className="w-5 h-5" />
               Back to Home
