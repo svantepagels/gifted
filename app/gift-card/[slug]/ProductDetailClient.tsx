@@ -29,6 +29,8 @@ export function ProductDetailClient({ product }: ProductDetailClientProps) {
   const [recipientEmail, setRecipientEmail] = useState<string>()
   const [giftMessage, setGiftMessage] = useState<string>()
   const [isCreatingOrder, setIsCreatingOrder] = useState(false)
+  const [orderError, setOrderError] = useState<string | null>(null)
+  const [recipientEmailError, setRecipientEmailError] = useState<string | null>(null)
   
   // Set cart product when component mounts
   useState(() => {
@@ -53,21 +55,25 @@ export function ProductDetailClient({ product }: ProductDetailClientProps) {
   
   const handleContinue = async () => {
     if (!product || !selectedAmount || isCreatingOrder) return
-    
+
+    // Clear any prior errors
+    setOrderError(null)
+    setRecipientEmailError(null)
+
     // Validate gift details if sending as gift
     if (deliveryMethod === 'gift' && !recipientEmail) {
-      alert('Please enter recipient email address')
+      setRecipientEmailError('Please enter a recipient email address.')
       return
     }
-    
+
     // Extract numeric Reloadly product ID from product metadata
     const reloadlyProductId = product._meta?.reloadlyProductId
     if (!reloadlyProductId) {
       console.error('[ProductDetail] Missing reloadlyProductId for product:', product.id)
-      alert('Product configuration error. Please try another product.')
+      setOrderError('Product configuration error. Please try another product.')
       return
     }
-    
+
     // Create order server-side
     setIsCreatingOrder(true)
     try {
@@ -92,7 +98,11 @@ export function ProductDetailClient({ product }: ProductDetailClientProps) {
 
       router.push(`/checkout?orderId=${order.id}`)
     } catch (error) {
-      alert(error instanceof Error ? error.message : 'Failed to create order. Please try again.')
+      const message =
+        error instanceof Error && error.message
+          ? error.message
+          : "Couldn't create your order. Please try again."
+      setOrderError(message)
       setIsCreatingOrder(false)
     }
   }
@@ -126,6 +136,17 @@ export function ProductDetailClient({ product }: ProductDetailClientProps) {
               )}
             </div>
             
+            {/* Inline validation / order creation error */}
+            {(orderError || recipientEmailError) && (
+              <div
+                role="alert"
+                aria-live="polite"
+                className="rounded-lg border border-error/40 bg-error/10 px-4 py-3 text-sm text-error"
+              >
+                {recipientEmailError || orderError}
+              </div>
+            )}
+
             {/* Desktop Continue Button */}
             <div className="hidden md:flex justify-end">
               <button

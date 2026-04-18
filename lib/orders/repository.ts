@@ -182,17 +182,21 @@ function buildRepository(): OrderRepository {
   }
 
   if (process.env.NODE_ENV === 'production') {
-    // In production without Redis, callers will get a failing repo instead of
-    // silently losing data between cold starts. Throw lazily on first use.
-    return new Proxy({} as OrderRepository, {
-      get() {
-        return async () => {
-          throw new Error(
-            'OrderRepository: UPSTASH_REDIS_REST_URL / UPSTASH_REDIS_REST_TOKEN are not configured.'
-          )
-        }
-      },
-    })
+    // TODO(svante): Create an Upstash Redis database and add these to Vercel:
+    //   https://vercel.com/svantepagels/gifted-project/settings/environment-variables
+    //   UPSTASH_REDIS_REST_URL
+    //   UPSTASH_REDIS_REST_TOKEN
+    // Until then we fall back to an in-memory repo so the checkout flow isn't
+    // hard-broken. This is NOT safe long term in serverless: each function
+    // instance has its own Map, so an order created on instance A may not be
+    // readable from instance B. Checkouts that complete within one warm
+    // instance's lifetime will work; others will see "order not found".
+    console.warn(
+      '[OrderRepository] UPSTASH_REDIS_REST_URL / UPSTASH_REDIS_REST_TOKEN are not set. ' +
+        'Falling back to in-memory storage — orders will not survive cold starts or cross instances. ' +
+        'Configure Upstash in Vercel to fix properly.'
+    )
+    return new MemoryOrderRepository()
   }
 
   // Local dev fallback
