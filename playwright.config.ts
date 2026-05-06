@@ -18,8 +18,11 @@ export default defineConfig({
       use: { ...devices['Desktop Chrome'], viewport: { width: 1920, height: 1080 } },
     },
     {
+      // Pixel 5 is chromium-based, so the project name accurately matches
+      // the engine. Previously this used 'iPhone 12' which forced webkit
+      // and broke runs in environments without the webkit browser binary.
       name: 'chromium-mobile',
-      use: { ...devices['iPhone 12'], viewport: { width: 390, height: 844 } },
+      use: { ...devices['Pixel 5'], viewport: { width: 390, height: 844 } },
     },
   ],
   webServer: {
