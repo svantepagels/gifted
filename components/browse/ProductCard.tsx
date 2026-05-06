@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { GiftCardProduct } from '@/lib/giftcards/types';
 import { useApp } from '@/contexts/AppContext';
@@ -59,6 +60,8 @@ const categoryColors: Record<string, { bg: string; text: string; gradient: strin
 
 export function ProductCard({ product, index = 0 }: ProductCardProps) {
   const { selectedCountry } = useApp();
+  const [logoFailed, setLogoFailed] = useState(false);
+  const showLogo = Boolean(product.logoUrl) && !logoFailed;
 
   // Get the first available denomination or range minimum
   const priceDisplay =
@@ -94,19 +97,32 @@ export function ProductCard({ product, index = 0 }: ProductCardProps) {
           </div>
 
           {/* Logo Container */}
-          <div className="aspect-video bg-surface-container flex items-center justify-center p-8 relative overflow-hidden">
+          <div className="aspect-video bg-white flex items-center justify-center p-6 relative overflow-hidden">
             {/* Subtle gradient overlay on hover */}
             <div
               className={`absolute inset-0 bg-gradient-to-br ${categoryStyle.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-300`}
             />
-            
+
             <div className="relative w-full h-full flex items-center justify-center">
-              {/* Placeholder for logo - in production would use Next Image */}
-              <div className="w-24 h-24 rounded-lg bg-surface-container-low flex items-center justify-center transform group-hover:scale-105 transition-transform duration-300">
-                <span className="text-headline-sm font-archivo text-surface-on-surface-variant">
-                  {product.brandName[0]}
-                </span>
-              </div>
+              {showLogo ? (
+                /* eslint-disable-next-line @next/next/no-img-element */
+                <img
+                  src={product.logoUrl}
+                  alt={`${product.brandName} logo`}
+                  loading="lazy"
+                  onError={() => setLogoFailed(true)}
+                  className="max-w-[88px] max-h-[88px] object-contain transform group-hover:scale-105 transition-transform duration-300"
+                />
+              ) : (
+                /* Fallback: gradient chip with the brand initial */
+                <div
+                  className={`w-24 h-24 rounded-lg bg-gradient-to-br ${categoryStyle.gradient} flex items-center justify-center transform group-hover:scale-105 transition-transform duration-300 shadow-ambient`}
+                >
+                  <span className="font-archivo font-black text-3xl text-white">
+                    {product.brandName[0]}
+                  </span>
+                </div>
+              )}
             </div>
           </div>
 

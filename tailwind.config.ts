@@ -98,7 +98,7 @@ const config: Config = {
       },
       fontSize: {
         // Hero (New - Bespoke Sizes)
-        'hero': ['clamp(3rem, 8vw, 7rem)', { lineHeight: '1', letterSpacing: '-0.03em', fontWeight: '900' }],
+        'hero': ['clamp(2.75rem, 6vw, 4.5rem)', { lineHeight: '1', letterSpacing: '-0.03em', fontWeight: '900' }],
         'hero-sub': ['clamp(1.25rem, 3vw, 2rem)', { lineHeight: '1.3', letterSpacing: '-0.01em' }],
         // Display (Enhanced)
         'display-xl': ['clamp(2.5rem, 6vw, 4.5rem)', { lineHeight: '1.1', letterSpacing: '-0.02em', fontWeight: '800' }],

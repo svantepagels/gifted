@@ -5,7 +5,12 @@ import { useRouter, useSearchParams } from 'next/navigation';
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-export function SearchBar() {
+interface SearchBarProps {
+  /** When true, drops the centered max-width wrapper and shrinks height — for embedding in a control bar. */
+  compact?: boolean;
+}
+
+export function SearchBar({ compact = false }: SearchBarProps) {
   const router = useRouter();
   const searchParams = useSearchParams();
   const [query, setQuery] = useState(searchParams.get('q') || '');
@@ -35,8 +40,15 @@ export function SearchBar() {
     router.push(`/?${params.toString()}`);
   };
 
+  const wrapperClass = compact
+    ? 'w-full max-w-[480px]'
+    : 'w-full max-w-[540px] mx-auto px-4';
+  const fieldHeight = compact ? 'h-11' : 'h-[52px]';
+  const buttonHeight = compact ? 'h-9' : 'h-[44px]';
+  const buttonPadding = compact ? 'px-5' : 'px-6';
+
   return (
-    <div className="w-full max-w-[540px] mx-auto px-4">
+    <div className={wrapperClass}>
       <motion.div
         initial={false}
         animate={{
@@ -46,11 +58,10 @@ export function SearchBar() {
             : '0 1px 2px rgba(15, 23, 42, 0.05)',
         }}
         transition={{ duration: 0.2 }}
-        className={`relative flex items-center bg-white border rounded-full h-[52px] pr-1 transition-colors duration-200 ${
+        className={`relative flex items-center bg-white border rounded-full ${fieldHeight} pr-1 transition-colors duration-200 ${
           isFocused ? 'border-secondary' : 'border-outline-variant'
         }`}
       >
-        {/* Search Icon */}
         <motion.div
           initial={false}
           animate={{
@@ -63,7 +74,6 @@ export function SearchBar() {
           <Search className="h-5 w-5 pointer-events-none" />
         </motion.div>
 
-        {/* Input Field */}
         <input
           type="text"
           value={query}
@@ -74,7 +84,6 @@ export function SearchBar() {
           className="flex-1 pl-12 pr-2 bg-transparent text-[15px] text-surface-on-surface placeholder:text-[#9CA3AF] focus:outline-none"
         />
 
-        {/* Clear Button */}
         <AnimatePresence>
           {query && (
             <motion.button
@@ -91,12 +100,11 @@ export function SearchBar() {
           )}
         </AnimatePresence>
 
-        {/* Search Button */}
         <motion.button
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.98 }}
           onClick={() => query && handleSearch(query)}
-          className="px-6 h-[44px] bg-secondary text-white rounded-full text-[13px] font-medium uppercase tracking-[0.5px] hover:bg-secondary-hover transition-colors duration-200 shadow-sm"
+          className={`${buttonPadding} ${buttonHeight} bg-secondary text-white rounded-full text-[13px] font-medium uppercase tracking-[0.5px] hover:bg-secondary-hover transition-colors duration-200 shadow-sm`}
         >
           SEARCH
         </motion.button>
