@@ -67,8 +67,8 @@ export function CategoryChips({ categories }: CategoryChipsProps) {
   return (
     <div className="relative">
       {/* Gradient Fade Overlays */}
-      <div className="absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
-      <div className="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
+      <div className="absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-surface-container-lowest to-transparent z-10 pointer-events-none" />
+      <div className="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-surface-container-lowest to-transparent z-10 pointer-events-none" />
 
       {/* Scrollable Container */}
       <div className="flex gap-3 overflow-x-auto pb-3 scrollbar-hide px-4 sm:px-6">

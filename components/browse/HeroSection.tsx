@@ -2,78 +2,92 @@
 
 import { motion } from 'framer-motion';
 import { fadeInUp, badgePulse } from '@/lib/animations/variants';
-import { ChevronDown, Zap } from 'lucide-react';
+import { Zap } from 'lucide-react';
+
+const HERO_INITIALS = [
+  { letter: 'N', gradient: 'from-category-entertainment to-purple-400' },
+  { letter: 'G', gradient: 'from-category-shopping to-blue-400' },
+  { letter: 'A', gradient: 'from-category-shopping to-blue-400' },
+  { letter: 'S', gradient: 'from-category-food to-orange-400' },
+  { letter: 'X', gradient: 'from-category-gaming to-pink-400' },
+  { letter: 'T', gradient: 'from-category-travel to-cyan-400' },
+  { letter: 'U', gradient: 'from-category-lifestyle to-green-400' },
+  { letter: 'P', gradient: 'from-category-gaming to-pink-400' },
+];
 
 export function HeroSection() {
   return (
-    <section className="relative py-12 sm:py-16 lg:py-20 px-4 overflow-hidden">
-      {/* Mesh Gradient Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-purple-50 via-pink-50 to-blue-50 opacity-60" />
-      <div 
-        className="absolute inset-0 opacity-30"
+    <section
+      id="hero"
+      className="relative py-10 md:py-8 lg:py-10 overflow-hidden"
+    >
+      {/* Mesh gradient background — mobile only */}
+      <div className="absolute inset-0 -mx-4 sm:-mx-6 bg-gradient-to-br from-purple-50 via-pink-50 to-blue-50 opacity-60 md:hidden" />
+      <div
+        className="absolute inset-0 -mx-4 sm:-mx-6 opacity-30 md:hidden"
         style={{
-          background: 'radial-gradient(at 27% 37%, hsla(270, 73%, 66%, 0.3) 0px, transparent 50%), radial-gradient(at 97% 21%, hsla(244, 73%, 66%, 0.3) 0px, transparent 50%), radial-gradient(at 52% 99%, hsla(280, 73%, 66%, 0.3) 0px, transparent 50%)',
+          background:
+            'radial-gradient(at 27% 37%, hsla(270, 73%, 66%, 0.3) 0px, transparent 50%), radial-gradient(at 97% 21%, hsla(244, 73%, 66%, 0.3) 0px, transparent 50%), radial-gradient(at 52% 99%, hsla(280, 73%, 66%, 0.3) 0px, transparent 50%)',
         }}
       />
 
-      <div className="relative text-center max-w-5xl mx-auto">
-        {/* Animated Badge */}
-        <motion.div
-          variants={badgePulse}
-          initial="initial"
-          animate="animate"
-          className="inline-flex items-center gap-2 px-4 py-2 mb-8 bg-white/80 backdrop-blur-sm rounded-full shadow-sm border border-purple-100"
-        >
-          <Zap className="w-4 h-4 text-accent-purple fill-accent-purple" />
-          <span className="text-label-md text-primary font-medium">
-            Instant Digital Delivery
-          </span>
-        </motion.div>
+      <div className="relative grid grid-cols-1 md:grid-cols-12 md:gap-8 items-center">
+        {/* Copy column */}
+        <div className="md:col-span-7 lg:col-span-7 text-center md:text-left">
+          <motion.div
+            variants={badgePulse}
+            initial="initial"
+            animate="animate"
+            className="inline-flex items-center gap-2 px-4 py-2 mb-6 bg-white/80 backdrop-blur-sm rounded-full shadow-sm border border-purple-100"
+          >
+            <Zap className="w-4 h-4 text-accent-purple fill-accent-purple" />
+            <span className="text-label-md text-primary font-medium">
+              Instant Digital Delivery
+            </span>
+          </motion.div>
 
-        {/* Hero Headline */}
-        <motion.h1
-          variants={fadeInUp}
-          initial="initial"
-          animate="animate"
-          transition={{ delay: 0.2, duration: 0.6 }}
-          className="font-archivo text-hero text-primary mb-6 uppercase leading-[0.95] tracking-tight"
-        >
-          Buy Digital
-          <br />
-          <span className="bg-gradient-to-r from-accent-purple via-accent-pink to-accent-orange bg-clip-text text-transparent">
-            Gift Cards
-          </span>
-          <br />
-          Instantly.
-        </motion.h1>
+          <motion.h1
+            variants={fadeInUp}
+            initial="initial"
+            animate="animate"
+            transition={{ duration: 0.5 }}
+            className="font-archivo text-hero text-primary mb-4 uppercase leading-[0.95] tracking-tight"
+          >
+            Buy Digital
+            <br />
+            <span className="bg-gradient-to-r from-accent-purple via-accent-pink to-accent-orange bg-clip-text text-transparent">
+              Gift Cards
+            </span>
+            <br className="md:hidden" />
+            <span className="md:ml-3">Instantly.</span>
+          </motion.h1>
 
-        {/* Hero Subheadline */}
-        <motion.p
-          variants={fadeInUp}
-          initial="initial"
-          animate="animate"
-          transition={{ delay: 0.4, duration: 0.6 }}
-          className="font-inter text-hero-sub text-surface-on-surface-variant max-w-2xl mx-auto mb-10"
-        >
-          Gift cards for your favorite brands. Delivered in minutes.
-          <br />
-          Easy, secure, and always ready to send.
-        </motion.p>
+          <p className="font-inter text-hero-sub text-surface-on-surface-variant max-w-xl mx-auto md:mx-0 mb-6">
+            Gift cards for your favorite brands. Delivered in minutes.
+          </p>
 
-        {/* Scroll Indicator - subtle */}
-        <motion.div
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 0.6, y: 0 }}
-          transition={{
-            delay: 0.8,
-            duration: 1.2,
-            repeat: Infinity,
-            repeatType: 'reverse',
-          }}
-          className="inline-flex flex-col items-center gap-1 text-surface-on-surface-variant"
-        >
-          <ChevronDown className="w-4 h-4" />
-        </motion.div>
+          <a
+            href="#products"
+            className="hidden md:inline-flex items-center justify-center px-6 h-[44px] bg-secondary text-secondary-on-secondary rounded-full text-[13px] font-medium uppercase tracking-[0.5px] hover:bg-secondary-hover transition-colors duration-200 shadow-sm"
+          >
+            Browse all gift cards
+          </a>
+        </div>
+
+        {/* Decorative brand-initial rail — desktop/tablet only */}
+        <div className="hidden md:flex md:col-span-5 lg:col-span-5 items-center justify-end">
+          <div className="grid grid-cols-4 gap-3">
+            {HERO_INITIALS.map((b, i) => (
+              <div
+                key={i}
+                aria-hidden
+                className={`w-16 h-16 lg:w-20 lg:h-20 rounded-2xl bg-gradient-to-br ${b.gradient} flex items-center justify-center text-white font-archivo font-black text-2xl lg:text-3xl shadow-ambient`}
+              >
+                {b.letter}
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );

@@ -114,64 +114,70 @@ export function ProductDetailClient({ product }: ProductDetailClientProps) {
     <>
       <Header />
       <main className="min-h-screen pb-32 md:pb-8 bg-surface">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <div className="max-w-4xl mx-auto space-y-8">
-            <ProductHero product={product} countryName={selectedCountry.name} />
-            
-            <div className="bg-surface-container-lowest rounded-lg p-6 space-y-6">
-              <AmountSelector
-                product={product}
-                currency={selectedCountry.currency}
-                selectedAmount={selectedAmount}
-                onAmountChange={handleAmountChange}
-              />
-              
-              <DeliveryMethodToggle
-                value={deliveryMethod}
-                onChange={handleDeliveryMethodChange}
-              />
-              
-              {deliveryMethod === 'gift' && (
-                <GiftDetailsForm onChange={handleGiftDetailsChange} />
-              )}
+        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_440px] gap-8 items-start">
+            {/* Left column — brand info */}
+            <div className="space-y-6 min-w-0">
+              <ProductHero product={product} countryName={selectedCountry.name} />
             </div>
-            
-            {/* Inline validation / order creation error */}
-            {(orderError || recipientEmailError) && (
-              <div
-                role="alert"
-                aria-live="polite"
-                className="rounded-lg border border-error/40 bg-error/10 px-4 py-3 text-sm text-error"
-              >
-                {recipientEmailError || orderError}
-              </div>
-            )}
 
-            {/* Desktop Continue Button */}
-            <div className="hidden md:flex justify-end">
-              <button
-                onClick={handleContinue}
-                disabled={!canContinue}
-                className="inline-flex items-center gap-2 px-8 py-4 bg-secondary text-secondary-on-secondary rounded-full font-archivo-black text-[14px] uppercase tracking-[1.5px] hover:bg-secondary-hover transition-all disabled:bg-surface-container-high disabled:text-surface-on-surface-variant disabled:cursor-not-allowed shadow-lg disabled:shadow-none"
-              >
-                {isCreatingOrder ? (
-                  <>
-                    <Loader2 className="h-5 w-5 animate-spin" />
-                    Processing...
-                  </>
-                ) : (
-                  <>
-                    Continue to Checkout
-                    {totalAmount && (
-                      <span className="ml-2 px-3 py-1 bg-white/15 rounded-full">
-                        {formatCurrency(totalAmount, selectedCountry.currency)}
-                      </span>
-                    )}
-                    <ArrowRight className="h-5 w-5" />
-                  </>
+            {/* Right column — sticky purchase panel on lg+ */}
+            <aside className="lg:sticky lg:top-[88px] lg:self-start space-y-4">
+              <div className="bg-surface-container-lowest rounded-lg p-6 space-y-6">
+                <AmountSelector
+                  product={product}
+                  currency={selectedCountry.currency}
+                  selectedAmount={selectedAmount}
+                  onAmountChange={handleAmountChange}
+                />
+
+                <DeliveryMethodToggle
+                  value={deliveryMethod}
+                  onChange={handleDeliveryMethodChange}
+                />
+
+                {deliveryMethod === 'gift' && (
+                  <GiftDetailsForm onChange={handleGiftDetailsChange} />
                 )}
-              </button>
-            </div>
+
+                {/* Inline validation / order creation error */}
+                {(orderError || recipientEmailError) && (
+                  <div
+                    role="alert"
+                    aria-live="polite"
+                    className="rounded-lg border border-error/40 bg-error/10 px-4 py-3 text-sm text-error"
+                  >
+                    {recipientEmailError || orderError}
+                  </div>
+                )}
+
+                {/* Desktop Continue Button — inside the sticky panel */}
+                <div className="hidden md:block">
+                  <button
+                    onClick={handleContinue}
+                    disabled={!canContinue}
+                    className="w-full inline-flex items-center justify-center gap-2 px-8 py-4 bg-secondary text-secondary-on-secondary rounded-full font-archivo-black text-[14px] uppercase tracking-[1.5px] hover:bg-secondary-hover transition-all disabled:bg-surface-container-high disabled:text-surface-on-surface-variant disabled:cursor-not-allowed shadow-lg disabled:shadow-none"
+                  >
+                    {isCreatingOrder ? (
+                      <>
+                        <Loader2 className="h-5 w-5 animate-spin" />
+                        Processing...
+                      </>
+                    ) : (
+                      <>
+                        Continue to Checkout
+                        {totalAmount && (
+                          <span className="ml-2 px-3 py-1 bg-white/15 rounded-full">
+                            {formatCurrency(totalAmount, selectedCountry.currency)}
+                          </span>
+                        )}
+                        <ArrowRight className="h-5 w-5" />
+                      </>
+                    )}
+                  </button>
+                </div>
+              </div>
+            </aside>
           </div>
         </div>
         
