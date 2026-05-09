@@ -45,7 +45,7 @@ export function CountrySelector() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.2 }}
-            className="absolute top-full right-0 mt-2 w-64 bg-surface-container-lowest rounded-lg shadow-ambient-lg z-50 overflow-hidden"
+            className="absolute top-full right-0 rtl:right-auto rtl:left-0 mt-2 w-64 bg-surface-container-lowest rounded-lg shadow-ambient-lg z-50 overflow-hidden"
           >
             <div className="py-2 max-h-96 overflow-y-auto">
               {COUNTRIES.map((country) => (

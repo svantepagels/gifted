@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { fadeInUp, badgePulse } from '@/lib/animations/variants';
 import { Zap } from 'lucide-react';
+import type { Messages } from '@/lib/i18n/useMessages';
 
 const HERO_INITIALS = [
   { letter: 'N', gradient: 'from-category-entertainment to-purple-400' },
@@ -15,7 +16,11 @@ const HERO_INITIALS = [
   { letter: 'P', gradient: 'from-category-gaming to-pink-400' },
 ];
 
-export function HeroSection() {
+interface HeroSectionProps {
+  messages: Messages;
+}
+
+export function HeroSection({ messages }: HeroSectionProps) {
   return (
     <section
       id="hero"
@@ -33,7 +38,7 @@ export function HeroSection() {
 
       <div className="relative grid grid-cols-1 md:grid-cols-12 md:gap-8 items-center">
         {/* Copy column */}
-        <div className="md:col-span-7 lg:col-span-7 text-center md:text-left">
+        <div className="md:col-span-7 lg:col-span-7 text-center md:text-start">
           <motion.div
             variants={badgePulse}
             initial="initial"
@@ -42,7 +47,7 @@ export function HeroSection() {
           >
             <Zap className="w-4 h-4 text-accent-purple fill-accent-purple" />
             <span className="text-label-md text-primary font-medium">
-              Instant Digital Delivery
+              {messages['hero.badge']}
             </span>
           </motion.div>
 
@@ -53,24 +58,24 @@ export function HeroSection() {
             transition={{ duration: 0.5 }}
             className="font-archivo text-hero text-primary mb-4 uppercase leading-[0.95] tracking-tight"
           >
-            Buy Digital
+            {messages['hero.title.line1']}
             <br />
             <span className="bg-gradient-to-r from-accent-purple via-accent-pink to-accent-orange bg-clip-text text-transparent">
-              Gift Cards
+              {messages['hero.title.line2']}
             </span>
             <br className="md:hidden" />
-            <span className="md:ml-3">Instantly.</span>
+            <span className="md:ml-3">{messages['hero.title.line3']}</span>
           </motion.h1>
 
           <p className="font-inter text-hero-sub text-surface-on-surface-variant max-w-xl mx-auto md:mx-0 mb-6">
-            Gift cards for your favorite brands. Delivered in minutes.
+            {messages['hero.subtitle']}
           </p>
 
           <a
             href="#products"
             className="hidden md:inline-flex items-center justify-center px-6 h-[44px] bg-secondary text-secondary-on-secondary rounded-full text-[13px] font-medium uppercase tracking-[0.5px] hover:bg-secondary-hover transition-colors duration-200 shadow-sm"
           >
-            Browse all gift cards
+            {messages['hero.browseCta']}
           </a>
         </div>
 

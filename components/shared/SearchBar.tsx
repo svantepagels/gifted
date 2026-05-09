@@ -4,6 +4,8 @@ import { Search, X } from 'lucide-react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useLocale } from '@/lib/i18n/useLocale';
+import { getMessages } from '@/lib/i18n/useMessages';
 
 interface SearchBarProps {
   /** When true, drops the centered max-width wrapper and shrinks height — for embedding in a control bar. */
@@ -13,6 +15,8 @@ interface SearchBarProps {
 export function SearchBar({ compact = false }: SearchBarProps) {
   const router = useRouter();
   const searchParams = useSearchParams();
+  const locale = useLocale();
+  const m = getMessages(locale);
   const [query, setQuery] = useState(searchParams.get('q') || '');
   const [isFocused, setIsFocused] = useState(false);
 
@@ -30,14 +34,14 @@ export function SearchBar({ compact = false }: SearchBarProps) {
       params.delete('q');
     }
 
-    router.push(`/?${params.toString()}`);
+    router.push(`/${locale}/?${params.toString()}`);
   };
 
   const handleClear = () => {
     setQuery('');
     const params = new URLSearchParams(searchParams.toString());
     params.delete('q');
-    router.push(`/?${params.toString()}`);
+    router.push(`/${locale}/?${params.toString()}`);
   };
 
   const wrapperClass = compact
@@ -69,7 +73,7 @@ export function SearchBar({ compact = false }: SearchBarProps) {
             color: isFocused ? '#0051D5' : '#9CA3AF',
           }}
           transition={{ duration: 0.2 }}
-          className="absolute left-5"
+          className="absolute left-5 rtl:left-auto rtl:right-5"
         >
           <Search className="h-5 w-5 pointer-events-none" />
         </motion.div>
@@ -80,8 +84,8 @@ export function SearchBar({ compact = false }: SearchBarProps) {
           onChange={(e) => handleSearch(e.target.value)}
           onFocus={() => setIsFocused(true)}
           onBlur={() => setIsFocused(false)}
-          placeholder="Search brands..."
-          className="flex-1 pl-12 pr-2 bg-transparent text-[15px] text-surface-on-surface placeholder:text-[#9CA3AF] focus:outline-none"
+          placeholder={m['search.placeholder']}
+          className="flex-1 pl-12 pr-2 rtl:pl-2 rtl:pr-12 bg-transparent text-[15px] text-surface-on-surface placeholder:text-[#9CA3AF] focus:outline-none"
         />
 
         <AnimatePresence>
@@ -93,7 +97,7 @@ export function SearchBar({ compact = false }: SearchBarProps) {
               transition={{ duration: 0.15 }}
               onClick={handleClear}
               className="mr-2 p-1.5 rounded-full hover:bg-surface-container-low transition-colors"
-              aria-label="Clear search"
+              aria-label={m['search.clearAriaLabel']}
             >
               <X className="h-4 w-4 text-surface-on-surface-variant" />
             </motion.button>
@@ -106,7 +110,7 @@ export function SearchBar({ compact = false }: SearchBarProps) {
           onClick={() => query && handleSearch(query)}
           className={`${buttonPadding} ${buttonHeight} bg-secondary text-white rounded-full text-[13px] font-medium uppercase tracking-[0.5px] hover:bg-secondary-hover transition-colors duration-200 shadow-sm`}
         >
-          SEARCH
+          {m['search.submit']}
         </motion.button>
       </motion.div>
     </div>

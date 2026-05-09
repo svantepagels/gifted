@@ -1,0 +1,40 @@
+{
+  "common.brand": "GIFTED",
+  "common.search": "Search",
+  "common.buy": "Buy",
+  "common.cart": "Cart",
+  "common.continue": "Continue",
+  "common.loading": "Loading...",
+
+  "header.shoppingCart": "Shopping cart",
+  "header.localeSwitcher.label": "Language",
+
+  "hero.badge": "Instant Digital Delivery",
+  "hero.title.line1": "Buy Digital",
+  "hero.title.line2": "Gift Cards",
+  "hero.title.line3": "Instantly.",
+  "hero.subtitle": "Gift cards for your favorite brands. Delivered in minutes.",
+  "hero.browseCta": "Browse all gift cards",
+
+  "search.placeholder": "Search brands...",
+  "search.clearAriaLabel": "Clear search",
+  "search.submit": "SEARCH",
+
+  "categories.all": "All",
+  "categories.shopping": "Shopping",
+  "categories.media": "Media",
+  "categories.food": "Food",
+  "categories.travel": "Travel",
+  "categories.gaming": "Gaming",
+  "categories.lifestyle": "Lifestyle",
+
+  "product.from": "From",
+  "product.range": "{min} - {max}",
+  "product.buyCta": "Buy",
+  "product.deliveryFast": "Instant delivery",
+
+  "notFound.title": "Product Not Found",
+  "notFound.message": "Sorry, we couldn't find the gift card you're looking for. It may have been removed or is no longer available.",
+  "notFound.homeCta": "Back to home",
+  "notFound.searchCta": "Browse all"
+}

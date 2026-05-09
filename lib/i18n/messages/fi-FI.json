@@ -1,0 +1,40 @@
+{
+  "common.brand": "GIFTED",
+  "common.search": "Hae",
+  "common.buy": "Osta",
+  "common.cart": "Ostoskori",
+  "common.continue": "Jatka",
+  "common.loading": "Ladataan...",
+
+  "header.shoppingCart": "Ostoskori",
+  "header.localeSwitcher.label": "Kieli",
+
+  "hero.badge": "Välitön digitaalinen toimitus",
+  "hero.title.line1": "Osta digitaalisia",
+  "hero.title.line2": "Lahjakortteja",
+  "hero.title.line3": "heti.",
+  "hero.subtitle": "Lahjakortteja suosikkibrändeillesi. Toimitus minuuteissa.",
+  "hero.browseCta": "Selaa kaikkia lahjakortteja",
+
+  "search.placeholder": "Hae brändejä...",
+  "search.clearAriaLabel": "Tyhjennä haku",
+  "search.submit": "HAE",
+
+  "categories.all": "Kaikki",
+  "categories.shopping": "Ostokset",
+  "categories.media": "Media",
+  "categories.food": "Ruoka",
+  "categories.travel": "Matkailu",
+  "categories.gaming": "Pelit",
+  "categories.lifestyle": "Hyvinvointi",
+
+  "product.from": "Alkaen",
+  "product.range": "{min} - {max}",
+  "product.buyCta": "Osta",
+  "product.deliveryFast": "Välitön toimitus",
+
+  "notFound.title": "Tuotetta ei löytynyt",
+  "notFound.message": "Etsimääsi lahjakorttia ei valitettavasti löytynyt. Se on ehkä poistettu tai ei ole enää saatavilla.",
+  "notFound.homeCta": "Takaisin etusivulle",
+  "notFound.searchCta": "Selaa kaikkia"
+}

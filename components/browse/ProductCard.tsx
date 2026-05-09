@@ -7,7 +7,18 @@ import { GiftCardProduct } from '@/lib/giftcards/types';
 import { useApp } from '@/contexts/AppContext';
 import { formatCurrency } from '@/lib/utils/currency';
 import { cardHover } from '@/lib/animations/variants';
-import { Zap, ShoppingBag, Film, Utensils, Plane, Gamepad2, Heart } from 'lucide-react';
+import {
+  Zap,
+  ShoppingBag,
+  Film,
+  Utensils,
+  Plane,
+  Gamepad2,
+  Heart,
+} from 'lucide-react';
+import { useLocale } from '@/lib/i18n/useLocale';
+import { getMessages, t, type Messages } from '@/lib/i18n/useMessages';
+import { localeHref } from '@/lib/i18n/href';
 
 interface ProductCardProps {
   product: GiftCardProduct;
@@ -25,7 +36,10 @@ const categoryIcons: Record<string, React.ElementType> = {
 };
 
 // Category Color Mapping (Tailwind classes)
-const categoryColors: Record<string, { bg: string; text: string; gradient: string }> = {
+const categoryColors: Record<
+  string,
+  { bg: string; text: string; gradient: string }
+> = {
   shopping: {
     bg: 'bg-category-shopping/10',
     text: 'text-category-shopping',
@@ -58,17 +72,51 @@ const categoryColors: Record<string, { bg: string; text: string; gradient: strin
   },
 };
 
+function categoryDisplayLabel(category: string, m: Messages): string {
+  const key = category.toLowerCase();
+  switch (key) {
+    case 'shopping':
+      return m['categories.shopping'];
+    case 'media':
+      return m['categories.media'];
+    case 'food':
+      return m['categories.food'];
+    case 'travel':
+      return m['categories.travel'];
+    case 'gaming':
+      return m['categories.gaming'];
+    case 'lifestyle':
+      return m['categories.lifestyle'];
+    default:
+      return category;
+  }
+}
+
 export function ProductCard({ product, index = 0 }: ProductCardProps) {
   const { selectedCountry } = useApp();
+  const locale = useLocale();
+  const m = getMessages(locale);
   const [logoFailed, setLogoFailed] = useState(false);
   const showLogo = Boolean(product.logoUrl) && !logoFailed;
 
   // Get the first available denomination or range minimum
   const priceDisplay =
     product.denominationType === 'FIXED' && product.fixedDenominations
-      ? `From ${formatCurrency(product.fixedDenominations[0].value, selectedCountry.currency)}`
+      ? `${m['product.from']} ${formatCurrency(
+          product.fixedDenominations[0].value,
+          selectedCountry.currency
+        )}`
       : product.denominationRange
-      ? `${formatCurrency(product.denominationRange.min, selectedCountry.currency)} - ${formatCurrency(product.denominationRange.max, selectedCountry.currency)}`
+      ? t(m, 'product.range', {
+          min: formatCurrency(
+            product.denominationRange.min,
+            selectedCountry.currency
+          ),
+          max: formatCurrency(
+            product.denominationRange.max,
+            selectedCountry.currency
+          ),
+        })
       : '';
 
   // Get category styling
@@ -77,7 +125,7 @@ export function ProductCard({ product, index = 0 }: ProductCardProps) {
   const CategoryIcon = categoryIcons[category] || ShoppingBag;
 
   return (
-    <Link href={`/gift-card/${product.slug}`}>
+    <Link href={localeHref(locale, `/gift-card/${product.slug}`)}>
       <motion.div
         variants={cardHover}
         initial="initial"
@@ -86,13 +134,17 @@ export function ProductCard({ product, index = 0 }: ProductCardProps) {
       >
         <div className="relative bg-surface-container-lowest rounded-xl overflow-hidden shadow-ambient hover:shadow-ambient-lg transition-all duration-300 h-full flex flex-col">
           {/* Category Gradient Accent Bar */}
-          <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${categoryStyle.gradient}`} />
+          <div
+            className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${categoryStyle.gradient}`}
+          />
 
           {/* Instant Delivery Badge */}
-          <div className="absolute top-3 right-3 z-10">
+          <div className="absolute top-3 right-3 rtl:right-auto rtl:left-3 z-10">
             <div className="flex items-center gap-1.5 px-2.5 py-1 bg-white/95 backdrop-blur-sm rounded-full shadow-sm">
               <Zap className="w-3.5 h-3.5 text-accent-purple fill-accent-purple" />
-              <span className="text-[11px] font-medium text-primary">Instant</span>
+              <span className="text-[11px] font-medium text-primary">
+                Instant
+              </span>
             </div>
           </div>
 
@@ -130,10 +182,16 @@ export function ProductCard({ product, index = 0 }: ProductCardProps) {
           <div className="p-5 flex-1 flex flex-col">
             {/* Category Badge with Icon */}
             <div className="mb-2 flex items-start">
-              <div className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full ${categoryStyle.bg} whitespace-nowrap`}>
-                <CategoryIcon className={`w-3.5 h-3.5 ${categoryStyle.text} flex-shrink-0`} />
-                <span className={`text-[11px] font-medium ${categoryStyle.text}`}>
-                  {product.category}
+              <div
+                className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full ${categoryStyle.bg} whitespace-nowrap`}
+              >
+                <CategoryIcon
+                  className={`w-3.5 h-3.5 ${categoryStyle.text} flex-shrink-0`}
+                />
+                <span
+                  className={`text-[11px] font-medium ${categoryStyle.text}`}
+                >
+                  {categoryDisplayLabel(product.category, m)}
                 </span>
               </div>
             </div>
@@ -151,7 +209,9 @@ export function ProductCard({ product, index = 0 }: ProductCardProps) {
             {/* Delivery Info */}
             <div className="mt-auto flex items-center gap-3 text-label-md text-surface-on-surface-variant">
               <div className="flex items-center gap-1.5">
-                <div className={`w-1.5 h-1.5 rounded-full ${categoryStyle.text}`} />
+                <div
+                  className={`w-1.5 h-1.5 rounded-full ${categoryStyle.text}`}
+                />
                 <span>Digital delivery</span>
               </div>
               <span className="text-surface-on-surface-variant/40">•</span>

@@ -1,14 +1,19 @@
+'use client'
+
 import { Order } from '@/lib/orders/types'
 import { formatCurrency } from '@/lib/utils/currency'
 import { CheckCircle, Mail, Clock, Copy } from 'lucide-react'
 import { Button } from '@/components/shared/Button'
 import Link from 'next/link'
+import { useLocale } from '@/lib/i18n/useLocale'
+import { localeHref } from '@/lib/i18n/href'
 
 interface SuccessSummaryProps {
   order: Order
 }
 
 export function SuccessSummary({ order }: SuccessSummaryProps) {
+  const locale = useLocale()
   // The transaction ID is the reference the support team uses to look up an
   // order at Reloadly. It is NOT a redeemable code — the code is emailed
   // directly to the recipient by Reloadly. See fulfillment handling in
@@ -146,7 +151,7 @@ export function SuccessSummary({ order }: SuccessSummaryProps) {
 
       {/* Actions */}
       <div className="flex flex-col sm:flex-row gap-4">
-        <Link href="/" className="flex-1">
+        <Link href={localeHref(locale, '/')} className="flex-1">
           <Button variant="primary" fullWidth>
             Buy Another Gift Card
           </Button>

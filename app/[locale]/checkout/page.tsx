@@ -11,19 +11,22 @@ import { Order } from '@/lib/orders/types'
 import { formatCurrency } from '@/lib/utils/currency'
 import { ArrowLeft, Shield } from 'lucide-react'
 import Link from 'next/link'
+import { useLocale } from '@/lib/i18n/useLocale'
+import { localeHref } from '@/lib/i18n/href'
 
 function CheckoutContent() {
   const router = useRouter()
   const searchParams = useSearchParams()
   const orderId = searchParams.get('orderId')
-  
+  const locale = useLocale()
+
   const [order, setOrder] = useState<Order | null>(null)
   const [isLoading, setIsLoading] = useState(true)
-  
+
   useEffect(() => {
     async function loadOrder() {
       if (!orderId) {
-        router.push('/')
+        router.push(localeHref(locale, '/'))
         return
       }
 
@@ -39,27 +42,27 @@ function CheckoutContent() {
         const orderData = await fetchOrder(orderId)
 
         if (!orderData) {
-          router.push('/')
+          router.push(localeHref(locale, '/'))
           return
         }
 
         if (!orderData.reloadlyProductId) {
           alert('Product configuration error. Please try selecting the product again.')
-          router.push('/')
+          router.push(localeHref(locale, '/'))
           return
         }
 
         setOrder(orderData)
       } catch {
-        router.push('/')
+        router.push(localeHref(locale, '/'))
       } finally {
         setIsLoading(false)
       }
     }
 
     loadOrder()
-  }, [orderId, router])
-  
+  }, [orderId, router, locale])
+
   const handleSubmit = async (email: string) => {
     if (!order) return
 
@@ -70,7 +73,7 @@ function CheckoutContent() {
     // Clear optimistic cache on success
     browserOrderStorage.clear()
 
-    router.push(`/success?orderId=${order.id}`)
+    router.push(localeHref(locale, `/success?orderId=${order.id}`))
   }
   
   if (isLoading) {
@@ -99,10 +102,10 @@ function CheckoutContent() {
           <div className="max-w-3xl mx-auto">
             {/* Back Button */}
             <Link
-              href={`/gift-card/${order.productId}`}
+              href={localeHref(locale, `/gift-card/${order.productId}`)}
               className="inline-flex items-center gap-2 text-body-md text-surface-on-surface-variant hover:text-surface-on-surface transition-colors mb-8"
             >
-              <ArrowLeft className="h-4 w-4" />
+              <ArrowLeft className="h-4 w-4 rtl:rotate-180" />
               Back to Product
             </Link>
             
