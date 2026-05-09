@@ -2,14 +2,27 @@
 
 import { useRouter, useSearchParams } from 'next/navigation';
 import { motion } from 'framer-motion';
-import { ShoppingBag, Film, Utensils, Plane, Gamepad2, Heart, Grid3x3 } from 'lucide-react';
+import {
+  ShoppingBag,
+  Film,
+  Utensils,
+  Plane,
+  Gamepad2,
+  Heart,
+  Grid3x3,
+} from 'lucide-react';
+import { useLocale } from '@/lib/i18n/useLocale';
+import { getMessages, type Messages } from '@/lib/i18n/useMessages';
 
 interface CategoryChipsProps {
   categories: string[];
 }
 
 // Category Icon & Color Mapping
-const categoryConfig: Record<string, { icon: React.ElementType; color: string; bg: string }> = {
+const categoryConfig: Record<
+  string,
+  { icon: React.ElementType; color: string; bg: string }
+> = {
   all: {
     icon: Grid3x3,
     color: 'text-primary',
@@ -47,9 +60,38 @@ const categoryConfig: Record<string, { icon: React.ElementType; color: string; b
   },
 };
 
+/**
+ * Map a catalog category (e.g. "Shopping", "All") to a translated label.
+ * Falls back to the raw category string for unknown categories so the
+ * UI never renders a missing-key placeholder.
+ */
+function categoryLabel(category: string, m: Messages): string {
+  const key = category.toLowerCase();
+  switch (key) {
+    case 'all':
+      return m['categories.all'];
+    case 'shopping':
+      return m['categories.shopping'];
+    case 'media':
+      return m['categories.media'];
+    case 'food':
+      return m['categories.food'];
+    case 'travel':
+      return m['categories.travel'];
+    case 'gaming':
+      return m['categories.gaming'];
+    case 'lifestyle':
+      return m['categories.lifestyle'];
+    default:
+      return category;
+  }
+}
+
 export function CategoryChips({ categories }: CategoryChipsProps) {
   const router = useRouter();
   const searchParams = useSearchParams();
+  const locale = useLocale();
+  const m = getMessages(locale);
   const activeCategory = searchParams.get('category') || 'All';
 
   const handleCategoryClick = (category: string) => {
@@ -61,7 +103,7 @@ export function CategoryChips({ categories }: CategoryChipsProps) {
       params.set('category', category);
     }
 
-    router.push(`/?${params.toString()}`);
+    router.push(`/${locale}/?${params.toString()}`);
   };
 
   return (
@@ -94,8 +136,12 @@ export function CategoryChips({ categories }: CategoryChipsProps) {
                 }
               `}
             >
-              <Icon className={`w-4 h-4 ${isActive ? 'text-white' : config.color}`} />
-              {category}
+              <Icon
+                className={`w-4 h-4 ${
+                  isActive ? 'text-white' : config.color
+                }`}
+              />
+              {categoryLabel(category, m)}
             </motion.button>
           );
         })}

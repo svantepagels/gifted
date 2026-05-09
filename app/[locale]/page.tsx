@@ -1,4 +1,5 @@
 import { Suspense } from 'react'
+import { notFound } from 'next/navigation'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
 import { HeroSection } from '@/components/browse/HeroSection'
@@ -7,6 +8,8 @@ import { CategoryChips } from '@/components/shared/CategoryChips'
 import { ProductGrid } from '@/components/browse/ProductGrid'
 import { TrustSection } from '@/components/browse/TrustSection'
 import { giftCardService } from '@/lib/giftcards/service'
+import { isLocale, type Locale } from '@/lib/i18n/config'
+import { getMessages } from '@/lib/i18n/useMessages'
 
 async function getProducts(searchParams: { q?: string; category?: string; country?: string }) {
   return await giftCardService.getProducts({
@@ -20,11 +23,16 @@ async function getCategories() {
   return await giftCardService.getCategories()
 }
 
-export default async function HomePage({
-  searchParams,
-}: {
+interface HomePageProps {
+  params: { locale: string }
   searchParams: { q?: string; category?: string; country?: string }
-}) {
+}
+
+export default async function HomePage({ params, searchParams }: HomePageProps) {
+  if (!isLocale(params.locale)) notFound()
+  const locale: Locale = params.locale
+  const messages = getMessages(locale)
+
   const [products, categories] = await Promise.all([
     getProducts(searchParams),
     getCategories(),
@@ -35,7 +43,7 @@ export default async function HomePage({
       <Header />
       <main className="min-h-screen pb-16">
         <div className="max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-8">
-          <HeroSection />
+          <HeroSection messages={messages} />
 
           {/* Mobile-only stacked controls — preserves the original mobile fold layout */}
           <div className="md:hidden">

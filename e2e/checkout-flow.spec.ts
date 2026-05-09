@@ -22,7 +22,7 @@ import { test, expect, Page } from '@playwright/test'
 
 async function goToFirstProductAndPickAmount(page: Page) {
   await page.goto('/')
-  const firstLink = page.locator('a[href^="/gift-card/"]').first()
+  const firstLink = page.locator('a[href*="/gift-card/"]').first()
   await expect(firstLink).toBeVisible()
   await firstLink.click()
   await page.waitForURL(/\/gift-card\//)

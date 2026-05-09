@@ -1,44 +1,20 @@
-import type { Metadata } from 'next'
-import { Archivo, Inter, Playfair_Display } from 'next/font/google'
-import './globals.css'
-import { AppProvider } from '@/contexts/AppContext'
+import type { ReactNode } from 'react'
 
-const archivo = Archivo({
-  subsets: ['latin'],
-  variable: '--font-archivo',
-  display: 'swap',
-})
-
-const inter = Inter({
-  subsets: ['latin'],
-  variable: '--font-inter',
-  display: 'swap',
-})
-
-const playfair = Playfair_Display({
-  subsets: ['latin'],
-  variable: '--font-playfair',
-  display: 'swap',
-})
-
-export const metadata: Metadata = {
-  title: 'GIFTED - Digital Gift Cards',
-  description: 'Buy digital gift cards for brands you love. Instant delivery.',
-  keywords: ['gift cards', 'digital gifts', 'online shopping'],
-}
-
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode
-}>) {
-  return (
-    <html lang="en" className={`${archivo.variable} ${inter.variable} ${playfair.variable}`}>
-      <body>
-        <AppProvider>
-          {children}
-        </AppProvider>
-      </body>
-    </html>
-  )
+/**
+ * Root layout — passthrough.
+ *
+ * In an i18n-routed App Router app, the locale layout
+ * (`app/[locale]/layout.tsx`) owns `<html>` and `<body>` so it can emit
+ * the correct `lang` and `dir` at SSR time. `app/not-found.tsx` and
+ * `app/global-error.tsx` emit their own `<html>`/`<body>` because they
+ * bypass the layout chain.
+ *
+ * This pattern matches the official Next.js `app-dir-i18n-routing`
+ * example. If a future Next.js version refuses a passthrough root
+ * layout, fall back to setting default `<html lang dir>` here and
+ * overriding via a client-side `<LocaleAttrSetter>` from the locale
+ * layout.
+ */
+export default function RootLayout({ children }: { children: ReactNode }) {
+  return children as JSX.Element
 }

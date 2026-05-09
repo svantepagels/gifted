@@ -4,6 +4,8 @@ import { useRouter } from 'next/navigation'
 import { Button } from '@/components/shared/Button'
 import { formatCurrency, calculateServiceFee } from '@/lib/utils/currency'
 import { Shield, Zap } from 'lucide-react'
+import { useLocale } from '@/lib/i18n/useLocale'
+import { localeHref } from '@/lib/i18n/href'
 
 interface OrderSummaryProps {
   productName: string
@@ -21,7 +23,8 @@ export function OrderSummary({
   sticky = false,
 }: OrderSummaryProps) {
   const router = useRouter()
-  
+  const locale = useLocale()
+
   const serviceFee = amount ? calculateServiceFee(amount) : 0
   const total = amount ? amount + serviceFee : 0
   const isComplete = amount !== null && amount > 0
@@ -30,7 +33,7 @@ export function OrderSummary({
     if (onContinue) {
       onContinue()
     } else {
-      router.push('/checkout')
+      router.push(localeHref(locale, '/checkout'))
     }
   }
   

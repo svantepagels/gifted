@@ -15,6 +15,8 @@ import { createOrder } from '@/lib/orders/api'
 import { browserOrderStorage } from '@/lib/orders/browser-storage'
 import { calculateServiceFee, formatCurrency } from '@/lib/utils/currency'
 import { ArrowRight, Loader2 } from 'lucide-react'
+import { useLocale } from '@/lib/i18n/useLocale'
+import { localeHref } from '@/lib/i18n/href'
 
 interface ProductDetailClientProps {
   product: GiftCardProduct
@@ -22,6 +24,7 @@ interface ProductDetailClientProps {
 
 export function ProductDetailClient({ product }: ProductDetailClientProps) {
   const router = useRouter()
+  const locale = useLocale()
   const { selectedCountry, setCartProduct, setCartAmount, setCartDeliveryMethod, setCartGiftDetails } = useApp()
   
   const [selectedAmount, setSelectedAmount] = useState<number | null>(null)
@@ -96,7 +99,7 @@ export function ProductDetailClient({ product }: ProductDetailClientProps) {
       // The server remains the source of truth.
       browserOrderStorage.save(order)
 
-      router.push(`/checkout?orderId=${order.id}`)
+      router.push(localeHref(locale, `/checkout?orderId=${order.id}`))
     } catch (error) {
       const message =
         error instanceof Error && error.message

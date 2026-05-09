@@ -22,10 +22,11 @@ import { test, expect, Page } from '@playwright/test'
 
 async function goToFirstProduct(page: Page): Promise<string> {
   await page.goto('/')
-  const firstLink = page.locator('a[href^="/gift-card/"]').first()
+  const firstLink = page.locator('a[href*="/gift-card/"]').first()
   await expect(firstLink).toBeVisible()
   const href = await firstLink.getAttribute('href')
-  expect(href).toMatch(/^\/gift-card\/[a-z0-9-]+$/)
+  // Locale-aware: hrefs are now /<locale>/gift-card/<slug>.
+  expect(href).toMatch(/^\/[a-z]{2}-[A-Z]{2}\/gift-card\/[a-z0-9-]+$/)
   await firstLink.click()
   await expect(page).toHaveURL(new RegExp(href!.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')))
   return href!

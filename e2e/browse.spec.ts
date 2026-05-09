@@ -34,7 +34,8 @@ test.describe('Browse/Home Page', () => {
     await expect(allChips.first()).toBeVisible()
 
     // At least one product card with a /gift-card/ link should be present.
-    const productLinks = page.locator('a[href^="/gift-card/"]')
+    // Locale-aware: hrefs are now /<locale>/gift-card/<slug>, so match anywhere in the URL.
+    const productLinks = page.locator('a[href*="/gift-card/"]')
     await expect(productLinks.first()).toBeVisible()
     expect(await productLinks.count()).toBeGreaterThan(0)
   })
@@ -80,16 +81,24 @@ test.describe('Browse/Home Page', () => {
     await page.goto('/')
 
     // Read a real catalog slug from the rendered grid instead of guessing.
-    const firstProductLink = page.locator('a[href^="/gift-card/"]').first()
+    const firstProductLink = page.locator('a[href*="/gift-card/"]').first()
     await expect(firstProductLink).toBeVisible()
     const href = await firstProductLink.getAttribute('href')
-    expect(href).toMatch(/^\/gift-card\/[a-z0-9-]+$/)
+    // Locale-aware: hrefs now look like /<locale>/gift-card/<slug>.
+    expect(href).toMatch(/^\/[a-z]{2}-[A-Z]{2}\/gift-card\/[a-z0-9-]+$/)
 
     await firstProductLink.click()
-    await expect(page).toHaveURL(new RegExp(href!.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')))
+    // Wait for the navigation to finish — Next dev mode can be slow to
+    // compile route segments on first hit.
+    await page.waitForURL(
+      new RegExp(href!.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')),
+      { timeout: 30_000 }
+    )
 
     // PDP shows the amount-entry block ("ENTER AMOUNT") on every product
     // (custom-range and fixed-denomination products both render this label).
-    await expect(page.getByText(/ENTER AMOUNT/i).first()).toBeVisible()
+    await expect(page.getByText(/ENTER AMOUNT/i).first()).toBeVisible({
+      timeout: 15_000,
+    })
   })
 })

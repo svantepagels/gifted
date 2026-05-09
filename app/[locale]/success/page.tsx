@@ -8,19 +8,22 @@ import { SuccessSummary } from '@/components/success/SuccessSummary'
 import { browserOrderStorage } from '@/lib/orders/browser-storage'
 import { fetchOrder } from '@/lib/orders/api'
 import { Order } from '@/lib/orders/types'
+import { useLocale } from '@/lib/i18n/useLocale'
+import { localeHref } from '@/lib/i18n/href'
 
 function SuccessContent() {
   const router = useRouter()
   const searchParams = useSearchParams()
   const orderId = searchParams.get('orderId')
-  
+  const locale = useLocale()
+
   const [order, setOrder] = useState<Order | null>(null)
   const [isLoading, setIsLoading] = useState(true)
-  
+
   useEffect(() => {
     async function loadOrder() {
       if (!orderId) {
-        router.push('/')
+        router.push(localeHref(locale, '/'))
         return
       }
 
@@ -31,7 +34,7 @@ function SuccessContent() {
         // Reloadly). Redoing this cleanly requires webhooks; for now we tell
         // the user the card is on the way either way.
         if (!orderData || (orderData.status !== 'completed' && orderData.status !== 'processing')) {
-          router.push('/')
+          router.push(localeHref(locale, '/'))
           return
         }
 
@@ -40,14 +43,14 @@ function SuccessContent() {
 
         setOrder(orderData)
       } catch {
-        router.push('/')
+        router.push(localeHref(locale, '/'))
       } finally {
         setIsLoading(false)
       }
     }
 
     loadOrder()
-  }, [orderId, router])
+  }, [orderId, router, locale])
   
   if (isLoading) {
     return (
