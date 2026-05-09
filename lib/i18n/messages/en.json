@@ -36,5 +36,22 @@
   "notFound.title": "Product Not Found",
   "notFound.message": "Sorry, we couldn't find the gift card you're looking for. It may have been removed or is no longer available.",
   "notFound.homeCta": "Back to home",
-  "notFound.searchCta": "Browse all"
+  "notFound.searchCta": "Browse all",
+
+  "landing.featureBenefits.heading": "Why buy from Gifted",
+  "landing.featureBenefits.instant.title": "Instant delivery",
+  "landing.featureBenefits.instant.body": "Codes delivered to your inbox in minutes — usually under 5.",
+  "landing.featureBenefits.noSignup.title": "No account needed",
+  "landing.featureBenefits.noSignup.body": "Buy as a guest. Just enter your email and pay.",
+  "landing.featureBenefits.secure.title": "Secure checkout",
+  "landing.featureBenefits.secure.body": "Card payments protected by Stripe. Your details never touch our servers.",
+  "landing.faq.heading": "Frequently asked questions",
+  "landing.denominations.heading": "Pick a denomination",
+  "landing.denominations.cta": "Buy now",
+  "landing.denominations.viewAll": "View all denominations",
+  "landing.popular.heading": "Popular gift cards in {country}",
+  "landing.popular.viewAll": "Browse all gift cards",
+  "landing.notFound.title": "Brand not available in this region",
+  "landing.notFound.message": "We couldn't find this brand for your locale. It may not be available in this country, or the URL might be wrong.",
+  "landing.notFound.homeCta": "Back to home"
 }

@@ -7,6 +7,7 @@ import { SearchBar } from '@/components/shared/SearchBar'
 import { CategoryChips } from '@/components/shared/CategoryChips'
 import { ProductGrid } from '@/components/browse/ProductGrid'
 import { TrustSection } from '@/components/browse/TrustSection'
+import { PopularBrands } from '@/components/landing/PopularBrands'
 import { giftCardService } from '@/lib/giftcards/service'
 import { isLocale, type Locale } from '@/lib/i18n/config'
 import { getMessages } from '@/lib/i18n/useMessages'
@@ -78,6 +79,13 @@ export default async function HomePage({ params, searchParams }: HomePageProps) 
           <div id="products" className="mb-16 scroll-mt-24">
             <ProductGrid products={products} />
           </div>
+
+          {/* Internal-link block to per-locale brand landing pages.
+              Wrapped in Suspense because PopularBrands is async and may
+              hit Reloadly during initial build. */}
+          <Suspense fallback={null}>
+            <PopularBrands locale={locale} messages={messages} />
+          </Suspense>
 
           <TrustSection />
         </div>

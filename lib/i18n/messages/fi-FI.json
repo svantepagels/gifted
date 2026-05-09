@@ -36,5 +36,22 @@
   "notFound.title": "Tuotetta ei löytynyt",
   "notFound.message": "Etsimääsi lahjakorttia ei valitettavasti löytynyt. Se on ehkä poistettu tai ei ole enää saatavilla.",
   "notFound.homeCta": "Takaisin etusivulle",
-  "notFound.searchCta": "Selaa kaikkia"
+  "notFound.searchCta": "Selaa kaikkia",
+
+  "landing.featureBenefits.heading": "Miksi ostaa Giftedistä",
+  "landing.featureBenefits.instant.title": "Välitön toimitus",
+  "landing.featureBenefits.instant.body": "Koodi sähköpostiisi minuuteissa — yleensä alle 5.",
+  "landing.featureBenefits.noSignup.title": "Ei tiliä tarvita",
+  "landing.featureBenefits.noSignup.body": "Osta vieraana. Anna sähköposti ja maksa.",
+  "landing.featureBenefits.secure.title": "Turvallinen maksu",
+  "landing.featureBenefits.secure.body": "Korttimaksut suojaa Stripe. Tietosi eivät kulje palvelimillemme.",
+  "landing.faq.heading": "Usein kysytyt kysymykset",
+  "landing.denominations.heading": "Valitse summa",
+  "landing.denominations.cta": "Osta nyt",
+  "landing.denominations.viewAll": "Katso kaikki summat",
+  "landing.popular.heading": "Suositut lahjakortit Suomessa",
+  "landing.popular.viewAll": "Selaa kaikkia lahjakortteja",
+  "landing.notFound.title": "Brändi ei ole saatavilla tällä alueella",
+  "landing.notFound.message": "Tätä brändiä ei löytynyt sinun kielialueellasi. Se ei ehkä ole saatavilla tässä maassa, tai URL on virheellinen.",
+  "landing.notFound.homeCta": "Takaisin etusivulle"
 }
