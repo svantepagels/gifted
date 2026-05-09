@@ -12,8 +12,9 @@ These tasks are **strictly sequential** — each builds on the previous one's br
 | 1 | i18n routing for 9 locales | [`01-i18n-routing.md`](./01-i18n-routing.md) | `feat/i18n-routing` ← `main` | — |
 | 2 | Per-locale × per-brand landing-page generator | [`02-landing-page-generator.md`](./02-landing-page-generator.md) | `feat/landing-page-generator` ← Task 1 merged | Task 1 in `main` |
 | 3 | SEO scaffolding (schema, sitemap, robots, hreflang) | [`03-seo-scaffolding.md`](./03-seo-scaffolding.md) | `feat/seo-scaffolding` ← Task 2 merged | Tasks 1 + 2 in `main` |
+| 4 | Apply Gifted logo across all surfaces (favicons, OG, header, footer, manifest, errors) | [`04-apply-brand-logo.md`](./04-apply-brand-logo.md) | `feat/apply-brand-logo` ← Task 3 merged | Tasks 1–3 in `main` (or run parallel to Task 1 with merge conflict cost) |
 
-**Do not run them in parallel.** Task 2 references the `app/[locale]/...` tree from Task 1; Task 3 references the `[brand]` page from Task 2.
+**Do not run Tasks 1–3 in parallel.** Task 2 references the `app/[locale]/...` tree from Task 1; Task 3 references the `[brand]` page from Task 2. Task 4 is mostly independent of the SEM go-to-market pipeline but should run last so its metadata edits land in the post-i18n `app/[locale]/layout.tsx`.
 
 ## Running them
 
@@ -30,6 +31,9 @@ npx tsx execute-task.ts "Implement Gifted Phase 1 Task 2 — per-locale × per-b
 
 # Task 3 — start ONLY after Task 2's PR is merged
 npx tsx execute-task.ts "Implement Gifted Phase 1 Task 3 — SEO scaffolding (JSON-LD, sitemap, robots, hreflang). Read the full brief at /Users/administrator/.openclaw/workspace/gifted-research/swarm-tasks/03-seo-scaffolding.md and execute it end-to-end. Repo: svantepagels/gifted, branch: feat/seo-scaffolding cut from main (after Task 2 is merged), target PR into main."
+
+# Task 4 — apply Gifted logo (run last; AFTER Tasks 1–3 are merged so it edits the post-i18n layout)
+npx tsx execute-task.ts "Implement Gifted Task 4 — apply the brand logo across all surfaces (header, footer, favicons, app icons, web manifest, OG images, error pages). Read the full brief at /Users/administrator/.openclaw/workspace/gifted-research/swarm-tasks/04-apply-brand-logo.md and execute it end-to-end. Repo: svantepagels/gifted, branch: feat/apply-brand-logo cut from main (after Tasks 1–3 are merged), target PR into main. Logo assets are at public/brand/ (already in main)."
 ```
 
 ## Pipeline shape per task
@@ -53,5 +57,6 @@ The briefs are detailed enough that the architect should produce a tight design 
 - Task 1: ~30–60 min
 - Task 2: ~60–120 min (largest — most files, most copy)
 - Task 3: ~30–45 min
+- Task 4: ~45–90 min (file-heavy but no business logic)
 
-Total ~2–3.5 hours of autonomous swarm work, gated by Svante's review between tasks.
+Total ~2.5–4.5 hours of autonomous swarm work, gated by Svante's review between tasks.
