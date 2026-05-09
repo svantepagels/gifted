@@ -1,0 +1,1119 @@
+country_iso,country_name,primary_lang,all_langs,brand,category,gift_tier,sku_count,min_denom,max_denom,currency,internet_users_m,lang_cpc_tier,stripe_tier,lang_tier,country_tier,stripe_tier_v2,head_searches_mo,longtail_searches_mo,total_searches_mo,head_cpc_usd,longtail_cpc_usd,cvr_est,breakeven_cpc_usd,profitable_longtail,profitable_head,roas_headroom_longtail,sem_clicks_mo,sem_orders_mo,sem_net_usd,seo_clicks_mo,seo_orders_mo,seo_net_usd,score,verdict,bucket
+FI,Finland,fi,fi|sv,NetFlix,Entertainment,A,1,25.0,88.61,EUR,5,4,1,4,3,1,7500,17500,25000,0.1,0.035,0.06,0.12,True,True,3.43,500.0,30.0,33.0,2500.0,150.0,164.0,50.9,WATCH,watch
+FI,Finland,fi,fi|sv,Steam,Gaming,B,3,,,EUR,5,4,1,4,3,1,10500,24500,35000,0.1,0.035,0.045,0.09,True,False,2.57,490.0,22.1,27.0,2450.0,110.2,135.0,45.0,WATCH,watch
+FI,Finland,fi,fi|sv,App Store & iTunes,Entertainment,A,1,,,EUR,5,4,1,4,3,1,3000,7000,10000,0.1,0.035,0.06,0.12,True,True,3.43,200.0,12.0,13.0,1000.0,60.0,66.0,44.4,WATCH-SEO,watch
+FI,Finland,fi,fi|sv,Swarovski,Shopping,A,3,,,EUR,5,4,1,4,3,1,240,560,800,0.1,0.035,0.06,0.12,True,True,3.43,16.0,1.0,1.0,80.0,4.8,5.0,40.3,SKIP-VOLUME,skip
+FI,Finland,fi,fi|sv,PlayStation,Gaming,B,3,,,EUR,5,4,1,4,3,1,4500,10500,15000,0.1,0.035,0.045,0.09,True,False,2.57,210.0,9.4,12.0,1050.0,47.2,58.0,39.8,WATCH-SEO,watch
+FI,Finland,fi,fi|sv,Xbox,Gaming,B,3,,,EUR,5,4,1,4,3,1,3000,7000,10000,0.1,0.035,0.045,0.09,True,False,2.57,140.0,6.3,8.0,700.0,31.5,38.0,38.6,SKIP-VOLUME,skip
+FI,Finland,fi,fi|sv,Fortnite,Gaming,C,9,,,USD,5,4,1,4,3,1,9000,21000,30000,0.1,0.035,0.04,0.08,True,False,2.29,420.0,16.8,19.0,2100.0,84.0,95.0,38.3,WATCH,watch
+FI,Finland,fi,fi|sv,Mobile Legends,Gaming,C,1,,,USD,5,4,1,4,3,1,3600,8400,12000,0.1,0.035,0.04,0.08,True,False,2.29,168.0,6.7,8.0,840.0,33.6,38.0,34.5,SKIP-VOLUME,skip
+FI,Finland,fi,fi|sv,World of Warcraft,Gaming,C,3,,,EUR,5,4,1,4,3,1,1200,2800,4000,0.1,0.035,0.04,0.08,True,False,2.29,56.0,2.2,3.0,280.0,11.2,13.0,32.8,SKIP-VOLUME,skip
+FI,Finland,fi,fi|sv,Crypto Voucher,Crypto,C,2,30.0,100.0,USD,5,4,1,4,3,1,900,2100,3000,0.1,0.035,0.04,0.08,True,False,2.29,42.0,1.7,2.0,210.0,8.4,9.0,32.6,SKIP-VOLUME,skip
+FI,Finland,fi,fi|sv,Jawaker,Shopping,C,2,,,USD,5,4,1,4,3,1,750,1750,2500,0.1,0.035,0.04,0.08,True,False,2.29,35.0,1.4,2.0,175.0,7.0,8.0,32.5,SKIP-VOLUME,skip
+FI,Finland,fi,fi|sv,NetDragon Universal,Gaming,C,1,,,USD,5,4,1,4,3,1,150,350,500,0.1,0.035,0.04,0.08,True,False,2.29,7.0,0.3,0.0,35.0,1.4,2.0,32.1,SKIP-VOLUME,skip
+FI,Finland,fi,fi|sv,SHENZHEN,Gaming,C,1,,,USD,5,4,1,4,3,1,60,140,200,0.1,0.035,0.04,0.08,True,False,2.29,2.8,0.1,0.0,14.0,0.6,1.0,32.0,SKIP-VOLUME,skip
+PL,Poland,pl,pl,NetFlix,Entertainment,A,1,,,PLN,33,3,1,3,3,1,7500,17500,25000,0.2,0.07,0.055,0.11,True,False,1.57,350.0,19.2,14.0,1750.0,96.2,70.0,26.7,WATCH-SEO,watch
+GR,Greece,el,el,NetFlix,Entertainment,A,1,25.0,88.61,EUR,10,3,1,3,3,1,7500,17500,25000,0.2,0.07,0.055,0.11,True,False,1.57,350.0,19.2,14.0,1750.0,96.2,70.0,26.7,WATCH-SEO,watch
+CY,Cyprus,el,el|tr,NetFlix,Entertainment,A,1,25.0,88.61,EUR,0.9,3,1,3,4,1,1750,4083,5833,0.2,0.07,0.055,0.11,True,False,1.57,81.7,4.5,3.0,408.3,22.5,16.0,23.1,SKIP-VOLUME,skip
+PL,Poland,pl,pl,FlixBus,Travel,A,1,,,PLN,33,3,1,3,3,1,240,560,800,0.2,0.07,0.055,0.11,True,False,1.57,11.2,0.6,0.0,56.0,3.1,2.0,22.1,SKIP-VOLUME,skip
+AE,United Arab Emirates,ar,ar|en,Amazon,Shopping,A,1,,,AED,9,3,2,3,3,2,12000,28000,40000,0.2,0.07,0.0467,0.093,True,False,1.34,560.0,26.2,13.0,2800.0,130.9,66.0,20.8,WATCH-SEO,watch
+SA,Saudi Arabia,ar,ar,Amazon,Shopping,A,1,1.0,385.76,SAR,36,3,2,3,3,2,12000,28000,40000,0.2,0.07,0.0467,0.093,True,False,1.34,560.0,26.2,13.0,2800.0,130.9,66.0,20.8,WATCH-SEO,watch
+AE,United Arab Emirates,ar,ar|en,NetFlix,Entertainment,A,1,,,AED,9,3,2,3,3,2,7500,17500,25000,0.2,0.07,0.0467,0.093,True,False,1.34,350.0,16.4,8.0,1750.0,81.8,41.0,19.3,SKIP-VOLUME,skip
+SA,Saudi Arabia,ar,ar,Google play,Entertainment,A,1,,,SAR,36,3,2,3,3,2,3000,7000,10000,0.2,0.07,0.0467,0.093,True,False,1.34,140.0,6.5,3.0,700.0,32.7,16.0,17.8,SKIP-VOLUME,skip
+AE,United Arab Emirates,ar,ar|en,Google play,Entertainment,A,1,,,AED,9,3,2,3,3,2,3000,7000,10000,0.2,0.07,0.0467,0.093,True,False,1.34,140.0,6.5,3.0,700.0,32.7,16.0,17.8,SKIP-VOLUME,skip
+SA,Saudi Arabia,ar,ar,App Store & iTunes,Entertainment,A,1,50.0,385.76,SAR,36,3,2,3,3,2,3000,7000,10000,0.2,0.07,0.0467,0.093,True,False,1.34,140.0,6.5,3.0,700.0,32.7,16.0,17.8,SKIP-VOLUME,skip
+AE,United Arab Emirates,ar,ar|en,App Store & iTunes,Entertainment,A,1,50.0,367.31,AED,9,3,2,3,3,2,3000,7000,10000,0.2,0.07,0.0467,0.093,True,False,1.34,140.0,6.5,3.0,700.0,32.7,16.0,17.8,SKIP-VOLUME,skip
+PL,Poland,pl,pl,Steam,Gaming,B,3,,,PLN,33,3,1,3,3,1,10500,24500,35000,0.2,0.07,0.04,0.08,True,False,1.14,490.0,19.6,5.0,2450.0,98.0,25.0,17.6,SKIP-VOLUME,skip
+GR,Greece,el,el,Steam,Gaming,B,3,,,EUR,10,3,1,3,3,1,10500,24500,35000,0.2,0.07,0.04,0.08,True,False,1.14,490.0,19.6,5.0,2450.0,98.0,25.0,17.6,SKIP-VOLUME,skip
+AE,United Arab Emirates,ar,ar|en,Spotify,Entertainment,A,1,,,AED,9,3,2,3,3,2,1800,4200,6000,0.2,0.07,0.0467,0.093,True,False,1.34,84.0,3.9,2.0,420.0,19.6,10.0,17.4,SKIP-VOLUME,skip
+PL,Poland,pl,pl,PlayStation,Gaming,B,3,,,PLN,33,3,1,3,3,1,4500,10500,15000,0.2,0.07,0.04,0.08,True,False,1.14,210.0,8.4,2.0,1050.0,42.0,11.0,16.7,SKIP-VOLUME,skip
+GR,Greece,el,el,Xbox,Gaming,B,3,,,EUR,10,3,1,3,3,1,3000,7000,10000,0.2,0.07,0.04,0.08,True,False,1.14,140.0,5.6,1.0,700.0,28.0,7.0,16.5,SKIP-VOLUME,skip
+PL,Poland,pl,pl,Xbox,Gaming,B,2,,,PLN,33,3,1,3,3,1,3000,7000,10000,0.2,0.07,0.04,0.08,True,False,1.14,140.0,5.6,1.0,700.0,28.0,7.0,16.5,SKIP-VOLUME,skip
+CY,Cyprus,el,el|tr,Steam,Gaming,B,3,,,EUR,0.9,3,1,3,4,1,2450,5717,8167,0.2,0.07,0.04,0.08,True,False,1.14,114.3,4.6,1.0,571.7,22.9,6.0,16.4,SKIP-VOLUME,skip
+CY,Cyprus,el,el|tr,Xbox,Gaming,B,3,,,EUR,0.9,3,1,3,4,1,700,1633,2333,0.2,0.07,0.04,0.08,True,False,1.14,32.7,1.3,0.0,163.3,6.5,2.0,16.1,SKIP-VOLUME,skip
+GR,Greece,el,el,twitch,Entertainment,B,1,,,USD,10,3,1,3,3,1,600,1400,2000,0.2,0.07,0.04,0.08,True,False,1.14,28.0,1.1,0.0,140.0,5.6,1.0,16.1,SKIP-VOLUME,skip
+KZ,Kazakhstan,kk,kk|ru,Fortnite,Gaming,C,7,,,USD,14,4,4,4,4,3,2100,4900,7000,0.1,0.035,0.026,0.052,True,False,1.49,98.0,2.5,2.0,490.0,12.7,8.0,14.9,SKIP-VOLUME,skip
+RW,Rwanda,rw,rw|en|fr,Fortnite,Gaming,C,7,,,USD,3,4,4,4,4,3,2100,4900,7000,0.1,0.035,0.026,0.052,True,False,1.49,98.0,2.5,2.0,490.0,12.7,8.0,14.9,SKIP-VOLUME,skip
+TZ,Tanzania,sw,sw|en,Fortnite,Gaming,C,7,,,USD,14,4,4,4,4,3,2100,4900,7000,0.1,0.035,0.026,0.052,True,False,1.49,98.0,2.5,2.0,490.0,12.7,8.0,14.9,SKIP-VOLUME,skip
+RW,Rwanda,rw,rw|en|fr,Mobile Legends,Gaming,C,3,,,USD,3,4,4,4,4,3,840,1960,2800,0.1,0.035,0.026,0.052,True,False,1.49,39.2,1.0,1.0,196.0,5.1,3.0,14.7,SKIP-VOLUME,skip
+TZ,Tanzania,sw,sw|en,Mobile Legends,Gaming,C,3,,,USD,14,4,4,4,4,3,840,1960,2800,0.1,0.035,0.026,0.052,True,False,1.49,39.2,1.0,1.0,196.0,5.1,3.0,14.7,SKIP-VOLUME,skip
+KZ,Kazakhstan,kk,kk|ru,Mobile Legends,Gaming,C,1,,,USD,14,4,4,4,4,3,840,1960,2800,0.1,0.035,0.026,0.052,True,False,1.49,39.2,1.0,1.0,196.0,5.1,3.0,14.7,SKIP-VOLUME,skip
+RW,Rwanda,rw,rw|en|fr,Crypto Voucher,Crypto,C,2,30.0,100.0,USD,3,4,4,4,4,3,210,490,700,0.1,0.035,0.026,0.052,True,False,1.49,9.8,0.3,0.0,49.0,1.3,1.0,14.6,SKIP-VOLUME,skip
+TZ,Tanzania,sw,sw|en,Crypto Voucher,Crypto,C,2,30.0,100.0,USD,14,4,4,4,4,3,210,490,700,0.1,0.035,0.026,0.052,True,False,1.49,9.8,0.3,0.0,49.0,1.3,1.0,14.6,SKIP-VOLUME,skip
+KZ,Kazakhstan,kk,kk|ru,NetDragon Universal,Gaming,C,2,,,USD,14,4,4,4,4,3,35,82,117,0.1,0.035,0.026,0.052,True,False,1.49,1.6,0.0,0.0,8.2,0.2,0.0,14.6,SKIP-VOLUME,skip
+KZ,Kazakhstan,kk,kk|ru,Jawaker,Shopping,C,2,,,USD,14,4,4,4,4,3,175,408,583,0.1,0.035,0.026,0.052,True,False,1.49,8.2,0.2,0.0,40.8,1.1,1.0,14.6,SKIP-VOLUME,skip
+RW,Rwanda,rw,rw|en|fr,Jawaker,Shopping,C,2,,,USD,3,4,4,4,4,3,175,408,583,0.1,0.035,0.026,0.052,True,False,1.49,8.2,0.2,0.0,40.8,1.1,1.0,14.6,SKIP-VOLUME,skip
+TZ,Tanzania,sw,sw|en,Jawaker,Shopping,C,2,,,USD,14,4,4,4,4,3,175,408,583,0.1,0.035,0.026,0.052,True,False,1.49,8.2,0.2,0.0,40.8,1.1,1.0,14.6,SKIP-VOLUME,skip
+KZ,Kazakhstan,kk,kk|ru,Crypto Voucher,Crypto,C,1,30.0,100.0,USD,14,4,4,4,4,3,210,490,700,0.1,0.035,0.026,0.052,True,False,1.49,9.8,0.3,0.0,49.0,1.3,1.0,14.6,SKIP-VOLUME,skip
+TZ,Tanzania,sw,sw|en,SHENZHEN,Gaming,C,1,,,USD,14,4,4,4,4,3,14,33,47,0.1,0.035,0.026,0.052,True,False,1.49,0.7,0.0,0.0,3.3,0.1,0.0,14.6,SKIP-VOLUME,skip
+RW,Rwanda,rw,rw|en|fr,NetDragon Universal,Gaming,C,1,,,USD,3,4,4,4,4,3,35,82,117,0.1,0.035,0.026,0.052,True,False,1.49,1.6,0.0,0.0,8.2,0.2,0.0,14.6,SKIP-VOLUME,skip
+TZ,Tanzania,sw,sw|en,NetDragon Universal,Gaming,C,1,,,USD,14,4,4,4,4,3,35,82,117,0.1,0.035,0.026,0.052,True,False,1.49,1.6,0.0,0.0,8.2,0.2,0.0,14.6,SKIP-VOLUME,skip
+PL,Poland,pl,pl,Mobile Legends,Gaming,C,3,,,USD,33,3,1,3,3,1,3600,8400,12000,0.2,0.07,0.035,0.07,True,False,1.0,168.0,5.9,0.0,840.0,29.4,0.0,14.0,SKIP-VOLUME,skip
+RO,Romania,ro,ro,Mobile Legends,Gaming,C,3,,,USD,16,3,1,3,3,1,3600,8400,12000,0.2,0.07,0.035,0.07,True,False,1.0,168.0,5.9,0.0,840.0,29.4,0.0,14.0,SKIP-VOLUME,skip
+CY,Cyprus,el,el|tr,World of Warcraft,Gaming,C,3,,,EUR,0.9,3,1,3,4,1,280,653,933,0.2,0.07,0.035,0.07,True,False,1.0,13.1,0.5,0.0,65.3,2.3,0.0,14.0,SKIP-VOLUME,skip
+GR,Greece,el,el,World of Warcraft,Gaming,C,3,,,EUR,10,3,1,3,3,1,1200,2800,4000,0.2,0.07,0.035,0.07,True,False,1.0,56.0,2.0,0.0,280.0,9.8,0.0,14.0,SKIP-VOLUME,skip
+PL,Poland,pl,pl,World of Warcraft,Gaming,C,3,,,EUR,33,3,1,3,3,1,1200,2800,4000,0.2,0.07,0.035,0.07,True,False,1.0,56.0,2.0,0.0,280.0,9.8,0.0,14.0,SKIP-VOLUME,skip
+RO,Romania,ro,ro,World of Warcraft,Gaming,C,3,,,EUR,16,3,1,3,3,1,1200,2800,4000,0.2,0.07,0.035,0.07,True,False,1.0,56.0,2.0,0.0,280.0,9.8,0.0,14.0,SKIP-VOLUME,skip
+PL,Poland,pl,pl,Crypto Voucher,Crypto,C,2,30.0,100.0,USD,33,3,1,3,3,1,900,2100,3000,0.2,0.07,0.035,0.07,True,False,1.0,42.0,1.5,0.0,210.0,7.4,0.0,14.0,SKIP-VOLUME,skip
+RO,Romania,ro,ro,Crypto Voucher,Crypto,C,2,30.0,100.0,USD,16,3,1,3,3,1,900,2100,3000,0.2,0.07,0.035,0.07,True,False,1.0,42.0,1.5,0.0,210.0,7.4,0.0,14.0,SKIP-VOLUME,skip
+GR,Greece,el,el,Crypto Voucher,Crypto,C,2,30.0,100.0,USD,10,3,1,3,3,1,900,2100,3000,0.2,0.07,0.035,0.07,True,False,1.0,42.0,1.5,0.0,210.0,7.4,0.0,14.0,SKIP-VOLUME,skip
+CY,Cyprus,el,el|tr,NetDragon Universal,Gaming,C,2,,,USD,0.9,3,1,3,4,1,35,82,117,0.2,0.07,0.035,0.07,True,False,1.0,1.6,0.1,0.0,8.2,0.3,0.0,14.0,SKIP-VOLUME,skip
+CY,Cyprus,el,el|tr,Jawaker,Shopping,C,2,,,USD,0.9,3,1,3,4,1,175,408,583,0.2,0.07,0.035,0.07,True,False,1.0,8.2,0.3,0.0,40.8,1.4,0.0,14.0,SKIP-VOLUME,skip
+PL,Poland,pl,pl,Jawaker,Shopping,C,2,,,USD,33,3,1,3,3,1,750,1750,2500,0.2,0.07,0.035,0.07,True,False,1.0,35.0,1.2,0.0,175.0,6.1,0.0,14.0,SKIP-VOLUME,skip
+RO,Romania,ro,ro,Jawaker,Shopping,C,2,,,USD,16,3,1,3,3,1,750,1750,2500,0.2,0.07,0.035,0.07,True,False,1.0,35.0,1.2,0.0,175.0,6.1,0.0,14.0,SKIP-VOLUME,skip
+GR,Greece,el,el,Jawaker,Shopping,C,2,,,USD,10,3,1,3,3,1,750,1750,2500,0.2,0.07,0.035,0.07,True,False,1.0,35.0,1.2,0.0,175.0,6.1,0.0,14.0,SKIP-VOLUME,skip
+GR,Greece,el,el,Fortnite,Gaming,C,8,,,USD,10,3,1,3,3,1,9000,21000,30000,0.2,0.07,0.035,0.07,True,False,1.0,420.0,14.7,0.0,2100.0,73.5,0.0,14.0,SKIP-VOLUME,skip
+CY,Cyprus,el,el|tr,Fortnite,Gaming,C,9,,,USD,0.9,3,1,3,4,1,2100,4900,7000,0.2,0.07,0.035,0.07,True,False,1.0,98.0,3.4,0.0,490.0,17.2,0.0,14.0,SKIP-VOLUME,skip
+PL,Poland,pl,pl,Fortnite,Gaming,C,7,,,USD,33,3,1,3,3,1,9000,21000,30000,0.2,0.07,0.035,0.07,True,False,1.0,420.0,14.7,0.0,2100.0,73.5,0.0,14.0,SKIP-VOLUME,skip
+RO,Romania,ro,ro,Fortnite,Gaming,C,7,,,USD,16,3,1,3,3,1,9000,21000,30000,0.2,0.07,0.035,0.07,True,False,1.0,420.0,14.7,0.0,2100.0,73.5,0.0,14.0,SKIP-VOLUME,skip
+CY,Cyprus,el,el|tr,Crypto Voucher,Crypto,C,1,30.0,100.0,USD,0.9,3,1,3,4,1,210,490,700,0.2,0.07,0.035,0.07,True,False,1.0,9.8,0.3,0.0,49.0,1.7,0.0,14.0,SKIP-VOLUME,skip
+GR,Greece,el,el,SHENZHEN,Gaming,C,1,,,USD,10,3,1,3,3,1,60,140,200,0.2,0.07,0.035,0.07,True,False,1.0,2.8,0.1,0.0,14.0,0.5,0.0,14.0,SKIP-VOLUME,skip
+PL,Poland,pl,pl,NetDragon Universal,Gaming,C,1,,,USD,33,3,1,3,3,1,150,350,500,0.2,0.07,0.035,0.07,True,False,1.0,7.0,0.2,0.0,35.0,1.2,0.0,14.0,SKIP-VOLUME,skip
+RO,Romania,ro,ro,NetDragon Universal,Gaming,C,1,,,USD,16,3,1,3,3,1,150,350,500,0.2,0.07,0.035,0.07,True,False,1.0,7.0,0.2,0.0,35.0,1.2,0.0,14.0,SKIP-VOLUME,skip
+GR,Greece,el,el,NetDragon Universal,Gaming,C,1,,,USD,10,3,1,3,3,1,150,350,500,0.2,0.07,0.035,0.07,True,False,1.0,7.0,0.2,0.0,35.0,1.2,0.0,14.0,SKIP-VOLUME,skip
+CY,Cyprus,el,el|tr,Mobile Legends,Gaming,C,1,,,USD,0.9,3,1,3,4,1,840,1960,2800,0.2,0.07,0.035,0.07,True,False,1.0,39.2,1.4,0.0,196.0,6.9,0.0,14.0,SKIP-VOLUME,skip
+GR,Greece,el,el,Mobile Legends,Gaming,C,1,,,USD,10,3,1,3,3,1,3600,8400,12000,0.2,0.07,0.035,0.07,True,False,1.0,168.0,5.9,0.0,840.0,29.4,0.0,14.0,SKIP-VOLUME,skip
+GR,Greece,el,el,Crypto Giftcard,Crypto,C,1,,,USD,10,3,1,3,3,1,450,1050,1500,0.2,0.07,0.035,0.07,True,False,1.0,21.0,0.7,0.0,105.0,3.7,0.0,14.0,SKIP-VOLUME,skip
+TH,Thailand,th,th,Steam,Gaming,B,3,,,THB,60,3,2,3,3,2,10500,24500,35000,0.2,0.07,0.034,0.068,False,False,0.97,0,0.0,0.0,0,0.0,0.0,12.2,SKIP-MATH,skip
+ID,Indonesia,id,id,Steam,Gaming,B,3,,,IDR,213,3,2,3,3,2,10500,24500,35000,0.2,0.07,0.034,0.068,False,False,0.97,0,0.0,0.0,0,0.0,0.0,12.2,SKIP-MATH,skip
+AE,United Arab Emirates,ar,ar|en,HUAWEI,Shopping,B,3,,,AED,9,3,2,3,3,2,240,560,800,0.2,0.07,0.034,0.068,False,False,0.97,0,0.0,0.0,0,0.0,0.0,12.2,SKIP-MATH,skip
+SA,Saudi Arabia,ar,ar,HUAWEI,Shopping,B,3,,,SAR,36,3,2,3,3,2,240,560,800,0.2,0.07,0.034,0.068,False,False,0.97,0,0.0,0.0,0,0.0,0.0,12.2,SKIP-MATH,skip
+AE,United Arab Emirates,ar,ar|en,Xbox,Gaming,B,3,,,AED,9,3,2,3,3,2,3000,7000,10000,0.2,0.07,0.034,0.068,False,False,0.97,0,0.0,0.0,0,0.0,0.0,12.2,SKIP-MATH,skip
+SA,Saudi Arabia,ar,ar,SHEIN,Shopping,B,1,,,USD,36,3,2,3,3,2,1500,3500,5000,0.2,0.07,0.034,0.068,False,False,0.97,0,0.0,0.0,0,0.0,0.0,12.2,SKIP-MATH,skip
+AE,United Arab Emirates,ar,ar|en,SHEIN,Shopping,B,1,,,USD,9,3,2,3,3,2,1500,3500,5000,0.2,0.07,0.034,0.068,False,False,0.97,0,0.0,0.0,0,0.0,0.0,12.2,SKIP-MATH,skip
+AE,United Arab Emirates,ar,ar|en,talabat,Shopping,C,3,,,AED,9,3,2,3,3,2,450,1050,1500,0.2,0.07,0.0298,0.06,False,False,0.85,0,0.0,0.0,0,0.0,0.0,10.7,SKIP-MATH,skip
+SA,Saudi Arabia,ar,ar,Mobile Legends,Gaming,C,3,,,USD,36,3,2,3,3,2,3600,8400,12000,0.2,0.07,0.0298,0.06,False,False,0.85,0,0.0,0.0,0,0.0,0.0,10.7,SKIP-MATH,skip
+TH,Thailand,th,th,Mobile Legends,Gaming,C,3,,,USD,60,3,2,3,3,2,3600,8400,12000,0.2,0.07,0.0298,0.06,False,False,0.85,0,0.0,0.0,0,0.0,0.0,10.7,SKIP-MATH,skip
+AE,United Arab Emirates,ar,ar|en,Deliveroo,Shopping,C,2,,,AED,9,3,2,3,3,2,60,140,200,0.2,0.07,0.0298,0.06,False,False,0.85,0,0.0,0.0,0,0.0,0.0,10.7,SKIP-MATH,skip
+SA,Saudi Arabia,ar,ar,Crypto Voucher,Crypto,C,2,30.0,100.0,USD,36,3,2,3,3,2,900,2100,3000,0.2,0.07,0.0298,0.06,False,False,0.85,0,0.0,0.0,0,0.0,0.0,10.7,SKIP-MATH,skip
+TH,Thailand,th,th,Crypto Voucher,Crypto,C,2,30.0,100.0,USD,60,3,2,3,3,2,900,2100,3000,0.2,0.07,0.0298,0.06,False,False,0.85,0,0.0,0.0,0,0.0,0.0,10.7,SKIP-MATH,skip
+AE,United Arab Emirates,ar,ar|en,Crypto Voucher,Crypto,C,2,30.0,100.0,USD,9,3,2,3,3,2,900,2100,3000,0.2,0.07,0.0298,0.06,False,False,0.85,0,0.0,0.0,0,0.0,0.0,10.7,SKIP-MATH,skip
+AE,United Arab Emirates,ar,ar|en,Anghami Plus,Entertainment,C,2,,,AED,9,3,2,3,3,2,240,560,800,0.2,0.07,0.0298,0.06,False,False,0.85,0,0.0,0.0,0,0.0,0.0,10.7,SKIP-MATH,skip
+ID,Indonesia,id,id,NetDragon Universal,Gaming,C,2,,,USD,213,3,2,3,3,2,150,350,500,0.2,0.07,0.0298,0.06,False,False,0.85,0,0.0,0.0,0,0.0,0.0,10.7,SKIP-MATH,skip
+SA,Saudi Arabia,ar,ar,Anghami Plus,Entertainment,C,2,,,SAR,36,3,2,3,3,2,240,560,800,0.2,0.07,0.0298,0.06,False,False,0.85,0,0.0,0.0,0,0.0,0.0,10.7,SKIP-MATH,skip
+ID,Indonesia,id,id,Fortnite,Gaming,C,7,,,USD,213,3,2,3,3,2,9000,21000,30000,0.2,0.07,0.0298,0.06,False,False,0.85,0,0.0,0.0,0,0.0,0.0,10.7,SKIP-MATH,skip
+ID,Indonesia,id,id,Jawaker,Shopping,C,2,,,USD,213,3,2,3,3,2,750,1750,2500,0.2,0.07,0.0298,0.06,False,False,0.85,0,0.0,0.0,0,0.0,0.0,10.7,SKIP-MATH,skip
+SA,Saudi Arabia,ar,ar,Jawaker,Shopping,C,2,,,USD,36,3,2,3,3,2,750,1750,2500,0.2,0.07,0.0298,0.06,False,False,0.85,0,0.0,0.0,0,0.0,0.0,10.7,SKIP-MATH,skip
+TH,Thailand,th,th,Jawaker,Shopping,C,2,,,USD,60,3,2,3,3,2,750,1750,2500,0.2,0.07,0.0298,0.06,False,False,0.85,0,0.0,0.0,0,0.0,0.0,10.7,SKIP-MATH,skip
+AE,United Arab Emirates,ar,ar|en,Jawaker,Shopping,C,2,,,USD,9,3,2,3,3,2,750,1750,2500,0.2,0.07,0.0298,0.06,False,False,0.85,0,0.0,0.0,0,0.0,0.0,10.7,SKIP-MATH,skip
+AE,United Arab Emirates,ar,ar|en,Fortnite,Gaming,C,8,,,USD,9,3,2,3,3,2,9000,21000,30000,0.2,0.07,0.0298,0.06,False,False,0.85,0,0.0,0.0,0,0.0,0.0,10.7,SKIP-MATH,skip
+SA,Saudi Arabia,ar,ar,Fortnite,Gaming,C,7,,,USD,36,3,2,3,3,2,9000,21000,30000,0.2,0.07,0.0298,0.06,False,False,0.85,0,0.0,0.0,0,0.0,0.0,10.7,SKIP-MATH,skip
+SA,Saudi Arabia,ar,ar,Crypto Giftcard,Crypto,C,2,,,USD,36,3,2,3,3,2,450,1050,1500,0.2,0.07,0.0298,0.06,False,False,0.85,0,0.0,0.0,0,0.0,0.0,10.7,SKIP-MATH,skip
+TH,Thailand,th,th,Crypto Giftcard,Crypto,C,2,,,USD,60,3,2,3,3,2,450,1050,1500,0.2,0.07,0.0298,0.06,False,False,0.85,0,0.0,0.0,0,0.0,0.0,10.7,SKIP-MATH,skip
+AE,United Arab Emirates,ar,ar|en,Crypto Giftcard,Crypto,C,2,,,USD,9,3,2,3,3,2,450,1050,1500,0.2,0.07,0.0298,0.06,False,False,0.85,0,0.0,0.0,0,0.0,0.0,10.7,SKIP-MATH,skip
+TH,Thailand,th,th,Fortnite,Gaming,C,7,,,USD,60,3,2,3,3,2,9000,21000,30000,0.2,0.07,0.0298,0.06,False,False,0.85,0,0.0,0.0,0,0.0,0.0,10.7,SKIP-MATH,skip
+ID,Indonesia,id,id,Crypto Voucher,Crypto,C,1,30.0,100.0,USD,213,3,2,3,3,2,900,2100,3000,0.2,0.07,0.0298,0.06,False,False,0.85,0,0.0,0.0,0,0.0,0.0,10.7,SKIP-MATH,skip
+SA,Saudi Arabia,ar,ar,SHENZHEN,Gaming,C,1,,,USD,36,3,2,3,3,2,60,140,200,0.2,0.07,0.0298,0.06,False,False,0.85,0,0.0,0.0,0,0.0,0.0,10.7,SKIP-MATH,skip
+TH,Thailand,th,th,SHENZHEN,Gaming,C,1,,,USD,60,3,2,3,3,2,60,140,200,0.2,0.07,0.0298,0.06,False,False,0.85,0,0.0,0.0,0,0.0,0.0,10.7,SKIP-MATH,skip
+AE,United Arab Emirates,ar,ar|en,SHENZHEN,Gaming,C,1,,,USD,9,3,2,3,3,2,60,140,200,0.2,0.07,0.0298,0.06,False,False,0.85,0,0.0,0.0,0,0.0,0.0,10.7,SKIP-MATH,skip
+SA,Saudi Arabia,ar,ar,NetDragon Universal,Gaming,C,1,,,USD,36,3,2,3,3,2,150,350,500,0.2,0.07,0.0298,0.06,False,False,0.85,0,0.0,0.0,0,0.0,0.0,10.7,SKIP-MATH,skip
+TH,Thailand,th,th,NetDragon Universal,Gaming,C,1,,,USD,60,3,2,3,3,2,150,350,500,0.2,0.07,0.0298,0.06,False,False,0.85,0,0.0,0.0,0,0.0,0.0,10.7,SKIP-MATH,skip
+AE,United Arab Emirates,ar,ar|en,NetDragon Universal,Gaming,C,1,,,USD,9,3,2,3,3,2,150,350,500,0.2,0.07,0.0298,0.06,False,False,0.85,0,0.0,0.0,0,0.0,0.0,10.7,SKIP-MATH,skip
+ID,Indonesia,id,id,Mobile Legends,Gaming,C,1,,,USD,213,3,2,3,3,2,3600,8400,12000,0.2,0.07,0.0298,0.06,False,False,0.85,0,0.0,0.0,0,0.0,0.0,10.7,SKIP-MATH,skip
+AE,United Arab Emirates,ar,ar|en,STARZPLAY,Entertainment,C,4,,,AED,9,3,2,3,3,2,180,420,600,0.2,0.07,0.0298,0.06,False,False,0.85,0,0.0,0.0,0,0.0,0.0,10.7,SKIP-MATH,skip
+HK,Hong Kong,zh,zh|en,Steam,Gaming,B,2,,,HKD,6,,1,,3,1,10500,24500,35000,0.3,0.105,0.03,0.06,False,False,0.57,0,0.0,0.0,0,0.0,0.0,8.0,SKIP-MATH,skip
+HK,Hong Kong,zh,zh|en,Roblox,Gaming,B,2,50.0,783.15,HKD,6,,1,,3,1,6000,14000,20000,0.3,0.105,0.03,0.06,False,False,0.57,0,0.0,0.0,0,0.0,0.0,8.0,SKIP-MATH,skip
+BR,Brazil,pt,pt,Google play,Entertainment,A,1,10.0,300.0,BRL,165,2,1,2,2,1,10000,23333,33333,0.55,0.193,0.05,0.1,False,False,0.52,0,0.0,0.0,0,0.0,0.0,7.3,SKIP-MATH,skip
+NL,Netherlands,nl,nl,Amazon,Shopping,A,1,1.0,88.61,EUR,17,2,1,2,2,1,40000,93333,133333,0.55,0.193,0.05,0.1,False,False,0.52,0,0.0,0.0,0,0.0,0.0,7.3,SKIP-MATH,skip
+BR,Brazil,pt,pt,NetFlix,Entertainment,A,1,50.0,491.42,BRL,165,2,1,2,2,1,25000,58333,83333,0.55,0.193,0.05,0.1,False,False,0.52,0,0.0,0.0,0,0.0,0.0,7.3,SKIP-MATH,skip
+BE,Belgium,nl,nl|fr,NetFlix,Entertainment,A,1,25.0,88.61,EUR,11,2,1,2,3,1,7500,17500,25000,0.55,0.193,0.05,0.1,False,False,0.52,0,0.0,0.0,0,0.0,0.0,7.3,SKIP-MATH,skip
+NL,Netherlands,nl,nl,NetFlix,Entertainment,A,1,25.0,88.61,EUR,17,2,1,2,2,1,25000,58333,83333,0.55,0.193,0.05,0.1,False,False,0.52,0,0.0,0.0,0,0.0,0.0,7.3,SKIP-MATH,skip
+PT,Portugal,pt,pt,NetFlix,Entertainment,A,1,25.0,88.61,EUR,10,2,1,2,3,1,7500,17500,25000,0.55,0.193,0.05,0.1,False,False,0.52,0,0.0,0.0,0,0.0,0.0,7.3,SKIP-MATH,skip
+PT,Portugal,pt,pt,App Store & iTunes,Entertainment,A,1,,,EUR,10,2,1,2,3,1,3000,7000,10000,0.55,0.193,0.05,0.1,False,False,0.52,0,0.0,0.0,0,0.0,0.0,7.3,SKIP-MATH,skip
+NL,Netherlands,nl,nl,App Store & iTunes,Entertainment,A,1,,,EUR,17,2,1,2,2,1,10000,23333,33333,0.55,0.193,0.05,0.1,False,False,0.52,0,0.0,0.0,0,0.0,0.0,7.3,SKIP-MATH,skip
+OM,Oman,ar,ar|en,Steam,Gaming,B,3,,,USD,4,3,3,3,4,3,2450,5717,8167,0.2,0.07,0.026,0.052,False,False,0.74,0,0.0,0.0,0,0.0,0.0,7.3,SKIP-MATH,skip
+VN,Vietnam,vi,vi,Steam,Gaming,B,3,,,VND,78,3,3,3,3,3,10500,24500,35000,0.2,0.07,0.026,0.052,False,False,0.74,0,0.0,0.0,0,0.0,0.0,7.3,SKIP-MATH,skip
+NL,Netherlands,nl,nl,Ticketmaster,Shopping,A,3,10.0,88.61,EUR,17,2,1,2,2,1,1500,3500,5000,0.55,0.193,0.05,0.1,False,False,0.52,0,0.0,0.0,0,0.0,0.0,7.3,SKIP-MATH,skip
+KW,Kuwait,ar,ar|en,Steam,Gaming,B,3,,,USD,4,3,3,3,4,3,2450,5717,8167,0.2,0.07,0.026,0.052,False,False,0.74,0,0.0,0.0,0,0.0,0.0,7.3,SKIP-MATH,skip
+BH,Bahrain,ar,ar|en,Steam,Gaming,B,3,,,USD,1.5,3,3,3,4,3,2450,5717,8167,0.2,0.07,0.026,0.052,False,False,0.74,0,0.0,0.0,0,0.0,0.0,7.3,SKIP-MATH,skip
+QA,Qatar,ar,ar|en,Steam,Gaming,B,3,,,USD,3,3,3,3,4,3,2450,5717,8167,0.2,0.07,0.026,0.052,False,False,0.74,0,0.0,0.0,0,0.0,0.0,7.3,SKIP-MATH,skip
+PT,Portugal,pt,pt,Rituals,Shopping,A,3,,,EUR,10,2,1,2,3,1,150,350,500,0.55,0.193,0.05,0.1,False,False,0.52,0,0.0,0.0,0,0.0,0.0,7.3,SKIP-MATH,skip
+PT,Portugal,pt,pt,Sephora,Shopping,A,3,,,EUR,10,2,1,2,3,1,750,1750,2500,0.55,0.193,0.05,0.1,False,False,0.52,0,0.0,0.0,0,0.0,0.0,7.3,SKIP-MATH,skip
+BE,Belgium,nl,nl|fr,Nike,Shopping,A,3,5.0,88.61,EUR,11,2,1,2,3,1,900,2100,3000,0.55,0.193,0.05,0.1,False,False,0.52,0,0.0,0.0,0,0.0,0.0,7.3,SKIP-MATH,skip
+NL,Netherlands,nl,nl,Zalando,Shopping,A,3,5.0,88.61,EUR,17,2,1,2,2,1,1800,4200,6000,0.55,0.193,0.05,0.1,False,False,0.52,0,0.0,0.0,0,0.0,0.0,7.3,SKIP-MATH,skip
+BR,Brazil,pt,pt,Decathlon,Shopping,A,2,,,BRL,165,2,1,2,2,1,1500,3500,5000,0.55,0.193,0.05,0.1,False,False,0.52,0,0.0,0.0,0,0.0,0.0,7.3,SKIP-MATH,skip
+NL,Netherlands,nl,nl,Mango,Shopping,A,1,,,EUR,17,2,1,2,2,1,600,1400,2000,0.55,0.193,0.05,0.1,False,False,0.52,0,0.0,0.0,0,0.0,0.0,7.3,SKIP-MATH,skip
+PT,Portugal,pt,pt,Mango,Shopping,A,1,,,EUR,10,2,1,2,3,1,180,420,600,0.55,0.193,0.05,0.1,False,False,0.52,0,0.0,0.0,0,0.0,0.0,7.3,SKIP-MATH,skip
+BR,Brazil,pt,pt,FlixBus,Travel,A,1,,,BRL,165,2,1,2,2,1,800,1867,2667,0.55,0.193,0.05,0.1,False,False,0.52,0,0.0,0.0,0,0.0,0.0,7.3,SKIP-MATH,skip
+BR,Brazil,pt,pt,Nike,Shopping,A,1,50.0,491.42,BRL,165,2,1,2,2,1,3000,7000,10000,0.55,0.193,0.05,0.1,False,False,0.52,0,0.0,0.0,0,0.0,0.0,7.3,SKIP-MATH,skip
+BH,Bahrain,ar,ar|en,SHEIN,Shopping,B,1,,,USD,1.5,3,3,3,4,3,350,817,1167,0.2,0.07,0.026,0.052,False,False,0.74,0,0.0,0.0,0,0.0,0.0,7.3,SKIP-MATH,skip
+KW,Kuwait,ar,ar|en,SHEIN,Shopping,B,1,,,USD,4,3,3,3,4,3,350,817,1167,0.2,0.07,0.026,0.052,False,False,0.74,0,0.0,0.0,0,0.0,0.0,7.3,SKIP-MATH,skip
+OM,Oman,ar,ar|en,SHEIN,Shopping,B,1,,,USD,4,3,3,3,4,3,350,817,1167,0.2,0.07,0.026,0.052,False,False,0.74,0,0.0,0.0,0,0.0,0.0,7.3,SKIP-MATH,skip
+QA,Qatar,ar,ar|en,SHEIN,Shopping,B,1,,,USD,3,3,3,3,4,3,350,817,1167,0.2,0.07,0.026,0.052,False,False,0.74,0,0.0,0.0,0,0.0,0.0,7.3,SKIP-MATH,skip
+HK,Hong Kong,zh,zh|en,Fortnite,Gaming,C,9,,,USD,6,,1,,3,1,9000,21000,30000,0.3,0.105,0.025,0.05,False,False,0.48,0,0.0,0.0,0,0.0,0.0,6.7,SKIP-MATH,skip
+MA,Morocco,ar,ar|fr,Mobile Legends,Gaming,C,3,,,USD,26,3,3,3,4,3,840,1960,2800,0.2,0.07,0.0228,0.046,False,False,0.65,0,0.0,0.0,0,0.0,0.0,6.4,SKIP-MATH,skip
+OM,Oman,ar,ar|en,Mobile Legends,Gaming,C,3,,,USD,4,3,3,3,4,3,840,1960,2800,0.2,0.07,0.0228,0.046,False,False,0.65,0,0.0,0.0,0,0.0,0.0,6.4,SKIP-MATH,skip
+QA,Qatar,ar,ar|en,Mobile Legends,Gaming,C,3,,,USD,3,3,3,3,4,3,840,1960,2800,0.2,0.07,0.0228,0.046,False,False,0.65,0,0.0,0.0,0,0.0,0.0,6.4,SKIP-MATH,skip
+DZ,Algeria,ar,ar|fr,Jawaker,Shopping,C,3,,,USD,25,3,4,3,4,3,175,408,583,0.2,0.07,0.0228,0.046,False,False,0.65,0,0.0,0.0,0,0.0,0.0,6.4,SKIP-MATH,skip
+TN,Tunisia,ar,ar|fr,Mobile Legends,Gaming,C,2,,,USD,7,3,3,3,4,3,840,1960,2800,0.2,0.07,0.0228,0.046,False,False,0.65,0,0.0,0.0,0,0.0,0.0,6.4,SKIP-MATH,skip
+UA,Ukraine,uk,uk|ru,Mobile Legends,Gaming,C,2,,,USD,,3,4,3,3,3,3600,8400,12000,0.2,0.07,0.0228,0.046,False,False,0.65,0,0.0,0.0,0,0.0,0.0,6.4,SKIP-MATH,skip
+VN,Vietnam,vi,vi,Mobile Legends,Gaming,C,2,,,USD,78,3,3,3,3,3,3600,8400,12000,0.2,0.07,0.0228,0.046,False,False,0.65,0,0.0,0.0,0,0.0,0.0,6.4,SKIP-MATH,skip
+BH,Bahrain,ar,ar|en,Jawaker,Shopping,C,2,,,USD,1.5,3,3,3,4,3,175,408,583,0.2,0.07,0.0228,0.046,False,False,0.65,0,0.0,0.0,0,0.0,0.0,6.4,SKIP-MATH,skip
+BH,Bahrain,ar,ar|en,Mobile Legends,Gaming,C,2,,,USD,1.5,3,3,3,4,3,840,1960,2800,0.2,0.07,0.0228,0.046,False,False,0.65,0,0.0,0.0,0,0.0,0.0,6.4,SKIP-MATH,skip
+LB,Lebanon,ar,ar|fr,Crypto Voucher,Crypto,C,2,30.0,100.0,USD,4,3,3,3,4,3,210,490,700,0.2,0.07,0.0228,0.046,False,False,0.65,0,0.0,0.0,0,0.0,0.0,6.4,SKIP-MATH,skip
+MA,Morocco,ar,ar|fr,Crypto Voucher,Crypto,C,2,30.0,100.0,USD,26,3,3,3,4,3,210,490,700,0.2,0.07,0.0228,0.046,False,False,0.65,0,0.0,0.0,0,0.0,0.0,6.4,SKIP-MATH,skip
+OM,Oman,ar,ar|en,Crypto Voucher,Crypto,C,2,30.0,100.0,USD,4,3,3,3,4,3,210,490,700,0.2,0.07,0.0228,0.046,False,False,0.65,0,0.0,0.0,0,0.0,0.0,6.4,SKIP-MATH,skip
+QA,Qatar,ar,ar|en,Crypto Voucher,Crypto,C,2,30.0,100.0,USD,3,3,3,3,4,3,210,490,700,0.2,0.07,0.0228,0.046,False,False,0.65,0,0.0,0.0,0,0.0,0.0,6.4,SKIP-MATH,skip
+TN,Tunisia,ar,ar|fr,Crypto Voucher,Crypto,C,2,30.0,100.0,USD,7,3,3,3,4,3,210,490,700,0.2,0.07,0.0228,0.046,False,False,0.65,0,0.0,0.0,0,0.0,0.0,6.4,SKIP-MATH,skip
+UA,Ukraine,uk,uk|ru,Crypto Voucher,Crypto,C,2,30.0,100.0,USD,,3,4,3,3,3,900,2100,3000,0.2,0.07,0.0228,0.046,False,False,0.65,0,0.0,0.0,0,0.0,0.0,6.4,SKIP-MATH,skip
+VN,Vietnam,vi,vi,Crypto Voucher,Crypto,C,2,30.0,100.0,USD,78,3,3,3,3,3,900,2100,3000,0.2,0.07,0.0228,0.046,False,False,0.65,0,0.0,0.0,0,0.0,0.0,6.4,SKIP-MATH,skip
+DZ,Algeria,ar,ar|fr,NetDragon Universal,Gaming,C,2,,,USD,25,3,4,3,4,3,35,82,117,0.2,0.07,0.0228,0.046,False,False,0.65,0,0.0,0.0,0,0.0,0.0,6.4,SKIP-MATH,skip
+BH,Bahrain,ar,ar|en,NetDragon Universal,Gaming,C,2,,,USD,1.5,3,3,3,4,3,35,82,117,0.2,0.07,0.0228,0.046,False,False,0.65,0,0.0,0.0,0,0.0,0.0,6.4,SKIP-MATH,skip
+EG,Egypt,ar,ar,NetDragon Universal,Gaming,C,2,,,USD,80,3,3,3,4,3,35,82,117,0.2,0.07,0.0228,0.046,False,False,0.65,0,0.0,0.0,0,0.0,0.0,6.4,SKIP-MATH,skip
+JO,Jordan,ar,ar,NetDragon Universal,Gaming,C,2,,,USD,8,3,3,3,4,3,35,82,117,0.2,0.07,0.0228,0.046,False,False,0.65,0,0.0,0.0,0,0.0,0.0,6.4,SKIP-MATH,skip
+KW,Kuwait,ar,ar|en,NetDragon Universal,Gaming,C,2,,,USD,4,3,3,3,4,3,35,82,117,0.2,0.07,0.0228,0.046,False,False,0.65,0,0.0,0.0,0,0.0,0.0,6.4,SKIP-MATH,skip
+LB,Lebanon,ar,ar|fr,NetDragon Universal,Gaming,C,2,,,USD,4,3,3,3,4,3,35,82,117,0.2,0.07,0.0228,0.046,False,False,0.65,0,0.0,0.0,0,0.0,0.0,6.4,SKIP-MATH,skip
+MA,Morocco,ar,ar|fr,NetDragon Universal,Gaming,C,2,,,USD,26,3,3,3,4,3,35,82,117,0.2,0.07,0.0228,0.046,False,False,0.65,0,0.0,0.0,0,0.0,0.0,6.4,SKIP-MATH,skip
+OM,Oman,ar,ar|en,NetDragon Universal,Gaming,C,2,,,USD,4,3,3,3,4,3,35,82,117,0.2,0.07,0.0228,0.046,False,False,0.65,0,0.0,0.0,0,0.0,0.0,6.4,SKIP-MATH,skip
+DZ,Algeria,ar,ar|fr,Fortnite,Gaming,C,10,,,USD,25,3,4,3,4,3,2100,4900,7000,0.2,0.07,0.0228,0.046,False,False,0.65,0,0.0,0.0,0,0.0,0.0,6.4,SKIP-MATH,skip
+BH,Bahrain,ar,ar|en,Fortnite,Gaming,C,9,,,USD,1.5,3,3,3,4,3,2100,4900,7000,0.2,0.07,0.0228,0.046,False,False,0.65,0,0.0,0.0,0,0.0,0.0,6.4,SKIP-MATH,skip
+EG,Egypt,ar,ar,Fortnite,Gaming,C,10,,,USD,80,3,3,3,4,3,2100,4900,7000,0.2,0.07,0.0228,0.046,False,False,0.65,0,0.0,0.0,0,0.0,0.0,6.4,SKIP-MATH,skip
+JO,Jordan,ar,ar,Fortnite,Gaming,C,7,,,USD,8,3,3,3,4,3,2100,4900,7000,0.2,0.07,0.0228,0.046,False,False,0.65,0,0.0,0.0,0,0.0,0.0,6.4,SKIP-MATH,skip
+KW,Kuwait,ar,ar|en,Fortnite,Gaming,C,7,,,USD,4,3,3,3,4,3,2100,4900,7000,0.2,0.07,0.0228,0.046,False,False,0.65,0,0.0,0.0,0,0.0,0.0,6.4,SKIP-MATH,skip
+EG,Egypt,ar,ar,Jawaker,Shopping,C,2,,,USD,80,3,3,3,4,3,175,408,583,0.2,0.07,0.0228,0.046,False,False,0.65,0,0.0,0.0,0,0.0,0.0,6.4,SKIP-MATH,skip
+JO,Jordan,ar,ar,Jawaker,Shopping,C,2,,,USD,8,3,3,3,4,3,175,408,583,0.2,0.07,0.0228,0.046,False,False,0.65,0,0.0,0.0,0,0.0,0.0,6.4,SKIP-MATH,skip
+KW,Kuwait,ar,ar|en,Jawaker,Shopping,C,2,,,USD,4,3,3,3,4,3,175,408,583,0.2,0.07,0.0228,0.046,False,False,0.65,0,0.0,0.0,0,0.0,0.0,6.4,SKIP-MATH,skip
+LB,Lebanon,ar,ar|fr,Jawaker,Shopping,C,2,,,USD,4,3,3,3,4,3,175,408,583,0.2,0.07,0.0228,0.046,False,False,0.65,0,0.0,0.0,0,0.0,0.0,6.4,SKIP-MATH,skip
+MA,Morocco,ar,ar|fr,Jawaker,Shopping,C,2,,,USD,26,3,3,3,4,3,175,408,583,0.2,0.07,0.0228,0.046,False,False,0.65,0,0.0,0.0,0,0.0,0.0,6.4,SKIP-MATH,skip
+OM,Oman,ar,ar|en,Jawaker,Shopping,C,2,,,USD,4,3,3,3,4,3,175,408,583,0.2,0.07,0.0228,0.046,False,False,0.65,0,0.0,0.0,0,0.0,0.0,6.4,SKIP-MATH,skip
+QA,Qatar,ar,ar|en,Jawaker,Shopping,C,2,,,USD,3,3,3,3,4,3,175,408,583,0.2,0.07,0.0228,0.046,False,False,0.65,0,0.0,0.0,0,0.0,0.0,6.4,SKIP-MATH,skip
+TN,Tunisia,ar,ar|fr,Jawaker,Shopping,C,2,,,USD,7,3,3,3,4,3,175,408,583,0.2,0.07,0.0228,0.046,False,False,0.65,0,0.0,0.0,0,0.0,0.0,6.4,SKIP-MATH,skip
+UA,Ukraine,uk,uk|ru,Jawaker,Shopping,C,2,,,USD,,3,4,3,3,3,750,1750,2500,0.2,0.07,0.0228,0.046,False,False,0.65,0,0.0,0.0,0,0.0,0.0,6.4,SKIP-MATH,skip
+VN,Vietnam,vi,vi,Jawaker,Shopping,C,2,,,USD,78,3,3,3,3,3,750,1750,2500,0.2,0.07,0.0228,0.046,False,False,0.65,0,0.0,0.0,0,0.0,0.0,6.4,SKIP-MATH,skip
+TN,Tunisia,ar,ar|fr,Fortnite,Gaming,C,8,,,USD,7,3,3,3,4,3,2100,4900,7000,0.2,0.07,0.0228,0.046,False,False,0.65,0,0.0,0.0,0,0.0,0.0,6.4,SKIP-MATH,skip
+UA,Ukraine,uk,uk|ru,Fortnite,Gaming,C,8,,,USD,,3,4,3,3,3,9000,21000,30000,0.2,0.07,0.0228,0.046,False,False,0.65,0,0.0,0.0,0,0.0,0.0,6.4,SKIP-MATH,skip
+VN,Vietnam,vi,vi,Fortnite,Gaming,C,8,,,USD,78,3,3,3,3,3,9000,21000,30000,0.2,0.07,0.0228,0.046,False,False,0.65,0,0.0,0.0,0,0.0,0.0,6.4,SKIP-MATH,skip
+LB,Lebanon,ar,ar|fr,Fortnite,Gaming,C,6,,,USD,4,3,3,3,4,3,2100,4900,7000,0.2,0.07,0.0228,0.046,False,False,0.65,0,0.0,0.0,0,0.0,0.0,6.4,SKIP-MATH,skip
+MA,Morocco,ar,ar|fr,Fortnite,Gaming,C,6,,,USD,26,3,3,3,4,3,2100,4900,7000,0.2,0.07,0.0228,0.046,False,False,0.65,0,0.0,0.0,0,0.0,0.0,6.4,SKIP-MATH,skip
+OM,Oman,ar,ar|en,Fortnite,Gaming,C,6,,,USD,4,3,3,3,4,3,2100,4900,7000,0.2,0.07,0.0228,0.046,False,False,0.65,0,0.0,0.0,0,0.0,0.0,6.4,SKIP-MATH,skip
+QA,Qatar,ar,ar|en,Fortnite,Gaming,C,7,,,USD,3,3,3,3,4,3,2100,4900,7000,0.2,0.07,0.0228,0.046,False,False,0.65,0,0.0,0.0,0,0.0,0.0,6.4,SKIP-MATH,skip
+DZ,Algeria,ar,ar|fr,Crypto Voucher,Crypto,C,1,30.0,100.0,USD,25,3,4,3,4,3,210,490,700,0.2,0.07,0.0228,0.046,False,False,0.65,0,0.0,0.0,0,0.0,0.0,6.4,SKIP-MATH,skip
+BH,Bahrain,ar,ar|en,Crypto Voucher,Crypto,C,1,30.0,100.0,USD,1.5,3,3,3,4,3,210,490,700,0.2,0.07,0.0228,0.046,False,False,0.65,0,0.0,0.0,0,0.0,0.0,6.4,SKIP-MATH,skip
+EG,Egypt,ar,ar,Crypto Voucher,Crypto,C,1,30.0,100.0,USD,80,3,3,3,4,3,210,490,700,0.2,0.07,0.0228,0.046,False,False,0.65,0,0.0,0.0,0,0.0,0.0,6.4,SKIP-MATH,skip
+JO,Jordan,ar,ar,Crypto Voucher,Crypto,C,1,30.0,100.0,USD,8,3,3,3,4,3,210,490,700,0.2,0.07,0.0228,0.046,False,False,0.65,0,0.0,0.0,0,0.0,0.0,6.4,SKIP-MATH,skip
+KW,Kuwait,ar,ar|en,Crypto Voucher,Crypto,C,1,30.0,100.0,USD,4,3,3,3,4,3,210,490,700,0.2,0.07,0.0228,0.046,False,False,0.65,0,0.0,0.0,0,0.0,0.0,6.4,SKIP-MATH,skip
+TN,Tunisia,ar,ar|fr,SHENZHEN,Gaming,C,1,,,USD,7,3,3,3,4,3,14,33,47,0.2,0.07,0.0228,0.046,False,False,0.65,0,0.0,0.0,0,0.0,0.0,6.4,SKIP-MATH,skip
+UA,Ukraine,uk,uk|ru,SHENZHEN,Gaming,C,1,,,USD,,3,4,3,3,3,60,140,200,0.2,0.07,0.0228,0.046,False,False,0.65,0,0.0,0.0,0,0.0,0.0,6.4,SKIP-MATH,skip
+VN,Vietnam,vi,vi,SHENZHEN,Gaming,C,1,,,USD,78,3,3,3,3,3,60,140,200,0.2,0.07,0.0228,0.046,False,False,0.65,0,0.0,0.0,0,0.0,0.0,6.4,SKIP-MATH,skip
+QA,Qatar,ar,ar|en,NetDragon Universal,Gaming,C,1,,,USD,3,3,3,3,4,3,35,82,117,0.2,0.07,0.0228,0.046,False,False,0.65,0,0.0,0.0,0,0.0,0.0,6.4,SKIP-MATH,skip
+TN,Tunisia,ar,ar|fr,NetDragon Universal,Gaming,C,1,,,USD,7,3,3,3,4,3,35,82,117,0.2,0.07,0.0228,0.046,False,False,0.65,0,0.0,0.0,0,0.0,0.0,6.4,SKIP-MATH,skip
+UA,Ukraine,uk,uk|ru,NetDragon Universal,Gaming,C,1,,,USD,,3,4,3,3,3,150,350,500,0.2,0.07,0.0228,0.046,False,False,0.65,0,0.0,0.0,0,0.0,0.0,6.4,SKIP-MATH,skip
+VN,Vietnam,vi,vi,NetDragon Universal,Gaming,C,1,,,USD,78,3,3,3,3,3,150,350,500,0.2,0.07,0.0228,0.046,False,False,0.65,0,0.0,0.0,0,0.0,0.0,6.4,SKIP-MATH,skip
+DZ,Algeria,ar,ar|fr,Mobile Legends,Gaming,C,1,,,USD,25,3,4,3,4,3,840,1960,2800,0.2,0.07,0.0228,0.046,False,False,0.65,0,0.0,0.0,0,0.0,0.0,6.4,SKIP-MATH,skip
+EG,Egypt,ar,ar,Mobile Legends,Gaming,C,1,,,USD,80,3,3,3,4,3,840,1960,2800,0.2,0.07,0.0228,0.046,False,False,0.65,0,0.0,0.0,0,0.0,0.0,6.4,SKIP-MATH,skip
+JO,Jordan,ar,ar,Mobile Legends,Gaming,C,1,,,USD,8,3,3,3,4,3,840,1960,2800,0.2,0.07,0.0228,0.046,False,False,0.65,0,0.0,0.0,0,0.0,0.0,6.4,SKIP-MATH,skip
+KW,Kuwait,ar,ar|en,Mobile Legends,Gaming,C,1,,,USD,4,3,3,3,4,3,840,1960,2800,0.2,0.07,0.0228,0.046,False,False,0.65,0,0.0,0.0,0,0.0,0.0,6.4,SKIP-MATH,skip
+LB,Lebanon,ar,ar|fr,Mobile Legends,Gaming,C,1,,,USD,4,3,3,3,4,3,840,1960,2800,0.2,0.07,0.0228,0.046,False,False,0.65,0,0.0,0.0,0,0.0,0.0,6.4,SKIP-MATH,skip
+MA,Morocco,ar,ar|fr,Crypto Giftcard,Crypto,C,1,,,USD,26,3,3,3,4,3,105,245,350,0.2,0.07,0.0228,0.046,False,False,0.65,0,0.0,0.0,0,0.0,0.0,6.4,SKIP-MATH,skip
+BR,Brazil,pt,pt,Steam,Gaming,B,3,,,BRL,165,2,1,2,2,1,35000,81667,116667,0.55,0.193,0.035,0.07,False,False,0.36,0,0.0,0.0,0,0.0,0.0,5.1,SKIP-MATH,skip
+BE,Belgium,nl,nl|fr,PlayStation,Gaming,B,3,,,EUR,11,2,1,2,3,1,4500,10500,15000,0.55,0.193,0.035,0.07,False,False,0.36,0,0.0,0.0,0,0.0,0.0,5.1,SKIP-MATH,skip
+BE,Belgium,nl,nl|fr,Steam,Gaming,B,3,,,EUR,11,2,1,2,3,1,10500,24500,35000,0.55,0.193,0.035,0.07,False,False,0.36,0,0.0,0.0,0,0.0,0.0,5.1,SKIP-MATH,skip
+NL,Netherlands,nl,nl,Steam,Gaming,B,3,,,EUR,17,2,1,2,2,1,35000,81667,116667,0.55,0.193,0.035,0.07,False,False,0.36,0,0.0,0.0,0,0.0,0.0,5.1,SKIP-MATH,skip
+PT,Portugal,pt,pt,Steam,Gaming,B,3,,,EUR,10,2,1,2,3,1,10500,24500,35000,0.55,0.193,0.035,0.07,False,False,0.36,0,0.0,0.0,0,0.0,0.0,5.1,SKIP-MATH,skip
+BE,Belgium,nl,nl|fr,Xbox,Gaming,B,3,,,EUR,11,2,1,2,3,1,3000,7000,10000,0.55,0.193,0.035,0.07,False,False,0.36,0,0.0,0.0,0,0.0,0.0,5.1,SKIP-MATH,skip
+NL,Netherlands,nl,nl,Xbox,Gaming,B,3,,,EUR,17,2,1,2,2,1,10000,23333,33333,0.55,0.193,0.035,0.07,False,False,0.36,0,0.0,0.0,0,0.0,0.0,5.1,SKIP-MATH,skip
+PT,Portugal,pt,pt,Xbox,Gaming,B,3,,,EUR,10,2,1,2,3,1,3000,7000,10000,0.55,0.193,0.035,0.07,False,False,0.36,0,0.0,0.0,0,0.0,0.0,5.1,SKIP-MATH,skip
+PT,Portugal,pt,pt,PlayStation,Gaming,B,3,,,EUR,10,2,1,2,3,1,4500,10500,15000,0.55,0.193,0.035,0.07,False,False,0.36,0,0.0,0.0,0,0.0,0.0,5.1,SKIP-MATH,skip
+BR,Brazil,pt,pt,Xbox,Gaming,B,8,49.99,149.99,BRL,165,2,1,2,2,1,10000,23333,33333,0.55,0.193,0.035,0.07,False,False,0.36,0,0.0,0.0,0,0.0,0.0,5.1,SKIP-MATH,skip
+BR,Brazil,pt,pt,Carrefour,Shopping,B,2,,,BRL,165,2,1,2,2,1,1200,2800,4000,0.55,0.193,0.035,0.07,False,False,0.36,0,0.0,0.0,0,0.0,0.0,5.1,SKIP-MATH,skip
+BR,Brazil,pt,pt,Tinder,Entertainment,B,4,,,BRL,165,2,1,2,2,1,3500,8167,11667,0.55,0.193,0.035,0.07,False,False,0.36,0,0.0,0.0,0,0.0,0.0,5.1,SKIP-MATH,skip
+BE,Belgium,nl,nl|fr,Just Eat,Shopping,B,1,,,EUR,11,2,1,2,3,1,450,1050,1500,0.55,0.193,0.035,0.07,False,False,0.36,0,0.0,0.0,0,0.0,0.0,5.1,SKIP-MATH,skip
+BR,Brazil,pt,pt,PlayStation,Gaming,B,1,,,BRL,165,2,1,2,2,1,15000,35000,50000,0.55,0.193,0.035,0.07,False,False,0.36,0,0.0,0.0,0,0.0,0.0,5.1,SKIP-MATH,skip
+DK,Denmark,da,da,Roblox,Gaming,B,1,100.0,634.04,DKK,5,2,1,2,3,1,6000,14000,20000,0.55,0.193,0.035,0.07,False,False,0.36,0,0.0,0.0,0,0.0,0.0,5.1,SKIP-MATH,skip
+NL,Netherlands,nl,nl,Mobile Legends,Gaming,C,3,,,USD,17,2,1,2,2,1,12000,28000,40000,0.55,0.193,0.03,0.06,False,False,0.31,0,0.0,0.0,0,0.0,0.0,4.4,SKIP-MATH,skip
+PT,Portugal,pt,pt,Mobile Legends,Gaming,C,3,,,USD,10,2,1,2,3,1,3600,8400,12000,0.55,0.193,0.03,0.06,False,False,0.31,0,0.0,0.0,0,0.0,0.0,4.4,SKIP-MATH,skip
+BE,Belgium,nl,nl|fr,World of Warcraft,Gaming,C,3,,,EUR,11,2,1,2,3,1,1200,2800,4000,0.55,0.193,0.03,0.06,False,False,0.31,0,0.0,0.0,0,0.0,0.0,4.4,SKIP-MATH,skip
+NL,Netherlands,nl,nl,World of Warcraft,Gaming,C,3,,,EUR,17,2,1,2,2,1,4000,9333,13333,0.55,0.193,0.03,0.06,False,False,0.31,0,0.0,0.0,0,0.0,0.0,4.4,SKIP-MATH,skip
+PT,Portugal,pt,pt,World of Warcraft,Gaming,C,3,,,EUR,10,2,1,2,3,1,1200,2800,4000,0.55,0.193,0.03,0.06,False,False,0.31,0,0.0,0.0,0,0.0,0.0,4.4,SKIP-MATH,skip
+BR,Brazil,pt,pt,Jawaker,Shopping,C,2,,,USD,165,2,1,2,2,1,2500,5833,8333,0.55,0.193,0.03,0.06,False,False,0.31,0,0.0,0.0,0,0.0,0.0,4.4,SKIP-MATH,skip
+BE,Belgium,nl,nl|fr,Mobile Legends,Gaming,C,2,,,USD,11,2,1,2,3,1,3600,8400,12000,0.55,0.193,0.03,0.06,False,False,0.31,0,0.0,0.0,0,0.0,0.0,4.4,SKIP-MATH,skip
+BR,Brazil,pt,pt,Mobile Legends,Gaming,C,2,,,USD,165,2,1,2,2,1,12000,28000,40000,0.55,0.193,0.03,0.06,False,False,0.31,0,0.0,0.0,0,0.0,0.0,4.4,SKIP-MATH,skip
+NL,Netherlands,nl,nl,Crypto Voucher,Crypto,C,2,30.0,100.0,USD,17,2,1,2,2,1,3000,7000,10000,0.55,0.193,0.03,0.06,False,False,0.31,0,0.0,0.0,0,0.0,0.0,4.4,SKIP-MATH,skip
+PT,Portugal,pt,pt,Crypto Voucher,Crypto,C,2,30.0,100.0,USD,10,2,1,2,3,1,900,2100,3000,0.55,0.193,0.03,0.06,False,False,0.31,0,0.0,0.0,0,0.0,0.0,4.4,SKIP-MATH,skip
+BE,Belgium,nl,nl|fr,Crypto Voucher,Crypto,C,2,30.0,100.0,USD,11,2,1,2,3,1,900,2100,3000,0.55,0.193,0.03,0.06,False,False,0.31,0,0.0,0.0,0,0.0,0.0,4.4,SKIP-MATH,skip
+BR,Brazil,pt,pt,NetDragon Universal,Gaming,C,2,,,USD,165,2,1,2,2,1,500,1167,1667,0.55,0.193,0.03,0.06,False,False,0.31,0,0.0,0.0,0,0.0,0.0,4.4,SKIP-MATH,skip
+NL,Netherlands,nl,nl,NetDragon Universal,Gaming,C,2,,,USD,17,2,1,2,2,1,500,1167,1667,0.55,0.193,0.03,0.06,False,False,0.31,0,0.0,0.0,0,0.0,0.0,4.4,SKIP-MATH,skip
+BR,Brazil,pt,pt,Fortnite,Gaming,C,10,,,USD,165,2,1,2,2,1,30000,70000,100000,0.55,0.193,0.03,0.06,False,False,0.31,0,0.0,0.0,0,0.0,0.0,4.4,SKIP-MATH,skip
+NL,Netherlands,nl,nl,Jawaker,Shopping,C,2,,,USD,17,2,1,2,2,1,2500,5833,8333,0.55,0.193,0.03,0.06,False,False,0.31,0,0.0,0.0,0,0.0,0.0,4.4,SKIP-MATH,skip
+PT,Portugal,pt,pt,Jawaker,Shopping,C,2,,,USD,10,2,1,2,3,1,750,1750,2500,0.55,0.193,0.03,0.06,False,False,0.31,0,0.0,0.0,0,0.0,0.0,4.4,SKIP-MATH,skip
+BE,Belgium,nl,nl|fr,Jawaker,Shopping,C,2,,,USD,11,2,1,2,3,1,750,1750,2500,0.55,0.193,0.03,0.06,False,False,0.31,0,0.0,0.0,0,0.0,0.0,4.4,SKIP-MATH,skip
+BE,Belgium,nl,nl|fr,Fortnite,Gaming,C,9,,,USD,11,2,1,2,3,1,9000,21000,30000,0.55,0.193,0.03,0.06,False,False,0.31,0,0.0,0.0,0,0.0,0.0,4.4,SKIP-MATH,skip
+NL,Netherlands,nl,nl,Fortnite,Gaming,C,6,,,USD,17,2,1,2,2,1,30000,70000,100000,0.55,0.193,0.03,0.06,False,False,0.31,0,0.0,0.0,0,0.0,0.0,4.4,SKIP-MATH,skip
+PT,Portugal,pt,pt,Fortnite,Gaming,C,7,,,USD,10,2,1,2,3,1,9000,21000,30000,0.55,0.193,0.03,0.06,False,False,0.31,0,0.0,0.0,0,0.0,0.0,4.4,SKIP-MATH,skip
+SE,Sweden,sv,sv,Crypto Giftcard,Crypto,C,2,,,USD,9,2,1,2,3,1,450,1050,1500,0.55,0.193,0.03,0.06,False,False,0.31,0,0.0,0.0,0,0.0,0.0,4.4,SKIP-MATH,skip
+BR,Brazil,pt,pt,Anacapri,Shopping,C,2,100.0,491.42,BRL,165,2,1,2,2,1,200,467,667,0.55,0.193,0.03,0.06,False,False,0.31,0,0.0,0.0,0,0.0,0.0,4.4,SKIP-MATH,skip
+BR,Brazil,pt,pt,Zinzane,Shopping,C,2,50.0,491.42,BRL,165,2,1,2,2,1,200,467,667,0.55,0.193,0.03,0.06,False,False,0.31,0,0.0,0.0,0,0.0,0.0,4.4,SKIP-MATH,skip
+BR,Brazil,pt,pt,Zift Card,Shopping,C,2,10.0,491.42,BRL,165,2,1,2,2,1,200,467,667,0.55,0.193,0.03,0.06,False,False,0.31,0,0.0,0.0,0,0.0,0.0,4.4,SKIP-MATH,skip
+BR,Brazil,pt,pt,Applebee's,Shopping,C,2,25.0,300.0,BRL,165,2,1,2,2,1,200,467,667,0.55,0.193,0.03,0.06,False,False,0.31,0,0.0,0.0,0,0.0,0.0,4.4,SKIP-MATH,skip
+BR,Brazil,pt,pt,Aramis,Shopping,C,2,50.0,491.42,BRL,165,2,1,2,2,1,200,467,667,0.55,0.193,0.03,0.06,False,False,0.31,0,0.0,0.0,0,0.0,0.0,4.4,SKIP-MATH,skip
+BR,Brazil,pt,pt,Arezzo,Shopping,C,2,100.0,491.42,BRL,165,2,1,2,2,1,200,467,667,0.55,0.193,0.03,0.06,False,False,0.31,0,0.0,0.0,0,0.0,0.0,4.4,SKIP-MATH,skip
+BR,Brazil,pt,pt,Vans,Shopping,C,2,100.0,491.42,BRL,165,2,1,2,2,1,200,467,667,0.55,0.193,0.03,0.06,False,False,0.31,0,0.0,0.0,0,0.0,0.0,4.4,SKIP-MATH,skip
+BR,Brazil,pt,pt,TNG,Shopping,C,2,50.0,491.42,BRL,165,2,1,2,2,1,200,467,667,0.55,0.193,0.03,0.06,False,False,0.31,0,0.0,0.0,0,0.0,0.0,4.4,SKIP-MATH,skip
+BR,Brazil,pt,pt,Tip Top,Shopping,C,2,50.0,300.0,BRL,165,2,1,2,2,1,200,467,667,0.55,0.193,0.03,0.06,False,False,0.31,0,0.0,0.0,0,0.0,0.0,4.4,SKIP-MATH,skip
+BR,Brazil,pt,pt,Spirito Santo,Shopping,C,2,50.0,491.42,BRL,165,2,1,2,2,1,200,467,667,0.55,0.193,0.03,0.06,False,False,0.31,0,0.0,0.0,0,0.0,0.0,4.4,SKIP-MATH,skip
+BR,Brazil,pt,pt,Shopee,Shopping,C,2,,,BRL,165,2,1,2,2,1,200,467,667,0.55,0.193,0.03,0.06,False,False,0.31,0,0.0,0.0,0,0.0,0.0,4.4,SKIP-MATH,skip
+BR,Brazil,pt,pt,Bitfy,Shopping,C,2,100.0,491.42,BRL,165,2,1,2,2,1,200,467,667,0.55,0.193,0.03,0.06,False,False,0.31,0,0.0,0.0,0,0.0,0.0,4.4,SKIP-MATH,skip
+BR,Brazil,pt,pt,Braz Pizzaria,Shopping,C,2,50.0,491.42,BRL,165,2,1,2,2,1,200,467,667,0.55,0.193,0.03,0.06,False,False,0.31,0,0.0,0.0,0,0.0,0.0,4.4,SKIP-MATH,skip
+BR,Brazil,pt,pt,Buser,Shopping,C,2,,,BRL,165,2,1,2,2,1,200,467,667,0.55,0.193,0.03,0.06,False,False,0.31,0,0.0,0.0,0,0.0,0.0,4.4,SKIP-MATH,skip
+BR,Brazil,pt,pt,Camarada Camarão,Shopping,C,2,50.0,491.42,BRL,165,2,1,2,2,1,200,467,667,0.55,0.193,0.03,0.06,False,False,0.31,0,0.0,0.0,0,0.0,0.0,4.4,SKIP-MATH,skip
+BR,Brazil,pt,pt,Corello,Shopping,C,2,30.0,491.42,BRL,165,2,1,2,2,1,200,467,667,0.55,0.193,0.03,0.06,False,False,0.31,0,0.0,0.0,0,0.0,0.0,4.4,SKIP-MATH,skip
+BR,Brazil,pt,pt,DGO,Shopping,C,2,,,BRL,165,2,1,2,2,1,200,467,667,0.55,0.193,0.03,0.06,False,False,0.31,0,0.0,0.0,0,0.0,0.0,4.4,SKIP-MATH,skip
+BR,Brazil,pt,pt,Dufry,Shopping,C,2,50.0,491.42,BRL,165,2,1,2,2,1,200,467,667,0.55,0.193,0.03,0.06,False,False,0.31,0,0.0,0.0,0,0.0,0.0,4.4,SKIP-MATH,skip
+BR,Brazil,pt,pt,Schutz,Shopping,C,2,100.0,491.42,BRL,165,2,1,2,2,1,200,467,667,0.55,0.193,0.03,0.06,False,False,0.31,0,0.0,0.0,0,0.0,0.0,4.4,SKIP-MATH,skip
+BR,Brazil,pt,pt,Crypto Voucher,Crypto,C,1,30.0,100.0,USD,165,2,1,2,2,1,3000,7000,10000,0.55,0.193,0.03,0.06,False,False,0.31,0,0.0,0.0,0,0.0,0.0,4.4,SKIP-MATH,skip
+BE,Belgium,nl,nl|fr,SHENZHEN,Gaming,C,1,,,USD,11,2,1,2,3,1,60,140,200,0.55,0.193,0.03,0.06,False,False,0.31,0,0.0,0.0,0,0.0,0.0,4.4,SKIP-MATH,skip
+PT,Portugal,pt,pt,NetDragon Universal,Gaming,C,1,,,USD,10,2,1,2,3,1,150,350,500,0.55,0.193,0.03,0.06,False,False,0.31,0,0.0,0.0,0,0.0,0.0,4.4,SKIP-MATH,skip
+BE,Belgium,nl,nl|fr,NetDragon Universal,Gaming,C,1,,,USD,11,2,1,2,3,1,150,350,500,0.55,0.193,0.03,0.06,False,False,0.31,0,0.0,0.0,0,0.0,0.0,4.4,SKIP-MATH,skip
+NL,Netherlands,nl,nl,Crypto Giftcard,Crypto,C,1,,,USD,17,2,1,2,2,1,1500,3500,5000,0.55,0.193,0.03,0.06,False,False,0.31,0,0.0,0.0,0,0.0,0.0,4.4,SKIP-MATH,skip
+BR,Brazil,pt,pt,Fogo de Chão,Shopping,C,1,10.0,491.42,BRL,165,2,1,2,2,1,200,467,667,0.55,0.193,0.03,0.06,False,False,0.31,0,0.0,0.0,0,0.0,0.0,4.4,SKIP-MATH,skip
+BR,Brazil,pt,pt,Santa Luzia,Shopping,C,1,50.0,491.42,BRL,165,2,1,2,2,1,200,467,667,0.55,0.193,0.03,0.06,False,False,0.31,0,0.0,0.0,0,0.0,0.0,4.4,SKIP-MATH,skip
+BR,Brazil,pt,pt,GNC Cinemas,Entertainment,C,1,50.0,300.0,BRL,165,2,1,2,2,1,200,467,667,0.55,0.193,0.03,0.06,False,False,0.31,0,0.0,0.0,0,0.0,0.0,4.4,SKIP-MATH,skip
+BR,Brazil,pt,pt,GrandVision,Shopping,C,1,50.0,491.42,BRL,165,2,1,2,2,1,200,467,667,0.55,0.193,0.03,0.06,False,False,0.31,0,0.0,0.0,0,0.0,0.0,4.4,SKIP-MATH,skip
+BR,Brazil,pt,pt,Havaianas,Shopping,C,1,30.0,491.42,BRL,165,2,1,2,2,1,200,467,667,0.55,0.193,0.03,0.06,False,False,0.31,0,0.0,0.0,0,0.0,0.0,4.4,SKIP-MATH,skip
+BR,Brazil,pt,pt,Hering,Shopping,C,1,49.99,200.0,BRL,165,2,1,2,2,1,200,467,667,0.55,0.193,0.03,0.06,False,False,0.31,0,0.0,0.0,0,0.0,0.0,4.4,SKIP-MATH,skip
+BR,Brazil,pt,pt,Imaginarium,Shopping,C,1,50.0,491.42,BRL,165,2,1,2,2,1,200,467,667,0.55,0.193,0.03,0.06,False,False,0.31,0,0.0,0.0,0,0.0,0.0,4.4,SKIP-MATH,skip
+BR,Brazil,pt,pt,Looke,Shopping,C,1,,,BRL,165,2,1,2,2,1,200,467,667,0.55,0.193,0.03,0.06,False,False,0.31,0,0.0,0.0,0,0.0,0.0,4.4,SKIP-MATH,skip
+BR,Brazil,pt,pt,McDonald's,Shopping,C,1,,,BRL,165,2,1,2,2,1,200,467,667,0.55,0.193,0.03,0.06,False,False,0.31,0,0.0,0.0,0,0.0,0.0,4.4,SKIP-MATH,skip
+BR,Brazil,pt,pt,Piraja,Shopping,C,1,50.0,491.42,BRL,165,2,1,2,2,1,200,467,667,0.55,0.193,0.03,0.06,False,False,0.31,0,0.0,0.0,0,0.0,0.0,4.4,SKIP-MATH,skip
+BR,Brazil,pt,pt,Outback Steakhouse,Shopping,C,1,50.0,491.42,BRL,165,2,1,2,2,1,200,467,667,0.55,0.193,0.03,0.06,False,False,0.31,0,0.0,0.0,0,0.0,0.0,4.4,SKIP-MATH,skip
+BR,Brazil,pt,pt,Minecraft,Gaming,C,1,,,BRL,165,2,1,2,2,1,200,467,667,0.55,0.193,0.03,0.06,False,False,0.31,0,0.0,0.0,0,0.0,0.0,4.4,SKIP-MATH,skip
+BR,Brazil,pt,pt,Neopets,Shopping,C,1,,,BRL,165,2,1,2,2,1,200,467,667,0.55,0.193,0.03,0.06,False,False,0.31,0,0.0,0.0,0,0.0,0.0,4.4,SKIP-MATH,skip
+BR,Brazil,pt,pt,Habbo,Entertainment,C,1,,,BRL,165,2,1,2,2,1,200,467,667,0.55,0.193,0.03,0.06,False,False,0.31,0,0.0,0.0,0,0.0,0.0,4.4,SKIP-MATH,skip
+BR,Brazil,pt,pt,EA Sports,Gaming,C,1,,,BRL,165,2,1,2,2,1,200,467,667,0.55,0.193,0.03,0.06,False,False,0.31,0,0.0,0.0,0,0.0,0.0,4.4,SKIP-MATH,skip
+BR,Brazil,pt,pt,McAfee,Software,C,1,,,BRL,165,2,1,2,2,1,200,467,667,0.55,0.193,0.03,0.06,False,False,0.31,0,0.0,0.0,0,0.0,0.0,4.4,SKIP-MATH,skip
+TW,Taiwan,zh,zh,Steam,Gaming,B,2,,,TWD,22,,3,,3,3,10500,24500,35000,0.3,0.105,0.0195,0.039,False,False,0.37,0,0.0,0.0,0,0.0,0.0,3.6,SKIP-MATH,skip
+TR,Turkey,tr,tr,Crypto Voucher,Crypto,C,2,30.0,100.0,USD,76,2,2,2,2,2,3000,7000,10000,0.55,0.193,0.0255,0.051,False,False,0.26,0,0.0,0.0,0,0.0,0.0,3.3,SKIP-MATH,skip
+TR,Turkey,tr,tr,Jawaker,Shopping,C,2,,,USD,76,2,2,2,2,2,2500,5833,8333,0.55,0.193,0.0255,0.051,False,False,0.26,0,0.0,0.0,0,0.0,0.0,3.3,SKIP-MATH,skip
+TR,Turkey,tr,tr,Fortnite,Gaming,C,8,,,USD,76,2,2,2,2,2,30000,70000,100000,0.55,0.193,0.0255,0.051,False,False,0.26,0,0.0,0.0,0,0.0,0.0,3.3,SKIP-MATH,skip
+TR,Turkey,tr,tr,Crypto Giftcard,Crypto,C,2,,,USD,76,2,2,2,2,2,1500,3500,5000,0.55,0.193,0.0255,0.051,False,False,0.26,0,0.0,0.0,0,0.0,0.0,3.3,SKIP-MATH,skip
+TR,Turkey,tr,tr,SHENZHEN,Gaming,C,1,,,USD,76,2,2,2,2,2,200,467,667,0.55,0.193,0.0255,0.051,False,False,0.26,0,0.0,0.0,0,0.0,0.0,3.3,SKIP-MATH,skip
+TR,Turkey,tr,tr,NetDragon Universal,Gaming,C,1,,,USD,76,2,2,2,2,2,500,1167,1667,0.55,0.193,0.0255,0.051,False,False,0.26,0,0.0,0.0,0,0.0,0.0,3.3,SKIP-MATH,skip
+ES,Spain,es,es,NetFlix,Entertainment,A,1,25.0,88.61,EUR,47,1,1,1,2,1,25000,58333,83333,1.2,0.42,0.045,0.09,False,False,0.21,0,0.0,0.0,0,0.0,0.0,3.0,SKIP-MATH,skip
+US,United States,en,en,NetFlix,Entertainment,A,1,,,USD,312,1,1,1,1,1,150000,350000,500000,1.2,0.42,0.045,0.09,False,False,0.21,0,0.0,0.0,0,0.0,0.0,3.0,SKIP-MATH,skip
+DE,Germany,de,de,App Store & iTunes,Entertainment,A,1,2.0,88.61,EUR,79,1,1,1,2,1,10000,23333,33333,1.2,0.42,0.045,0.09,False,False,0.21,0,0.0,0.0,0,0.0,0.0,3.0,SKIP-MATH,skip
+GB,United Kingdom,en,en,App Store & iTunes,Entertainment,A,1,2.0,76.64,GBP,67,1,1,1,1,1,60000,140000,200000,1.2,0.42,0.045,0.09,False,False,0.21,0,0.0,0.0,0,0.0,0.0,3.0,SKIP-MATH,skip
+AT,Austria,de,de,Amazon,Shopping,A,1,1.0,88.61,EUR,8,1,1,1,3,1,12000,28000,40000,1.2,0.42,0.045,0.09,False,False,0.21,0,0.0,0.0,0,0.0,0.0,3.0,SKIP-MATH,skip
+FR,France,fr,fr,Amazon,Shopping,A,1,1.0,88.61,EUR,64,1,1,1,2,1,40000,93333,133333,1.2,0.42,0.045,0.09,False,False,0.21,0,0.0,0.0,0,0.0,0.0,3.0,SKIP-MATH,skip
+ES,Spain,es,es,Amazon,Shopping,A,1,1.0,88.61,EUR,47,1,1,1,2,1,40000,93333,133333,1.2,0.42,0.045,0.09,False,False,0.21,0,0.0,0.0,0,0.0,0.0,3.0,SKIP-MATH,skip
+FR,France,fr,fr,App Store & iTunes,Entertainment,A,1,,,EUR,64,1,1,1,2,1,10000,23333,33333,1.2,0.42,0.045,0.09,False,False,0.21,0,0.0,0.0,0,0.0,0.0,3.0,SKIP-MATH,skip
+DE,Germany,de,de,Amazon,Shopping,A,1,1.0,88.61,EUR,79,1,1,1,2,1,40000,93333,133333,1.2,0.42,0.045,0.09,False,False,0.21,0,0.0,0.0,0,0.0,0.0,3.0,SKIP-MATH,skip
+IT,Italy,it,it,Amazon,Shopping,A,1,1.0,88.61,EUR,56,1,1,1,2,1,40000,93333,133333,1.2,0.42,0.045,0.09,False,False,0.21,0,0.0,0.0,0,0.0,0.0,3.0,SKIP-MATH,skip
+GB,United Kingdom,en,en,Amazon,Shopping,A,1,1.0,76.64,GBP,67,1,1,1,1,1,240000,560000,800000,1.2,0.42,0.045,0.09,False,False,0.21,0,0.0,0.0,0,0.0,0.0,3.0,SKIP-MATH,skip
+DE,Germany,de,de,NetFlix,Entertainment,A,1,25.0,88.61,EUR,79,1,1,1,2,1,25000,58333,83333,1.2,0.42,0.045,0.09,False,False,0.21,0,0.0,0.0,0,0.0,0.0,3.0,SKIP-MATH,skip
+CA,Canada,en,en|fr,Google play,Entertainment,A,1,10.0,142.87,CAD,36,1,1,1,2,1,10000,23333,33333,1.2,0.42,0.045,0.09,False,False,0.21,0,0.0,0.0,0,0.0,0.0,3.0,SKIP-MATH,skip
+AU,Australia,en,en,Amazon,Shopping,A,1,1.0,144.8,AUD,24,1,1,1,2,1,40000,93333,133333,1.2,0.42,0.045,0.09,False,False,0.21,0,0.0,0.0,0,0.0,0.0,3.0,SKIP-MATH,skip
+FR,France,fr,fr,NetFlix,Entertainment,A,2,25.0,88.61,EUR,64,1,1,1,2,1,25000,58333,83333,1.2,0.42,0.045,0.09,False,False,0.21,0,0.0,0.0,0,0.0,0.0,3.0,SKIP-MATH,skip
+AT,Austria,de,de,NetFlix,Entertainment,A,1,25.0,88.61,EUR,8,1,1,1,3,1,7500,17500,25000,1.2,0.42,0.045,0.09,False,False,0.21,0,0.0,0.0,0,0.0,0.0,3.0,SKIP-MATH,skip
+IE,Ireland,en,en,NetFlix,Entertainment,A,1,25.0,88.61,EUR,5,1,1,1,3,1,7500,17500,25000,1.2,0.42,0.045,0.09,False,False,0.21,0,0.0,0.0,0,0.0,0.0,3.0,SKIP-MATH,skip
+IT,Italy,it,it,NetFlix,Entertainment,A,1,25.0,88.61,EUR,56,1,1,1,2,1,25000,58333,83333,1.2,0.42,0.045,0.09,False,False,0.21,0,0.0,0.0,0,0.0,0.0,3.0,SKIP-MATH,skip
+DE,Germany,de,de,Google play,Entertainment,A,1,1.0,88.61,EUR,79,1,1,1,2,1,10000,23333,33333,1.2,0.42,0.045,0.09,False,False,0.21,0,0.0,0.0,0,0.0,0.0,3.0,SKIP-MATH,skip
+US,United States,en,en,Amazon,Shopping,A,1,1.0,100.0,USD,312,1,1,1,1,1,240000,560000,800000,1.2,0.42,0.045,0.09,False,False,0.21,0,0.0,0.0,0,0.0,0.0,3.0,SKIP-MATH,skip
+GB,United Kingdom,en,en,NetFlix,Entertainment,A,1,,,GBP,67,1,1,1,1,1,150000,350000,500000,1.2,0.42,0.045,0.09,False,False,0.21,0,0.0,0.0,0,0.0,0.0,3.0,SKIP-MATH,skip
+AT,Austria,de,de,App Store & iTunes,Entertainment,A,1,,,EUR,8,1,1,1,3,1,3000,7000,10000,1.2,0.42,0.045,0.09,False,False,0.21,0,0.0,0.0,0,0.0,0.0,3.0,SKIP-MATH,skip
+IE,Ireland,en,en,App Store & iTunes,Entertainment,A,1,,,EUR,5,1,1,1,3,1,3000,7000,10000,1.2,0.42,0.045,0.09,False,False,0.21,0,0.0,0.0,0,0.0,0.0,3.0,SKIP-MATH,skip
+US,United States,en,en,App Store & iTunes,Entertainment,A,1,2.0,100.0,USD,312,1,1,1,1,1,60000,140000,200000,1.2,0.42,0.045,0.09,False,False,0.21,0,0.0,0.0,0,0.0,0.0,3.0,SKIP-MATH,skip
+IE,Ireland,en,en,Nike,Shopping,A,3,5.0,88.61,EUR,5,1,1,1,3,1,900,2100,3000,1.2,0.42,0.045,0.09,False,False,0.21,0,0.0,0.0,0,0.0,0.0,3.0,SKIP-MATH,skip
+ES,Spain,es,es,Ticketmaster,Shopping,A,3,10.0,88.61,EUR,47,1,1,1,2,1,1500,3500,5000,1.2,0.42,0.045,0.09,False,False,0.21,0,0.0,0.0,0,0.0,0.0,3.0,SKIP-MATH,skip
+IT,Italy,it,it,Sephora,Shopping,A,3,,,EUR,56,1,1,1,2,1,2500,5833,8333,1.2,0.42,0.045,0.09,False,False,0.21,0,0.0,0.0,0,0.0,0.0,3.0,SKIP-MATH,skip
+AT,Austria,de,de,Ticketmaster,Shopping,A,3,10.0,88.61,EUR,8,1,1,1,3,1,450,1050,1500,1.2,0.42,0.045,0.09,False,False,0.21,0,0.0,0.0,0,0.0,0.0,3.0,SKIP-MATH,skip
+ES,Spain,es,es,Rituals,Shopping,A,3,,,EUR,47,1,1,1,2,1,500,1167,1667,1.2,0.42,0.045,0.09,False,False,0.21,0,0.0,0.0,0,0.0,0.0,3.0,SKIP-MATH,skip
+DE,Germany,de,de,Zalando,Shopping,A,3,,,EUR,79,1,1,1,2,1,1800,4200,6000,1.2,0.42,0.045,0.09,False,False,0.21,0,0.0,0.0,0,0.0,0.0,3.0,SKIP-MATH,skip
+GB,United Kingdom,en,en,Swarovski,Shopping,A,3,,,GBP,67,1,1,1,1,1,4800,11200,16000,1.2,0.42,0.045,0.09,False,False,0.21,0,0.0,0.0,0,0.0,0.0,3.0,SKIP-MATH,skip
+IE,Ireland,en,en,Swarovski,Shopping,A,3,,,EUR,5,1,1,1,3,1,240,560,800,1.2,0.42,0.045,0.09,False,False,0.21,0,0.0,0.0,0,0.0,0.0,3.0,SKIP-MATH,skip
+ES,Spain,es,es,Smartbox,Shopping,A,3,,,EUR,47,1,1,1,2,1,1200,2800,4000,1.2,0.42,0.045,0.09,False,False,0.21,0,0.0,0.0,0,0.0,0.0,3.0,SKIP-MATH,skip
+IT,Italy,it,it,Smartbox,Shopping,A,3,,,EUR,56,1,1,1,2,1,1200,2800,4000,1.2,0.42,0.045,0.09,False,False,0.21,0,0.0,0.0,0,0.0,0.0,3.0,SKIP-MATH,skip
+ES,Spain,es,es,Sephora,Shopping,A,2,,,EUR,47,1,1,1,2,1,2500,5833,8333,1.2,0.42,0.045,0.09,False,False,0.21,0,0.0,0.0,0,0.0,0.0,3.0,SKIP-MATH,skip
+DE,Germany,de,de,Nike,Shopping,A,2,5.0,88.61,EUR,79,1,1,1,2,1,3000,7000,10000,1.2,0.42,0.045,0.09,False,False,0.21,0,0.0,0.0,0,0.0,0.0,3.0,SKIP-MATH,skip
+AT,Austria,de,de,Zalando,Shopping,A,2,5.0,88.61,EUR,8,1,1,1,3,1,540,1260,1800,1.2,0.42,0.045,0.09,False,False,0.21,0,0.0,0.0,0,0.0,0.0,3.0,SKIP-MATH,skip
+TW,Taiwan,zh,zh,Fortnite,Gaming,C,9,,,USD,22,,3,,3,3,9000,21000,30000,0.3,0.105,0.0163,0.033,False,False,0.31,0,0.0,0.0,0,0.0,0.0,3.0,SKIP-MATH,skip
+ES,Spain,es,es,Decathlon,Shopping,A,2,,,EUR,47,1,1,1,2,1,1500,3500,5000,1.2,0.42,0.045,0.09,False,False,0.21,0,0.0,0.0,0,0.0,0.0,3.0,SKIP-MATH,skip
+FR,France,fr,fr,Decathlon,Shopping,A,3,5.0,88.61,EUR,64,1,1,1,2,1,1500,3500,5000,1.2,0.42,0.045,0.09,False,False,0.21,0,0.0,0.0,0,0.0,0.0,3.0,SKIP-MATH,skip
+FR,France,fr,fr,Adidas,Shopping,A,1,,,EUR,64,1,1,1,2,1,200,467,667,1.2,0.42,0.045,0.09,False,False,0.21,0,0.0,0.0,0,0.0,0.0,3.0,SKIP-MATH,skip
+DE,Germany,de,de,Decathlon,Shopping,A,1,,,EUR,79,1,1,1,2,1,1500,3500,5000,1.2,0.42,0.045,0.09,False,False,0.21,0,0.0,0.0,0,0.0,0.0,3.0,SKIP-MATH,skip
+IT,Italy,it,it,FlixBus,Travel,A,1,,,EUR,56,1,1,1,2,1,800,1867,2667,1.2,0.42,0.045,0.09,False,False,0.21,0,0.0,0.0,0,0.0,0.0,3.0,SKIP-MATH,skip
+ES,Spain,es,es,FlixBus,Travel,A,1,,,EUR,47,1,1,1,2,1,800,1867,2667,1.2,0.42,0.045,0.09,False,False,0.21,0,0.0,0.0,0,0.0,0.0,3.0,SKIP-MATH,skip
+DE,Germany,de,de,Adidas,Shopping,A,1,,,EUR,79,1,1,1,2,1,200,467,667,1.2,0.42,0.045,0.09,False,False,0.21,0,0.0,0.0,0,0.0,0.0,3.0,SKIP-MATH,skip
+DE,Germany,de,de,FlixBus,Travel,A,1,,,EUR,79,1,1,1,2,1,800,1867,2667,1.2,0.42,0.045,0.09,False,False,0.21,0,0.0,0.0,0,0.0,0.0,3.0,SKIP-MATH,skip
+DE,Germany,de,de,Mango,Shopping,A,1,,,EUR,79,1,1,1,2,1,600,1400,2000,1.2,0.42,0.045,0.09,False,False,0.21,0,0.0,0.0,0,0.0,0.0,3.0,SKIP-MATH,skip
+US,United States,en,en,ASOS,Shopping,A,1,5.0,100.0,USD,312,1,1,1,1,1,7200,16800,24000,1.2,0.42,0.045,0.09,False,False,0.21,0,0.0,0.0,0,0.0,0.0,3.0,SKIP-MATH,skip
+US,United States,en,en,Sephora,Shopping,A,1,10.0,100.0,USD,312,1,1,1,1,1,15000,35000,50000,1.2,0.42,0.045,0.09,False,False,0.21,0,0.0,0.0,0,0.0,0.0,3.0,SKIP-MATH,skip
+US,United States,en,en,H&M,Shopping,A,1,10.0,100.0,USD,312,1,1,1,1,1,4800,11200,16000,1.2,0.42,0.045,0.09,False,False,0.21,0,0.0,0.0,0,0.0,0.0,3.0,SKIP-MATH,skip
+US,United States,en,en,Nike,Shopping,A,1,5.0,100.0,USD,312,1,1,1,1,1,18000,42000,60000,1.2,0.42,0.045,0.09,False,False,0.21,0,0.0,0.0,0,0.0,0.0,3.0,SKIP-MATH,skip
+FR,France,fr,fr,Steam,Gaming,B,3,,,EUR,64,1,1,1,2,1,35000,81667,116667,1.2,0.42,0.03,0.06,False,False,0.14,0,0.0,0.0,0,0.0,0.0,2.0,SKIP-MATH,skip
+MY,Malaysia,en,en|ms,Steam,Gaming,B,3,,,MYR,30,1,1,1,3,1,10500,24500,35000,1.2,0.42,0.03,0.06,False,False,0.14,0,0.0,0.0,0,0.0,0.0,2.0,SKIP-MATH,skip
+GB,United Kingdom,en,en,Xbox,Gaming,B,3,,,GBP,67,1,1,1,1,1,60000,140000,200000,1.2,0.42,0.03,0.06,False,False,0.14,0,0.0,0.0,0,0.0,0.0,2.0,SKIP-MATH,skip
+SG,Singapore,en,en,Steam,Gaming,B,3,,,SGD,5,1,1,1,3,1,10500,24500,35000,1.2,0.42,0.03,0.06,False,False,0.14,0,0.0,0.0,0,0.0,0.0,2.0,SKIP-MATH,skip
+AT,Austria,de,de,Steam,Gaming,B,3,,,EUR,8,1,1,1,3,1,10500,24500,35000,1.2,0.42,0.03,0.06,False,False,0.14,0,0.0,0.0,0,0.0,0.0,2.0,SKIP-MATH,skip
+DE,Germany,de,de,Steam,Gaming,B,3,,,EUR,79,1,1,1,2,1,35000,81667,116667,1.2,0.42,0.03,0.06,False,False,0.14,0,0.0,0.0,0,0.0,0.0,2.0,SKIP-MATH,skip
+IE,Ireland,en,en,Steam,Gaming,B,3,,,EUR,5,1,1,1,3,1,10500,24500,35000,1.2,0.42,0.03,0.06,False,False,0.14,0,0.0,0.0,0,0.0,0.0,2.0,SKIP-MATH,skip
+IT,Italy,it,it,Steam,Gaming,B,3,,,EUR,56,1,1,1,2,1,35000,81667,116667,1.2,0.42,0.03,0.06,False,False,0.14,0,0.0,0.0,0,0.0,0.0,2.0,SKIP-MATH,skip
+ES,Spain,es,es,Steam,Gaming,B,3,,,EUR,47,1,1,1,2,1,35000,81667,116667,1.2,0.42,0.03,0.06,False,False,0.14,0,0.0,0.0,0,0.0,0.0,2.0,SKIP-MATH,skip
+CA,Canada,en,en|fr,PlayStation,Gaming,B,3,,,CAD,36,1,1,1,2,1,15000,35000,50000,1.2,0.42,0.03,0.06,False,False,0.14,0,0.0,0.0,0,0.0,0.0,2.0,SKIP-MATH,skip
+AT,Austria,de,de,Xbox,Gaming,B,3,,,EUR,8,1,1,1,3,1,3000,7000,10000,1.2,0.42,0.03,0.06,False,False,0.14,0,0.0,0.0,0,0.0,0.0,2.0,SKIP-MATH,skip
+FR,France,fr,fr,Xbox,Gaming,B,3,,,EUR,64,1,1,1,2,1,10000,23333,33333,1.2,0.42,0.03,0.06,False,False,0.14,0,0.0,0.0,0,0.0,0.0,2.0,SKIP-MATH,skip
+DE,Germany,de,de,Xbox,Gaming,B,3,,,EUR,79,1,1,1,2,1,10000,23333,33333,1.2,0.42,0.03,0.06,False,False,0.14,0,0.0,0.0,0,0.0,0.0,2.0,SKIP-MATH,skip
+IE,Ireland,en,en,Xbox,Gaming,B,3,,,EUR,5,1,1,1,3,1,3000,7000,10000,1.2,0.42,0.03,0.06,False,False,0.14,0,0.0,0.0,0,0.0,0.0,2.0,SKIP-MATH,skip
+IT,Italy,it,it,Xbox,Gaming,B,3,,,EUR,56,1,1,1,2,1,10000,23333,33333,1.2,0.42,0.03,0.06,False,False,0.14,0,0.0,0.0,0,0.0,0.0,2.0,SKIP-MATH,skip
+ES,Spain,es,es,Xbox,Gaming,B,3,,,EUR,47,1,1,1,2,1,10000,23333,33333,1.2,0.42,0.03,0.06,False,False,0.14,0,0.0,0.0,0,0.0,0.0,2.0,SKIP-MATH,skip
+GB,United Kingdom,en,en,Nintendo,Gaming,B,7,,,GBP,67,1,1,1,1,1,48000,112000,160000,1.2,0.42,0.03,0.06,False,False,0.14,0,0.0,0.0,0,0.0,0.0,2.0,SKIP-MATH,skip
+US,United States,en,en,Xbox,Gaming,B,5,,,USD,312,1,1,1,1,1,60000,140000,200000,1.2,0.42,0.03,0.06,False,False,0.14,0,0.0,0.0,0,0.0,0.0,2.0,SKIP-MATH,skip
+AT,Austria,de,de,PlayStation,Gaming,B,3,,,EUR,8,1,1,1,3,1,4500,10500,15000,1.2,0.42,0.03,0.06,False,False,0.14,0,0.0,0.0,0,0.0,0.0,2.0,SKIP-MATH,skip
+DE,Germany,de,de,PlayStation,Gaming,B,3,,,EUR,79,1,1,1,2,1,15000,35000,50000,1.2,0.42,0.03,0.06,False,False,0.14,0,0.0,0.0,0,0.0,0.0,2.0,SKIP-MATH,skip
+IT,Italy,it,it,PlayStation,Gaming,B,3,,,EUR,56,1,1,1,2,1,15000,35000,50000,1.2,0.42,0.03,0.06,False,False,0.14,0,0.0,0.0,0,0.0,0.0,2.0,SKIP-MATH,skip
+ES,Spain,es,es,PlayStation,Gaming,B,3,,,EUR,47,1,1,1,2,1,15000,35000,50000,1.2,0.42,0.03,0.06,False,False,0.14,0,0.0,0.0,0,0.0,0.0,2.0,SKIP-MATH,skip
+KR,South Korea,ko,ko,Crypto Voucher,Crypto,C,2,30.0,100.0,USD,49,2,3,2,2,3,3000,7000,10000,0.55,0.193,0.0195,0.039,False,False,0.2,0,0.0,0.0,0,0.0,0.0,2.0,SKIP-MATH,skip
+FR,France,fr,fr,Paysafe Card,Payment Cards,B,6,,,EUR,64,1,1,1,2,1,4000,9333,13333,1.2,0.42,0.03,0.06,False,False,0.14,0,0.0,0.0,0,0.0,0.0,2.0,SKIP-MATH,skip
+DE,Germany,de,de,Paysafe Card,Payment Cards,B,3,,,EUR,79,1,1,1,2,1,4000,9333,13333,1.2,0.42,0.03,0.06,False,False,0.14,0,0.0,0.0,0,0.0,0.0,2.0,SKIP-MATH,skip
+ES,Spain,es,es,Paysafe Card,Payment Cards,B,5,,,EUR,47,1,1,1,2,1,4000,9333,13333,1.2,0.42,0.03,0.06,False,False,0.14,0,0.0,0.0,0,0.0,0.0,2.0,SKIP-MATH,skip
+KR,South Korea,ko,ko,Jawaker,Shopping,C,2,,,USD,49,2,3,2,2,3,2500,5833,8333,0.55,0.193,0.0195,0.039,False,False,0.2,0,0.0,0.0,0,0.0,0.0,2.0,SKIP-MATH,skip
+KR,South Korea,ko,ko,Fortnite,Gaming,C,9,,,USD,49,2,3,2,2,3,30000,70000,100000,0.55,0.193,0.0195,0.039,False,False,0.2,0,0.0,0.0,0,0.0,0.0,2.0,SKIP-MATH,skip
+IE,Ireland,en,en,Tesco,Shopping,B,2,1.0,88.61,EUR,5,1,1,1,3,1,750,1750,2500,1.2,0.42,0.03,0.06,False,False,0.14,0,0.0,0.0,0,0.0,0.0,2.0,SKIP-MATH,skip
+FR,France,fr,fr,Roblox,Gaming,B,2,10.0,88.61,EUR,64,1,1,1,2,1,20000,46667,66667,1.2,0.42,0.03,0.06,False,False,0.14,0,0.0,0.0,0,0.0,0.0,2.0,SKIP-MATH,skip
+DE,Germany,de,de,Tinder,Entertainment,B,2,,,EUR,79,1,1,1,2,1,3500,8167,11667,1.2,0.42,0.03,0.06,False,False,0.14,0,0.0,0.0,0,0.0,0.0,2.0,SKIP-MATH,skip
+ES,Spain,es,es,Tinder,Entertainment,B,2,,,EUR,47,1,1,1,2,1,3500,8167,11667,1.2,0.42,0.03,0.06,False,False,0.14,0,0.0,0.0,0,0.0,0.0,2.0,SKIP-MATH,skip
+FR,France,fr,fr,Tinder,Entertainment,B,2,,,EUR,64,1,1,1,2,1,3500,8167,11667,1.2,0.42,0.03,0.06,False,False,0.14,0,0.0,0.0,0,0.0,0.0,2.0,SKIP-MATH,skip
+IE,Ireland,en,en,Tinder,Entertainment,B,2,,,EUR,5,1,1,1,3,1,1050,2450,3500,1.2,0.42,0.03,0.06,False,False,0.14,0,0.0,0.0,0,0.0,0.0,2.0,SKIP-MATH,skip
+IT,Italy,it,it,Tinder,Entertainment,B,2,,,EUR,56,1,1,1,2,1,3500,8167,11667,1.2,0.42,0.03,0.06,False,False,0.14,0,0.0,0.0,0,0.0,0.0,2.0,SKIP-MATH,skip
+GB,United Kingdom,en,en,Tinder,Entertainment,B,2,,,GBP,67,1,1,1,1,1,21000,49000,70000,1.2,0.42,0.03,0.06,False,False,0.14,0,0.0,0.0,0,0.0,0.0,2.0,SKIP-MATH,skip
+DE,Germany,de,de,twitch,Entertainment,B,1,,,USD,79,1,1,1,2,1,2000,4667,6667,1.2,0.42,0.03,0.06,False,False,0.14,0,0.0,0.0,0,0.0,0.0,2.0,SKIP-MATH,skip
+CA,Canada,en,en|fr,Xbox,Gaming,B,4,,,CAD,36,1,1,1,2,1,10000,23333,33333,1.2,0.42,0.03,0.06,False,False,0.14,0,0.0,0.0,0,0.0,0.0,2.0,SKIP-MATH,skip
+KR,South Korea,ko,ko,SHENZHEN,Gaming,C,1,,,USD,49,2,3,2,2,3,200,467,667,0.55,0.193,0.0195,0.039,False,False,0.2,0,0.0,0.0,0,0.0,0.0,2.0,SKIP-MATH,skip
+KR,South Korea,ko,ko,NetDragon Universal,Gaming,C,1,,,USD,49,2,3,2,2,3,500,1167,1667,0.55,0.193,0.0195,0.039,False,False,0.2,0,0.0,0.0,0,0.0,0.0,2.0,SKIP-MATH,skip
+KR,South Korea,ko,ko,Mobile Legends,Gaming,C,1,,,USD,49,2,3,2,2,3,12000,28000,40000,0.55,0.193,0.0195,0.039,False,False,0.2,0,0.0,0.0,0,0.0,0.0,2.0,SKIP-MATH,skip
+FR,France,fr,fr,Mastercard,Payment Cards,B,1,1.0,88.61,EUR,64,1,1,1,2,1,600,1400,2000,1.2,0.42,0.03,0.06,False,False,0.14,0,0.0,0.0,0,0.0,0.0,2.0,SKIP-MATH,skip
+US,United States,en,en,Mastercard,Payment Cards,B,4,1.0,100.0,USD,312,1,1,1,1,1,3600,8400,12000,1.2,0.42,0.03,0.06,False,False,0.14,0,0.0,0.0,0,0.0,0.0,2.0,SKIP-MATH,skip
+AU,Australia,en,en,Roblox,Gaming,B,1,10.0,144.8,AUD,24,1,1,1,2,1,20000,46667,66667,1.2,0.42,0.03,0.06,False,False,0.14,0,0.0,0.0,0,0.0,0.0,2.0,SKIP-MATH,skip
+MM,Myanmar,my,my,Mobile Legends,Gaming,C,3,,,USD,23,4,4,4,4,4,840,1960,2800,0.1,0.035,0.012,0.024,False,False,0.69,0,0.0,0.0,0,0.0,0.0,1.9,SKIP-STRIPE,skip
+NP,Nepal,ne,ne,Mobile Legends,Gaming,C,3,,,USD,11,4,4,4,4,4,840,1960,2800,0.1,0.035,0.012,0.024,False,False,0.69,0,0.0,0.0,0,0.0,0.0,1.9,SKIP-STRIPE,skip
+PK,Pakistan,ur,ur|en,Mobile Legends,Gaming,C,3,,,USD,116,4,4,4,4,4,840,1960,2800,0.1,0.035,0.012,0.024,False,False,0.69,0,0.0,0.0,0,0.0,0.0,1.9,SKIP-STRIPE,skip
+LK,Sri Lanka,si,si|ta,Mobile Legends,Gaming,C,3,,,USD,11,4,4,4,4,4,840,1960,2800,0.1,0.035,0.012,0.024,False,False,0.69,0,0.0,0.0,0,0.0,0.0,1.9,SKIP-STRIPE,skip
+AF,Afghanistan,fa,fa|ps,PUBG,Gaming,C,3,,,USD,6,4,4,4,4,4,560,1307,1867,0.1,0.035,0.012,0.024,False,False,0.69,0,0.0,0.0,0,0.0,0.0,1.9,SKIP-STRIPE,skip
+AF,Afghanistan,fa,fa|ps,Jawaker,Shopping,C,3,,,USD,6,4,4,4,4,4,175,408,583,0.1,0.035,0.012,0.024,False,False,0.69,0,0.0,0.0,0,0.0,0.0,1.9,SKIP-STRIPE,skip
+AL,Albania,sq,sq,Jawaker,Shopping,C,3,,,USD,2,4,4,4,4,4,175,408,583,0.1,0.035,0.012,0.024,False,False,0.69,0,0.0,0.0,0,0.0,0.0,1.9,SKIP-STRIPE,skip
+UZ,Uzbekistan,uz,uz|ru,Mobile Legends,Gaming,C,2,,,USD,17,4,4,4,4,4,840,1960,2800,0.1,0.035,0.012,0.024,False,False,0.69,0,0.0,0.0,0,0.0,0.0,1.9,SKIP-STRIPE,skip
+AM,Armenia,hy,hy,Jawaker,Shopping,C,2,,,USD,2,4,4,4,4,4,175,408,583,0.1,0.035,0.012,0.024,False,False,0.69,0,0.0,0.0,0,0.0,0.0,1.9,SKIP-STRIPE,skip
+BD,Bangladesh,bn,bn,Jawaker,Shopping,C,2,,,USD,70,4,4,4,4,4,175,408,583,0.1,0.035,0.012,0.024,False,False,0.69,0,0.0,0.0,0,0.0,0.0,1.9,SKIP-STRIPE,skip
+KH,Cambodia,km,km,Jawaker,Shopping,C,3,,,USD,8,4,4,4,4,4,175,408,583,0.1,0.035,0.012,0.024,False,False,0.69,0,0.0,0.0,0,0.0,0.0,1.9,SKIP-STRIPE,skip
+BD,Bangladesh,bn,bn,Mobile Legends,Gaming,C,2,,,USD,70,4,4,4,4,4,840,1960,2800,0.1,0.035,0.012,0.024,False,False,0.69,0,0.0,0.0,0,0.0,0.0,1.9,SKIP-STRIPE,skip
+KH,Cambodia,km,km,Mobile Legends,Gaming,C,2,,,USD,8,4,4,4,4,4,840,1960,2800,0.1,0.035,0.012,0.024,False,False,0.69,0,0.0,0.0,0,0.0,0.0,1.9,SKIP-STRIPE,skip
+KG,Kyrgyzstan,ky,ky|ru,Crypto Voucher,Crypto,C,2,30.0,100.0,USD,3,4,4,4,4,4,210,490,700,0.1,0.035,0.012,0.024,False,False,0.69,0,0.0,0.0,0,0.0,0.0,1.9,SKIP-STRIPE,skip
+LA,Laos,lo,lo,Crypto Voucher,Crypto,C,2,30.0,100.0,USD,3,4,4,4,4,4,210,490,700,0.1,0.035,0.012,0.024,False,False,0.69,0,0.0,0.0,0,0.0,0.0,1.9,SKIP-STRIPE,skip
+MK,Macedonia,mk,mk,Crypto Voucher,Crypto,C,2,30.0,100.0,USD,1.5,4,4,4,4,4,210,490,700,0.1,0.035,0.012,0.024,False,False,0.69,0,0.0,0.0,0,0.0,0.0,1.9,SKIP-STRIPE,skip
+MM,Myanmar,my,my,Crypto Voucher,Crypto,C,2,30.0,100.0,USD,23,4,4,4,4,4,210,490,700,0.1,0.035,0.012,0.024,False,False,0.69,0,0.0,0.0,0,0.0,0.0,1.9,SKIP-STRIPE,skip
+NP,Nepal,ne,ne,Crypto Voucher,Crypto,C,2,30.0,100.0,USD,11,4,4,4,4,4,210,490,700,0.1,0.035,0.012,0.024,False,False,0.69,0,0.0,0.0,0,0.0,0.0,1.9,SKIP-STRIPE,skip
+PK,Pakistan,ur,ur|en,Crypto Voucher,Crypto,C,2,30.0,100.0,USD,116,4,4,4,4,4,210,490,700,0.1,0.035,0.012,0.024,False,False,0.69,0,0.0,0.0,0,0.0,0.0,1.9,SKIP-STRIPE,skip
+LK,Sri Lanka,si,si|ta,Crypto Voucher,Crypto,C,2,30.0,100.0,USD,11,4,4,4,4,4,210,490,700,0.1,0.035,0.012,0.024,False,False,0.69,0,0.0,0.0,0,0.0,0.0,1.9,SKIP-STRIPE,skip
+UZ,Uzbekistan,uz,uz|ru,Crypto Voucher,Crypto,C,2,30.0,100.0,USD,17,4,4,4,4,4,210,490,700,0.1,0.035,0.012,0.024,False,False,0.69,0,0.0,0.0,0,0.0,0.0,1.9,SKIP-STRIPE,skip
+AF,Afghanistan,fa,fa|ps,NetDragon Universal,Gaming,C,2,,,USD,6,4,4,4,4,4,35,82,117,0.1,0.035,0.012,0.024,False,False,0.69,0,0.0,0.0,0,0.0,0.0,1.9,SKIP-STRIPE,skip
+AL,Albania,sq,sq,NetDragon Universal,Gaming,C,2,,,USD,2,4,4,4,4,4,35,82,117,0.1,0.035,0.012,0.024,False,False,0.69,0,0.0,0.0,0,0.0,0.0,1.9,SKIP-STRIPE,skip
+AM,Armenia,hy,hy,NetDragon Universal,Gaming,C,2,,,USD,2,4,4,4,4,4,35,82,117,0.1,0.035,0.012,0.024,False,False,0.69,0,0.0,0.0,0,0.0,0.0,1.9,SKIP-STRIPE,skip
+BD,Bangladesh,bn,bn,NetDragon Universal,Gaming,C,2,,,USD,70,4,4,4,4,4,35,82,117,0.1,0.035,0.012,0.024,False,False,0.69,0,0.0,0.0,0,0.0,0.0,1.9,SKIP-STRIPE,skip
+KH,Cambodia,km,km,NetDragon Universal,Gaming,C,2,,,USD,8,4,4,4,4,4,35,82,117,0.1,0.035,0.012,0.024,False,False,0.69,0,0.0,0.0,0,0.0,0.0,1.9,SKIP-STRIPE,skip
+ET,Ethiopia,am,am,NetDragon Universal,Gaming,C,2,,,USD,21,4,4,4,4,4,35,82,117,0.1,0.035,0.012,0.024,False,False,0.69,0,0.0,0.0,0,0.0,0.0,1.9,SKIP-STRIPE,skip
+GE,Georgia,ka,ka,NetDragon Universal,Gaming,C,2,,,USD,2.5,4,4,4,4,4,35,82,117,0.1,0.035,0.012,0.024,False,False,0.69,0,0.0,0.0,0,0.0,0.0,1.9,SKIP-STRIPE,skip
+KG,Kyrgyzstan,ky,ky|ru,NetDragon Universal,Gaming,C,2,,,USD,3,4,4,4,4,4,35,82,117,0.1,0.035,0.012,0.024,False,False,0.69,0,0.0,0.0,0,0.0,0.0,1.9,SKIP-STRIPE,skip
+LA,Laos,lo,lo,NetDragon Universal,Gaming,C,2,,,USD,3,4,4,4,4,4,35,82,117,0.1,0.035,0.012,0.024,False,False,0.69,0,0.0,0.0,0,0.0,0.0,1.9,SKIP-STRIPE,skip
+MK,Macedonia,mk,mk,NetDragon Universal,Gaming,C,2,,,USD,1.5,4,4,4,4,4,35,82,117,0.1,0.035,0.012,0.024,False,False,0.69,0,0.0,0.0,0,0.0,0.0,1.9,SKIP-STRIPE,skip
+MM,Myanmar,my,my,NetDragon Universal,Gaming,C,2,,,USD,23,4,4,4,4,4,35,82,117,0.1,0.035,0.012,0.024,False,False,0.69,0,0.0,0.0,0,0.0,0.0,1.9,SKIP-STRIPE,skip
+NP,Nepal,ne,ne,NetDragon Universal,Gaming,C,2,,,USD,11,4,4,4,4,4,35,82,117,0.1,0.035,0.012,0.024,False,False,0.69,0,0.0,0.0,0,0.0,0.0,1.9,SKIP-STRIPE,skip
+PK,Pakistan,ur,ur|en,NetDragon Universal,Gaming,C,2,,,USD,116,4,4,4,4,4,35,82,117,0.1,0.035,0.012,0.024,False,False,0.69,0,0.0,0.0,0,0.0,0.0,1.9,SKIP-STRIPE,skip
+AF,Afghanistan,fa,fa|ps,Fortnite,Gaming,C,10,,,USD,6,4,4,4,4,4,2100,4900,7000,0.1,0.035,0.012,0.024,False,False,0.69,0,0.0,0.0,0,0.0,0.0,1.9,SKIP-STRIPE,skip
+AL,Albania,sq,sq,Fortnite,Gaming,C,10,,,USD,2,4,4,4,4,4,2100,4900,7000,0.1,0.035,0.012,0.024,False,False,0.69,0,0.0,0.0,0,0.0,0.0,1.9,SKIP-STRIPE,skip
+AM,Armenia,hy,hy,Fortnite,Gaming,C,9,,,USD,2,4,4,4,4,4,2100,4900,7000,0.1,0.035,0.012,0.024,False,False,0.69,0,0.0,0.0,0,0.0,0.0,1.9,SKIP-STRIPE,skip
+BD,Bangladesh,bn,bn,Fortnite,Gaming,C,10,,,USD,70,4,4,4,4,4,2100,4900,7000,0.1,0.035,0.012,0.024,False,False,0.69,0,0.0,0.0,0,0.0,0.0,1.9,SKIP-STRIPE,skip
+KH,Cambodia,km,km,Fortnite,Gaming,C,9,,,USD,8,4,4,4,4,4,2100,4900,7000,0.1,0.035,0.012,0.024,False,False,0.69,0,0.0,0.0,0,0.0,0.0,1.9,SKIP-STRIPE,skip
+GE,Georgia,ka,ka,Fortnite,Gaming,C,10,,,USD,2.5,4,4,4,4,4,2100,4900,7000,0.1,0.035,0.012,0.024,False,False,0.69,0,0.0,0.0,0,0.0,0.0,1.9,SKIP-STRIPE,skip
+KG,Kyrgyzstan,ky,ky|ru,Fortnite,Gaming,C,7,,,USD,3,4,4,4,4,4,2100,4900,7000,0.1,0.035,0.012,0.024,False,False,0.69,0,0.0,0.0,0,0.0,0.0,1.9,SKIP-STRIPE,skip
+ET,Ethiopia,am,am,Jawaker,Shopping,C,2,,,USD,21,4,4,4,4,4,175,408,583,0.1,0.035,0.012,0.024,False,False,0.69,0,0.0,0.0,0,0.0,0.0,1.9,SKIP-STRIPE,skip
+GE,Georgia,ka,ka,Jawaker,Shopping,C,2,,,USD,2.5,4,4,4,4,4,175,408,583,0.1,0.035,0.012,0.024,False,False,0.69,0,0.0,0.0,0,0.0,0.0,1.9,SKIP-STRIPE,skip
+KG,Kyrgyzstan,ky,ky|ru,Jawaker,Shopping,C,2,,,USD,3,4,4,4,4,4,175,408,583,0.1,0.035,0.012,0.024,False,False,0.69,0,0.0,0.0,0,0.0,0.0,1.9,SKIP-STRIPE,skip
+LA,Laos,lo,lo,Jawaker,Shopping,C,2,,,USD,3,4,4,4,4,4,175,408,583,0.1,0.035,0.012,0.024,False,False,0.69,0,0.0,0.0,0,0.0,0.0,1.9,SKIP-STRIPE,skip
+MK,Macedonia,mk,mk,Jawaker,Shopping,C,2,,,USD,1.5,4,4,4,4,4,175,408,583,0.1,0.035,0.012,0.024,False,False,0.69,0,0.0,0.0,0,0.0,0.0,1.9,SKIP-STRIPE,skip
+MM,Myanmar,my,my,Jawaker,Shopping,C,2,,,USD,23,4,4,4,4,4,175,408,583,0.1,0.035,0.012,0.024,False,False,0.69,0,0.0,0.0,0,0.0,0.0,1.9,SKIP-STRIPE,skip
+NP,Nepal,ne,ne,Jawaker,Shopping,C,2,,,USD,11,4,4,4,4,4,175,408,583,0.1,0.035,0.012,0.024,False,False,0.69,0,0.0,0.0,0,0.0,0.0,1.9,SKIP-STRIPE,skip
+PK,Pakistan,ur,ur|en,Jawaker,Shopping,C,2,,,USD,116,4,4,4,4,4,175,408,583,0.1,0.035,0.012,0.024,False,False,0.69,0,0.0,0.0,0,0.0,0.0,1.9,SKIP-STRIPE,skip
+LK,Sri Lanka,si,si|ta,Jawaker,Shopping,C,2,,,USD,11,4,4,4,4,4,175,408,583,0.1,0.035,0.012,0.024,False,False,0.69,0,0.0,0.0,0,0.0,0.0,1.9,SKIP-STRIPE,skip
+UZ,Uzbekistan,uz,uz|ru,Jawaker,Shopping,C,2,,,USD,17,4,4,4,4,4,175,408,583,0.1,0.035,0.012,0.024,False,False,0.69,0,0.0,0.0,0,0.0,0.0,1.9,SKIP-STRIPE,skip
+UZ,Uzbekistan,uz,uz|ru,Fortnite,Gaming,C,8,,,USD,17,4,4,4,4,4,2100,4900,7000,0.1,0.035,0.012,0.024,False,False,0.69,0,0.0,0.0,0,0.0,0.0,1.9,SKIP-STRIPE,skip
+ET,Ethiopia,am,am,Fortnite,Gaming,C,9,,,USD,21,4,4,4,4,4,2100,4900,7000,0.1,0.035,0.012,0.024,False,False,0.69,0,0.0,0.0,0,0.0,0.0,1.9,SKIP-STRIPE,skip
+LA,Laos,lo,lo,Fortnite,Gaming,C,6,,,USD,3,4,4,4,4,4,2100,4900,7000,0.1,0.035,0.012,0.024,False,False,0.69,0,0.0,0.0,0,0.0,0.0,1.9,SKIP-STRIPE,skip
+MK,Macedonia,mk,mk,Fortnite,Gaming,C,6,,,USD,1.5,4,4,4,4,4,2100,4900,7000,0.1,0.035,0.012,0.024,False,False,0.69,0,0.0,0.0,0,0.0,0.0,1.9,SKIP-STRIPE,skip
+MM,Myanmar,my,my,Fortnite,Gaming,C,6,,,USD,23,4,4,4,4,4,2100,4900,7000,0.1,0.035,0.012,0.024,False,False,0.69,0,0.0,0.0,0,0.0,0.0,1.9,SKIP-STRIPE,skip
+NP,Nepal,ne,ne,Fortnite,Gaming,C,5,,,USD,11,4,4,4,4,4,2100,4900,7000,0.1,0.035,0.012,0.024,False,False,0.69,0,0.0,0.0,0,0.0,0.0,1.9,SKIP-STRIPE,skip
+PK,Pakistan,ur,ur|en,Fortnite,Gaming,C,6,,,USD,116,4,4,4,4,4,2100,4900,7000,0.1,0.035,0.012,0.024,False,False,0.69,0,0.0,0.0,0,0.0,0.0,1.9,SKIP-STRIPE,skip
+LK,Sri Lanka,si,si|ta,Fortnite,Gaming,C,6,,,USD,11,4,4,4,4,4,2100,4900,7000,0.1,0.035,0.012,0.024,False,False,0.69,0,0.0,0.0,0,0.0,0.0,1.9,SKIP-STRIPE,skip
+AF,Afghanistan,fa,fa|ps,Crypto Voucher,Crypto,C,1,30.0,100.0,USD,6,4,4,4,4,4,210,490,700,0.1,0.035,0.012,0.024,False,False,0.69,0,0.0,0.0,0,0.0,0.0,1.9,SKIP-STRIPE,skip
+AL,Albania,sq,sq,Crypto Voucher,Crypto,C,1,30.0,100.0,USD,2,4,4,4,4,4,210,490,700,0.1,0.035,0.012,0.024,False,False,0.69,0,0.0,0.0,0,0.0,0.0,1.9,SKIP-STRIPE,skip
+AM,Armenia,hy,hy,Crypto Voucher,Crypto,C,1,30.0,100.0,USD,2,4,4,4,4,4,210,490,700,0.1,0.035,0.012,0.024,False,False,0.69,0,0.0,0.0,0,0.0,0.0,1.9,SKIP-STRIPE,skip
+BD,Bangladesh,bn,bn,Crypto Voucher,Crypto,C,1,30.0,100.0,USD,70,4,4,4,4,4,210,490,700,0.1,0.035,0.012,0.024,False,False,0.69,0,0.0,0.0,0,0.0,0.0,1.9,SKIP-STRIPE,skip
+KH,Cambodia,km,km,Crypto Voucher,Crypto,C,1,30.0,100.0,USD,8,4,4,4,4,4,210,490,700,0.1,0.035,0.012,0.024,False,False,0.69,0,0.0,0.0,0,0.0,0.0,1.9,SKIP-STRIPE,skip
+ET,Ethiopia,am,am,Crypto Voucher,Crypto,C,1,30.0,100.0,USD,21,4,4,4,4,4,210,490,700,0.1,0.035,0.012,0.024,False,False,0.69,0,0.0,0.0,0,0.0,0.0,1.9,SKIP-STRIPE,skip
+GE,Georgia,ka,ka,Crypto Voucher,Crypto,C,1,30.0,100.0,USD,2.5,4,4,4,4,4,210,490,700,0.1,0.035,0.012,0.024,False,False,0.69,0,0.0,0.0,0,0.0,0.0,1.9,SKIP-STRIPE,skip
+LK,Sri Lanka,si,si|ta,SHENZHEN,Gaming,C,1,,,USD,11,4,4,4,4,4,14,33,47,0.1,0.035,0.012,0.024,False,False,0.69,0,0.0,0.0,0,0.0,0.0,1.9,SKIP-STRIPE,skip
+UZ,Uzbekistan,uz,uz|ru,SHENZHEN,Gaming,C,1,,,USD,17,4,4,4,4,4,14,33,47,0.1,0.035,0.012,0.024,False,False,0.69,0,0.0,0.0,0,0.0,0.0,1.9,SKIP-STRIPE,skip
+LK,Sri Lanka,si,si|ta,NetDragon Universal,Gaming,C,1,,,USD,11,4,4,4,4,4,35,82,117,0.1,0.035,0.012,0.024,False,False,0.69,0,0.0,0.0,0,0.0,0.0,1.9,SKIP-STRIPE,skip
+UZ,Uzbekistan,uz,uz|ru,NetDragon Universal,Gaming,C,1,,,USD,17,4,4,4,4,4,35,82,117,0.1,0.035,0.012,0.024,False,False,0.69,0,0.0,0.0,0,0.0,0.0,1.9,SKIP-STRIPE,skip
+AF,Afghanistan,fa,fa|ps,Mobile Legends,Gaming,C,1,,,USD,6,4,4,4,4,4,840,1960,2800,0.1,0.035,0.012,0.024,False,False,0.69,0,0.0,0.0,0,0.0,0.0,1.9,SKIP-STRIPE,skip
+AL,Albania,sq,sq,Mobile Legends,Gaming,C,1,,,USD,2,4,4,4,4,4,840,1960,2800,0.1,0.035,0.012,0.024,False,False,0.69,0,0.0,0.0,0,0.0,0.0,1.9,SKIP-STRIPE,skip
+AM,Armenia,hy,hy,Mobile Legends,Gaming,C,1,,,USD,2,4,4,4,4,4,840,1960,2800,0.1,0.035,0.012,0.024,False,False,0.69,0,0.0,0.0,0,0.0,0.0,1.9,SKIP-STRIPE,skip
+ET,Ethiopia,am,am,Mobile Legends,Gaming,C,1,,,USD,21,4,4,4,4,4,840,1960,2800,0.1,0.035,0.012,0.024,False,False,0.69,0,0.0,0.0,0,0.0,0.0,1.9,SKIP-STRIPE,skip
+GE,Georgia,ka,ka,Mobile Legends,Gaming,C,1,,,USD,2.5,4,4,4,4,4,840,1960,2800,0.1,0.035,0.012,0.024,False,False,0.69,0,0.0,0.0,0,0.0,0.0,1.9,SKIP-STRIPE,skip
+KG,Kyrgyzstan,ky,ky|ru,Mobile Legends,Gaming,C,1,,,USD,3,4,4,4,4,4,840,1960,2800,0.1,0.035,0.012,0.024,False,False,0.69,0,0.0,0.0,0,0.0,0.0,1.9,SKIP-STRIPE,skip
+LA,Laos,lo,lo,Mobile Legends,Gaming,C,1,,,USD,3,4,4,4,4,4,840,1960,2800,0.1,0.035,0.012,0.024,False,False,0.69,0,0.0,0.0,0,0.0,0.0,1.9,SKIP-STRIPE,skip
+MK,Macedonia,mk,mk,Mobile Legends,Gaming,C,1,,,USD,1.5,4,4,4,4,4,840,1960,2800,0.1,0.035,0.012,0.024,False,False,0.69,0,0.0,0.0,0,0.0,0.0,1.9,SKIP-STRIPE,skip
+US,United States,en,en,Target,Shopping,C,1,,,USD,312,1,1,1,1,1,1200,2800,4000,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+US,United States,en,en,Airbnb,Travel,C,1,25.0,100.0,USD,312,1,1,1,1,1,1200,2800,4000,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+US,United States,en,en,Starbucks,Shopping,C,1,5.0,100.0,USD,312,1,1,1,1,1,1200,2800,4000,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+DE,Germany,de,de,OTTO,Shopping,C,3,,,EUR,79,1,1,1,2,1,1200,2800,4000,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+IT,Italy,it,it,Prenatal,Shopping,C,3,,,EUR,56,1,1,1,2,1,100,233,333,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+DE,Germany,de,de,myCARE,Travel,C,3,,,EUR,79,1,1,1,2,1,100,233,333,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+DE,Germany,de,de,TV NOW,Entertainment,C,3,,,EUR,79,1,1,1,2,1,400,933,1333,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+DE,Germany,de,de,Zooplus,Shopping,C,3,,,EUR,79,1,1,1,2,1,200,467,667,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+IT,Italy,it,it,Orchestra,Shopping,C,3,,,EUR,56,1,1,1,2,1,100,233,333,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+MX,Mexico,es,es,Mobile Legends,Gaming,C,3,,,USD,105,1,1,1,2,1,12000,28000,40000,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+PA,Panama,es,es,Mobile Legends,Gaming,C,3,,,USD,3,1,2,1,4,1,840,1960,2800,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+PE,Peru,es,es,Mobile Legends,Gaming,C,3,,,USD,26,1,2,1,4,1,840,1960,2800,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+SG,Singapore,en,en,Mobile Legends,Gaming,C,3,,,USD,5,1,1,1,3,1,3600,8400,12000,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+ES,Spain,es,es,Mobile Legends,Gaming,C,3,,,USD,47,1,1,1,2,1,12000,28000,40000,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+GB,United Kingdom,en,en,Mobile Legends,Gaming,C,3,,,USD,67,1,1,1,1,1,72000,168000,240000,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+DE,Germany,de,de,Waipu TV,Shopping,C,3,,,EUR,79,1,1,1,2,1,300,700,1000,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+IT,Italy,it,it,Salute Semplice,Shopping,C,3,,,EUR,56,1,1,1,2,1,200,467,667,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+GB,United Kingdom,en,en,Racingbreaks,Shopping,C,3,,,GBP,67,1,1,1,1,1,1200,2800,4000,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+IT,Italy,it,it,Volagratis,Shopping,C,3,,,EUR,56,1,1,1,2,1,200,467,667,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+IT,Italy,it,it,null,Gaming,C,3,,,EUR,56,1,1,1,2,1,200,467,667,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+GB,United Kingdom,en,en,The Hotel,Travel,C,3,25.0,76.64,GBP,67,1,1,1,1,1,1200,2800,4000,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+US,United States,en,en,PUBG,Gaming,C,5,,,USD,312,1,1,1,1,1,48000,112000,160000,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+AT,Austria,de,de,World of Warcraft,Gaming,C,3,,,EUR,8,1,1,1,3,1,1200,2800,4000,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+FR,France,fr,fr,World of Warcraft,Gaming,C,3,,,EUR,64,1,1,1,2,1,4000,9333,13333,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+DE,Germany,de,de,World of Warcraft,Gaming,C,3,,,EUR,79,1,1,1,2,1,4000,9333,13333,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+IE,Ireland,en,en,World of Warcraft,Gaming,C,3,,,EUR,5,1,1,1,3,1,1200,2800,4000,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+IT,Italy,it,it,World of Warcraft,Gaming,C,3,,,EUR,56,1,1,1,2,1,4000,9333,13333,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+ES,Spain,es,es,World of Warcraft,Gaming,C,3,,,EUR,47,1,1,1,2,1,4000,9333,13333,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+US,United States,en,en,Mobile Legends,Gaming,C,2,,,USD,312,1,1,1,1,1,72000,168000,240000,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+UY,Uruguay,es,es,Mobile Legends,Gaming,C,2,,,USD,3,1,2,1,4,1,840,1960,2800,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+CL,Chile,es,es,NetDragon Universal,Gaming,C,3,,,USD,16,1,2,1,3,1,150,350,500,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+CO,Colombia,es,es,NetDragon Universal,Gaming,C,3,,,USD,38,1,2,1,3,1,150,350,500,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+CA,Canada,en,en|fr,Jawaker,Shopping,C,3,,,USD,36,1,1,1,2,1,2500,5833,8333,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+CL,Chile,es,es,Jawaker,Shopping,C,3,,,USD,16,1,2,1,3,1,750,1750,2500,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+CA,Canada,en,en|fr,Mobile Legends,Gaming,C,2,,,USD,36,1,1,1,2,1,12000,28000,40000,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+CL,Chile,es,es,Mobile Legends,Gaming,C,2,,,USD,16,1,2,1,3,1,3600,8400,12000,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+MY,Malaysia,en,en|ms,Crypto Voucher,Crypto,C,2,30.0,100.0,USD,30,1,1,1,3,1,900,2100,3000,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+MX,Mexico,es,es,Crypto Voucher,Crypto,C,2,30.0,100.0,USD,105,1,1,1,2,1,3000,7000,10000,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+PA,Panama,es,es,Crypto Voucher,Crypto,C,2,30.0,100.0,USD,3,1,2,1,4,1,210,490,700,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+PE,Peru,es,es,Crypto Voucher,Crypto,C,2,30.0,100.0,USD,26,1,2,1,4,1,210,490,700,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+SG,Singapore,en,en,Crypto Voucher,Crypto,C,2,30.0,100.0,USD,5,1,1,1,3,1,900,2100,3000,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+ES,Spain,es,es,Crypto Voucher,Crypto,C,2,30.0,100.0,USD,47,1,1,1,2,1,3000,7000,10000,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+GB,United Kingdom,en,en,Crypto Voucher,Crypto,C,2,30.0,100.0,USD,67,1,1,1,1,1,18000,42000,60000,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+US,United States,en,en,Crypto Voucher,Crypto,C,2,30.0,100.0,USD,312,1,1,1,1,1,18000,42000,60000,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+UY,Uruguay,es,es,Crypto Voucher,Crypto,C,2,30.0,100.0,USD,3,1,2,1,4,1,210,490,700,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+IE,Ireland,en,en,Crypto Voucher,Crypto,C,2,30.0,100.0,USD,5,1,1,1,3,1,900,2100,3000,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+AT,Austria,de,de,Crypto Voucher,Crypto,C,2,30.0,100.0,USD,8,1,1,1,3,1,900,2100,3000,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+CA,Canada,en,en|fr,NetDragon Universal,Gaming,C,2,,,USD,36,1,1,1,2,1,500,1167,1667,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+CR,Costa Rica,es,es,NetDragon Universal,Gaming,C,2,,,USD,4,1,2,1,4,1,35,82,117,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+DO,Dominican Republic,es,es,NetDragon Universal,Gaming,C,2,,,USD,7,1,2,1,4,1,35,82,117,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+FR,France,fr,fr,NetDragon Universal,Gaming,C,2,,,USD,64,1,1,1,2,1,500,1167,1667,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+DE,Germany,de,de,NetDragon Universal,Gaming,C,2,,,USD,79,1,1,1,2,1,500,1167,1667,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+IT,Italy,it,it,NetDragon Universal,Gaming,C,2,,,USD,56,1,1,1,2,1,500,1167,1667,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+MY,Malaysia,en,en|ms,NetDragon Universal,Gaming,C,2,,,USD,30,1,1,1,3,1,150,350,500,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+MX,Mexico,es,es,NetDragon Universal,Gaming,C,2,,,USD,105,1,1,1,2,1,500,1167,1667,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+CA,Canada,en,en|fr,Fortnite,Gaming,C,9,,,USD,36,1,1,1,2,1,30000,70000,100000,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+CL,Chile,es,es,Fortnite,Gaming,C,10,,,USD,16,1,2,1,3,1,9000,21000,30000,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+DO,Dominican Republic,es,es,Fortnite,Gaming,C,10,,,USD,7,1,2,1,4,1,2100,4900,7000,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+FR,France,fr,fr,Fortnite,Gaming,C,10,,,USD,64,1,1,1,2,1,30000,70000,100000,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+DE,Germany,de,de,Fortnite,Gaming,C,10,,,USD,79,1,1,1,2,1,30000,70000,100000,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+IT,Italy,it,it,Fortnite,Gaming,C,7,,,USD,56,1,1,1,2,1,30000,70000,100000,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+CO,Colombia,es,es,Jawaker,Shopping,C,2,,,USD,38,1,2,1,3,1,750,1750,2500,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+CR,Costa Rica,es,es,Jawaker,Shopping,C,2,,,USD,4,1,2,1,4,1,175,408,583,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+DO,Dominican Republic,es,es,Jawaker,Shopping,C,2,,,USD,7,1,2,1,4,1,175,408,583,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+FR,France,fr,fr,Jawaker,Shopping,C,2,,,USD,64,1,1,1,2,1,2500,5833,8333,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+DE,Germany,de,de,Jawaker,Shopping,C,2,,,USD,79,1,1,1,2,1,2500,5833,8333,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+IT,Italy,it,it,Jawaker,Shopping,C,2,,,USD,56,1,1,1,2,1,2500,5833,8333,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+MY,Malaysia,en,en|ms,Jawaker,Shopping,C,2,,,USD,30,1,1,1,3,1,750,1750,2500,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+MX,Mexico,es,es,Jawaker,Shopping,C,2,,,USD,105,1,1,1,2,1,2500,5833,8333,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+PA,Panama,es,es,Jawaker,Shopping,C,2,,,USD,3,1,2,1,4,1,175,408,583,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+PE,Peru,es,es,Jawaker,Shopping,C,2,,,USD,26,1,2,1,4,1,175,408,583,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+SG,Singapore,en,en,Jawaker,Shopping,C,2,,,USD,5,1,1,1,3,1,750,1750,2500,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+ES,Spain,es,es,Jawaker,Shopping,C,2,,,USD,47,1,1,1,2,1,2500,5833,8333,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+GB,United Kingdom,en,en,Jawaker,Shopping,C,2,,,USD,67,1,1,1,1,1,15000,35000,50000,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+US,United States,en,en,Jawaker,Shopping,C,2,,,USD,312,1,1,1,1,1,15000,35000,50000,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+UY,Uruguay,es,es,Jawaker,Shopping,C,2,,,USD,3,1,2,1,4,1,175,408,583,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+IE,Ireland,en,en,Jawaker,Shopping,C,2,,,USD,5,1,1,1,3,1,750,1750,2500,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+AU,Australia,en,en,Jawaker,Shopping,C,2,,,USD,24,1,1,1,2,1,2500,5833,8333,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+AT,Austria,de,de,Jawaker,Shopping,C,2,,,USD,8,1,1,1,3,1,750,1750,2500,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+JP,Japan,ja,ja,Jawaker,Shopping,C,2,,,USD,110,1,1,1,2,1,2500,5833,8333,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+GB,United Kingdom,en,en,Fortnite,Gaming,C,5,,,USD,67,1,1,1,1,1,180000,420000,600000,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+US,United States,en,en,Fortnite,Gaming,C,8,,,USD,312,1,1,1,1,1,180000,420000,600000,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+UY,Uruguay,es,es,Fortnite,Gaming,C,8,,,USD,3,1,2,1,4,1,2100,4900,7000,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+IE,Ireland,en,en,Fortnite,Gaming,C,9,,,USD,5,1,1,1,3,1,9000,21000,30000,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+AU,Australia,en,en,Fortnite,Gaming,C,9,,,USD,24,1,1,1,2,1,30000,70000,100000,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+AT,Austria,de,de,Fortnite,Gaming,C,9,,,USD,8,1,1,1,3,1,9000,21000,30000,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+JP,Japan,ja,ja,Fortnite,Gaming,C,9,,,USD,110,1,1,1,2,1,30000,70000,100000,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+CR,Costa Rica,es,es,Fortnite,Gaming,C,9,,,USD,4,1,2,1,4,1,2100,4900,7000,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+MY,Malaysia,en,en|ms,Fortnite,Gaming,C,6,,,USD,30,1,1,1,3,1,9000,21000,30000,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+MX,Mexico,es,es,Fortnite,Gaming,C,6,,,USD,105,1,1,1,2,1,30000,70000,100000,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+PA,Panama,es,es,Fortnite,Gaming,C,6,,,USD,3,1,2,1,4,1,2100,4900,7000,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+PE,Peru,es,es,Fortnite,Gaming,C,6,,,USD,26,1,2,1,4,1,2100,4900,7000,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+SG,Singapore,en,en,Fortnite,Gaming,C,7,,,USD,5,1,1,1,3,1,9000,21000,30000,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+ES,Spain,es,es,Crypto Giftcard,Crypto,C,2,,,USD,47,1,1,1,2,1,1500,3500,5000,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+GB,United Kingdom,en,en,Crypto Giftcard,Crypto,C,2,,,USD,67,1,1,1,1,1,9000,21000,30000,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+US,United States,en,en,Crypto Giftcard,Crypto,C,2,,,USD,312,1,1,1,1,1,9000,21000,30000,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+ES,Spain,es,es,Corte Inglés,Shopping,C,2,,,EUR,47,1,1,1,2,1,200,467,667,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+US,United States,en,en,Paypal,Payment Cards,C,2,1.0,100.0,USD,312,1,1,1,1,1,1200,2800,4000,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+US,United States,en,en,Lulumelon,Shopping,C,2,25.0,100.0,USD,312,1,1,1,1,1,1200,2800,4000,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+GB,United Kingdom,en,en,Asda,Shopping,C,2,1.0,76.64,GBP,67,1,1,1,1,1,1200,2800,4000,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+FR,France,fr,fr,IKEA,Shopping,C,2,,,EUR,64,1,1,1,2,1,200,467,667,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+GB,United Kingdom,en,en,Matalan,Shopping,C,2,1.0,76.64,GBP,67,1,1,1,1,1,1200,2800,4000,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+US,United States,en,en,Abercrombie & Fitch,Shopping,C,2,25.0,100.0,USD,312,1,1,1,1,1,1200,2800,4000,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+ES,Spain,es,es,Zara,Shopping,C,2,,,EUR,47,1,1,1,2,1,200,467,667,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+CO,Colombia,es,es,Fortnite,Gaming,C,3,,,USD,38,1,2,1,3,1,9000,21000,30000,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+ES,Spain,es,es,Fortnite,Gaming,C,6,,,USD,47,1,1,1,2,1,30000,70000,100000,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+US,United States,en,en,StubHub,Entertainment,C,1,,,USD,312,1,1,1,1,1,1200,2800,4000,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+US,United States,en,en,Wine.com,Shopping,C,1,,,USD,312,1,1,1,1,1,1200,2800,4000,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+US,United States,en,en,The Coffee Bean & Tea Leaf,Shopping,C,1,,,USD,312,1,1,1,1,1,1200,2800,4000,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+CA,Canada,en,en|fr,Crypto Voucher,Crypto,C,1,30.0,100.0,USD,36,1,1,1,2,1,3000,7000,10000,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+CL,Chile,es,es,Crypto Voucher,Crypto,C,1,30.0,100.0,USD,16,1,2,1,3,1,900,2100,3000,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+CO,Colombia,es,es,Crypto Voucher,Crypto,C,1,30.0,100.0,USD,38,1,2,1,3,1,900,2100,3000,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+CR,Costa Rica,es,es,Crypto Voucher,Crypto,C,1,30.0,100.0,USD,4,1,2,1,4,1,210,490,700,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+DO,Dominican Republic,es,es,Crypto Voucher,Crypto,C,1,30.0,100.0,USD,7,1,2,1,4,1,210,490,700,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+FR,France,fr,fr,Crypto Voucher,Crypto,C,1,30.0,100.0,USD,64,1,1,1,2,1,3000,7000,10000,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+DE,Germany,de,de,Crypto Voucher,Crypto,C,1,30.0,100.0,USD,79,1,1,1,2,1,3000,7000,10000,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+IT,Italy,it,it,Crypto Voucher,Crypto,C,1,30.0,100.0,USD,56,1,1,1,2,1,3000,7000,10000,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+US,United States,en,en,CBSi Paramount Plus,Entertainment,C,1,,,USD,312,1,1,1,1,1,1200,2800,4000,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+US,United States,en,en,EA Play,Gaming,C,1,,,USD,312,1,1,1,1,1,1200,2800,4000,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+SG,Singapore,en,en,SHENZHEN,Gaming,C,1,,,USD,5,1,1,1,3,1,60,140,200,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+ES,Spain,es,es,SHENZHEN,Gaming,C,1,,,USD,47,1,1,1,2,1,200,467,667,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+GB,United Kingdom,en,en,SHENZHEN,Gaming,C,1,,,USD,67,1,1,1,1,1,1200,2800,4000,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+US,United States,en,en,SHENZHEN,Gaming,C,1,,,USD,312,1,1,1,1,1,1200,2800,4000,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+UY,Uruguay,es,es,SHENZHEN,Gaming,C,1,,,USD,3,1,2,1,4,1,14,33,47,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+IE,Ireland,en,en,SHENZHEN,Gaming,C,1,,,USD,5,1,1,1,3,1,60,140,200,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+AT,Austria,de,de,SHENZHEN,Gaming,C,1,,,USD,8,1,1,1,3,1,60,140,200,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+DE,Germany,de,de,Eventim,Shopping,C,1,,,EUR,79,1,1,1,2,1,200,467,667,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+AT,Austria,de,de,Calzedonia,Shopping,C,1,,,EUR,8,1,1,1,3,1,60,140,200,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+IT,Italy,it,it,Intimissimi,Shopping,C,1,,,EUR,56,1,1,1,2,1,200,467,667,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+DE,Germany,de,de,Game World,Gaming,C,1,,,EUR,79,1,1,1,2,1,200,467,667,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+AT,Austria,de,de,CHRIST,Shopping,C,1,,,EUR,8,1,1,1,3,1,60,140,200,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+DE,Germany,de,de,Galeria Kaufhof,Shopping,C,1,,,EUR,79,1,1,1,2,1,200,467,667,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+IT,Italy,it,it,HotelGift,Travel,C,1,,,EUR,56,1,1,1,2,1,200,467,667,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+DE,Germany,de,de,C&A,Shopping,C,1,,,EUR,79,1,1,1,2,1,200,467,667,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+IT,Italy,it,it,Ecobnb,Travel,C,1,,,EUR,56,1,1,1,2,1,200,467,667,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+DE,Germany,de,de,Big Point,Gaming,C,1,,,EUR,79,1,1,1,2,1,200,467,667,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+AU,Australia,en,en,Free Fire,Gaming,C,5,,,USD,24,1,1,1,2,1,15000,35000,50000,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+IT,Italy,it,it,Abbonamenti,Shopping,C,1,,,EUR,56,1,1,1,2,1,200,467,667,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+ES,Spain,es,es,Atrapalo,Shopping,C,1,,,EUR,47,1,1,1,2,1,200,467,667,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+IT,Italy,it,it,IKEA,Shopping,C,1,,,EUR,56,1,1,1,2,1,200,467,667,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+AU,Australia,en,en,Riot Access,Gaming,C,1,,,USD,24,1,1,1,2,1,200,467,667,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+DE,Germany,de,de,Douglas,Shopping,C,1,,,EUR,79,1,1,1,2,1,200,467,667,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+AU,Australia,en,en,Razer Gold,Gaming,C,1,,,USD,24,1,1,1,2,1,200,467,667,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+CA,Canada,en,en|fr,Rakuten,Entertainment,C,1,,,CAD,36,1,1,1,2,1,200,467,667,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+AU,Australia,en,en,Crypto Voucher,Crypto,C,1,30.0,100.0,USD,24,1,1,1,2,1,3000,7000,10000,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+PA,Panama,es,es,NetDragon Universal,Gaming,C,1,,,USD,3,1,2,1,4,1,35,82,117,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+PE,Peru,es,es,NetDragon Universal,Gaming,C,1,,,USD,26,1,2,1,4,1,35,82,117,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+SG,Singapore,en,en,NetDragon Universal,Gaming,C,1,,,USD,5,1,1,1,3,1,150,350,500,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+ES,Spain,es,es,NetDragon Universal,Gaming,C,1,,,USD,47,1,1,1,2,1,500,1167,1667,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+GB,United Kingdom,en,en,NetDragon Universal,Gaming,C,1,,,USD,67,1,1,1,1,1,3000,7000,10000,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+US,United States,en,en,NetDragon Universal,Gaming,C,1,,,USD,312,1,1,1,1,1,3000,7000,10000,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+UY,Uruguay,es,es,NetDragon Universal,Gaming,C,1,,,USD,3,1,2,1,4,1,35,82,117,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+IE,Ireland,en,en,NetDragon Universal,Gaming,C,1,,,USD,5,1,1,1,3,1,150,350,500,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+AT,Austria,de,de,NetDragon Universal,Gaming,C,1,,,USD,8,1,1,1,3,1,150,350,500,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+AU,Australia,en,en,NetDragon Universal,Gaming,C,1,,,USD,24,1,1,1,2,1,500,1167,1667,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+FR,France,fr,fr,FT Orange Ticket Video,Entertainment,C,1,,,EUR,64,1,1,1,2,1,200,467,667,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+GB,United Kingdom,en,en,Cornerstone,Shopping,C,1,,,GBP,67,1,1,1,1,1,1200,2800,4000,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+AU,Australia,en,en,MOLEK-SYNTEZ,Gaming,C,1,,,USD,24,1,1,1,2,1,200,467,667,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+AU,Australia,en,en,SHENZHEN,Gaming,C,1,,,USD,24,1,1,1,2,1,200,467,667,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+IT,Italy,it,it,Marionnaud,Shopping,C,1,,,EUR,56,1,1,1,2,1,200,467,667,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+AU,Australia,en,en,Mobile Legends,Gaming,C,1,,,USD,24,1,1,1,2,1,12000,28000,40000,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+AT,Austria,de,de,Mobile Legends,Gaming,C,1,,,USD,8,1,1,1,3,1,3600,8400,12000,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+CR,Costa Rica,es,es,Mobile Legends,Gaming,C,1,,,USD,4,1,2,1,4,1,840,1960,2800,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+DO,Dominican Republic,es,es,Mobile Legends,Gaming,C,1,,,USD,7,1,2,1,4,1,840,1960,2800,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+FR,France,fr,fr,Mobile Legends,Gaming,C,1,,,USD,64,1,1,1,2,1,12000,28000,40000,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+DE,Germany,de,de,Mobile Legends,Gaming,C,1,,,USD,79,1,1,1,2,1,12000,28000,40000,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+IE,Ireland,en,en,Mobile Legends,Gaming,C,1,,,USD,5,1,1,1,3,1,3600,8400,12000,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+IT,Italy,it,it,Mobile Legends,Gaming,C,1,,,USD,56,1,1,1,2,1,12000,28000,40000,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+MY,Malaysia,en,en|ms,Mobile Legends,Gaming,C,1,,,USD,30,1,1,1,3,1,3600,8400,12000,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+US,United States,en,en,Binance,Crypto,C,1,50.0,100.0,USD,312,1,1,1,1,1,1200,2800,4000,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+CA,Canada,en,en|fr,Crypto Giftcard,Crypto,C,1,,,USD,36,1,1,1,2,1,1500,3500,5000,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+FR,France,fr,fr,Crypto Giftcard,Crypto,C,1,,,USD,64,1,1,1,2,1,1500,3500,5000,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+DE,Germany,de,de,Crypto Giftcard,Crypto,C,1,,,USD,79,1,1,1,2,1,1500,3500,5000,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+IT,Italy,it,it,Crypto Giftcard,Crypto,C,1,,,USD,56,1,1,1,2,1,1500,3500,5000,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+US,United States,en,en,Rewarble Visa,Payment Cards,C,1,5.0,100.0,USD,312,1,1,1,1,1,1200,2800,4000,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+FR,France,fr,fr,Transcash Mastercard EUR,Payment Cards,C,1,,,EUR,64,1,1,1,2,1,200,467,667,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+US,United States,en,en,Rewarble Mastercard USD,Payment Cards,C,1,5.0,100.0,USD,312,1,1,1,1,1,1200,2800,4000,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+US,United States,en,en,American Express,Payment Cards,C,1,5.0,100.0,USD,312,1,1,1,1,1,1200,2800,4000,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+US,United States,en,en,Visa,Payment Cards,C,1,1.0,100.0,USD,312,1,1,1,1,1,1200,2800,4000,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+CA,Canada,en,en|fr,Hudson's Bay,Shopping,C,1,5.0,142.87,CAD,36,1,1,1,2,1,200,467,667,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+CA,Canada,en,en|fr,The Ultimate Dining,Shopping,C,2,5.0,142.87,CAD,36,1,1,1,2,1,200,467,667,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+US,United States,en,en,Wayfair,Shopping,C,1,10.0,100.0,USD,312,1,1,1,1,1,1200,2800,4000,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+CA,Canada,en,en|fr,Harry Rosen Inc.,Shopping,C,1,5.0,142.87,CAD,36,1,1,1,2,1,200,467,667,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+CA,Canada,en,en|fr,Indigo,Shopping,C,1,5.0,142.87,CAD,36,1,1,1,2,1,200,467,667,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+US,United States,en,en,CB2,Shopping,C,1,25.0,100.0,USD,312,1,1,1,1,1,1200,2800,4000,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+CA,Canada,en,en|fr,Home Hardware,Shopping,C,1,10.0,142.87,CAD,36,1,1,1,2,1,200,467,667,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+CA,Canada,en,en|fr,Bath & Body Works,Shopping,C,1,10.0,142.87,CAD,36,1,1,1,2,1,200,467,667,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+CO,Colombia,es,es,Riot Access,Gaming,C,1,,,USD,38,1,2,1,3,1,60,140,200,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+CA,Canada,en,en|fr,Kernels Popcorn,Shopping,C,1,10.0,142.87,CAD,36,1,1,1,2,1,200,467,667,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+US,United States,en,en,Ulta Beauty,Shopping,C,1,5.0,100.0,USD,312,1,1,1,1,1,1200,2800,4000,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+CA,Canada,en,en|fr,Bass Pro Shops,Shopping,C,1,15.0,142.87,CAD,36,1,1,1,2,1,200,467,667,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+CA,Canada,en,en|fr,Dukes_Refresher,Shopping,C,1,10.0,142.87,CAD,36,1,1,1,2,1,200,467,667,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+CA,Canada,en,en|fr,Inspired Dining Card,Shopping,C,1,10.0,142.87,CAD,36,1,1,1,2,1,200,467,667,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+US,United States,en,en,Banana Republic,Shopping,C,1,10.0,100.0,USD,312,1,1,1,1,1,1200,2800,4000,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+US,United States,en,en,Under Armour®,Shopping,C,1,25.0,100.0,USD,312,1,1,1,1,1,1200,2800,4000,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+US,United States,en,en,Macy's,Shopping,C,1,5.0,100.0,USD,312,1,1,1,1,1,1200,2800,4000,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+US,United States,en,en,Airalo,Travel,C,1,,,USD,312,1,1,1,1,1,1200,2800,4000,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+US,United States,en,en,BestCare,Shopping,C,1,,,USD,312,1,1,1,1,1,1200,2800,4000,1.2,0.42,0.025,0.05,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.7,SKIP-MATH,skip
+PH,Philippines,en,en|tl,Steam,Gaming,B,3,,,PHP,90,1,2,1,3,2,10500,24500,35000,1.2,0.42,0.0255,0.051,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.5,SKIP-MATH,skip
+IN,India,en,en|hi,Steam,Gaming,B,3,,,INR,850,1,2,1,3,2,10500,24500,35000,1.2,0.42,0.0255,0.051,False,False,0.12,0,0.0,0.0,0,0.0,0.0,1.5,SKIP-MATH,skip
+NG,Nigeria,en,en,Mobile Legends,Gaming,C,3,,,USD,109,1,3,1,4,2,840,1960,2800,1.2,0.42,0.0213,0.043,False,False,0.1,0,0.0,0.0,0,0.0,0.0,1.3,SKIP-MATH,skip
+PH,Philippines,en,en|tl,Mobile Legends,Gaming,C,3,,,USD,90,1,2,1,3,2,3600,8400,12000,1.2,0.42,0.0213,0.043,False,False,0.1,0,0.0,0.0,0,0.0,0.0,1.3,SKIP-MATH,skip
+ZA,South Africa,en,en,Mobile Legends,Gaming,C,3,,,USD,43,1,2,1,3,2,3600,8400,12000,1.2,0.42,0.0213,0.043,False,False,0.1,0,0.0,0.0,0,0.0,0.0,1.3,SKIP-MATH,skip
+AR,Argentina,es,es,Jawaker,Shopping,C,2,,,USD,45,1,2,1,3,2,750,1750,2500,1.2,0.42,0.0213,0.043,False,False,0.1,0,0.0,0.0,0,0.0,0.0,1.3,SKIP-MATH,skip
+NG,Nigeria,en,en,Crypto Voucher,Crypto,C,2,30.0,100.0,USD,109,1,3,1,4,2,210,490,700,1.2,0.42,0.0213,0.043,False,False,0.1,0,0.0,0.0,0,0.0,0.0,1.3,SKIP-MATH,skip
+PH,Philippines,en,en|tl,Crypto Voucher,Crypto,C,2,30.0,100.0,USD,90,1,2,1,3,2,900,2100,3000,1.2,0.42,0.0213,0.043,False,False,0.1,0,0.0,0.0,0,0.0,0.0,1.3,SKIP-MATH,skip
+ZA,South Africa,en,en,Crypto Voucher,Crypto,C,2,30.0,100.0,USD,43,1,2,1,3,2,900,2100,3000,1.2,0.42,0.0213,0.043,False,False,0.1,0,0.0,0.0,0,0.0,0.0,1.3,SKIP-MATH,skip
+AR,Argentina,es,es,NetDragon Universal,Gaming,C,2,,,USD,45,1,2,1,3,2,150,350,500,1.2,0.42,0.0213,0.043,False,False,0.1,0,0.0,0.0,0,0.0,0.0,1.3,SKIP-MATH,skip
+GH,Ghana,en,en,NetDragon Universal,Gaming,C,2,,,USD,14,1,3,1,4,2,35,82,117,1.2,0.42,0.0213,0.043,False,False,0.1,0,0.0,0.0,0,0.0,0.0,1.3,SKIP-MATH,skip
+IN,India,en,en|hi,NetDragon Universal,Gaming,C,2,,,USD,850,1,2,1,3,2,150,350,500,1.2,0.42,0.0213,0.043,False,False,0.1,0,0.0,0.0,0,0.0,0.0,1.3,SKIP-MATH,skip
+KE,Kenya,en,en|sw,NetDragon Universal,Gaming,C,2,,,USD,22,1,3,1,4,2,35,82,117,1.2,0.42,0.0213,0.043,False,False,0.1,0,0.0,0.0,0,0.0,0.0,1.3,SKIP-MATH,skip
+NG,Nigeria,en,en,NetDragon Universal,Gaming,C,2,,,USD,109,1,3,1,4,2,35,82,117,1.2,0.42,0.0213,0.043,False,False,0.1,0,0.0,0.0,0,0.0,0.0,1.3,SKIP-MATH,skip
+AR,Argentina,es,es,Fortnite,Gaming,C,9,,,USD,45,1,2,1,3,2,9000,21000,30000,1.2,0.42,0.0213,0.043,False,False,0.1,0,0.0,0.0,0,0.0,0.0,1.3,SKIP-MATH,skip
+GH,Ghana,en,en,Fortnite,Gaming,C,10,,,USD,14,1,3,1,4,2,2100,4900,7000,1.2,0.42,0.0213,0.043,False,False,0.1,0,0.0,0.0,0,0.0,0.0,1.3,SKIP-MATH,skip
+IN,India,en,en|hi,Fortnite,Gaming,C,7,,,USD,850,1,2,1,3,2,9000,21000,30000,1.2,0.42,0.0213,0.043,False,False,0.1,0,0.0,0.0,0,0.0,0.0,1.3,SKIP-MATH,skip
+KE,Kenya,en,en|sw,Fortnite,Gaming,C,7,,,USD,22,1,3,1,4,2,2100,4900,7000,1.2,0.42,0.0213,0.043,False,False,0.1,0,0.0,0.0,0,0.0,0.0,1.3,SKIP-MATH,skip
+GH,Ghana,en,en,Jawaker,Shopping,C,2,,,USD,14,1,3,1,4,2,175,408,583,1.2,0.42,0.0213,0.043,False,False,0.1,0,0.0,0.0,0,0.0,0.0,1.3,SKIP-MATH,skip
+IN,India,en,en|hi,Jawaker,Shopping,C,2,,,USD,850,1,2,1,3,2,750,1750,2500,1.2,0.42,0.0213,0.043,False,False,0.1,0,0.0,0.0,0,0.0,0.0,1.3,SKIP-MATH,skip
+KE,Kenya,en,en|sw,Jawaker,Shopping,C,2,,,USD,22,1,3,1,4,2,175,408,583,1.2,0.42,0.0213,0.043,False,False,0.1,0,0.0,0.0,0,0.0,0.0,1.3,SKIP-MATH,skip
+NG,Nigeria,en,en,Jawaker,Shopping,C,2,,,USD,109,1,3,1,4,2,175,408,583,1.2,0.42,0.0213,0.043,False,False,0.1,0,0.0,0.0,0,0.0,0.0,1.3,SKIP-MATH,skip
+PH,Philippines,en,en|tl,Jawaker,Shopping,C,2,,,USD,90,1,2,1,3,2,750,1750,2500,1.2,0.42,0.0213,0.043,False,False,0.1,0,0.0,0.0,0,0.0,0.0,1.3,SKIP-MATH,skip
+ZA,South Africa,en,en,Jawaker,Shopping,C,2,,,USD,43,1,2,1,3,2,750,1750,2500,1.2,0.42,0.0213,0.043,False,False,0.1,0,0.0,0.0,0,0.0,0.0,1.3,SKIP-MATH,skip
+NG,Nigeria,en,en,Fortnite,Gaming,C,6,,,USD,109,1,3,1,4,2,2100,4900,7000,1.2,0.42,0.0213,0.043,False,False,0.1,0,0.0,0.0,0,0.0,0.0,1.3,SKIP-MATH,skip
+PH,Philippines,en,en|tl,Fortnite,Gaming,C,6,,,USD,90,1,2,1,3,2,9000,21000,30000,1.2,0.42,0.0213,0.043,False,False,0.1,0,0.0,0.0,0,0.0,0.0,1.3,SKIP-MATH,skip
+ZA,South Africa,en,en,Fortnite,Gaming,C,7,,,USD,43,1,2,1,3,2,9000,21000,30000,1.2,0.42,0.0213,0.043,False,False,0.1,0,0.0,0.0,0,0.0,0.0,1.3,SKIP-MATH,skip
+NG,Nigeria,en,en,Crypto Giftcard,Crypto,C,2,,,USD,109,1,3,1,4,2,105,245,350,1.2,0.42,0.0213,0.043,False,False,0.1,0,0.0,0.0,0,0.0,0.0,1.3,SKIP-MATH,skip
+PH,Philippines,en,en|tl,Crypto Giftcard,Crypto,C,2,,,USD,90,1,2,1,3,2,450,1050,1500,1.2,0.42,0.0213,0.043,False,False,0.1,0,0.0,0.0,0,0.0,0.0,1.3,SKIP-MATH,skip
+AR,Argentina,es,es,Crypto Voucher,Crypto,C,1,30.0,100.0,USD,45,1,2,1,3,2,900,2100,3000,1.2,0.42,0.0213,0.043,False,False,0.1,0,0.0,0.0,0,0.0,0.0,1.3,SKIP-MATH,skip
+GH,Ghana,en,en,Crypto Voucher,Crypto,C,1,30.0,100.0,USD,14,1,3,1,4,2,210,490,700,1.2,0.42,0.0213,0.043,False,False,0.1,0,0.0,0.0,0,0.0,0.0,1.3,SKIP-MATH,skip
+KE,Kenya,en,en|sw,Crypto Voucher,Crypto,C,1,30.0,100.0,USD,22,1,3,1,4,2,210,490,700,1.2,0.42,0.0213,0.043,False,False,0.1,0,0.0,0.0,0,0.0,0.0,1.3,SKIP-MATH,skip
+ZA,South Africa,en,en,SHENZHEN,Gaming,C,1,,,USD,43,1,2,1,3,2,60,140,200,1.2,0.42,0.0213,0.043,False,False,0.1,0,0.0,0.0,0,0.0,0.0,1.3,SKIP-MATH,skip
+PH,Philippines,en,en|tl,NetDragon Universal,Gaming,C,1,,,USD,90,1,2,1,3,2,150,350,500,1.2,0.42,0.0213,0.043,False,False,0.1,0,0.0,0.0,0,0.0,0.0,1.3,SKIP-MATH,skip
+ZA,South Africa,en,en,NetDragon Universal,Gaming,C,1,,,USD,43,1,2,1,3,2,150,350,500,1.2,0.42,0.0213,0.043,False,False,0.1,0,0.0,0.0,0,0.0,0.0,1.3,SKIP-MATH,skip
+AR,Argentina,es,es,Mobile Legends,Gaming,C,1,,,USD,45,1,2,1,3,2,3600,8400,12000,1.2,0.42,0.0213,0.043,False,False,0.1,0,0.0,0.0,0,0.0,0.0,1.3,SKIP-MATH,skip
+GH,Ghana,en,en,Mobile Legends,Gaming,C,1,,,USD,14,1,3,1,4,2,840,1960,2800,1.2,0.42,0.0213,0.043,False,False,0.1,0,0.0,0.0,0,0.0,0.0,1.3,SKIP-MATH,skip
+IN,India,en,en|hi,Mobile Legends,Gaming,C,1,,,USD,850,1,2,1,3,2,3600,8400,12000,1.2,0.42,0.0213,0.043,False,False,0.1,0,0.0,0.0,0,0.0,0.0,1.3,SKIP-MATH,skip
+KE,Kenya,en,en|sw,Mobile Legends,Gaming,C,1,,,USD,22,1,3,1,4,2,840,1960,2800,1.2,0.42,0.0213,0.043,False,False,0.1,0,0.0,0.0,0,0.0,0.0,1.3,SKIP-MATH,skip
+MD,Moldova,ro,ro,Mobile Legends,Gaming,C,3,,,USD,2,3,4,3,4,4,840,1960,2800,0.2,0.07,0.0105,0.021,False,False,0.3,0,0.0,0.0,0,0.0,0.0,0.8,SKIP-STRIPE,skip
+NI,Nicaragua,es,es,Mobile Legends,Gaming,C,3,,,USD,3,1,4,1,4,3,840,1960,2800,1.2,0.42,0.0163,0.033,False,False,0.08,0,0.0,0.0,0,0.0,0.0,0.8,SKIP-MATH,skip
+PS,Palestine,ar,ar,Mobile Legends,Gaming,C,3,,,USD,,3,4,3,4,4,840,1960,2800,0.2,0.07,0.0105,0.021,False,False,0.3,0,0.0,0.0,0,0.0,0.0,0.8,SKIP-STRIPE,skip
+PY,Paraguay,es,es,Mobile Legends,Gaming,C,3,,,USD,4,1,4,1,4,3,840,1960,2800,1.2,0.42,0.0163,0.033,False,False,0.08,0,0.0,0.0,0,0.0,0.0,0.8,SKIP-MATH,skip
+RU,Russia,ru,ru,Mobile Legends,Gaming,C,3,,,USD,130,3,4,3,2,4,12000,28000,40000,0.2,0.07,0.0105,0.021,False,False,0.3,0,0.0,0.0,0,0.0,0.0,0.8,SKIP-STRIPE,skip
+SN,Senegal,fr,fr,Mobile Legends,Gaming,C,3,,,USD,7,1,4,1,4,3,840,1960,2800,1.2,0.42,0.0163,0.033,False,False,0.08,0,0.0,0.0,0,0.0,0.0,0.8,SKIP-MATH,skip
+UG,Uganda,en,en|sw,Mobile Legends,Gaming,C,3,,,USD,10,1,4,1,4,3,840,1960,2800,1.2,0.42,0.0163,0.033,False,False,0.08,0,0.0,0.0,0,0.0,0.0,0.8,SKIP-MATH,skip
+YE,Yemen,ar,ar,Mobile Legends,Gaming,C,2,,,USD,6,3,4,3,4,4,840,1960,2800,0.2,0.07,0.0105,0.021,False,False,0.3,0,0.0,0.0,0,0.0,0.0,0.8,SKIP-STRIPE,skip
+ZM,Zambia,en,en,Mobile Legends,Gaming,C,2,,,USD,4,1,4,1,4,3,840,1960,2800,1.2,0.42,0.0163,0.033,False,False,0.08,0,0.0,0.0,0,0.0,0.0,0.8,SKIP-MATH,skip
+ZW,Zimbabwe,en,en,Mobile Legends,Gaming,C,2,,,USD,5,1,4,1,4,3,840,1960,2800,1.2,0.42,0.0163,0.033,False,False,0.08,0,0.0,0.0,0,0.0,0.0,0.8,SKIP-MATH,skip
+BO,Bolivia,es,es,Jawaker,Shopping,C,2,,,USD,6,1,4,1,4,3,175,408,583,1.2,0.42,0.0163,0.033,False,False,0.08,0,0.0,0.0,0,0.0,0.0,0.8,SKIP-MATH,skip
+CM,Cameroon,fr,fr|en,Jawaker,Shopping,C,3,,,USD,8,1,4,1,4,3,175,408,583,1.2,0.42,0.0163,0.033,False,False,0.08,0,0.0,0.0,0,0.0,0.0,0.8,SKIP-MATH,skip
+BO,Bolivia,es,es,Mobile Legends,Gaming,C,2,,,USD,6,1,4,1,4,3,840,1960,2800,1.2,0.42,0.0163,0.033,False,False,0.08,0,0.0,0.0,0,0.0,0.0,0.8,SKIP-MATH,skip
+CM,Cameroon,fr,fr|en,Mobile Legends,Gaming,C,2,,,USD,8,1,4,1,4,3,840,1960,2800,1.2,0.42,0.0163,0.033,False,False,0.08,0,0.0,0.0,0,0.0,0.0,0.8,SKIP-MATH,skip
+MG,Madagascar,fr,fr|mg,Crypto Voucher,Crypto,C,2,30.0,100.0,USD,4,1,4,1,4,3,210,490,700,1.2,0.42,0.0163,0.033,False,False,0.08,0,0.0,0.0,0,0.0,0.0,0.8,SKIP-MATH,skip
+MD,Moldova,ro,ro,Crypto Voucher,Crypto,C,2,30.0,100.0,USD,2,3,4,3,4,4,210,490,700,0.2,0.07,0.0105,0.021,False,False,0.3,0,0.0,0.0,0,0.0,0.0,0.8,SKIP-STRIPE,skip
+NI,Nicaragua,es,es,Crypto Voucher,Crypto,C,2,30.0,100.0,USD,3,1,4,1,4,3,210,490,700,1.2,0.42,0.0163,0.033,False,False,0.08,0,0.0,0.0,0,0.0,0.0,0.8,SKIP-MATH,skip
+PS,Palestine,ar,ar,Crypto Voucher,Crypto,C,2,30.0,100.0,USD,,3,4,3,4,4,210,490,700,0.2,0.07,0.0105,0.021,False,False,0.3,0,0.0,0.0,0,0.0,0.0,0.8,SKIP-STRIPE,skip
+PY,Paraguay,es,es,Crypto Voucher,Crypto,C,2,30.0,100.0,USD,4,1,4,1,4,3,210,490,700,1.2,0.42,0.0163,0.033,False,False,0.08,0,0.0,0.0,0,0.0,0.0,0.8,SKIP-MATH,skip
+RU,Russia,ru,ru,Crypto Voucher,Crypto,C,2,30.0,100.0,USD,130,3,4,3,2,4,3000,7000,10000,0.2,0.07,0.0105,0.021,False,False,0.3,0,0.0,0.0,0,0.0,0.0,0.8,SKIP-STRIPE,skip
+SN,Senegal,fr,fr,Crypto Voucher,Crypto,C,2,30.0,100.0,USD,7,1,4,1,4,3,210,490,700,1.2,0.42,0.0163,0.033,False,False,0.08,0,0.0,0.0,0,0.0,0.0,0.8,SKIP-MATH,skip
+UG,Uganda,en,en|sw,Crypto Voucher,Crypto,C,2,30.0,100.0,USD,10,1,4,1,4,3,210,490,700,1.2,0.42,0.0163,0.033,False,False,0.08,0,0.0,0.0,0,0.0,0.0,0.8,SKIP-MATH,skip
+YE,Yemen,ar,ar,Crypto Voucher,Crypto,C,2,30.0,100.0,USD,6,3,4,3,4,4,210,490,700,0.2,0.07,0.0105,0.021,False,False,0.3,0,0.0,0.0,0,0.0,0.0,0.8,SKIP-STRIPE,skip
+ZM,Zambia,en,en,Crypto Voucher,Crypto,C,2,30.0,100.0,USD,4,1,4,1,4,3,210,490,700,1.2,0.42,0.0163,0.033,False,False,0.08,0,0.0,0.0,0,0.0,0.0,0.8,SKIP-MATH,skip
+ZW,Zimbabwe,en,en,Crypto Voucher,Crypto,C,2,30.0,100.0,USD,5,1,4,1,4,3,210,490,700,1.2,0.42,0.0163,0.033,False,False,0.08,0,0.0,0.0,0,0.0,0.0,0.8,SKIP-MATH,skip
+BO,Bolivia,es,es,NetDragon Universal,Gaming,C,2,,,USD,6,1,4,1,4,3,35,82,117,1.2,0.42,0.0163,0.033,False,False,0.08,0,0.0,0.0,0,0.0,0.0,0.8,SKIP-MATH,skip
+CM,Cameroon,fr,fr|en,NetDragon Universal,Gaming,C,2,,,USD,8,1,4,1,4,3,35,82,117,1.2,0.42,0.0163,0.033,False,False,0.08,0,0.0,0.0,0,0.0,0.0,0.8,SKIP-MATH,skip
+CI,Côte d'Ivoire,fr,fr,NetDragon Universal,Gaming,C,2,,,USD,9,1,4,1,4,3,35,82,117,1.2,0.42,0.0163,0.033,False,False,0.08,0,0.0,0.0,0,0.0,0.0,0.8,SKIP-MATH,skip
+EC,Ecuador,es,es,NetDragon Universal,Gaming,C,2,,,USD,13,1,4,1,4,3,35,82,117,1.2,0.42,0.0163,0.033,False,False,0.08,0,0.0,0.0,0,0.0,0.0,0.8,SKIP-MATH,skip
+SV,El Salvador,es,es,NetDragon Universal,Gaming,C,2,,,USD,4,1,4,1,4,3,35,82,117,1.2,0.42,0.0163,0.033,False,False,0.08,0,0.0,0.0,0,0.0,0.0,0.8,SKIP-MATH,skip
+GT,Guatemala,es,es,NetDragon Universal,Gaming,C,2,,,USD,9,1,4,1,4,3,35,82,117,1.2,0.42,0.0163,0.033,False,False,0.08,0,0.0,0.0,0,0.0,0.0,0.8,SKIP-MATH,skip
+HN,Honduras,es,es,NetDragon Universal,Gaming,C,2,,,USD,4,1,4,1,4,3,35,82,117,1.2,0.42,0.0163,0.033,False,False,0.08,0,0.0,0.0,0,0.0,0.0,0.8,SKIP-MATH,skip
+IQ,Iraq,ar,ar,NetDragon Universal,Gaming,C,2,,,USD,22,3,4,3,4,4,35,82,117,0.2,0.07,0.0105,0.021,False,False,0.3,0,0.0,0.0,0,0.0,0.0,0.8,SKIP-STRIPE,skip
+MG,Madagascar,fr,fr|mg,NetDragon Universal,Gaming,C,2,,,USD,4,1,4,1,4,3,35,82,117,1.2,0.42,0.0163,0.033,False,False,0.08,0,0.0,0.0,0,0.0,0.0,0.8,SKIP-MATH,skip
+MD,Moldova,ro,ro,NetDragon Universal,Gaming,C,2,,,USD,2,3,4,3,4,4,35,82,117,0.2,0.07,0.0105,0.021,False,False,0.3,0,0.0,0.0,0,0.0,0.0,0.8,SKIP-STRIPE,skip
+NI,Nicaragua,es,es,NetDragon Universal,Gaming,C,2,,,USD,3,1,4,1,4,3,35,82,117,1.2,0.42,0.0163,0.033,False,False,0.08,0,0.0,0.0,0,0.0,0.0,0.8,SKIP-MATH,skip
+BO,Bolivia,es,es,Fortnite,Gaming,C,9,,,USD,6,1,4,1,4,3,2100,4900,7000,1.2,0.42,0.0163,0.033,False,False,0.08,0,0.0,0.0,0,0.0,0.0,0.8,SKIP-MATH,skip
+CM,Cameroon,fr,fr|en,Fortnite,Gaming,C,9,,,USD,8,1,4,1,4,3,2100,4900,7000,1.2,0.42,0.0163,0.033,False,False,0.08,0,0.0,0.0,0,0.0,0.0,0.8,SKIP-MATH,skip
+EC,Ecuador,es,es,Fortnite,Gaming,C,10,,,USD,13,1,4,1,4,3,2100,4900,7000,1.2,0.42,0.0163,0.033,False,False,0.08,0,0.0,0.0,0,0.0,0.0,0.8,SKIP-MATH,skip
+SV,El Salvador,es,es,Fortnite,Gaming,C,10,,,USD,4,1,4,1,4,3,2100,4900,7000,1.2,0.42,0.0163,0.033,False,False,0.08,0,0.0,0.0,0,0.0,0.0,0.8,SKIP-MATH,skip
+GT,Guatemala,es,es,Fortnite,Gaming,C,10,,,USD,9,1,4,1,4,3,2100,4900,7000,1.2,0.42,0.0163,0.033,False,False,0.08,0,0.0,0.0,0,0.0,0.0,0.8,SKIP-MATH,skip
+HN,Honduras,es,es,Fortnite,Gaming,C,8,,,USD,4,1,4,1,4,3,2100,4900,7000,1.2,0.42,0.0163,0.033,False,False,0.08,0,0.0,0.0,0,0.0,0.0,0.8,SKIP-MATH,skip
+IQ,Iraq,ar,ar,Fortnite,Gaming,C,7,,,USD,22,3,4,3,4,4,2100,4900,7000,0.2,0.07,0.0105,0.021,False,False,0.3,0,0.0,0.0,0,0.0,0.0,0.8,SKIP-STRIPE,skip
+CI,Côte d'Ivoire,fr,fr,Jawaker,Shopping,C,2,,,USD,9,1,4,1,4,3,175,408,583,1.2,0.42,0.0163,0.033,False,False,0.08,0,0.0,0.0,0,0.0,0.0,0.8,SKIP-MATH,skip
+EC,Ecuador,es,es,Jawaker,Shopping,C,2,,,USD,13,1,4,1,4,3,175,408,583,1.2,0.42,0.0163,0.033,False,False,0.08,0,0.0,0.0,0,0.0,0.0,0.8,SKIP-MATH,skip
+SV,El Salvador,es,es,Jawaker,Shopping,C,2,,,USD,4,1,4,1,4,3,175,408,583,1.2,0.42,0.0163,0.033,False,False,0.08,0,0.0,0.0,0,0.0,0.0,0.8,SKIP-MATH,skip
+GT,Guatemala,es,es,Jawaker,Shopping,C,2,,,USD,9,1,4,1,4,3,175,408,583,1.2,0.42,0.0163,0.033,False,False,0.08,0,0.0,0.0,0,0.0,0.0,0.8,SKIP-MATH,skip
+HN,Honduras,es,es,Jawaker,Shopping,C,2,,,USD,4,1,4,1,4,3,175,408,583,1.2,0.42,0.0163,0.033,False,False,0.08,0,0.0,0.0,0,0.0,0.0,0.8,SKIP-MATH,skip
+IQ,Iraq,ar,ar,Jawaker,Shopping,C,2,,,USD,22,3,4,3,4,4,175,408,583,0.2,0.07,0.0105,0.021,False,False,0.3,0,0.0,0.0,0,0.0,0.0,0.8,SKIP-STRIPE,skip
+MG,Madagascar,fr,fr|mg,Jawaker,Shopping,C,2,,,USD,4,1,4,1,4,3,175,408,583,1.2,0.42,0.0163,0.033,False,False,0.08,0,0.0,0.0,0,0.0,0.0,0.8,SKIP-MATH,skip
+MD,Moldova,ro,ro,Jawaker,Shopping,C,2,,,USD,2,3,4,3,4,4,175,408,583,0.2,0.07,0.0105,0.021,False,False,0.3,0,0.0,0.0,0,0.0,0.0,0.8,SKIP-STRIPE,skip
+NI,Nicaragua,es,es,Jawaker,Shopping,C,2,,,USD,3,1,4,1,4,3,175,408,583,1.2,0.42,0.0163,0.033,False,False,0.08,0,0.0,0.0,0,0.0,0.0,0.8,SKIP-MATH,skip
+PS,Palestine,ar,ar,Jawaker,Shopping,C,2,,,USD,,3,4,3,4,4,175,408,583,0.2,0.07,0.0105,0.021,False,False,0.3,0,0.0,0.0,0,0.0,0.0,0.8,SKIP-STRIPE,skip
+PY,Paraguay,es,es,Jawaker,Shopping,C,2,,,USD,4,1,4,1,4,3,175,408,583,1.2,0.42,0.0163,0.033,False,False,0.08,0,0.0,0.0,0,0.0,0.0,0.8,SKIP-MATH,skip
+RU,Russia,ru,ru,Jawaker,Shopping,C,2,,,USD,130,3,4,3,2,4,2500,5833,8333,0.2,0.07,0.0105,0.021,False,False,0.3,0,0.0,0.0,0,0.0,0.0,0.8,SKIP-STRIPE,skip
+SN,Senegal,fr,fr,Jawaker,Shopping,C,2,,,USD,7,1,4,1,4,3,175,408,583,1.2,0.42,0.0163,0.033,False,False,0.08,0,0.0,0.0,0,0.0,0.0,0.8,SKIP-MATH,skip
+UG,Uganda,en,en|sw,Jawaker,Shopping,C,2,,,USD,10,1,4,1,4,3,175,408,583,1.2,0.42,0.0163,0.033,False,False,0.08,0,0.0,0.0,0,0.0,0.0,0.8,SKIP-MATH,skip
+YE,Yemen,ar,ar,Jawaker,Shopping,C,2,,,USD,6,3,4,3,4,4,175,408,583,0.2,0.07,0.0105,0.021,False,False,0.3,0,0.0,0.0,0,0.0,0.0,0.8,SKIP-STRIPE,skip
+ZM,Zambia,en,en,Jawaker,Shopping,C,2,,,USD,4,1,4,1,4,3,175,408,583,1.2,0.42,0.0163,0.033,False,False,0.08,0,0.0,0.0,0,0.0,0.0,0.8,SKIP-MATH,skip
+ZW,Zimbabwe,en,en,Jawaker,Shopping,C,2,,,USD,5,1,4,1,4,3,175,408,583,1.2,0.42,0.0163,0.033,False,False,0.08,0,0.0,0.0,0,0.0,0.0,0.8,SKIP-MATH,skip
+UG,Uganda,en,en|sw,Fortnite,Gaming,C,8,,,USD,10,1,4,1,4,3,2100,4900,7000,1.2,0.42,0.0163,0.033,False,False,0.08,0,0.0,0.0,0,0.0,0.0,0.8,SKIP-MATH,skip
+YE,Yemen,ar,ar,Fortnite,Gaming,C,8,,,USD,6,3,4,3,4,4,2100,4900,7000,0.2,0.07,0.0105,0.021,False,False,0.3,0,0.0,0.0,0,0.0,0.0,0.8,SKIP-STRIPE,skip
+ZM,Zambia,en,en,Fortnite,Gaming,C,8,,,USD,4,1,4,1,4,3,2100,4900,7000,1.2,0.42,0.0163,0.033,False,False,0.08,0,0.0,0.0,0,0.0,0.0,0.8,SKIP-MATH,skip
+ZW,Zimbabwe,en,en,Fortnite,Gaming,C,8,,,USD,5,1,4,1,4,3,2100,4900,7000,1.2,0.42,0.0163,0.033,False,False,0.08,0,0.0,0.0,0,0.0,0.0,0.8,SKIP-MATH,skip
+CI,Côte d'Ivoire,fr,fr,Fortnite,Gaming,C,9,,,USD,9,1,4,1,4,3,2100,4900,7000,1.2,0.42,0.0163,0.033,False,False,0.08,0,0.0,0.0,0,0.0,0.0,0.8,SKIP-MATH,skip
+MG,Madagascar,fr,fr|mg,Fortnite,Gaming,C,6,,,USD,4,1,4,1,4,3,2100,4900,7000,1.2,0.42,0.0163,0.033,False,False,0.08,0,0.0,0.0,0,0.0,0.0,0.8,SKIP-MATH,skip
+MD,Moldova,ro,ro,Fortnite,Gaming,C,6,,,USD,2,3,4,3,4,4,2100,4900,7000,0.2,0.07,0.0105,0.021,False,False,0.3,0,0.0,0.0,0,0.0,0.0,0.8,SKIP-STRIPE,skip
+NI,Nicaragua,es,es,Fortnite,Gaming,C,6,,,USD,3,1,4,1,4,3,2100,4900,7000,1.2,0.42,0.0163,0.033,False,False,0.08,0,0.0,0.0,0,0.0,0.0,0.8,SKIP-MATH,skip
+PS,Palestine,ar,ar,Fortnite,Gaming,C,6,,,USD,,3,4,3,4,4,2100,4900,7000,0.2,0.07,0.0105,0.021,False,False,0.3,0,0.0,0.0,0,0.0,0.0,0.8,SKIP-STRIPE,skip
+PY,Paraguay,es,es,Fortnite,Gaming,C,6,,,USD,4,1,4,1,4,3,2100,4900,7000,1.2,0.42,0.0163,0.033,False,False,0.08,0,0.0,0.0,0,0.0,0.0,0.8,SKIP-MATH,skip
+RU,Russia,ru,ru,Fortnite,Gaming,C,7,,,USD,130,3,4,3,2,4,30000,70000,100000,0.2,0.07,0.0105,0.021,False,False,0.3,0,0.0,0.0,0,0.0,0.0,0.8,SKIP-STRIPE,skip
+SN,Senegal,fr,fr,Fortnite,Gaming,C,7,,,USD,7,1,4,1,4,3,2100,4900,7000,1.2,0.42,0.0163,0.033,False,False,0.08,0,0.0,0.0,0,0.0,0.0,0.8,SKIP-MATH,skip
+BO,Bolivia,es,es,Crypto Voucher,Crypto,C,1,30.0,100.0,USD,6,1,4,1,4,3,210,490,700,1.2,0.42,0.0163,0.033,False,False,0.08,0,0.0,0.0,0,0.0,0.0,0.8,SKIP-MATH,skip
+CM,Cameroon,fr,fr|en,Crypto Voucher,Crypto,C,1,30.0,100.0,USD,8,1,4,1,4,3,210,490,700,1.2,0.42,0.0163,0.033,False,False,0.08,0,0.0,0.0,0,0.0,0.0,0.8,SKIP-MATH,skip
+CI,Côte d'Ivoire,fr,fr,Crypto Voucher,Crypto,C,1,30.0,100.0,USD,9,1,4,1,4,3,210,490,700,1.2,0.42,0.0163,0.033,False,False,0.08,0,0.0,0.0,0,0.0,0.0,0.8,SKIP-MATH,skip
+EC,Ecuador,es,es,Crypto Voucher,Crypto,C,1,30.0,100.0,USD,13,1,4,1,4,3,210,490,700,1.2,0.42,0.0163,0.033,False,False,0.08,0,0.0,0.0,0,0.0,0.0,0.8,SKIP-MATH,skip
+SV,El Salvador,es,es,Crypto Voucher,Crypto,C,1,30.0,100.0,USD,4,1,4,1,4,3,210,490,700,1.2,0.42,0.0163,0.033,False,False,0.08,0,0.0,0.0,0,0.0,0.0,0.8,SKIP-MATH,skip
+GT,Guatemala,es,es,Crypto Voucher,Crypto,C,1,30.0,100.0,USD,9,1,4,1,4,3,210,490,700,1.2,0.42,0.0163,0.033,False,False,0.08,0,0.0,0.0,0,0.0,0.0,0.8,SKIP-MATH,skip
+HN,Honduras,es,es,Crypto Voucher,Crypto,C,1,30.0,100.0,USD,4,1,4,1,4,3,210,490,700,1.2,0.42,0.0163,0.033,False,False,0.08,0,0.0,0.0,0,0.0,0.0,0.8,SKIP-MATH,skip
+IQ,Iraq,ar,ar,Crypto Voucher,Crypto,C,1,30.0,100.0,USD,22,3,4,3,4,4,210,490,700,0.2,0.07,0.0105,0.021,False,False,0.3,0,0.0,0.0,0,0.0,0.0,0.8,SKIP-STRIPE,skip
+SN,Senegal,fr,fr,SHENZHEN,Gaming,C,1,,,USD,7,1,4,1,4,3,14,33,47,1.2,0.42,0.0163,0.033,False,False,0.08,0,0.0,0.0,0,0.0,0.0,0.8,SKIP-MATH,skip
+UG,Uganda,en,en|sw,SHENZHEN,Gaming,C,1,,,USD,10,1,4,1,4,3,14,33,47,1.2,0.42,0.0163,0.033,False,False,0.08,0,0.0,0.0,0,0.0,0.0,0.8,SKIP-MATH,skip
+YE,Yemen,ar,ar,SHENZHEN,Gaming,C,1,,,USD,6,3,4,3,4,4,14,33,47,0.2,0.07,0.0105,0.021,False,False,0.3,0,0.0,0.0,0,0.0,0.0,0.8,SKIP-STRIPE,skip
+ZM,Zambia,en,en,SHENZHEN,Gaming,C,1,,,USD,4,1,4,1,4,3,14,33,47,1.2,0.42,0.0163,0.033,False,False,0.08,0,0.0,0.0,0,0.0,0.0,0.8,SKIP-MATH,skip
+ZW,Zimbabwe,en,en,SHENZHEN,Gaming,C,1,,,USD,5,1,4,1,4,3,14,33,47,1.2,0.42,0.0163,0.033,False,False,0.08,0,0.0,0.0,0,0.0,0.0,0.8,SKIP-MATH,skip
+PS,Palestine,ar,ar,NetDragon Universal,Gaming,C,1,,,USD,,3,4,3,4,4,35,82,117,0.2,0.07,0.0105,0.021,False,False,0.3,0,0.0,0.0,0,0.0,0.0,0.8,SKIP-STRIPE,skip
+PY,Paraguay,es,es,NetDragon Universal,Gaming,C,1,,,USD,4,1,4,1,4,3,35,82,117,1.2,0.42,0.0163,0.033,False,False,0.08,0,0.0,0.0,0,0.0,0.0,0.8,SKIP-MATH,skip
+RU,Russia,ru,ru,NetDragon Universal,Gaming,C,1,,,USD,130,3,4,3,2,4,500,1167,1667,0.2,0.07,0.0105,0.021,False,False,0.3,0,0.0,0.0,0,0.0,0.0,0.8,SKIP-STRIPE,skip
+SN,Senegal,fr,fr,NetDragon Universal,Gaming,C,1,,,USD,7,1,4,1,4,3,35,82,117,1.2,0.42,0.0163,0.033,False,False,0.08,0,0.0,0.0,0,0.0,0.0,0.8,SKIP-MATH,skip
+UG,Uganda,en,en|sw,NetDragon Universal,Gaming,C,1,,,USD,10,1,4,1,4,3,35,82,117,1.2,0.42,0.0163,0.033,False,False,0.08,0,0.0,0.0,0,0.0,0.0,0.8,SKIP-MATH,skip
+YE,Yemen,ar,ar,NetDragon Universal,Gaming,C,1,,,USD,6,3,4,3,4,4,35,82,117,0.2,0.07,0.0105,0.021,False,False,0.3,0,0.0,0.0,0,0.0,0.0,0.8,SKIP-STRIPE,skip
+ZM,Zambia,en,en,NetDragon Universal,Gaming,C,1,,,USD,4,1,4,1,4,3,35,82,117,1.2,0.42,0.0163,0.033,False,False,0.08,0,0.0,0.0,0,0.0,0.0,0.8,SKIP-MATH,skip
+ZW,Zimbabwe,en,en,NetDragon Universal,Gaming,C,1,,,USD,5,1,4,1,4,3,35,82,117,1.2,0.42,0.0163,0.033,False,False,0.08,0,0.0,0.0,0,0.0,0.0,0.8,SKIP-MATH,skip
+CI,Côte d'Ivoire,fr,fr,Mobile Legends,Gaming,C,1,,,USD,9,1,4,1,4,3,840,1960,2800,1.2,0.42,0.0163,0.033,False,False,0.08,0,0.0,0.0,0,0.0,0.0,0.8,SKIP-MATH,skip
+EC,Ecuador,es,es,Mobile Legends,Gaming,C,1,,,USD,13,1,4,1,4,3,840,1960,2800,1.2,0.42,0.0163,0.033,False,False,0.08,0,0.0,0.0,0,0.0,0.0,0.8,SKIP-MATH,skip
+SV,El Salvador,es,es,Mobile Legends,Gaming,C,1,,,USD,4,1,4,1,4,3,840,1960,2800,1.2,0.42,0.0163,0.033,False,False,0.08,0,0.0,0.0,0,0.0,0.0,0.8,SKIP-MATH,skip
+GT,Guatemala,es,es,Mobile Legends,Gaming,C,1,,,USD,9,1,4,1,4,3,840,1960,2800,1.2,0.42,0.0163,0.033,False,False,0.08,0,0.0,0.0,0,0.0,0.0,0.8,SKIP-MATH,skip
+HN,Honduras,es,es,Mobile Legends,Gaming,C,1,,,USD,4,1,4,1,4,3,840,1960,2800,1.2,0.42,0.0163,0.033,False,False,0.08,0,0.0,0.0,0,0.0,0.0,0.8,SKIP-MATH,skip
+IQ,Iraq,ar,ar,Mobile Legends,Gaming,C,1,,,USD,22,3,4,3,4,4,840,1960,2800,0.2,0.07,0.0105,0.021,False,False,0.3,0,0.0,0.0,0,0.0,0.0,0.8,SKIP-STRIPE,skip
+MG,Madagascar,fr,fr|mg,Mobile Legends,Gaming,C,1,,,USD,4,1,4,1,4,3,840,1960,2800,1.2,0.42,0.0163,0.033,False,False,0.08,0,0.0,0.0,0,0.0,0.0,0.8,SKIP-MATH,skip
+VG,British Virgin Islands,??,,Fortnite,Gaming,C,11,,,USD,,,4,,4,4,2100,4900,7000,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+MR,Mauritania,??,,Mobile Legends,Gaming,C,3,,,USD,,,4,,4,4,840,1960,2800,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+MS,Montserrat,??,,Mobile Legends,Gaming,C,3,,,USD,,,4,,4,4,840,1960,2800,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+NA,Namibia,??,,Mobile Legends,Gaming,C,3,,,USD,,,4,,4,4,840,1960,2800,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+NR,Nauru,??,,Mobile Legends,Gaming,C,3,,,USD,,,4,,4,4,840,1960,2800,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+NE,Niger,??,,Mobile Legends,Gaming,C,3,,,USD,,,4,,4,4,840,1960,2800,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+PG,Papua New Guinea,??,,Mobile Legends,Gaming,C,3,,,USD,,,4,,4,4,840,1960,2800,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+PR,Puerto Rico,??,,Mobile Legends,Gaming,C,3,,,USD,,,4,,4,4,840,1960,2800,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+KN,Saint Kitts And Nevis,??,,Mobile Legends,Gaming,C,3,,,USD,,,4,,4,4,840,1960,2800,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+LC,Saint Lucia,??,,Mobile Legends,Gaming,C,3,,,USD,,,4,,4,4,840,1960,2800,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+WS,Samoa,??,,Mobile Legends,Gaming,C,3,,,USD,,,4,,4,4,840,1960,2800,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+SL,Sierra Leone,??,,Mobile Legends,Gaming,C,3,,,USD,,,4,,4,4,840,1960,2800,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+SO,Somalia,??,,Mobile Legends,Gaming,C,3,,,USD,,,4,,4,4,840,1960,2800,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+SZ,Eswatini,??,,Mobile Legends,Gaming,C,3,,,USD,,,4,,4,4,840,1960,2800,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+TJ,Tajikistan,tg,tg|ru,Mobile Legends,Gaming,C,3,,,USD,3,,4,,4,4,840,1960,2800,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+AS,American Samoa,??,,Jawaker,Shopping,C,3,,,USD,,,4,,4,4,175,408,583,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+AI,Anguilla,??,,Jawaker,Shopping,C,3,,,USD,,,4,,4,4,175,408,583,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+TO,Tonga,??,,Mobile Legends,Gaming,C,2,,,USD,,,4,,4,4,840,1960,2800,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+TT,Trinidad and Tobago,??,,Mobile Legends,Gaming,C,2,,,USD,,,4,,4,4,840,1960,2800,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+TC,Turks And Caicos Islands,??,,Mobile Legends,Gaming,C,2,,,USD,,,4,,4,4,840,1960,2800,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+VU,Vanuatu,??,,Mobile Legends,Gaming,C,2,,,USD,,,4,,4,4,840,1960,2800,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+VG,British Virgin Islands,??,,Mobile Legends,Gaming,C,2,,,USD,,,4,,4,4,840,1960,2800,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+VC,Saint Vincent And The Grenadines,??,,Mobile Legends,Gaming,C,2,,,USD,,,4,,4,4,840,1960,2800,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+AN,Netherlands Antilles,??,,Mobile Legends,Gaming,C,2,,,USD,,,4,,4,4,840,1960,2800,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+KY,Cayman Islands,??,,NetDragon Universal,Gaming,C,3,,,USD,,,4,,4,4,35,82,117,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+CF,Central African Republic,??,,NetDragon Universal,Gaming,C,3,,,USD,,,4,,4,4,35,82,117,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+CN,China,zh,zh,NetDragon Universal,Gaming,C,3,,,USD,1067,,4,,4,4,35,82,117,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+AG,Antigua and Barbuda,??,,Jawaker,Shopping,C,2,,,USD,,,4,,4,4,175,408,583,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+AW,Aruba,??,,Jawaker,Shopping,C,2,,,USD,,,4,,4,4,175,408,583,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+BS,Bahamas,??,,Jawaker,Shopping,C,2,,,USD,,,4,,4,4,175,408,583,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+BB,Barbados,??,,Jawaker,Shopping,C,2,,,USD,,,4,,4,4,175,408,583,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+BZ,Belize,??,,Jawaker,Shopping,C,2,,,USD,,,4,,4,4,175,408,583,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+BM,Bermuda,??,,Jawaker,Shopping,C,2,,,USD,,,4,,4,4,175,408,583,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+BW,Botswana,??,,Jawaker,Shopping,C,2,,,USD,,,4,,4,4,175,408,583,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+VG,British Virgin Islands,??,,Jawaker,Shopping,C,2,,,USD,,,4,,4,4,175,408,583,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+BI,Burundi,??,,Jawaker,Shopping,C,3,,,USD,,,4,,4,4,175,408,583,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+KY,Cayman Islands,??,,Jawaker,Shopping,C,3,,,USD,,,4,,4,4,175,408,583,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+CF,Central African Republic,??,,Jawaker,Shopping,C,3,,,USD,,,4,,4,4,175,408,583,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+BB,Barbados,??,,Mobile Legends,Gaming,C,2,,,USD,,,4,,4,4,840,1960,2800,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+BY,Belarus,be,be|ru,Mobile Legends,Gaming,C,2,,,USD,,,4,,4,4,840,1960,2800,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+BZ,Belize,??,,Mobile Legends,Gaming,C,2,,,USD,,,4,,4,4,840,1960,2800,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+BM,Bermuda,??,,Mobile Legends,Gaming,C,2,,,USD,,,4,,4,4,840,1960,2800,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+BW,Botswana,??,,Mobile Legends,Gaming,C,2,,,USD,,,4,,4,4,840,1960,2800,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+BI,Burundi,??,,Mobile Legends,Gaming,C,2,,,USD,,,4,,4,4,840,1960,2800,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+KY,Cayman Islands,??,,Mobile Legends,Gaming,C,2,,,USD,,,4,,4,4,840,1960,2800,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+CF,Central African Republic,??,,Mobile Legends,Gaming,C,2,,,USD,,,4,,4,4,840,1960,2800,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+KM,Comoros,??,,Mobile Legends,Gaming,C,2,,,USD,,,4,,4,4,840,1960,2800,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+CG,Congo,??,,Mobile Legends,Gaming,C,2,,,USD,,,4,,4,4,840,1960,2800,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+LR,Liberia,??,,Crypto Voucher,Crypto,C,2,30.0,100.0,USD,,,4,,4,4,210,490,700,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+MW,Malawi,??,,Crypto Voucher,Crypto,C,2,30.0,100.0,USD,,,4,,4,4,210,490,700,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+MQ,Martinique,??,,Crypto Voucher,Crypto,C,2,30.0,100.0,USD,,,4,,4,4,210,490,700,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+NA,Namibia,??,,Crypto Voucher,Crypto,C,2,30.0,100.0,USD,,,4,,4,4,210,490,700,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+NR,Nauru,??,,Crypto Voucher,Crypto,C,2,30.0,100.0,USD,,,4,,4,4,210,490,700,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+AN,Netherlands Antilles,??,,Crypto Voucher,Crypto,C,2,30.0,100.0,USD,,,4,,4,4,210,490,700,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+NE,Niger,??,,Crypto Voucher,Crypto,C,2,30.0,100.0,USD,,,4,,4,4,210,490,700,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+PG,Papua New Guinea,??,,Crypto Voucher,Crypto,C,2,30.0,100.0,USD,,,4,,4,4,210,490,700,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+PR,Puerto Rico,??,,Crypto Voucher,Crypto,C,2,30.0,100.0,USD,,,4,,4,4,210,490,700,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+KN,Saint Kitts And Nevis,??,,Crypto Voucher,Crypto,C,2,30.0,100.0,USD,,,4,,4,4,210,490,700,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+LC,Saint Lucia,??,,Crypto Voucher,Crypto,C,2,30.0,100.0,USD,,,4,,4,4,210,490,700,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+VC,Saint Vincent And The Grenadines,??,,Crypto Voucher,Crypto,C,2,30.0,100.0,USD,,,4,,4,4,210,490,700,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+WS,Samoa,??,,Crypto Voucher,Crypto,C,2,30.0,100.0,USD,,,4,,4,4,210,490,700,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+SL,Sierra Leone,??,,Crypto Voucher,Crypto,C,2,30.0,100.0,USD,,,4,,4,4,210,490,700,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+SZ,Eswatini,??,,Crypto Voucher,Crypto,C,2,30.0,100.0,USD,,,4,,4,4,210,490,700,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+TJ,Tajikistan,tg,tg|ru,Crypto Voucher,Crypto,C,2,30.0,100.0,USD,3,,4,,4,4,210,490,700,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+TO,Tonga,??,,Crypto Voucher,Crypto,C,2,30.0,100.0,USD,,,4,,4,4,210,490,700,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+TT,Trinidad and Tobago,??,,Crypto Voucher,Crypto,C,2,30.0,100.0,USD,,,4,,4,4,210,490,700,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+TC,Turks And Caicos Islands,??,,Crypto Voucher,Crypto,C,2,30.0,100.0,USD,,,4,,4,4,210,490,700,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+VU,Vanuatu,??,,Crypto Voucher,Crypto,C,2,30.0,100.0,USD,,,4,,4,4,210,490,700,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+SO,Somalia,??,,Crypto Voucher,Crypto,C,2,30.0,100.0,USD,,,4,,4,4,210,490,700,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+BY,Belarus,be,be|ru,Crypto Voucher,Crypto,C,2,30.0,100.0,USD,,,4,,4,4,210,490,700,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+KM,Comoros,??,,Crypto Voucher,Crypto,C,2,30.0,100.0,USD,,,4,,4,4,210,490,700,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+MR,Mauritania,??,,Crypto Voucher,Crypto,C,2,30.0,100.0,USD,,,4,,4,4,210,490,700,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+MS,Montserrat,??,,Crypto Voucher,Crypto,C,2,30.0,100.0,USD,,,4,,4,4,210,490,700,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+AS,American Samoa,??,,NetDragon Universal,Gaming,C,2,,,USD,,,4,,4,4,35,82,117,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+AI,Anguilla,??,,NetDragon Universal,Gaming,C,2,,,USD,,,4,,4,4,35,82,117,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+AG,Antigua and Barbuda,??,,NetDragon Universal,Gaming,C,2,,,USD,,,4,,4,4,35,82,117,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+AW,Aruba,??,,NetDragon Universal,Gaming,C,2,,,USD,,,4,,4,4,35,82,117,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+BS,Bahamas,??,,NetDragon Universal,Gaming,C,2,,,USD,,,4,,4,4,35,82,117,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+BB,Barbados,??,,NetDragon Universal,Gaming,C,2,,,USD,,,4,,4,4,35,82,117,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+BZ,Belize,??,,NetDragon Universal,Gaming,C,2,,,USD,,,4,,4,4,35,82,117,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+BM,Bermuda,??,,NetDragon Universal,Gaming,C,2,,,USD,,,4,,4,4,35,82,117,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+BW,Botswana,??,,NetDragon Universal,Gaming,C,2,,,USD,,,4,,4,4,35,82,117,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+VG,British Virgin Islands,??,,NetDragon Universal,Gaming,C,2,,,USD,,,4,,4,4,35,82,117,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+BI,Burundi,??,,NetDragon Universal,Gaming,C,2,,,USD,,,4,,4,4,35,82,117,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+CG,Congo,??,,NetDragon Universal,Gaming,C,2,,,USD,,,4,,4,4,35,82,117,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+CU,Cuba,??,,NetDragon Universal,Gaming,C,2,,,USD,,,4,,4,4,35,82,117,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+DM,Dominica,??,,NetDragon Universal,Gaming,C,2,,,USD,,,4,,4,4,35,82,117,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+FJ,Fiji,??,,NetDragon Universal,Gaming,C,2,,,USD,,,4,,4,4,35,82,117,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+GM,Gambia,??,,NetDragon Universal,Gaming,C,2,,,USD,,,4,,4,4,35,82,117,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+GD,Grenada,??,,NetDragon Universal,Gaming,C,2,,,USD,,,4,,4,4,35,82,117,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+GN,Guinea Conakry,??,,NetDragon Universal,Gaming,C,2,,,USD,,,4,,4,4,35,82,117,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+GW,Guinea-Bissau,??,,NetDragon Universal,Gaming,C,2,,,USD,,,4,,4,4,35,82,117,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+GY,Guyana,??,,NetDragon Universal,Gaming,C,2,,,USD,,,4,,4,4,35,82,117,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+HT,Haiti,??,,NetDragon Universal,Gaming,C,2,,,USD,,,4,,4,4,35,82,117,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+JM,Jamaica,??,,NetDragon Universal,Gaming,C,2,,,USD,,,4,,4,4,35,82,117,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+LR,Liberia,??,,NetDragon Universal,Gaming,C,2,,,USD,,,4,,4,4,35,82,117,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+MW,Malawi,??,,NetDragon Universal,Gaming,C,2,,,USD,,,4,,4,4,35,82,117,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+MQ,Martinique,??,,NetDragon Universal,Gaming,C,2,,,USD,,,4,,4,4,35,82,117,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+NA,Namibia,??,,NetDragon Universal,Gaming,C,2,,,USD,,,4,,4,4,35,82,117,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+NR,Nauru,??,,NetDragon Universal,Gaming,C,2,,,USD,,,4,,4,4,35,82,117,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+AN,Netherlands Antilles,??,,NetDragon Universal,Gaming,C,2,,,USD,,,4,,4,4,35,82,117,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+NE,Niger,??,,NetDragon Universal,Gaming,C,2,,,USD,,,4,,4,4,35,82,117,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+AS,American Samoa,??,,Fortnite,Gaming,C,10,,,USD,,,4,,4,4,2100,4900,7000,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+AI,Anguilla,??,,Fortnite,Gaming,C,10,,,USD,,,4,,4,4,2100,4900,7000,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+AG,Antigua and Barbuda,??,,Fortnite,Gaming,C,10,,,USD,,,4,,4,4,2100,4900,7000,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+AW,Aruba,??,,Fortnite,Gaming,C,9,,,USD,,,4,,4,4,2100,4900,7000,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+BS,Bahamas,??,,Fortnite,Gaming,C,9,,,USD,,,4,,4,4,2100,4900,7000,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+BB,Barbados,??,,Fortnite,Gaming,C,10,,,USD,,,4,,4,4,2100,4900,7000,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+BZ,Belize,??,,Fortnite,Gaming,C,10,,,USD,,,4,,4,4,2100,4900,7000,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+BM,Bermuda,??,,Fortnite,Gaming,C,10,,,USD,,,4,,4,4,2100,4900,7000,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+BW,Botswana,??,,Fortnite,Gaming,C,9,,,USD,,,4,,4,4,2100,4900,7000,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+BI,Burundi,??,,Fortnite,Gaming,C,9,,,USD,,,4,,4,4,2100,4900,7000,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+KY,Cayman Islands,??,,Fortnite,Gaming,C,9,,,USD,,,4,,4,4,2100,4900,7000,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+CF,Central African Republic,??,,Fortnite,Gaming,C,9,,,USD,,,4,,4,4,2100,4900,7000,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+CN,China,zh,zh,Fortnite,Gaming,C,10,,,USD,1067,,4,,4,4,2100,4900,7000,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+CG,Congo,??,,Fortnite,Gaming,C,10,,,USD,,,4,,4,4,2100,4900,7000,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+DM,Dominica,??,,Fortnite,Gaming,C,10,,,USD,,,4,,4,4,2100,4900,7000,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+FJ,Fiji,??,,Fortnite,Gaming,C,10,,,USD,,,4,,4,4,2100,4900,7000,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+GM,Gambia,??,,Fortnite,Gaming,C,10,,,USD,,,4,,4,4,2100,4900,7000,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+GD,Grenada,??,,Fortnite,Gaming,C,10,,,USD,,,4,,4,4,2100,4900,7000,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+GN,Guinea Conakry,??,,Fortnite,Gaming,C,10,,,USD,,,4,,4,4,2100,4900,7000,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+GW,Guinea-Bissau,??,,Fortnite,Gaming,C,7,,,USD,,,4,,4,4,2100,4900,7000,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+GY,Guyana,??,,Fortnite,Gaming,C,8,,,USD,,,4,,4,4,2100,4900,7000,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+HT,Haiti,??,,Fortnite,Gaming,C,8,,,USD,,,4,,4,4,2100,4900,7000,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+JM,Jamaica,??,,Fortnite,Gaming,C,7,,,USD,,,4,,4,4,2100,4900,7000,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+CN,China,zh,zh,Jawaker,Shopping,C,2,,,USD,1067,,4,,4,4,175,408,583,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+CG,Congo,??,,Jawaker,Shopping,C,2,,,USD,,,4,,4,4,175,408,583,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+CU,Cuba,??,,Jawaker,Shopping,C,2,,,USD,,,4,,4,4,175,408,583,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+DM,Dominica,??,,Jawaker,Shopping,C,2,,,USD,,,4,,4,4,175,408,583,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+FJ,Fiji,??,,Jawaker,Shopping,C,2,,,USD,,,4,,4,4,175,408,583,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+GM,Gambia,??,,Jawaker,Shopping,C,2,,,USD,,,4,,4,4,175,408,583,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+GD,Grenada,??,,Jawaker,Shopping,C,2,,,USD,,,4,,4,4,175,408,583,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+GN,Guinea Conakry,??,,Jawaker,Shopping,C,2,,,USD,,,4,,4,4,175,408,583,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+GW,Guinea-Bissau,??,,Jawaker,Shopping,C,2,,,USD,,,4,,4,4,175,408,583,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+GY,Guyana,??,,Jawaker,Shopping,C,2,,,USD,,,4,,4,4,175,408,583,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+HT,Haiti,??,,Jawaker,Shopping,C,2,,,USD,,,4,,4,4,175,408,583,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+JM,Jamaica,??,,Jawaker,Shopping,C,2,,,USD,,,4,,4,4,175,408,583,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+LR,Liberia,??,,Jawaker,Shopping,C,2,,,USD,,,4,,4,4,175,408,583,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+MW,Malawi,??,,Jawaker,Shopping,C,2,,,USD,,,4,,4,4,175,408,583,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+MQ,Martinique,??,,Jawaker,Shopping,C,2,,,USD,,,4,,4,4,175,408,583,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+NA,Namibia,??,,Jawaker,Shopping,C,2,,,USD,,,4,,4,4,175,408,583,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+NR,Nauru,??,,Jawaker,Shopping,C,2,,,USD,,,4,,4,4,175,408,583,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+AN,Netherlands Antilles,??,,Jawaker,Shopping,C,2,,,USD,,,4,,4,4,175,408,583,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+NE,Niger,??,,Jawaker,Shopping,C,2,,,USD,,,4,,4,4,175,408,583,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+PG,Papua New Guinea,??,,Jawaker,Shopping,C,2,,,USD,,,4,,4,4,175,408,583,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+PR,Puerto Rico,??,,Jawaker,Shopping,C,2,,,USD,,,4,,4,4,175,408,583,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+KN,Saint Kitts And Nevis,??,,Jawaker,Shopping,C,2,,,USD,,,4,,4,4,175,408,583,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+LC,Saint Lucia,??,,Jawaker,Shopping,C,2,,,USD,,,4,,4,4,175,408,583,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+VC,Saint Vincent And The Grenadines,??,,Jawaker,Shopping,C,2,,,USD,,,4,,4,4,175,408,583,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+WS,Samoa,??,,Jawaker,Shopping,C,2,,,USD,,,4,,4,4,175,408,583,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+SL,Sierra Leone,??,,Jawaker,Shopping,C,2,,,USD,,,4,,4,4,175,408,583,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+SZ,Eswatini,??,,Jawaker,Shopping,C,2,,,USD,,,4,,4,4,175,408,583,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+TJ,Tajikistan,tg,tg|ru,Jawaker,Shopping,C,2,,,USD,3,,4,,4,4,175,408,583,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+TO,Tonga,??,,Jawaker,Shopping,C,2,,,USD,,,4,,4,4,175,408,583,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+TT,Trinidad and Tobago,??,,Jawaker,Shopping,C,2,,,USD,,,4,,4,4,175,408,583,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+TC,Turks And Caicos Islands,??,,Jawaker,Shopping,C,2,,,USD,,,4,,4,4,175,408,583,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+VU,Vanuatu,??,,Jawaker,Shopping,C,2,,,USD,,,4,,4,4,175,408,583,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+SO,Somalia,??,,Jawaker,Shopping,C,2,,,USD,,,4,,4,4,175,408,583,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+BY,Belarus,be,be|ru,Jawaker,Shopping,C,2,,,USD,,,4,,4,4,175,408,583,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+KM,Comoros,??,,Jawaker,Shopping,C,2,,,USD,,,4,,4,4,175,408,583,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+MR,Mauritania,??,,Jawaker,Shopping,C,2,,,USD,,,4,,4,4,175,408,583,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+MS,Montserrat,??,,Jawaker,Shopping,C,2,,,USD,,,4,,4,4,175,408,583,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+TT,Trinidad and Tobago,??,,Fortnite,Gaming,C,8,,,USD,,,4,,4,4,2100,4900,7000,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+TC,Turks And Caicos Islands,??,,Fortnite,Gaming,C,8,,,USD,,,4,,4,4,2100,4900,7000,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+VU,Vanuatu,??,,Fortnite,Gaming,C,8,,,USD,,,4,,4,4,2100,4900,7000,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+SO,Somalia,??,,Fortnite,Gaming,C,8,,,USD,,,4,,4,4,2100,4900,7000,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+BY,Belarus,be,be|ru,Fortnite,Gaming,C,8,,,USD,,,4,,4,4,2100,4900,7000,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+KM,Comoros,??,,Fortnite,Gaming,C,8,,,USD,,,4,,4,4,2100,4900,7000,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+MR,Mauritania,??,,Fortnite,Gaming,C,9,,,USD,,,4,,4,4,2100,4900,7000,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+MS,Montserrat,??,,Fortnite,Gaming,C,9,,,USD,,,4,,4,4,2100,4900,7000,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+CU,Cuba,??,,Fortnite,Gaming,C,9,,,USD,,,4,,4,4,2100,4900,7000,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+LR,Liberia,??,,Fortnite,Gaming,C,6,,,USD,,,4,,4,4,2100,4900,7000,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+MW,Malawi,??,,Fortnite,Gaming,C,6,,,USD,,,4,,4,4,2100,4900,7000,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+MQ,Martinique,??,,Fortnite,Gaming,C,6,,,USD,,,4,,4,4,2100,4900,7000,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+NA,Namibia,??,,Fortnite,Gaming,C,6,,,USD,,,4,,4,4,2100,4900,7000,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+NR,Nauru,??,,Fortnite,Gaming,C,6,,,USD,,,4,,4,4,2100,4900,7000,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+AN,Netherlands Antilles,??,,Fortnite,Gaming,C,6,,,USD,,,4,,4,4,2100,4900,7000,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+NE,Niger,??,,Fortnite,Gaming,C,6,,,USD,,,4,,4,4,2100,4900,7000,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+PG,Papua New Guinea,??,,Fortnite,Gaming,C,6,,,USD,,,4,,4,4,2100,4900,7000,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+PR,Puerto Rico,??,,Fortnite,Gaming,C,7,,,USD,,,4,,4,4,2100,4900,7000,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+KN,Saint Kitts And Nevis,??,,Fortnite,Gaming,C,7,,,USD,,,4,,4,4,2100,4900,7000,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+LC,Saint Lucia,??,,Fortnite,Gaming,C,7,,,USD,,,4,,4,4,2100,4900,7000,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+VC,Saint Vincent And The Grenadines,??,,Fortnite,Gaming,C,7,,,USD,,,4,,4,4,2100,4900,7000,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+WS,Samoa,??,,Fortnite,Gaming,C,7,,,USD,,,4,,4,4,2100,4900,7000,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+SL,Sierra Leone,??,,Fortnite,Gaming,C,7,,,USD,,,4,,4,4,2100,4900,7000,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+SZ,Eswatini,??,,Fortnite,Gaming,C,7,,,USD,,,4,,4,4,2100,4900,7000,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+TJ,Tajikistan,tg,tg|ru,Fortnite,Gaming,C,7,,,USD,3,,4,,4,4,2100,4900,7000,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+TO,Tonga,??,,Fortnite,Gaming,C,7,,,USD,,,4,,4,4,2100,4900,7000,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+AS,American Samoa,??,,Crypto Voucher,Crypto,C,1,30.0,100.0,USD,,,4,,4,4,210,490,700,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+AI,Anguilla,??,,Crypto Voucher,Crypto,C,1,30.0,100.0,USD,,,4,,4,4,210,490,700,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+AG,Antigua and Barbuda,??,,Crypto Voucher,Crypto,C,1,30.0,100.0,USD,,,4,,4,4,210,490,700,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+AW,Aruba,??,,Crypto Voucher,Crypto,C,1,30.0,100.0,USD,,,4,,4,4,210,490,700,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+BS,Bahamas,??,,Crypto Voucher,Crypto,C,1,30.0,100.0,USD,,,4,,4,4,210,490,700,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+BB,Barbados,??,,Crypto Voucher,Crypto,C,1,30.0,100.0,USD,,,4,,4,4,210,490,700,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+BZ,Belize,??,,Crypto Voucher,Crypto,C,1,30.0,100.0,USD,,,4,,4,4,210,490,700,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+BM,Bermuda,??,,Crypto Voucher,Crypto,C,1,30.0,100.0,USD,,,4,,4,4,210,490,700,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+BW,Botswana,??,,Crypto Voucher,Crypto,C,1,30.0,100.0,USD,,,4,,4,4,210,490,700,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+VG,British Virgin Islands,??,,Crypto Voucher,Crypto,C,1,30.0,100.0,USD,,,4,,4,4,210,490,700,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+BI,Burundi,??,,Crypto Voucher,Crypto,C,1,30.0,100.0,USD,,,4,,4,4,210,490,700,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+KY,Cayman Islands,??,,Crypto Voucher,Crypto,C,1,30.0,100.0,USD,,,4,,4,4,210,490,700,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+CF,Central African Republic,??,,Crypto Voucher,Crypto,C,1,30.0,100.0,USD,,,4,,4,4,210,490,700,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+CN,China,zh,zh,Crypto Voucher,Crypto,C,1,30.0,100.0,USD,1067,,4,,4,4,210,490,700,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+CG,Congo,??,,Crypto Voucher,Crypto,C,1,30.0,100.0,USD,,,4,,4,4,210,490,700,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+CU,Cuba,??,,Crypto Voucher,Crypto,C,1,30.0,100.0,USD,,,4,,4,4,210,490,700,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+DM,Dominica,??,,Crypto Voucher,Crypto,C,1,30.0,100.0,USD,,,4,,4,4,210,490,700,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+FJ,Fiji,??,,Crypto Voucher,Crypto,C,1,30.0,100.0,USD,,,4,,4,4,210,490,700,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+GM,Gambia,??,,Crypto Voucher,Crypto,C,1,30.0,100.0,USD,,,4,,4,4,210,490,700,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+GD,Grenada,??,,Crypto Voucher,Crypto,C,1,30.0,100.0,USD,,,4,,4,4,210,490,700,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+GN,Guinea Conakry,??,,Crypto Voucher,Crypto,C,1,30.0,100.0,USD,,,4,,4,4,210,490,700,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+GW,Guinea-Bissau,??,,Crypto Voucher,Crypto,C,1,30.0,100.0,USD,,,4,,4,4,210,490,700,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+GY,Guyana,??,,Crypto Voucher,Crypto,C,1,30.0,100.0,USD,,,4,,4,4,210,490,700,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+HT,Haiti,??,,Crypto Voucher,Crypto,C,1,30.0,100.0,USD,,,4,,4,4,210,490,700,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+JM,Jamaica,??,,Crypto Voucher,Crypto,C,1,30.0,100.0,USD,,,4,,4,4,210,490,700,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+LC,Saint Lucia,??,,SHENZHEN,Gaming,C,1,,,USD,,,4,,4,4,14,33,47,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+VC,Saint Vincent And The Grenadines,??,,SHENZHEN,Gaming,C,1,,,USD,,,4,,4,4,14,33,47,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+WS,Samoa,??,,SHENZHEN,Gaming,C,1,,,USD,,,4,,4,4,14,33,47,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+SL,Sierra Leone,??,,SHENZHEN,Gaming,C,1,,,USD,,,4,,4,4,14,33,47,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+SZ,Eswatini,??,,SHENZHEN,Gaming,C,1,,,USD,,,4,,4,4,14,33,47,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+TJ,Tajikistan,tg,tg|ru,SHENZHEN,Gaming,C,1,,,USD,3,,4,,4,4,14,33,47,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+TO,Tonga,??,,SHENZHEN,Gaming,C,1,,,USD,,,4,,4,4,14,33,47,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+TT,Trinidad and Tobago,??,,SHENZHEN,Gaming,C,1,,,USD,,,4,,4,4,14,33,47,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+TC,Turks And Caicos Islands,??,,SHENZHEN,Gaming,C,1,,,USD,,,4,,4,4,14,33,47,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+VU,Vanuatu,??,,SHENZHEN,Gaming,C,1,,,USD,,,4,,4,4,14,33,47,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+SO,Somalia,??,,SHENZHEN,Gaming,C,1,,,USD,,,4,,4,4,14,33,47,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+BY,Belarus,be,be|ru,SHENZHEN,Gaming,C,1,,,USD,,,4,,4,4,14,33,47,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+KM,Comoros,??,,SHENZHEN,Gaming,C,1,,,USD,,,4,,4,4,14,33,47,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+MR,Mauritania,??,,SHENZHEN,Gaming,C,1,,,USD,,,4,,4,4,14,33,47,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+MS,Montserrat,??,,SHENZHEN,Gaming,C,1,,,USD,,,4,,4,4,14,33,47,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+PG,Papua New Guinea,??,,NetDragon Universal,Gaming,C,1,,,USD,,,4,,4,4,35,82,117,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+PR,Puerto Rico,??,,NetDragon Universal,Gaming,C,1,,,USD,,,4,,4,4,35,82,117,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+KN,Saint Kitts And Nevis,??,,NetDragon Universal,Gaming,C,1,,,USD,,,4,,4,4,35,82,117,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+LC,Saint Lucia,??,,NetDragon Universal,Gaming,C,1,,,USD,,,4,,4,4,35,82,117,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+VC,Saint Vincent And The Grenadines,??,,NetDragon Universal,Gaming,C,1,,,USD,,,4,,4,4,35,82,117,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+WS,Samoa,??,,NetDragon Universal,Gaming,C,1,,,USD,,,4,,4,4,35,82,117,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+SL,Sierra Leone,??,,NetDragon Universal,Gaming,C,1,,,USD,,,4,,4,4,35,82,117,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+SZ,Eswatini,??,,NetDragon Universal,Gaming,C,1,,,USD,,,4,,4,4,35,82,117,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+TJ,Tajikistan,tg,tg|ru,NetDragon Universal,Gaming,C,1,,,USD,3,,4,,4,4,35,82,117,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+TO,Tonga,??,,NetDragon Universal,Gaming,C,1,,,USD,,,4,,4,4,35,82,117,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+TT,Trinidad and Tobago,??,,NetDragon Universal,Gaming,C,1,,,USD,,,4,,4,4,35,82,117,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+TC,Turks And Caicos Islands,??,,NetDragon Universal,Gaming,C,1,,,USD,,,4,,4,4,35,82,117,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+VU,Vanuatu,??,,NetDragon Universal,Gaming,C,1,,,USD,,,4,,4,4,35,82,117,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+SO,Somalia,??,,NetDragon Universal,Gaming,C,1,,,USD,,,4,,4,4,35,82,117,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+BY,Belarus,be,be|ru,NetDragon Universal,Gaming,C,1,,,USD,,,4,,4,4,35,82,117,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+KM,Comoros,??,,NetDragon Universal,Gaming,C,1,,,USD,,,4,,4,4,35,82,117,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+MR,Mauritania,??,,NetDragon Universal,Gaming,C,1,,,USD,,,4,,4,4,35,82,117,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+MS,Montserrat,??,,NetDragon Universal,Gaming,C,1,,,USD,,,4,,4,4,35,82,117,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+AS,American Samoa,??,,Mobile Legends,Gaming,C,1,,,USD,,,4,,4,4,840,1960,2800,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+AI,Anguilla,??,,Mobile Legends,Gaming,C,1,,,USD,,,4,,4,4,840,1960,2800,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+AG,Antigua and Barbuda,??,,Mobile Legends,Gaming,C,1,,,USD,,,4,,4,4,840,1960,2800,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+AW,Aruba,??,,Mobile Legends,Gaming,C,1,,,USD,,,4,,4,4,840,1960,2800,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+BS,Bahamas,??,,Mobile Legends,Gaming,C,1,,,USD,,,4,,4,4,840,1960,2800,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+CU,Cuba,??,,Mobile Legends,Gaming,C,1,,,USD,,,4,,4,4,840,1960,2800,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+DM,Dominica,??,,Mobile Legends,Gaming,C,1,,,USD,,,4,,4,4,840,1960,2800,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+FJ,Fiji,??,,Mobile Legends,Gaming,C,1,,,USD,,,4,,4,4,840,1960,2800,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+GM,Gambia,??,,Mobile Legends,Gaming,C,1,,,USD,,,4,,4,4,840,1960,2800,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+GD,Grenada,??,,Mobile Legends,Gaming,C,1,,,USD,,,4,,4,4,840,1960,2800,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+GN,Guinea Conakry,??,,Mobile Legends,Gaming,C,1,,,USD,,,4,,4,4,840,1960,2800,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+GW,Guinea-Bissau,??,,Mobile Legends,Gaming,C,1,,,USD,,,4,,4,4,840,1960,2800,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+GY,Guyana,??,,Mobile Legends,Gaming,C,1,,,USD,,,4,,4,4,840,1960,2800,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+HT,Haiti,??,,Mobile Legends,Gaming,C,1,,,USD,,,4,,4,4,840,1960,2800,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+JM,Jamaica,??,,Mobile Legends,Gaming,C,1,,,USD,,,4,,4,4,840,1960,2800,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+LR,Liberia,??,,Mobile Legends,Gaming,C,1,,,USD,,,4,,4,4,840,1960,2800,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+MW,Malawi,??,,Mobile Legends,Gaming,C,1,,,USD,,,4,,4,4,840,1960,2800,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+MQ,Martinique,??,,Mobile Legends,Gaming,C,1,,,USD,,,4,,4,4,840,1960,2800,0.3,0.105,0.0075,0.015,False,False,0.14,0,0.0,0.0,0,0.0,0.0,0.4,SKIP-STRIPE,skip
+MZ,Mozambique,pt,pt,Mobile Legends,Gaming,C,3,,,USD,5,2,4,2,4,4,840,1960,2800,0.55,0.193,0.009,0.018,False,False,0.09,0,0.0,0.0,0,0.0,0.0,0.3,SKIP-STRIPE,skip
+SR,Suriname,nl,nl,Mobile Legends,Gaming,C,3,,,USD,,2,4,2,4,4,840,1960,2800,0.55,0.193,0.009,0.018,False,False,0.09,0,0.0,0.0,0,0.0,0.0,0.3,SKIP-STRIPE,skip
+AO,Angola,pt,pt,Jawaker,Shopping,C,3,,,USD,5,2,4,2,4,4,175,408,583,0.55,0.193,0.009,0.018,False,False,0.09,0,0.0,0.0,0,0.0,0.0,0.3,SKIP-STRIPE,skip
+CV,Cape Verde,pt,pt,Jawaker,Shopping,C,3,,,USD,,2,4,2,4,4,175,408,583,0.55,0.193,0.009,0.018,False,False,0.09,0,0.0,0.0,0,0.0,0.0,0.3,SKIP-STRIPE,skip
+MZ,Mozambique,pt,pt,Crypto Voucher,Crypto,C,2,30.0,100.0,USD,5,2,4,2,4,4,210,490,700,0.55,0.193,0.009,0.018,False,False,0.09,0,0.0,0.0,0,0.0,0.0,0.3,SKIP-STRIPE,skip
+SR,Suriname,nl,nl,Crypto Voucher,Crypto,C,2,30.0,100.0,USD,,2,4,2,4,4,210,490,700,0.55,0.193,0.009,0.018,False,False,0.09,0,0.0,0.0,0,0.0,0.0,0.3,SKIP-STRIPE,skip
+AO,Angola,pt,pt,NetDragon Universal,Gaming,C,2,,,USD,5,2,4,2,4,4,35,82,117,0.55,0.193,0.009,0.018,False,False,0.09,0,0.0,0.0,0,0.0,0.0,0.3,SKIP-STRIPE,skip
+CV,Cape Verde,pt,pt,NetDragon Universal,Gaming,C,2,,,USD,,2,4,2,4,4,35,82,117,0.55,0.193,0.009,0.018,False,False,0.09,0,0.0,0.0,0,0.0,0.0,0.3,SKIP-STRIPE,skip
+MZ,Mozambique,pt,pt,NetDragon Universal,Gaming,C,2,,,USD,5,2,4,2,4,4,35,82,117,0.55,0.193,0.009,0.018,False,False,0.09,0,0.0,0.0,0,0.0,0.0,0.3,SKIP-STRIPE,skip
+AO,Angola,pt,pt,Fortnite,Gaming,C,10,,,USD,5,2,4,2,4,4,2100,4900,7000,0.55,0.193,0.009,0.018,False,False,0.09,0,0.0,0.0,0,0.0,0.0,0.3,SKIP-STRIPE,skip
+CV,Cape Verde,pt,pt,Fortnite,Gaming,C,9,,,USD,,2,4,2,4,4,2100,4900,7000,0.55,0.193,0.009,0.018,False,False,0.09,0,0.0,0.0,0,0.0,0.0,0.3,SKIP-STRIPE,skip
+MZ,Mozambique,pt,pt,Jawaker,Shopping,C,2,,,USD,5,2,4,2,4,4,175,408,583,0.55,0.193,0.009,0.018,False,False,0.09,0,0.0,0.0,0,0.0,0.0,0.3,SKIP-STRIPE,skip
+SR,Suriname,nl,nl,Jawaker,Shopping,C,2,,,USD,,2,4,2,4,4,175,408,583,0.55,0.193,0.009,0.018,False,False,0.09,0,0.0,0.0,0,0.0,0.0,0.3,SKIP-STRIPE,skip
+MZ,Mozambique,pt,pt,Fortnite,Gaming,C,6,,,USD,5,2,4,2,4,4,2100,4900,7000,0.55,0.193,0.009,0.018,False,False,0.09,0,0.0,0.0,0,0.0,0.0,0.3,SKIP-STRIPE,skip
+SR,Suriname,nl,nl,Fortnite,Gaming,C,7,,,USD,,2,4,2,4,4,2100,4900,7000,0.55,0.193,0.009,0.018,False,False,0.09,0,0.0,0.0,0,0.0,0.0,0.3,SKIP-STRIPE,skip
+AO,Angola,pt,pt,Crypto Voucher,Crypto,C,1,30.0,100.0,USD,5,2,4,2,4,4,210,490,700,0.55,0.193,0.009,0.018,False,False,0.09,0,0.0,0.0,0,0.0,0.0,0.3,SKIP-STRIPE,skip
+CV,Cape Verde,pt,pt,Crypto Voucher,Crypto,C,1,30.0,100.0,USD,,2,4,2,4,4,210,490,700,0.55,0.193,0.009,0.018,False,False,0.09,0,0.0,0.0,0,0.0,0.0,0.3,SKIP-STRIPE,skip
+SR,Suriname,nl,nl,SHENZHEN,Gaming,C,1,,,USD,,2,4,2,4,4,14,33,47,0.55,0.193,0.009,0.018,False,False,0.09,0,0.0,0.0,0,0.0,0.0,0.3,SKIP-STRIPE,skip
+SR,Suriname,nl,nl,NetDragon Universal,Gaming,C,1,,,USD,,2,4,2,4,4,35,82,117,0.55,0.193,0.009,0.018,False,False,0.09,0,0.0,0.0,0,0.0,0.0,0.3,SKIP-STRIPE,skip
+AO,Angola,pt,pt,Mobile Legends,Gaming,C,1,,,USD,5,2,4,2,4,4,840,1960,2800,0.55,0.193,0.009,0.018,False,False,0.09,0,0.0,0.0,0,0.0,0.0,0.3,SKIP-STRIPE,skip
+CV,Cape Verde,pt,pt,Mobile Legends,Gaming,C,1,,,USD,,2,4,2,4,4,840,1960,2800,0.55,0.193,0.009,0.018,False,False,0.09,0,0.0,0.0,0,0.0,0.0,0.3,SKIP-STRIPE,skip
+TG,Togo,fr,fr,Mobile Legends,Gaming,C,2,,,USD,,1,4,1,4,4,840,1960,2800,1.2,0.42,0.0075,0.015,False,False,0.04,0,0.0,0.0,0,0.0,0.0,0.1,SKIP-STRIPE,skip
+VE,Venezuela,es,es,Mobile Legends,Gaming,C,2,,,USD,21,1,4,1,4,4,840,1960,2800,1.2,0.42,0.0075,0.015,False,False,0.04,0,0.0,0.0,0,0.0,0.0,0.1,SKIP-STRIPE,skip
+BJ,Benin,fr,fr,Jawaker,Shopping,C,2,,,USD,,1,4,1,4,4,175,408,583,1.2,0.42,0.0075,0.015,False,False,0.04,0,0.0,0.0,0,0.0,0.0,0.1,SKIP-STRIPE,skip
+BF,Burkina Faso,fr,fr,Jawaker,Shopping,C,3,,,USD,,1,4,1,4,4,175,408,583,1.2,0.42,0.0075,0.015,False,False,0.04,0,0.0,0.0,0,0.0,0.0,0.1,SKIP-STRIPE,skip
+BJ,Benin,fr,fr,Mobile Legends,Gaming,C,2,,,USD,,1,4,1,4,4,840,1960,2800,1.2,0.42,0.0075,0.015,False,False,0.04,0,0.0,0.0,0,0.0,0.0,0.1,SKIP-STRIPE,skip
+BF,Burkina Faso,fr,fr,Mobile Legends,Gaming,C,2,,,USD,,1,4,1,4,4,840,1960,2800,1.2,0.42,0.0075,0.015,False,False,0.04,0,0.0,0.0,0,0.0,0.0,0.1,SKIP-STRIPE,skip
+CD,The Democratic Republic Of Congo,fr,fr,Mobile Legends,Gaming,C,2,,,USD,14,1,4,1,4,4,840,1960,2800,1.2,0.42,0.0075,0.015,False,False,0.04,0,0.0,0.0,0,0.0,0.0,0.1,SKIP-STRIPE,skip
+ML,Mali,fr,fr,Crypto Voucher,Crypto,C,2,30.0,100.0,USD,,1,4,1,4,4,210,490,700,1.2,0.42,0.0075,0.015,False,False,0.04,0,0.0,0.0,0,0.0,0.0,0.1,SKIP-STRIPE,skip
+CD,The Democratic Republic Of Congo,fr,fr,Crypto Voucher,Crypto,C,2,30.0,100.0,USD,14,1,4,1,4,4,210,490,700,1.2,0.42,0.0075,0.015,False,False,0.04,0,0.0,0.0,0,0.0,0.0,0.1,SKIP-STRIPE,skip
+TG,Togo,fr,fr,Crypto Voucher,Crypto,C,2,30.0,100.0,USD,,1,4,1,4,4,210,490,700,1.2,0.42,0.0075,0.015,False,False,0.04,0,0.0,0.0,0,0.0,0.0,0.1,SKIP-STRIPE,skip
+VE,Venezuela,es,es,Crypto Voucher,Crypto,C,2,30.0,100.0,USD,21,1,4,1,4,4,210,490,700,1.2,0.42,0.0075,0.015,False,False,0.04,0,0.0,0.0,0,0.0,0.0,0.1,SKIP-STRIPE,skip
+BJ,Benin,fr,fr,NetDragon Universal,Gaming,C,2,,,USD,,1,4,1,4,4,35,82,117,1.2,0.42,0.0075,0.015,False,False,0.04,0,0.0,0.0,0,0.0,0.0,0.1,SKIP-STRIPE,skip
+BF,Burkina Faso,fr,fr,NetDragon Universal,Gaming,C,2,,,USD,,1,4,1,4,4,35,82,117,1.2,0.42,0.0075,0.015,False,False,0.04,0,0.0,0.0,0,0.0,0.0,0.1,SKIP-STRIPE,skip
+ML,Mali,fr,fr,NetDragon Universal,Gaming,C,2,,,USD,,1,4,1,4,4,35,82,117,1.2,0.42,0.0075,0.015,False,False,0.04,0,0.0,0.0,0,0.0,0.0,0.1,SKIP-STRIPE,skip
+BJ,Benin,fr,fr,Fortnite,Gaming,C,10,,,USD,,1,4,1,4,4,2100,4900,7000,1.2,0.42,0.0075,0.015,False,False,0.04,0,0.0,0.0,0,0.0,0.0,0.1,SKIP-STRIPE,skip
+BF,Burkina Faso,fr,fr,Fortnite,Gaming,C,9,,,USD,,1,4,1,4,4,2100,4900,7000,1.2,0.42,0.0075,0.015,False,False,0.04,0,0.0,0.0,0,0.0,0.0,0.1,SKIP-STRIPE,skip
+ML,Mali,fr,fr,Jawaker,Shopping,C,2,,,USD,,1,4,1,4,4,175,408,583,1.2,0.42,0.0075,0.015,False,False,0.04,0,0.0,0.0,0,0.0,0.0,0.1,SKIP-STRIPE,skip
+CD,The Democratic Republic Of Congo,fr,fr,Jawaker,Shopping,C,2,,,USD,14,1,4,1,4,4,175,408,583,1.2,0.42,0.0075,0.015,False,False,0.04,0,0.0,0.0,0,0.0,0.0,0.1,SKIP-STRIPE,skip
+TG,Togo,fr,fr,Jawaker,Shopping,C,2,,,USD,,1,4,1,4,4,175,408,583,1.2,0.42,0.0075,0.015,False,False,0.04,0,0.0,0.0,0,0.0,0.0,0.1,SKIP-STRIPE,skip
+VE,Venezuela,es,es,Jawaker,Shopping,C,2,,,USD,21,1,4,1,4,4,175,408,583,1.2,0.42,0.0075,0.015,False,False,0.04,0,0.0,0.0,0,0.0,0.0,0.1,SKIP-STRIPE,skip
+VE,Venezuela,es,es,Fortnite,Gaming,C,8,,,USD,21,1,4,1,4,4,2100,4900,7000,1.2,0.42,0.0075,0.015,False,False,0.04,0,0.0,0.0,0,0.0,0.0,0.1,SKIP-STRIPE,skip
+ML,Mali,fr,fr,Fortnite,Gaming,C,6,,,USD,,1,4,1,4,4,2100,4900,7000,1.2,0.42,0.0075,0.015,False,False,0.04,0,0.0,0.0,0,0.0,0.0,0.1,SKIP-STRIPE,skip
+CD,The Democratic Republic Of Congo,fr,fr,Fortnite,Gaming,C,7,,,USD,14,1,4,1,4,4,2100,4900,7000,1.2,0.42,0.0075,0.015,False,False,0.04,0,0.0,0.0,0,0.0,0.0,0.1,SKIP-STRIPE,skip
+TG,Togo,fr,fr,Fortnite,Gaming,C,7,,,USD,,1,4,1,4,4,2100,4900,7000,1.2,0.42,0.0075,0.015,False,False,0.04,0,0.0,0.0,0,0.0,0.0,0.1,SKIP-STRIPE,skip
+BJ,Benin,fr,fr,Crypto Voucher,Crypto,C,1,30.0,100.0,USD,,1,4,1,4,4,210,490,700,1.2,0.42,0.0075,0.015,False,False,0.04,0,0.0,0.0,0,0.0,0.0,0.1,SKIP-STRIPE,skip
+BF,Burkina Faso,fr,fr,Crypto Voucher,Crypto,C,1,30.0,100.0,USD,,1,4,1,4,4,210,490,700,1.2,0.42,0.0075,0.015,False,False,0.04,0,0.0,0.0,0,0.0,0.0,0.1,SKIP-STRIPE,skip
+CD,The Democratic Republic Of Congo,fr,fr,SHENZHEN,Gaming,C,1,,,USD,14,1,4,1,4,4,14,33,47,1.2,0.42,0.0075,0.015,False,False,0.04,0,0.0,0.0,0,0.0,0.0,0.1,SKIP-STRIPE,skip
+TG,Togo,fr,fr,SHENZHEN,Gaming,C,1,,,USD,,1,4,1,4,4,14,33,47,1.2,0.42,0.0075,0.015,False,False,0.04,0,0.0,0.0,0,0.0,0.0,0.1,SKIP-STRIPE,skip
+VE,Venezuela,es,es,SHENZHEN,Gaming,C,1,,,USD,21,1,4,1,4,4,14,33,47,1.2,0.42,0.0075,0.015,False,False,0.04,0,0.0,0.0,0,0.0,0.0,0.1,SKIP-STRIPE,skip
+VE,Venezuela,es,es,Free Fire,Gaming,C,1,,,USD,21,1,4,1,4,4,1050,2450,3500,1.2,0.42,0.0075,0.015,False,False,0.04,0,0.0,0.0,0,0.0,0.0,0.1,SKIP-STRIPE,skip
+CD,The Democratic Republic Of Congo,fr,fr,NetDragon Universal,Gaming,C,1,,,USD,14,1,4,1,4,4,35,82,117,1.2,0.42,0.0075,0.015,False,False,0.04,0,0.0,0.0,0,0.0,0.0,0.1,SKIP-STRIPE,skip
+TG,Togo,fr,fr,NetDragon Universal,Gaming,C,1,,,USD,,1,4,1,4,4,35,82,117,1.2,0.42,0.0075,0.015,False,False,0.04,0,0.0,0.0,0,0.0,0.0,0.1,SKIP-STRIPE,skip
+VE,Venezuela,es,es,NetDragon Universal,Gaming,C,1,,,USD,21,1,4,1,4,4,35,82,117,1.2,0.42,0.0075,0.015,False,False,0.04,0,0.0,0.0,0,0.0,0.0,0.1,SKIP-STRIPE,skip
+ML,Mali,fr,fr,Mobile Legends,Gaming,C,1,,,USD,,1,4,1,4,4,840,1960,2800,1.2,0.42,0.0075,0.015,False,False,0.04,0,0.0,0.0,0,0.0,0.0,0.1,SKIP-STRIPE,skip
