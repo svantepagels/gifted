@@ -18,17 +18,31 @@ import { test, expect, Page } from '@playwright/test'
  * - CTA copy: "Continue to Checkout" (was "Continue as Guest").
  * - There are TWO Continue buttons in the DOM (mobile + desktop sticky);
  *   we target the visible one with `:visible`.
+ *
+ * Updated 2026-05-09 for i18n routing:
+ * - `/` now 308-redirects to `/<locale>/`. Wait for the redirect to settle
+ *   on a locale-prefixed URL before reading the first product link,
+ *   otherwise dev-server lazy-compile of the `[locale]` segment under
+ *   parallel-worker contention can race the assertion.
  */
 
-async function goToFirstProduct(page: Page): Promise<string> {
+async function gotoLocalizedHome(page: Page) {
   await page.goto('/')
+  await page.waitForURL(/\/[a-z]{2}-[A-Z]{2}(\/?$|\/?\?)/, { timeout: 30_000 })
+}
+
+async function goToFirstProduct(page: Page): Promise<string> {
+  await gotoLocalizedHome(page)
   const firstLink = page.locator('a[href*="/gift-card/"]').first()
-  await expect(firstLink).toBeVisible()
+  await expect(firstLink).toBeVisible({ timeout: 15_000 })
   const href = await firstLink.getAttribute('href')
   // Locale-aware: hrefs are now /<locale>/gift-card/<slug>.
   expect(href).toMatch(/^\/[a-z]{2}-[A-Z]{2}\/gift-card\/[a-z0-9-]+$/)
   await firstLink.click()
-  await expect(page).toHaveURL(new RegExp(href!.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')))
+  await page.waitForURL(
+    new RegExp(href!.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')),
+    { timeout: 30_000 }
+  )
   return href!
 }
 
