@@ -1,82 +1,50 @@
-import { Country } from './types'
+/**
+ * Public country-data module.
+ *
+ * Server-side: `getAllCountries()` returns the build-time-generated list
+ * of every country with at least one redeemable Reloadly product.
+ *
+ * Client-side: components must NOT import `getAllCountries` directly.
+ * The list is loaded once at the layout level and passed through React
+ * context (see `app/[locale]/layout.tsx` → `<AppProvider countries=…>`).
+ *
+ * The `findCountryByCode` helper is a pure synchronous list lookup and
+ * is safe to call from either side.
+ */
 
-export const COUNTRIES: Country[] = [
-  {
-    code: 'US',
-    name: 'United States',
-    currency: 'USD',
-    currencySymbol: '$',
-    flag: '🇺🇸',
-  },
-  {
-    code: 'GB',
-    name: 'United Kingdom',
-    currency: 'GBP',
-    currencySymbol: '£',
-    flag: '🇬🇧',
-  },
-  {
-    code: 'CA',
-    name: 'Canada',
-    currency: 'CAD',
-    currencySymbol: 'C$',
-    flag: '🇨🇦',
-  },
-  {
-    code: 'AU',
-    name: 'Australia',
-    currency: 'AUD',
-    currencySymbol: 'A$',
-    flag: '🇦🇺',
-  },
-  {
-    code: 'DE',
-    name: 'Germany',
-    currency: 'EUR',
-    currencySymbol: '€',
-    flag: '🇩🇪',
-  },
-  {
-    code: 'FR',
-    name: 'France',
-    currency: 'EUR',
-    currencySymbol: '€',
-    flag: '🇫🇷',
-  },
-  {
-    code: 'ES',
-    name: 'Spain',
-    currency: 'EUR',
-    currencySymbol: '€',
-    flag: '🇪🇸',
-  },
-  {
-    code: 'IT',
-    name: 'Italy',
-    currency: 'EUR',
-    currencySymbol: '€',
-    flag: '🇮🇹',
-  },
-  {
-    code: 'BR',
-    name: 'Brazil',
-    currency: 'BRL',
-    currencySymbol: 'R$',
-    flag: '🇧🇷',
-  },
-  {
-    code: 'MX',
-    name: 'Mexico',
-    currency: 'MXN',
-    currencySymbol: 'MX$',
-    flag: '🇲🇽',
-  },
-]
+import 'server-only'
+import type { Country } from './types'
+import { getRedeemableCountries } from './build-countries'
+import { FALLBACK_COUNTRIES } from './fallback'
 
-export function getCountryByCode(code: string): Country | undefined {
-  return COUNTRIES.find(c => c.code === code)
+export async function getAllCountries(): Promise<Country[]> {
+  return await getRedeemableCountries()
 }
 
-export function getDefaultCountry(): Country {
-  return COUNTRIES[0] // US by default
+/**
+ * Best default country for first-time visitors:
+ *   1. US (matches historical default), if present in the list
+ *   2. otherwise the first alphabetical entry
+ *   3. otherwise the first hardcoded fallback (always non-empty)
+ */
+export async function getDefaultCountryAsync(): Promise<Country> {
+  const list = await getAllCountries()
+  return (
+    list.find((c) => c.code === 'US') ??
+    list[0] ??
+    FALLBACK_COUNTRIES[0]
+  )
+}
+
+/**
+ * Pure, synchronous lookup against an already-loaded country list.
+ * Use this in client components: pass the list in via context/props.
+ */
+export function findCountryByCode(
+  list: Country[],
+  code: string
+): Country | undefined {
+  if (!code) return undefined
+  const upper = code.toUpperCase()
+  return list.find((c) => c.code === upper)
 }
