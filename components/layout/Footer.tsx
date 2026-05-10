@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { useLocale } from '@/lib/i18n/useLocale'
 import { localeHref } from '@/lib/i18n/href'
 
@@ -12,6 +13,24 @@ export function Footer() {
   return (
     <footer className="bg-primary-container text-primary-on-container mt-24">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="mb-12">
+          <Link
+            href={href('/')}
+            aria-label="Gifted home"
+            className="inline-flex items-center hover:opacity-80 transition-opacity"
+          >
+            <Image
+              src="/brand/gifted-logo.svg"
+              alt="Gifted"
+              width={120}
+              height={36}
+              className="h-8 w-auto invert brightness-0 contrast-200"
+            />
+          </Link>
+          <p className="text-label-md mt-3 opacity-80">
+            Digital gift cards, instantly delivered.
+          </p>
+        </div>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           <div>
             <h3 className="font-archivo text-title-md mb-4">Products</h3>
@@ -77,16 +96,16 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="font-archivo text-title-md mb-4">GIFTED</h3>
+            <h3 className="font-archivo text-title-md mb-4">Stay in touch</h3>
             <p className="text-label-md">
-              Digital gift cards delivered instantly. Send joy to anyone, anywhere.
+              Follow updates and new brands.
             </p>
           </div>
         </div>
 
         <div className="mt-12 pt-8 border-t border-primary-on-container/20">
           <p className="text-center text-label-md">
-            © {currentYear} GIFTED. All rights reserved.
+            © {currentYear} Gifted. All rights reserved.
           </p>
         </div>
       </div>

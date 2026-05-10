@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import type { ReactNode } from 'react'
 import { notFound } from 'next/navigation'
 import { Archivo, Inter, Playfair_Display } from 'next/font/google'
@@ -30,9 +30,44 @@ const playfair = Playfair_Display({
 })
 
 export const metadata: Metadata = {
-  title: 'GIFTED - Digital Gift Cards',
-  description: 'Buy digital gift cards for brands you love. Instant delivery.',
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL ?? 'https://gifted.app'
+  ),
+  title: {
+    default: 'Gifted — Digital Gift Cards',
+    template: '%s | Gifted',
+  },
+  description:
+    'Buy digital gift cards for brands you love. Instant delivery worldwide.',
+  applicationName: 'Gifted',
   keywords: ['gift cards', 'digital gifts', 'online shopping'],
+  manifest: '/manifest.webmanifest',
+  icons: {
+    icon: [
+      { url: '/icon', type: 'image/png', sizes: '32x32' },
+      { url: '/favicon.ico', sizes: 'any' },
+    ],
+    apple: [{ url: '/apple-icon', sizes: '180x180', type: 'image/png' }],
+  },
+  openGraph: {
+    type: 'website',
+    siteName: 'Gifted',
+    title: 'Gifted — Digital Gift Cards',
+    description:
+      'Buy digital gift cards for brands you love. Instant delivery worldwide.',
+    images: ['/opengraph-image'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Gifted — Digital Gift Cards',
+    description:
+      'Buy digital gift cards for brands you love. Instant delivery worldwide.',
+    images: ['/twitter-image'],
+  },
+}
+
+export const viewport: Viewport = {
+  themeColor: '#0A1320',
 }
 
 /**

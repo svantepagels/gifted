@@ -17,29 +17,45 @@ export default function GlobalError({
   return (
     <html>
       <body>
-        <div style={{
-          minHeight: '100vh',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          padding: '2rem',
-        }}>
-          <div style={{
-            maxWidth: '500px',
-            textAlign: 'center',
-          }}>
-            <h2 style={{ fontSize: '2rem', marginBottom: '1rem' }}>
-              Something went wrong!
+        <div
+          style={{
+            minHeight: '100vh',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            padding: '2rem',
+            background: '#ffffff',
+            fontFamily:
+              "system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif",
+          }}
+        >
+          <div style={{ maxWidth: '500px', textAlign: 'center' }}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/brand/gifted-logo.svg"
+              alt="Gifted"
+              width={140}
+              height={40}
+              style={{ height: 40, width: 'auto', marginBottom: '2rem' }}
+            />
+            <h2
+              style={{
+                fontSize: '2rem',
+                marginBottom: '1rem',
+                color: '#0A1320',
+              }}
+            >
+              Something went wrong
             </h2>
             <p style={{ color: '#666', marginBottom: '2rem' }}>
-              We've been notified of this error and will fix it as soon as possible.
+              We&apos;ve been notified and will fix it as soon as possible.
             </p>
             <button
               onClick={() => reset()}
               style={{
                 padding: '0.75rem 2rem',
                 fontSize: '1rem',
-                backgroundColor: '#000',
+                backgroundColor: '#0A1320',
                 color: '#fff',
                 border: 'none',
                 borderRadius: '0.5rem',
