@@ -53,5 +53,30 @@
   "landing.popular.viewAll": "Browse all gift cards",
   "landing.notFound.title": "Brand not available in this region",
   "landing.notFound.message": "We couldn't find this brand for your locale. It may not be available in this country, or the URL might be wrong.",
-  "landing.notFound.homeCta": "Back to home"
+  "landing.notFound.homeCta": "Back to home",
+
+  "trust.instant.title": "Instant Delivery",
+  "trust.instant.description": "Gift cards delivered to your inbox within minutes",
+  "trust.secure.title": "Secure & Trusted",
+  "trust.secure.description": "Bank-level encryption and fraud protection",
+  "trust.perfect.title": "Perfect Every Time",
+  "trust.perfect.description": "No expiration dates on our digital gift cards",
+
+  "footer.tagline": "Digital gift cards, instantly delivered.",
+  "footer.products.heading": "Products",
+  "footer.products.browse": "Browse All",
+  "footer.support.heading": "Support",
+  "footer.support.helpCenter": "Help Center",
+  "footer.support.contact": "Contact Us",
+  "footer.support.faq": "FAQ",
+  "footer.company.heading": "Company",
+  "footer.company.about": "About Us",
+  "footer.company.terms": "Terms of Service",
+  "footer.company.privacy": "Privacy Policy",
+  "footer.stayInTouch.heading": "Stay in touch",
+  "footer.stayInTouch.body": "Follow updates and new brands.",
+  "footer.copyright": "© {year} Gifted. All rights reserved.",
+
+  "checkout.trust.securePayment": "Secure payment",
+  "checkout.trust.instantDelivery": "Instant delivery"
 }

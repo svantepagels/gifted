@@ -10,6 +10,23 @@ import { locales, defaultLocale } from '@/lib/i18n/config'
  */
 const PUBLIC_FILE = /\.(.*)$/
 
+/**
+ * Next.js file-convention metadata routes that live at the root of `app/`
+ * (not under `app/[locale]/`). They have no file extension so the
+ * `PUBLIC_FILE` regex does not catch them, but they must NEVER be
+ * locale-redirected — browsers and OG/Twitter crawlers won't follow the
+ * 308 and the favicon / social preview will silently break.
+ */
+const METADATA_ROUTES = new Set([
+  '/icon',
+  '/apple-icon',
+  '/opengraph-image',
+  '/twitter-image',
+  '/manifest.webmanifest',
+  '/sitemap.xml',
+  '/robots.txt',
+])
+
 function getLocaleFromRequest(req: NextRequest): string {
   const headers = { 'accept-language': req.headers.get('accept-language') ?? '' }
   let languages: string[] = []
@@ -43,7 +60,8 @@ export function middleware(req: NextRequest) {
   if (
     pathname.startsWith('/api') ||
     pathname.startsWith('/_next') ||
-    PUBLIC_FILE.test(pathname)
+    PUBLIC_FILE.test(pathname) ||
+    METADATA_ROUTES.has(pathname)
   ) {
     return NextResponse.next()
   }

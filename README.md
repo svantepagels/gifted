@@ -2,9 +2,15 @@
 
 A production-ready, mobile-first digital gift card marketplace built with Next.js 14, TypeScript, and Tailwind CSS.
 
+## Brand
+
+The Gifted wordmark and brand spec live in [`public/brand/`](./public/brand/). See [`public/brand/README.md`](./public/brand/README.md) for the canonical asset inventory, ink color (`#0A1320`), and transparent-vs-white-bg usage rules.
+
+The wordmark is wired into the header, footer, favicons, web manifest, default Open Graph and Twitter Card images, and 404/error fallback pages. Per-brand gift-card logos (Amazon, Spotify, etc.) live separately in [`public/brand-logos/`](./public/brand-logos/) and are unrelated to the master wordmark.
+
 ## Overview
 
-GIFTED is a clean, modern web application for purchasing digital gift cards. It features:
+Gifted is a clean, modern web application for purchasing digital gift cards. It features:
 - **Country-first product catalog** - Browse gift cards available in your region
 - **Dual purchase flows** - "For Me" or "Send as Gift" options
 - **Guest checkout** - Friction-free purchasing (no forced account creation)
@@ -91,7 +97,7 @@ gifted-project/
 
 ### Color Palette
 
-GIFTED uses an "Architectural Ledger" aesthetic with restrained colors:
+Gifted uses an "Architectural Ledger" aesthetic with restrained colors:
 
 - **Primary Navy (Ink):** `#0F172A` - Headlines, primary text
 - **Secondary Blue (CTA):** `#0051D5` - Call-to-action buttons
@@ -408,15 +414,37 @@ npx playwright show-report
 ### Test Structure
 
 ```
-tests/
-└── e2e/
-    ├── browse.spec.ts           # Home page interactions
-    ├── product-detail.spec.ts   # Product configuration
-    ├── checkout.spec.ts         # Full purchase flow
-    └── visual/
-        ├── desktop.spec.ts      # Desktop screenshots
-        └── mobile.spec.ts       # Mobile screenshots
+e2e/
+├── browse.spec.ts             # Legacy home page interactions
+├── product-detail.spec.ts     # Legacy product configuration
+├── checkout.spec.ts           # Legacy purchase flow
+├── visual/                    # Legacy visual regression
+└── all-locales/               # Cross-locale launch QA suite (9 locales × 2 viewports)
+    ├── helpers.ts             # Shared utilities, locale iteration
+    ├── sentinels.ts           # English-leak detection list
+    ├── i18n-coverage.spec.ts  # Static + runtime translation completeness
+    ├── surfaces.spec.ts       # Metadata routes, favicons, manifest, OG, robots, sitemap
+    ├── layout.spec.ts         # Header, footer, locale switcher, RTL, mobile overflow
+    └── journey.spec.ts        # Per-locale full user journey (home → PDP → checkout → 404)
 ```
+
+### Running the all-locales QA suite
+
+```bash
+# All 9 locales × desktop-1280 + mobile-375 (~7 minutes)
+npx playwright test e2e/all-locales/
+
+# Single project
+npx playwright test e2e/all-locales/ --project=chromium-desktop-1280
+npx playwright test e2e/all-locales/ --project=chromium-mobile-375
+
+# One spec
+npx playwright test e2e/all-locales/i18n-coverage.spec.ts
+```
+
+The suite iterates `locales` from `lib/i18n/config.ts` — add a new locale
+there and the suite picks it up automatically. Translation gaps and
+deferred fixes are tracked in [`KNOWN_GAPS.md`](./KNOWN_GAPS.md).
 
 ## Environment Variables
 

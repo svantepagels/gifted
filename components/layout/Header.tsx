@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { ShoppingCart } from 'lucide-react'
 import { CountrySelector } from '@/components/shared/CountrySelector'
 import { LocaleSwitcher } from '@/components/shared/LocaleSwitcher'
@@ -25,9 +26,17 @@ export function Header() {
           {/* Logo */}
           <Link
             href={localeHref(locale, '/')}
-            className="font-archivo-black text-[16px] leading-none tracking-tighter text-primary uppercase hover:opacity-80 transition-opacity"
+            aria-label="Gifted home"
+            className="flex items-center hover:opacity-80 transition-opacity"
           >
-            GIFTED
+            <Image
+              src="/brand/gifted-logo.svg"
+              alt="GIFTED"
+              width={96}
+              height={28}
+              priority
+              className="h-6 md:h-7 w-auto"
+            />
           </Link>
 
           {/* Right Side Actions */}

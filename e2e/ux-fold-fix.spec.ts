@@ -84,8 +84,11 @@ test.describe('Header (P0a)', () => {
       await expect(headerLocator).toBeVisible();
 
       const headerText = (await headerLocator.innerText()).toUpperCase();
-      // GIFTED logo MUST be present
-      expect(headerText).toContain('GIFTED');
+      // GIFTED logo MUST be present (now an SVG with alt text)
+      const logo = headerLocator
+        .locator('img[alt="GIFTED" i], a[aria-label="Gifted home"]')
+        .first();
+      await expect(logo).toBeVisible();
       // Forbidden labels MUST NOT be present in header
       expect(headerText).not.toContain('BROWSE');
       expect(headerText).not.toContain('DEALS');
