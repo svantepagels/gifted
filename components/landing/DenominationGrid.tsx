@@ -18,7 +18,7 @@
 
 import Link from 'next/link'
 import { useMemo, useState } from 'react'
-import { formatCurrency } from '@/lib/utils/currency'
+import { formatCurrencyForLocale } from '@/lib/i18n/format-currency'
 import { localeHref } from '@/lib/i18n/href'
 import type { Locale } from '@/lib/i18n/config'
 import type { Messages } from '@/lib/i18n/useMessages'
@@ -136,9 +136,10 @@ interface DenomCardProps {
   href: string
   cta: string
   accent: string
+  locale: Locale
 }
 
-function DenomCard({ amount, currency, href, cta, accent }: DenomCardProps) {
+function DenomCard({ amount, currency, href, cta, accent, locale }: DenomCardProps) {
   return (
     <Link
       href={href}
@@ -147,7 +148,7 @@ function DenomCard({ amount, currency, href, cta, accent }: DenomCardProps) {
       <div className={`h-1 bg-gradient-to-r ${accent}`} aria-hidden="true" />
       <div className="flex flex-col flex-1 p-4 md:p-5">
         <div className="font-archivo text-headline-md md:text-headline-lg text-surface-on-surface mb-3">
-          {formatCurrency(amount, currency)}
+          {formatCurrencyForLocale(amount, currency, locale)}
         </div>
         <div className="mt-auto">
           <span className="inline-flex items-center justify-center w-full min-h-[48px] h-12 rounded-full bg-secondary text-secondary-on-secondary text-[13px] font-medium uppercase tracking-[0.5px] group-hover:bg-secondary-hover transition-colors">
@@ -190,6 +191,7 @@ function FixedGrid({
             href={targetHref}
             cta={cta}
             accent={brand.accentGradient}
+            locale={locale}
           />
         </li>
       ))}
@@ -229,6 +231,7 @@ function RangeGrid({
             href={targetHref}
             cta={cta}
             accent={brand.accentGradient}
+            locale={locale}
           />
         </li>
       ))}

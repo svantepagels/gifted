@@ -3,6 +3,8 @@
 import { motion } from 'framer-motion'
 import { User, Gift } from 'lucide-react'
 import { DeliveryMethod } from '@/lib/orders/types'
+import { useLocale } from '@/lib/i18n/useLocale'
+import { getMessages } from '@/lib/i18n/useMessages'
 
 interface DeliveryMethodToggleProps {
   value: DeliveryMethod
@@ -10,25 +12,30 @@ interface DeliveryMethodToggleProps {
 }
 
 export function DeliveryMethodToggle({ value, onChange }: DeliveryMethodToggleProps) {
+  const locale = useLocale()
+  const m = getMessages(locale)
+
   const options: { value: DeliveryMethod; label: string; icon: typeof User }[] = [
-    { value: 'self', label: 'For me', icon: User },
-    { value: 'gift', label: 'Send as gift', icon: Gift },
+    { value: 'self', label: m['pdp.delivery.self'], icon: User },
+    { value: 'gift', label: m['pdp.delivery.gift'], icon: Gift },
   ]
-  
+
   return (
     <div>
       <label className="block text-[18px] font-bold uppercase tracking-[1.5px] text-primary mb-4">
-        DELIVERY METHOD
+        {m['pdp.delivery.heading']}
       </label>
       <div className="grid grid-cols-2 gap-3">
         {options.map((option) => {
           const isSelected = value === option.value
           const Icon = option.icon
-          
+
           return (
             <motion.button
               key={option.value}
               onClick={() => onChange(option.value)}
+              aria-label={option.label}
+              aria-pressed={isSelected}
               className={`
                 p-4 rounded-lg border-2 transition-all duration-200
                 ${isSelected

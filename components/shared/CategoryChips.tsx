@@ -10,9 +10,13 @@ import {
   Gamepad2,
   Heart,
   Grid3x3,
+  Sparkles,
+  Cpu,
+  MoreHorizontal,
 } from 'lucide-react';
 import { useLocale } from '@/lib/i18n/useLocale';
-import { getMessages, type Messages } from '@/lib/i18n/useMessages';
+import { getMessages } from '@/lib/i18n/useMessages';
+import { categoryDisplayLabel } from '@/lib/i18n/category-label';
 
 interface CategoryChipsProps {
   categories: string[];
@@ -38,6 +42,11 @@ const categoryConfig: Record<
     color: 'text-category-entertainment',
     bg: 'bg-category-entertainment hover:bg-category-entertainment/90',
   },
+  entertainment: {
+    icon: Film,
+    color: 'text-category-entertainment',
+    bg: 'bg-category-entertainment hover:bg-category-entertainment/90',
+  },
   food: {
     icon: Utensils,
     color: 'text-category-food',
@@ -58,34 +67,22 @@ const categoryConfig: Record<
     color: 'text-category-lifestyle',
     bg: 'bg-category-lifestyle hover:bg-category-lifestyle/90',
   },
+  beauty: {
+    icon: Sparkles,
+    color: 'text-category-lifestyle',
+    bg: 'bg-category-lifestyle hover:bg-category-lifestyle/90',
+  },
+  tech: {
+    icon: Cpu,
+    color: 'text-category-shopping',
+    bg: 'bg-category-shopping hover:bg-category-shopping/90',
+  },
+  other: {
+    icon: MoreHorizontal,
+    color: 'text-category-shopping',
+    bg: 'bg-category-shopping hover:bg-category-shopping/90',
+  },
 };
-
-/**
- * Map a catalog category (e.g. "Shopping", "All") to a translated label.
- * Falls back to the raw category string for unknown categories so the
- * UI never renders a missing-key placeholder.
- */
-function categoryLabel(category: string, m: Messages): string {
-  const key = category.toLowerCase();
-  switch (key) {
-    case 'all':
-      return m['categories.all'];
-    case 'shopping':
-      return m['categories.shopping'];
-    case 'media':
-      return m['categories.media'];
-    case 'food':
-      return m['categories.food'];
-    case 'travel':
-      return m['categories.travel'];
-    case 'gaming':
-      return m['categories.gaming'];
-    case 'lifestyle':
-      return m['categories.lifestyle'];
-    default:
-      return category;
-  }
-}
 
 export function CategoryChips({ categories }: CategoryChipsProps) {
   const router = useRouter();
@@ -141,7 +138,7 @@ export function CategoryChips({ categories }: CategoryChipsProps) {
                   isActive ? 'text-white' : config.color
                 }`}
               />
-              {categoryLabel(category, m)}
+              {categoryDisplayLabel(category, m)}
             </motion.button>
           );
         })}

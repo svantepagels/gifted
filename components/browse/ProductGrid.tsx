@@ -3,6 +3,8 @@
 import { GiftCardProduct } from '@/lib/giftcards/types'
 import { ProductCard } from './ProductCard'
 import { Search } from 'lucide-react'
+import { useLocale } from '@/lib/i18n/useLocale'
+import { getMessages } from '@/lib/i18n/useMessages'
 
 interface ProductGridProps {
   products: GiftCardProduct[]
@@ -10,6 +12,9 @@ interface ProductGridProps {
 }
 
 export function ProductGrid({ products, isLoading = false }: ProductGridProps) {
+  const locale = useLocale()
+  const m = getMessages(locale)
+
   if (isLoading) {
     return (
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 2xl:grid-cols-7 gap-4">
@@ -28,21 +33,21 @@ export function ProductGrid({ products, isLoading = false }: ProductGridProps) {
       </div>
     )
   }
-  
+
   if (products.length === 0) {
     return (
       <div className="py-24 text-center">
         <Search className="h-16 w-16 text-surface-on-surface-variant mx-auto mb-4 opacity-50" />
         <h3 className="font-archivo text-headline-md text-surface-on-surface mb-2">
-          No gift cards found
+          {m['browse.empty.title']}
         </h3>
         <p className="text-body-lg text-surface-on-surface-variant max-w-md mx-auto">
-          Try adjusting your filters or search query to find the perfect gift card.
+          {m['browse.empty.body']}
         </p>
       </div>
     )
   }
-  
+
   return (
     <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 2xl:grid-cols-7 gap-4">
       {products.map((product) => (

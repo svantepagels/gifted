@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test'
 import * as fs from 'fs'
 import * as path from 'path'
-import { LOCALES, NON_EN_LOCALES } from './helpers'
+import { LOCALES, NON_EN_LOCALES, pickProductSlug, pickBrandSlug } from './helpers'
 import { ENGLISH_SENTINELS } from './sentinels'
 
 const MESSAGES_DIR = path.resolve(__dirname, '../../lib/i18n/messages')
@@ -86,20 +86,61 @@ test.describe('i18n: static completeness', () => {
   })
 })
 
+function findLeaks(bodyText: string): string[] {
+  const lower = bodyText.toLowerCase()
+  const leaked: string[] = []
+  for (const sentinel of ENGLISH_SENTINELS) {
+    if (lower.includes(sentinel.toLowerCase())) leaked.push(sentinel)
+  }
+  return leaked
+}
+
 test.describe('i18n: runtime leak check', () => {
   for (const locale of NON_EN_LOCALES) {
     test(`${locale} home page does not leak English sentinels`, async ({ page }) => {
       const res = await page.goto(`/${locale}/`, { waitUntil: 'domcontentloaded' })
       expect(res?.status()).toBe(200)
-      const bodyText = (await page.locator('body').innerText()).toLowerCase()
-      const leaked: string[] = []
-      for (const sentinel of ENGLISH_SENTINELS) {
-        if (bodyText.includes(sentinel.toLowerCase())) leaked.push(sentinel)
-      }
+      const bodyText = await page.locator('body').innerText()
+      const leaked = findLeaks(bodyText)
       expect(
         leaked,
         `English sentinels leaked on /${locale}/ page: ${leaked.join(' | ')}`
       ).toEqual([])
+    })
+
+    test(`${locale} PDP does not leak English sentinels`, async ({ page }) => {
+      const slug = await pickProductSlug(page, locale)
+      test.skip(!slug, `No product card present on /${locale}/ home`)
+      const res = await page.goto(`/${locale}/gift-card/${slug}`, {
+        waitUntil: 'domcontentloaded',
+      })
+      expect(res?.status()).toBe(200)
+      // Wait for the AmountSelector / DeliveryMethodToggle to render
+      await page.waitForTimeout(500)
+      const bodyText = await page.locator('body').innerText()
+      const leaked = findLeaks(bodyText)
+      expect(
+        leaked,
+        `English sentinels leaked on /${locale}/gift-card/${slug}: ${leaked.join(' | ')}`
+      ).toEqual([])
+    })
+
+    test(`${locale} brand landing page does not leak English sentinels`, async ({ page }) => {
+      const slug = await pickBrandSlug(page, locale)
+      const res = await page.goto(`/${locale}/buy/${slug}`, {
+        waitUntil: 'domcontentloaded',
+      })
+      // Brand LP may 404 in some locales — skip in that case
+      test.skip(res?.status() !== 200, `Brand ${slug} unavailable in ${locale}`)
+      const bodyText = await page.locator('body').innerText()
+      const leaked = findLeaks(bodyText)
+      // NOTE: brand-marketing copy in lib/landing-pages/copy.ts is
+      // English-only by design (separate task). We allow up to 5
+      // marketing-string leaks here.
+      expect(
+        leaked.length,
+        `English sentinels leaked on /${locale}/buy/${slug}: ${leaked.join(' | ')}`
+      ).toBeLessThanOrEqual(5)
     })
   }
 })

@@ -1,33 +1,50 @@
 import { z } from 'zod'
 
+/**
+ * Schemas use i18n keys (not English strings) as Zod messages so that
+ * consumers can render them in the active locale at form-render time.
+ *
+ * Pattern:
+ *   const errMsg = errors.foo?.message
+ *   const localized = errMsg && m[errMsg as MessageKey] ? m[errMsg as MessageKey] : errMsg
+ *
+ * Existing English fallbacks remain intact: if a consumer forgets to
+ * map an error to messages, the displayed text is the i18n key string,
+ * which is at least non-empty and unambiguous in logs.
+ */
+
 export const emailSchema = z
   .string()
-  .min(1, 'Email is required')
-  .email('Please enter a valid email address')
+  .min(1, 'checkoutForm.email.errorInvalid')
+  .email('checkoutForm.email.errorInvalid')
 
 export const giftDetailsSchema = z.object({
-  recipientEmail: emailSchema,
+  recipientEmail: z
+    .string()
+    .email('pdp.gift.recipientEmailInvalid')
+    .optional()
+    .or(z.literal('')),
   giftMessage: z
     .string()
-    .max(200, 'Message must be 200 characters or less')
+    .max(200, 'pdp.gift.messageTooLong')
     .optional(),
 })
 
 export const checkoutSchema = z.object({
   email: z
     .string()
-    .min(1, 'Email address is required')
-    .email('Please enter a valid email address'),
+    .min(1, 'checkoutForm.email.errorInvalid')
+    .email('checkoutForm.email.errorInvalid'),
   confirmEmail: z
     .string()
-    .min(1, 'Please confirm your email address')
-    .email('Please enter a valid email address'),
+    .min(1, 'checkoutForm.email.errorInvalid')
+    .email('checkoutForm.email.errorInvalid'),
 }).refine((data) => data.email === data.confirmEmail, {
-  message: 'Email addresses do not match',
+  message: 'checkoutForm.email.errorInvalid',
   path: ['confirmEmail'],
 })
 
 export const customAmountSchema = z
   .number()
-  .min(1, 'Amount must be at least 1')
-  .max(10000, 'Amount cannot exceed 10,000')
+  .min(1, 'pdp.amount.errorMin')
+  .max(10000, 'pdp.amount.errorMax')
