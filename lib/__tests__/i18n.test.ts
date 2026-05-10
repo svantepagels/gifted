@@ -129,22 +129,29 @@ describe('getMessages', () => {
     expect(m['categories.all']).toBe('Kaikki')
   })
 
-  test('ar-AE returns TODO-prefixed placeholder strings', () => {
-    const m = getMessages('ar-AE')
-    expect(m['hero.badge']).toBe('[TODO ar-AE] Instant Digital Delivery')
-    expect(m['notFound.title']).toBe('[TODO ar-AE] Product Not Found')
+  test('ar-AE/ar-SA return Arabic-script translations (no [TODO] placeholders)', () => {
+    for (const loc of ['ar-AE', 'ar-SA'] as const) {
+      const m = getMessages(loc)
+      expect(m['hero.badge']).not.toMatch(/\[TODO/)
+      expect(m['hero.badge']).toMatch(/[\u0600-\u06FF]/)
+      expect(m['notFound.title']).not.toMatch(/\[TODO/)
+      expect(m['notFound.title']).toMatch(/[\u0600-\u06FF]/)
+    }
   })
 
-  test('ar-SA, pl-PL, el-GR also return TODO placeholders', () => {
-    expect(getMessages('ar-SA')['hero.badge']).toBe(
-      '[TODO ar-SA] Instant Digital Delivery'
-    )
-    expect(getMessages('pl-PL')['hero.badge']).toBe(
-      '[TODO pl-PL] Instant Digital Delivery'
-    )
-    expect(getMessages('el-GR')['hero.badge']).toBe(
-      '[TODO el-GR] Instant Digital Delivery'
-    )
+  test('pl-PL returns hand-translated Polish copy (no [TODO] placeholders)', () => {
+    const m = getMessages('pl-PL')
+    expect(m['hero.badge']).not.toMatch(/\[TODO/)
+    expect(m['hero.badge'].toLowerCase()).toContain('dostawa')
+    expect(m['notFound.title']).not.toMatch(/\[TODO/)
+  })
+
+  test('el-GR returns hand-translated Greek copy (no [TODO] placeholders)', () => {
+    const m = getMessages('el-GR')
+    expect(m['hero.badge']).not.toMatch(/\[TODO/)
+    expect(m['hero.badge']).toMatch(/[\u0370-\u03FF]/)
+    expect(m['notFound.title']).not.toMatch(/\[TODO/)
+    expect(m['notFound.title']).toMatch(/[\u0370-\u03FF]/)
   })
 
   test('every locale has a non-empty value for every key', () => {

@@ -3,8 +3,10 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { GiftCardProduct } from '@/lib/giftcards/types'
-import { formatCurrency } from '@/lib/utils/currency'
+import { formatCurrencyForLocale } from '@/lib/i18n/format-currency'
 import { Input } from '@/components/shared/Input'
+import { useLocale } from '@/lib/i18n/useLocale'
+import { getMessages, t } from '@/lib/i18n/useMessages'
 
 interface AmountSelectorProps {
   product: GiftCardProduct
@@ -19,43 +21,53 @@ export function AmountSelector({
   selectedAmount,
   onAmountChange,
 }: AmountSelectorProps) {
+  const locale = useLocale()
+  const m = getMessages(locale)
   const [customAmount, setCustomAmount] = useState('')
   const [customError, setCustomError] = useState('')
-  
+
   const handleCustomAmountChange = (value: string) => {
     setCustomAmount(value)
     setCustomError('')
-    
+
     const num = parseFloat(value)
     if (isNaN(num)) {
-      setCustomError('Please enter a valid amount')
+      setCustomError(m['pdp.amount.errorInvalid'])
       return
     }
-    
+
     if (product.denominationRange) {
       if (num < product.denominationRange.min) {
-        setCustomError(`Minimum amount is ${formatCurrency(product.denominationRange.min, currency)}`)
+        setCustomError(
+          t(m, 'pdp.amount.errorMin', {
+            amount: formatCurrencyForLocale(product.denominationRange.min, currency, locale),
+          })
+        )
         return
       }
       if (num > product.denominationRange.max) {
-        setCustomError(`Maximum amount is ${formatCurrency(product.denominationRange.max, currency)}`)
+        setCustomError(
+          t(m, 'pdp.amount.errorMax', {
+            amount: formatCurrencyForLocale(product.denominationRange.max, currency, locale),
+          })
+        )
         return
       }
     }
-    
+
     onAmountChange(num)
   }
-  
+
   if (product.denominationType === 'FIXED' && product.fixedDenominations) {
     return (
       <div>
         <label className="block text-[18px] font-bold uppercase tracking-[1.5px] text-primary mb-4">
-          SELECT AMOUNT
+          {m['pdp.amount.selectHeading']}
         </label>
         <div className="grid grid-cols-5 gap-3">
           {product.fixedDenominations.map((denom) => {
             const isSelected = selectedAmount === denom.value
-            
+
             return (
               <motion.button
                 key={denom.value}
@@ -71,7 +83,7 @@ export function AmountSelector({
               >
                 <span className="text-xs uppercase text-surface-on-surface-variant mb-1">{currency}</span>
                 <span className="text-2xl font-bold text-surface-on-surface">
-                  {formatCurrency(denom.value, currency)}
+                  {formatCurrencyForLocale(denom.value, currency, locale)}
                 </span>
               </motion.button>
             )
@@ -80,22 +92,26 @@ export function AmountSelector({
       </div>
     )
   }
-  
+
   if (product.denominationType === 'RANGE' && product.denominationRange) {
     return (
       <div>
         <label className="block text-[18px] font-bold uppercase tracking-[1.5px] text-primary mb-2">
-          ENTER AMOUNT
+          {m['pdp.amount.enterHeading']}
         </label>
         <p className="text-label-md text-surface-on-surface-variant mb-4">
-          Between {formatCurrency(product.denominationRange.min, currency)} and{' '}
-          {formatCurrency(product.denominationRange.max, currency)}
+          {t(m, 'pdp.amount.range', {
+            min: formatCurrencyForLocale(product.denominationRange.min, currency, locale),
+            max: formatCurrencyForLocale(product.denominationRange.max, currency, locale),
+          })}
         </p>
         <Input
           type="number"
           value={customAmount}
           onChange={(e) => handleCustomAmountChange(e.target.value)}
-          placeholder={`e.g. ${product.denominationRange.min}`}
+          placeholder={t(m, 'pdp.amount.placeholder', {
+            example: String(product.denominationRange.min),
+          })}
           min={product.denominationRange.min}
           max={product.denominationRange.max}
           step={product.denominationRange.step || 1}
@@ -104,6 +120,6 @@ export function AmountSelector({
       </div>
     )
   }
-  
+
   return null
 }

@@ -26,6 +26,36 @@ export const ENGLISH_SENTINELS: readonly string[] = [
   'Brand not available in this region',
   'Instant Digital Delivery',
   'View all denominations',
+
+  // PDP
+  'SELECT AMOUNT',
+  'ENTER AMOUNT',
+  'DELIVERY METHOD',
+  'For me',
+  'Send as gift',
+  'GIFT RECIPIENT',
+  'Personal Message',
+  'CONTINUE TO CHECKOUT',
+  'Digital Delivery',
+  'How to redeem',
+  'ORDER SUMMARY',
+  'Service fee',
+
+  // Browse / chrome
+  'No gift cards found',
+  'Instant',
+  'Digital delivery',
+
+  // Checkout
+  'YOUR INFORMATION',
+  'Email address',
+  'Confirm email',
+  'Pay now',
+  'Order review',
+
+  // Success
+  'Order Confirmed',
+  'Buy another card',
 ] as const
 
 /**

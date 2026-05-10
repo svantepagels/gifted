@@ -5,7 +5,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { GiftCardProduct } from '@/lib/giftcards/types';
 import { useApp } from '@/contexts/AppContext';
-import { formatCurrency } from '@/lib/utils/currency';
+import { formatCurrencyForLocale } from '@/lib/i18n/format-currency';
 import { cardHover } from '@/lib/animations/variants';
 import {
   Zap,
@@ -15,10 +15,14 @@ import {
   Plane,
   Gamepad2,
   Heart,
+  Sparkles,
+  Cpu,
+  MoreHorizontal,
 } from 'lucide-react';
 import { useLocale } from '@/lib/i18n/useLocale';
-import { getMessages, t, type Messages } from '@/lib/i18n/useMessages';
+import { getMessages, t } from '@/lib/i18n/useMessages';
 import { localeHref } from '@/lib/i18n/href';
+import { categoryDisplayLabel } from '@/lib/i18n/category-label';
 
 interface ProductCardProps {
   product: GiftCardProduct;
@@ -29,13 +33,17 @@ interface ProductCardProps {
 const categoryIcons: Record<string, React.ElementType> = {
   shopping: ShoppingBag,
   media: Film,
+  entertainment: Film,
   food: Utensils,
   travel: Plane,
   gaming: Gamepad2,
   lifestyle: Heart,
+  beauty: Sparkles,
+  tech: Cpu,
+  other: MoreHorizontal,
 };
 
-// Category Color Mapping (Tailwind classes)
+// Category Color Mapping (Tailwind classes). Falls back to "shopping" for unknown.
 const categoryColors: Record<
   string,
   { bg: string; text: string; gradient: string }
@@ -46,6 +54,11 @@ const categoryColors: Record<
     gradient: 'from-category-shopping to-blue-400',
   },
   media: {
+    bg: 'bg-category-entertainment/10',
+    text: 'text-category-entertainment',
+    gradient: 'from-category-entertainment to-purple-400',
+  },
+  entertainment: {
     bg: 'bg-category-entertainment/10',
     text: 'text-category-entertainment',
     gradient: 'from-category-entertainment to-purple-400',
@@ -70,27 +83,22 @@ const categoryColors: Record<
     text: 'text-category-lifestyle',
     gradient: 'from-category-lifestyle to-green-400',
   },
+  beauty: {
+    bg: 'bg-category-lifestyle/10',
+    text: 'text-category-lifestyle',
+    gradient: 'from-category-lifestyle to-pink-400',
+  },
+  tech: {
+    bg: 'bg-category-shopping/10',
+    text: 'text-category-shopping',
+    gradient: 'from-category-shopping to-indigo-400',
+  },
+  other: {
+    bg: 'bg-category-shopping/10',
+    text: 'text-category-shopping',
+    gradient: 'from-category-shopping to-slate-400',
+  },
 };
-
-function categoryDisplayLabel(category: string, m: Messages): string {
-  const key = category.toLowerCase();
-  switch (key) {
-    case 'shopping':
-      return m['categories.shopping'];
-    case 'media':
-      return m['categories.media'];
-    case 'food':
-      return m['categories.food'];
-    case 'travel':
-      return m['categories.travel'];
-    case 'gaming':
-      return m['categories.gaming'];
-    case 'lifestyle':
-      return m['categories.lifestyle'];
-    default:
-      return category;
-  }
-}
 
 export function ProductCard({ product, index = 0 }: ProductCardProps) {
   const { selectedCountry } = useApp();
@@ -99,23 +107,17 @@ export function ProductCard({ product, index = 0 }: ProductCardProps) {
   const [logoFailed, setLogoFailed] = useState(false);
   const showLogo = Boolean(product.logoUrl) && !logoFailed;
 
+  const fmt = (n: number) =>
+    formatCurrencyForLocale(n, selectedCountry.currency, locale);
+
   // Get the first available denomination or range minimum
   const priceDisplay =
     product.denominationType === 'FIXED' && product.fixedDenominations
-      ? `${m['product.from']} ${formatCurrency(
-          product.fixedDenominations[0].value,
-          selectedCountry.currency
-        )}`
+      ? `${m['product.from']} ${fmt(product.fixedDenominations[0].value)}`
       : product.denominationRange
       ? t(m, 'product.range', {
-          min: formatCurrency(
-            product.denominationRange.min,
-            selectedCountry.currency
-          ),
-          max: formatCurrency(
-            product.denominationRange.max,
-            selectedCountry.currency
-          ),
+          min: fmt(product.denominationRange.min),
+          max: fmt(product.denominationRange.max),
         })
       : '';
 
@@ -143,14 +145,13 @@ export function ProductCard({ product, index = 0 }: ProductCardProps) {
             <div className="flex items-center gap-1.5 px-2.5 py-1 bg-white/95 backdrop-blur-sm rounded-full shadow-sm">
               <Zap className="w-3.5 h-3.5 text-accent-purple fill-accent-purple" />
               <span className="text-[11px] font-medium text-primary">
-                Instant
+                {m['browse.productCard.instant']}
               </span>
             </div>
           </div>
 
           {/* Logo Container */}
           <div className="aspect-video bg-white flex items-center justify-center p-6 relative overflow-hidden">
-            {/* Subtle gradient overlay on hover */}
             <div
               className={`absolute inset-0 bg-gradient-to-br ${categoryStyle.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-300`}
             />
@@ -166,7 +167,6 @@ export function ProductCard({ product, index = 0 }: ProductCardProps) {
                   className="max-w-[88px] max-h-[88px] object-contain transform group-hover:scale-105 transition-transform duration-300"
                 />
               ) : (
-                /* Fallback: gradient chip with the brand initial */
                 <div
                   className={`w-24 h-24 rounded-lg bg-gradient-to-br ${categoryStyle.gradient} flex items-center justify-center transform group-hover:scale-105 transition-transform duration-300 shadow-ambient`}
                 >
@@ -212,10 +212,10 @@ export function ProductCard({ product, index = 0 }: ProductCardProps) {
                 <div
                   className={`w-1.5 h-1.5 rounded-full ${categoryStyle.text}`}
                 />
-                <span>Digital delivery</span>
+                <span>{m['browse.productCard.digitalDelivery']}</span>
               </div>
               <span className="text-surface-on-surface-variant/40">•</span>
-              <span>~5 min</span>
+              <span>{t(m, 'browse.productCard.deliveryEta', { minutes: '5' })}</span>
             </div>
           </div>
 

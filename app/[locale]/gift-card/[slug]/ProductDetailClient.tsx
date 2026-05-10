@@ -13,10 +13,12 @@ import { useApp } from '@/contexts/AppContext'
 import { DeliveryMethod } from '@/lib/orders/types'
 import { createOrder } from '@/lib/orders/api'
 import { browserOrderStorage } from '@/lib/orders/browser-storage'
-import { calculateServiceFee, formatCurrency } from '@/lib/utils/currency'
+import { calculateServiceFee } from '@/lib/utils/currency'
+import { formatCurrencyForLocale } from '@/lib/i18n/format-currency'
 import { ArrowRight, Loader2 } from 'lucide-react'
 import { useLocale } from '@/lib/i18n/useLocale'
 import { localeHref } from '@/lib/i18n/href'
+import { getMessages } from '@/lib/i18n/useMessages'
 
 interface ProductDetailClientProps {
   product: GiftCardProduct
@@ -25,8 +27,9 @@ interface ProductDetailClientProps {
 export function ProductDetailClient({ product }: ProductDetailClientProps) {
   const router = useRouter()
   const locale = useLocale()
+  const m = getMessages(locale)
   const { selectedCountry, setCartProduct, setCartAmount, setCartDeliveryMethod, setCartGiftDetails } = useApp()
-  
+
   const [selectedAmount, setSelectedAmount] = useState<number | null>(null)
   const [deliveryMethod, setDeliveryMethod] = useState<DeliveryMethod>('self')
   const [recipientEmail, setRecipientEmail] = useState<string>()
@@ -34,28 +37,28 @@ export function ProductDetailClient({ product }: ProductDetailClientProps) {
   const [isCreatingOrder, setIsCreatingOrder] = useState(false)
   const [orderError, setOrderError] = useState<string | null>(null)
   const [recipientEmailError, setRecipientEmailError] = useState<string | null>(null)
-  
+
   // Set cart product when component mounts
   useState(() => {
     setCartProduct(product)
   })
-  
+
   const handleAmountChange = (amount: number) => {
     setSelectedAmount(amount)
     setCartAmount(amount)
   }
-  
+
   const handleDeliveryMethodChange = (method: DeliveryMethod) => {
     setDeliveryMethod(method)
     setCartDeliveryMethod(method)
   }
-  
+
   const handleGiftDetailsChange = (data: { recipientEmail?: string; giftMessage?: string }) => {
     setRecipientEmail(data.recipientEmail)
     setGiftMessage(data.giftMessage)
     setCartGiftDetails(data.recipientEmail, data.giftMessage)
   }
-  
+
   const handleContinue = async () => {
     if (!product || !selectedAmount || isCreatingOrder) return
 
@@ -65,7 +68,7 @@ export function ProductDetailClient({ product }: ProductDetailClientProps) {
 
     // Validate gift details if sending as gift
     if (deliveryMethod === 'gift' && !recipientEmail) {
-      setRecipientEmailError('Please enter a recipient email address.')
+      setRecipientEmailError(m['pdp.error.recipientRequired'])
       return
     }
 
@@ -73,7 +76,7 @@ export function ProductDetailClient({ product }: ProductDetailClientProps) {
     const reloadlyProductId = product._meta?.reloadlyProductId
     if (!reloadlyProductId) {
       console.error('[ProductDetail] Missing reloadlyProductId for product:', product.id)
-      setOrderError('Product configuration error. Please try another product.')
+      setOrderError(m['pdp.error.productConfig'])
       return
     }
 
@@ -82,21 +85,19 @@ export function ProductDetailClient({ product }: ProductDetailClientProps) {
     try {
       const order = await createOrder({
         productId: product.id,
-        reloadlyProductId, // Numeric Reloadly product ID
+        reloadlyProductId,
         productName: product.brandName,
         productLogoUrl: product.logoUrl,
         amount: selectedAmount,
         currency: selectedCountry.currency,
         serviceFee: calculateServiceFee(selectedAmount),
         deliveryMethod,
-        customerEmail: '', // Will be set at checkout
+        customerEmail: '',
         recipientEmail: deliveryMethod === 'gift' ? recipientEmail : undefined,
         giftMessage: deliveryMethod === 'gift' ? giftMessage : undefined,
         countryCode: selectedCountry.code,
       })
 
-      // Optimistic client-side cache so /checkout can render instantly.
-      // The server remains the source of truth.
       browserOrderStorage.save(order)
 
       router.push(localeHref(locale, `/checkout?orderId=${order.id}`))
@@ -104,15 +105,15 @@ export function ProductDetailClient({ product }: ProductDetailClientProps) {
       const message =
         error instanceof Error && error.message
           ? error.message
-          : "Couldn't create your order. Please try again."
+          : m['pdp.error.orderCreate']
       setOrderError(message)
       setIsCreatingOrder(false)
     }
   }
-  
+
   const totalAmount = selectedAmount ? selectedAmount + calculateServiceFee(selectedAmount) : null
   const canContinue = product && selectedAmount && (deliveryMethod === 'self' || recipientEmail) && !isCreatingOrder
-  
+
   return (
     <>
       <Header />
@@ -121,7 +122,7 @@ export function ProductDetailClient({ product }: ProductDetailClientProps) {
           <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_440px] gap-8 items-start">
             {/* Left column — brand info */}
             <div className="space-y-6 min-w-0">
-              <ProductHero product={product} countryName={selectedCountry.name} />
+              <ProductHero product={product} countryCode={selectedCountry.code} />
             </div>
 
             {/* Right column — sticky purchase panel on lg+ */}
@@ -164,14 +165,14 @@ export function ProductDetailClient({ product }: ProductDetailClientProps) {
                     {isCreatingOrder ? (
                       <>
                         <Loader2 className="h-5 w-5 animate-spin" />
-                        Processing...
+                        {m['pdp.cta.processing']}
                       </>
                     ) : (
                       <>
-                        Continue to Checkout
+                        {m['pdp.cta.continue']}
                         {totalAmount && (
                           <span className="ml-2 px-3 py-1 bg-white/15 rounded-full">
-                            {formatCurrency(totalAmount, selectedCountry.currency)}
+                            {formatCurrencyForLocale(totalAmount, selectedCountry.currency, locale)}
                           </span>
                         )}
                         <ArrowRight className="h-5 w-5" />
@@ -183,7 +184,7 @@ export function ProductDetailClient({ product }: ProductDetailClientProps) {
             </aside>
           </div>
         </div>
-        
+
         {/* Mobile Sticky CTA */}
         <div className="md:hidden fixed bottom-0 left-0 right-0 p-4 bg-surface-container-lowest/95 backdrop-blur border-t border-outline-variant z-30">
           <button
@@ -194,15 +195,15 @@ export function ProductDetailClient({ product }: ProductDetailClientProps) {
             {isCreatingOrder ? (
               <>
                 <Loader2 className="h-5 w-5 animate-spin" />
-                <span>Processing...</span>
+                <span>{m['pdp.cta.processing']}</span>
               </>
             ) : (
               <>
-                <span>Continue to Checkout</span>
+                <span>{m['pdp.cta.continue']}</span>
                 <div className="flex items-center gap-2">
                   {totalAmount && (
                     <span className="px-3 py-1 bg-white/15 rounded-full text-[12px]">
-                      {formatCurrency(totalAmount, selectedCountry.currency)}
+                      {formatCurrencyForLocale(totalAmount, selectedCountry.currency, locale)}
                     </span>
                   )}
                   <ArrowRight className="h-5 w-5" />

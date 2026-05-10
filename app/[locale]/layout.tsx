@@ -10,6 +10,7 @@ import {
   localeMeta,
   type Locale,
 } from '@/lib/i18n/config'
+import { getMessages } from '@/lib/i18n/useMessages'
 import '../globals.css'
 
 const archivo = Archivo({
@@ -30,43 +31,6 @@ const playfair = Playfair_Display({
   display: 'swap',
 })
 
-export const metadata: Metadata = {
-  metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL ?? 'https://gifted.app'
-  ),
-  title: {
-    default: 'Gifted — Digital Gift Cards',
-    template: '%s | Gifted',
-  },
-  description:
-    'Buy digital gift cards for brands you love. Instant delivery worldwide.',
-  applicationName: 'Gifted',
-  keywords: ['gift cards', 'digital gifts', 'online shopping'],
-  manifest: '/manifest.webmanifest',
-  icons: {
-    icon: [
-      { url: '/icon', type: 'image/png', sizes: '32x32' },
-      { url: '/favicon.ico', sizes: 'any' },
-    ],
-    apple: [{ url: '/apple-icon', sizes: '180x180', type: 'image/png' }],
-  },
-  openGraph: {
-    type: 'website',
-    siteName: 'Gifted',
-    title: 'Gifted — Digital Gift Cards',
-    description:
-      'Buy digital gift cards for brands you love. Instant delivery worldwide.',
-    images: ['/opengraph-image'],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Gifted — Digital Gift Cards',
-    description:
-      'Buy digital gift cards for brands you love. Instant delivery worldwide.',
-    images: ['/twitter-image'],
-  },
-}
-
 export const viewport: Viewport = {
   themeColor: '#0A1320',
 }
@@ -76,6 +40,58 @@ export const viewport: Viewport = {
  */
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }))
+}
+
+/**
+ * Per-locale SEO metadata (title, description, OpenGraph, Twitter card).
+ *
+ * Resolved at build/render time from the locale's message JSON. en-*
+ * locales share `en.json`; everything else maps to its own file.
+ */
+export async function generateMetadata({
+  params,
+}: {
+  params: { locale: string }
+}): Promise<Metadata> {
+  if (!isLocale(params.locale)) return {}
+  const locale: Locale = params.locale
+  const meta = localeMeta[locale]
+  const m = getMessages(locale)
+
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://gifted.app'
+
+  return {
+    metadataBase: new URL(baseUrl),
+    title: {
+      default: m['meta.home.title'],
+      template: '%s | Gifted',
+    },
+    description: m['meta.home.description'],
+    applicationName: 'Gifted',
+    keywords: ['gift cards', 'digital gifts', 'online shopping'],
+    manifest: '/manifest.webmanifest',
+    icons: {
+      icon: [
+        { url: '/icon', type: 'image/png', sizes: '32x32' },
+        { url: '/favicon.ico', sizes: 'any' },
+      ],
+      apple: [{ url: '/apple-icon', sizes: '180x180', type: 'image/png' }],
+    },
+    openGraph: {
+      type: 'website',
+      siteName: 'Gifted',
+      title: m['meta.home.ogTitle'],
+      description: m['meta.home.ogDescription'],
+      locale: meta.hreflang,
+      images: ['/opengraph-image'],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: m['meta.home.ogTitle'],
+      description: m['meta.home.ogDescription'],
+      images: ['/twitter-image'],
+    },
+  }
 }
 
 interface LocaleLayoutProps {

@@ -17,7 +17,8 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { fadeInUp } from '@/lib/animations/variants'
-import { formatCurrency } from '@/lib/utils/currency'
+import { formatCurrencyForLocale } from '@/lib/i18n/format-currency'
+import { useLocale } from '@/lib/i18n/useLocale'
 import type { BrandConfig, BrandCopy } from '@/lib/landing-pages/types'
 import type { GiftCardProduct } from '@/lib/giftcards/types'
 
@@ -40,6 +41,7 @@ export function BrandHero({
   primaryProduct,
   primaryCurrency,
 }: BrandHeroProps) {
+  const locale = useLocale()
   const [logoFailed, setLogoFailed] = useState(false)
   const showLogo = Boolean(heroLogoUrl) && !logoFailed
 
@@ -105,7 +107,7 @@ export function BrandHero({
                   href="#denominations"
                   className="inline-flex items-center justify-center min-h-[44px] px-4 md:px-5 rounded-full bg-surface-container-lowest border border-outline-variant text-label-md md:text-body-md font-medium text-primary hover:border-primary hover:bg-primary/5 transition-colors"
                 >
-                  {formatCurrency(amount, primaryCurrency)}
+                  {formatCurrencyForLocale(amount, primaryCurrency, locale)}
                 </a>
               ))}
             </div>
