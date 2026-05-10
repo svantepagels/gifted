@@ -6,6 +6,7 @@ import { formatCurrency, calculateServiceFee } from '@/lib/utils/currency'
 import { Shield, Zap } from 'lucide-react'
 import { useLocale } from '@/lib/i18n/useLocale'
 import { localeHref } from '@/lib/i18n/href'
+import { getMessages } from '@/lib/i18n/useMessages'
 
 interface OrderSummaryProps {
   productName: string
@@ -24,6 +25,11 @@ export function OrderSummary({
 }: OrderSummaryProps) {
   const router = useRouter()
   const locale = useLocale()
+  const m = getMessages(locale)
+  const trustMessages = {
+    securePayment: m['checkout.trust.securePayment'],
+    instantDelivery: m['checkout.trust.instantDelivery'],
+  }
 
   const serviceFee = amount ? calculateServiceFee(amount) : 0
   const total = amount ? amount + serviceFee : 0
@@ -94,11 +100,11 @@ export function OrderSummary({
       <div className="space-y-2">
         <div className="flex items-center gap-2 text-label-md text-surface-on-surface-variant">
           <Shield className="h-4 w-4" />
-          <span>Secure payment</span>
+          <span>{trustMessages.securePayment}</span>
         </div>
         <div className="flex items-center gap-2 text-label-md text-surface-on-surface-variant">
           <Zap className="h-4 w-4" />
-          <span>Instant delivery</span>
+          <span>{trustMessages.instantDelivery}</span>
         </div>
       </div>
     </div>
