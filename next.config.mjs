@@ -9,6 +9,13 @@ const nextConfig = {
   experimental: {
     instrumentationHook: true,
   },
+  // Static page generation invokes the [locale]/layout for every
+  // prerendered route, which in turn fetches the full Reloadly catalog
+  // (paginated). On a cold worker the first call can exceed the
+  // default 60s. Module-level caching makes subsequent pages free, but
+  // the first one needs more headroom — especially under parallel
+  // worker contention.
+  staticPageGenerationTimeout: 240,
 }
 
 export default withSentryConfig(nextConfig, {

@@ -16,6 +16,23 @@ export interface Country {
   flagUrl: string;
 }
 
+/**
+ * Full country object returned by `GET /countries` on the gift cards
+ * base URL. Richer than the `country` object embedded inside `Product`,
+ * which only has `isoName/name/flagUrl`.
+ */
+export interface ReloadlyCountryRaw {
+  isoName: string;
+  name: string;
+  currencyCode: string;
+  currencyName: string;
+  currencySymbol: string;
+  flagUrl: string;
+  callingCodes: string[];
+  numberOfDecimals: number;
+  locked: boolean;
+}
+
 export interface RedeemInstruction {
   concise: string;
   verbose: string;

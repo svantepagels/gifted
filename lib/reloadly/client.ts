@@ -5,6 +5,7 @@ import type {
   OrderResponse,
   RedeemInstructionsResponse,
   PaginatedResponse,
+  ReloadlyCountryRaw,
 } from './types';
 import { safeJsonParse } from '@/lib/utils/safe-json';
 
@@ -73,6 +74,30 @@ export class ReloadlyClient {
     }
 
     return await this.authenticate();
+  }
+
+  /**
+   * Get the master list of countries supported by Reloadly's gift card
+   * API. NOT the same as redeemable — call this against the product
+   * catalog (see lib/countries/build-countries.ts) to filter down to
+   * countries that actually have at least one redeemable product.
+   */
+  async getCountries(): Promise<ReloadlyCountryRaw[]> {
+    const token = await this.getAccessToken();
+
+    const response = await fetch(`${this.baseUrl}/countries`, {
+      method: 'GET',
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+
+    if (!response.ok) {
+      const error = await response.text();
+      throw new Error(`Failed to fetch countries: ${error}`);
+    }
+
+    return await safeJsonParse<ReloadlyCountryRaw[]>(response, 'getCountries');
   }
 
   /**

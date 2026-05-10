@@ -3,6 +3,7 @@ import type { ReactNode } from 'react'
 import { notFound } from 'next/navigation'
 import { Archivo, Inter, Playfair_Display } from 'next/font/google'
 import { AppProvider } from '@/contexts/AppContext'
+import { getAllCountries } from '@/lib/countries/data'
 import {
   locales,
   isLocale,
@@ -82,12 +83,20 @@ interface LocaleLayoutProps {
   params: { locale: string }
 }
 
-export default function LocaleLayout({ children, params }: LocaleLayoutProps) {
+export default async function LocaleLayout({
+  children,
+  params,
+}: LocaleLayoutProps) {
   if (!isLocale(params.locale)) {
     notFound()
   }
   const locale: Locale = params.locale
   const meta = localeMeta[locale]
+
+  // Build-time-generated full country list (every Reloadly country
+  // with at least one redeemable product). Memoised via react.cache,
+  // so this runs once per build regardless of how many locales render.
+  const countries = await getAllCountries()
 
   return (
     <html
@@ -96,7 +105,7 @@ export default function LocaleLayout({ children, params }: LocaleLayoutProps) {
       className={`${archivo.variable} ${inter.variable} ${playfair.variable}`}
     >
       <body>
-        <AppProvider>{children}</AppProvider>
+        <AppProvider countries={countries}>{children}</AppProvider>
       </body>
     </html>
   )
