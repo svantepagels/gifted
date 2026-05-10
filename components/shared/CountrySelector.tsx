@@ -28,12 +28,26 @@ export function CountrySelector() {
     return () => document.removeEventListener('mousedown', handleClickOutside)
   }, [])
 
+  // Sort by *localized* display name so the visible UI is alphabetical in
+  // the active locale (the underlying `countries` list is sorted by the
+  // English catalog name, which doesn't match what we render once
+  // Intl.DisplayNames is involved — e.g. "Democratic Republic of the
+  // Congo" → "Congo - Kinshasa").
+  const sortedCountries = useMemo(() => {
+    const collator = new Intl.Collator(locale)
+    return [...countries].sort((a, b) => {
+      const an = localizedCountryName(locale, a.code) || a.name
+      const bn = localizedCountryName(locale, b.code) || b.name
+      return collator.compare(an, bn)
+    })
+  }, [countries, locale])
+
   // Match against the English catalog name AND the localized name so users
   // can type either "Germany" or "Saksa" / "Niemcy" / "Γερμανία" / etc.
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase()
-    if (!q) return countries
-    return countries.filter((c) => {
+    if (!q) return sortedCountries
+    return sortedCountries.filter((c) => {
       const localized = localizedCountryName(locale, c.code).toLowerCase()
       return (
         c.name.toLowerCase().includes(q) ||
@@ -41,7 +55,7 @@ export function CountrySelector() {
         localized.includes(q)
       )
     })
-  }, [countries, query, locale])
+  }, [sortedCountries, query, locale])
 
   const showSearch = countries.length > 10
 
