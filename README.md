@@ -414,15 +414,37 @@ npx playwright show-report
 ### Test Structure
 
 ```
-tests/
-└── e2e/
-    ├── browse.spec.ts           # Home page interactions
-    ├── product-detail.spec.ts   # Product configuration
-    ├── checkout.spec.ts         # Full purchase flow
-    └── visual/
-        ├── desktop.spec.ts      # Desktop screenshots
-        └── mobile.spec.ts       # Mobile screenshots
+e2e/
+├── browse.spec.ts             # Legacy home page interactions
+├── product-detail.spec.ts     # Legacy product configuration
+├── checkout.spec.ts           # Legacy purchase flow
+├── visual/                    # Legacy visual regression
+└── all-locales/               # Cross-locale launch QA suite (9 locales × 2 viewports)
+    ├── helpers.ts             # Shared utilities, locale iteration
+    ├── sentinels.ts           # English-leak detection list
+    ├── i18n-coverage.spec.ts  # Static + runtime translation completeness
+    ├── surfaces.spec.ts       # Metadata routes, favicons, manifest, OG, robots, sitemap
+    ├── layout.spec.ts         # Header, footer, locale switcher, RTL, mobile overflow
+    └── journey.spec.ts        # Per-locale full user journey (home → PDP → checkout → 404)
 ```
+
+### Running the all-locales QA suite
+
+```bash
+# All 9 locales × desktop-1280 + mobile-375 (~7 minutes)
+npx playwright test e2e/all-locales/
+
+# Single project
+npx playwright test e2e/all-locales/ --project=chromium-desktop-1280
+npx playwright test e2e/all-locales/ --project=chromium-mobile-375
+
+# One spec
+npx playwright test e2e/all-locales/i18n-coverage.spec.ts
+```
+
+The suite iterates `locales` from `lib/i18n/config.ts` — add a new locale
+there and the suite picks it up automatically. Translation gaps and
+deferred fixes are tracked in [`KNOWN_GAPS.md`](./KNOWN_GAPS.md).
 
 ## Environment Variables
 
