@@ -64,16 +64,30 @@ export function AmountSelector({
         <label className="block text-[18px] font-bold uppercase tracking-[1.5px] text-primary mb-4">
           {m['pdp.amount.selectHeading']}
         </label>
-        <div className="grid grid-cols-5 gap-3">
+        <div
+          className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-2 sm:gap-3"
+          role="radiogroup"
+          aria-label={m['pdp.amount.selectHeading']}
+          data-testid="amount-selector-grid"
+        >
           {product.fixedDenominations.map((denom) => {
             const isSelected = selectedAmount === denom.value
+            const formatted = formatCurrencyForLocale(denom.value, currency, locale)
 
             return (
               <motion.button
                 key={denom.value}
+                type="button"
+                role="radio"
+                aria-checked={isSelected}
+                aria-label={formatted}
                 onClick={() => onAmountChange(denom.value)}
+                data-testid="amount-card"
+                data-amount={denom.value}
                 className={`
-                  flex flex-col items-center justify-center p-4 rounded-lg border-2 transition-all duration-200
+                  flex items-center justify-center text-center break-words
+                  min-h-[64px] sm:min-h-[80px] p-3 sm:p-4
+                  rounded-lg border-2 transition-all duration-200
                   ${isSelected
                     ? 'border-secondary bg-secondary/5'
                     : 'border-outline-variant hover:border-surface-on-surface-variant'
@@ -81,9 +95,8 @@ export function AmountSelector({
                 `}
                 whileTap={{ scale: 0.95 }}
               >
-                <span className="text-xs uppercase text-surface-on-surface-variant mb-1">{currency}</span>
-                <span className="text-2xl font-bold text-surface-on-surface">
-                  {formatCurrencyForLocale(denom.value, currency, locale)}
+                <span className="text-lg sm:text-xl md:text-2xl font-bold text-surface-on-surface leading-tight">
+                  {formatted}
                 </span>
               </motion.button>
             )
@@ -116,6 +129,7 @@ export function AmountSelector({
           max={product.denominationRange.max}
           step={product.denominationRange.step || 1}
           error={customError}
+          data-testid="amount-range-input"
         />
       </div>
     )
