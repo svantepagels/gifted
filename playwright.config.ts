@@ -24,6 +24,21 @@ export default defineConfig({
       name: 'chromium-mobile',
       use: { ...devices['Pixel 5'], viewport: { width: 390, height: 844 } },
     },
+    {
+      // 1280×800 desktop and 375×812 mobile match the brief literally.
+      // The all-locales suite asserts mobile horizontal-overflow at 375.
+      name: 'chromium-desktop-1280',
+      use: { ...devices['Desktop Chrome'], viewport: { width: 1280, height: 800 } },
+    },
+    {
+      name: 'chromium-mobile-375',
+      use: {
+        ...devices['Desktop Chrome'],
+        viewport: { width: 375, height: 812 },
+        isMobile: true,
+        hasTouch: true,
+      },
+    },
   ],
   webServer: {
     command: 'npm run dev',

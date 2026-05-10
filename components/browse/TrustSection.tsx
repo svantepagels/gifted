@@ -1,24 +1,30 @@
+'use client'
+
 import { Shield, Zap, Gift } from 'lucide-react'
+import { useLocale } from '@/lib/i18n/useLocale'
+import { getMessages } from '@/lib/i18n/useMessages'
 
 export function TrustSection() {
+  const locale = useLocale()
+  const m = getMessages(locale)
   const features = [
     {
       icon: Zap,
-      title: 'Instant Delivery',
-      description: 'Gift cards delivered to your inbox within minutes',
+      title: m['trust.instant.title'],
+      description: m['trust.instant.description'],
     },
     {
       icon: Shield,
-      title: 'Secure & Trusted',
-      description: 'Bank-level encryption and fraud protection',
+      title: m['trust.secure.title'],
+      description: m['trust.secure.description'],
     },
     {
       icon: Gift,
-      title: 'Perfect Every Time',
-      description: 'No expiration dates on our digital gift cards',
+      title: m['trust.perfect.title'],
+      description: m['trust.perfect.description'],
     },
   ]
-  
+
   return (
     <section className="py-16 sm:py-24">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">

@@ -5,21 +5,17 @@
   "common.cart": "Ostoskori",
   "common.continue": "Jatka",
   "common.loading": "Ladataan...",
-
   "header.shoppingCart": "Ostoskori",
   "header.localeSwitcher.label": "Kieli",
-
   "hero.badge": "Välitön digitaalinen toimitus",
   "hero.title.line1": "Osta digitaalisia",
   "hero.title.line2": "Lahjakortteja",
   "hero.title.line3": "heti.",
   "hero.subtitle": "Lahjakortteja suosikkibrändeillesi. Toimitus minuuteissa.",
   "hero.browseCta": "Selaa kaikkia lahjakortteja",
-
   "search.placeholder": "Hae brändejä...",
   "search.clearAriaLabel": "Tyhjennä haku",
   "search.submit": "HAE",
-
   "categories.all": "Kaikki",
   "categories.shopping": "Ostokset",
   "categories.media": "Media",
@@ -27,17 +23,14 @@
   "categories.travel": "Matkailu",
   "categories.gaming": "Pelit",
   "categories.lifestyle": "Hyvinvointi",
-
   "product.from": "Alkaen",
   "product.range": "{min} - {max}",
   "product.buyCta": "Osta",
   "product.deliveryFast": "Välitön toimitus",
-
   "notFound.title": "Tuotetta ei löytynyt",
   "notFound.message": "Etsimääsi lahjakorttia ei valitettavasti löytynyt. Se on ehkä poistettu tai ei ole enää saatavilla.",
   "notFound.homeCta": "Takaisin etusivulle",
   "notFound.searchCta": "Selaa kaikkia",
-
   "landing.featureBenefits.heading": "Miksi ostaa Giftedistä",
   "landing.featureBenefits.instant.title": "Välitön toimitus",
   "landing.featureBenefits.instant.body": "Koodi sähköpostiisi minuuteissa — yleensä alle 5.",
@@ -53,5 +46,27 @@
   "landing.popular.viewAll": "Selaa kaikkia lahjakortteja",
   "landing.notFound.title": "Brändi ei ole saatavilla tällä alueella",
   "landing.notFound.message": "Tätä brändiä ei löytynyt sinun kielialueellasi. Se ei ehkä ole saatavilla tässä maassa, tai URL on virheellinen.",
-  "landing.notFound.homeCta": "Takaisin etusivulle"
+  "landing.notFound.homeCta": "Takaisin etusivulle",
+  "trust.instant.title": "Välitön toimitus",
+  "trust.instant.description": "Lahjakortit sähköpostiisi minuuteissa",
+  "trust.secure.title": "Turvallista ja luotettavaa",
+  "trust.secure.description": "Pankkitason salaus ja petossuojaus",
+  "trust.perfect.title": "Täydellinen joka kerta",
+  "trust.perfect.description": "Digitaalisilla lahjakorteillamme ei ole vanhentumispäivää",
+  "footer.tagline": "Digitaalisia lahjakortteja heti.",
+  "footer.products.heading": "Tuotteet",
+  "footer.products.browse": "Selaa kaikkia",
+  "footer.support.heading": "Tuki",
+  "footer.support.helpCenter": "Ohjekeskus",
+  "footer.support.contact": "Ota yhteyttä",
+  "footer.support.faq": "UKK",
+  "footer.company.heading": "Yritys",
+  "footer.company.about": "Tietoa meistä",
+  "footer.company.terms": "Käyttöehdot",
+  "footer.company.privacy": "Tietosuojakäytäntö",
+  "footer.stayInTouch.heading": "Pysy yhteydessä",
+  "footer.stayInTouch.body": "Seuraa päivityksiä ja uusia brändejä.",
+  "footer.copyright": "© {year} Gifted. Kaikki oikeudet pidätetään.",
+  "checkout.trust.securePayment": "Turvallinen maksu",
+  "checkout.trust.instantDelivery": "Välitön toimitus"
 }

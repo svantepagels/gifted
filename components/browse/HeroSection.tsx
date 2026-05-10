@@ -56,7 +56,7 @@ export function HeroSection({ messages }: HeroSectionProps) {
             initial="initial"
             animate="animate"
             transition={{ duration: 0.5 }}
-            className="font-archivo text-hero text-primary mb-4 uppercase leading-[0.95] tracking-tight"
+            className="font-archivo text-hero text-primary mb-4 uppercase leading-[0.95] tracking-tight break-words hyphens-auto"
           >
             {messages['hero.title.line1']}
             <br />
