@@ -37,109 +37,28 @@ export function Footer() {
             {m['footer.tagline']}
           </p>
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-          <div>
-            <h3 className="font-archivo text-title-md mb-4">
-              {m['footer.products.heading']}
-            </h3>
-            <ul className="space-y-2">
-              <li>
-                <Link
-                  href={href('/')}
-                  className="text-label-lg hover:text-surface-container-lowest transition-colors"
-                >
-                  {m['footer.products.browse']}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href={href('/?category=Shopping')}
-                  className="text-label-lg hover:text-surface-container-lowest transition-colors"
-                >
-                  {m['categories.shopping']}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href={href('/?category=Media')}
-                  className="text-label-lg hover:text-surface-container-lowest transition-colors"
-                >
-                  {m['categories.media']}
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="font-archivo text-title-md mb-4">
-              {m['footer.support.heading']}
-            </h3>
-            <ul className="space-y-2">
-              <li>
-                <Link
-                  href={href('/help')}
-                  className="text-label-lg hover:text-surface-container-lowest transition-colors"
-                >
-                  {m['footer.support.helpCenter']}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href={href('/contact')}
-                  className="text-label-lg hover:text-surface-container-lowest transition-colors"
-                >
-                  {m['footer.support.contact']}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href={href('/faq')}
-                  className="text-label-lg hover:text-surface-container-lowest transition-colors"
-                >
-                  {m['footer.support.faq']}
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="font-archivo text-title-md mb-4">
-              {m['footer.company.heading']}
-            </h3>
-            <ul className="space-y-2">
-              <li>
-                <Link
-                  href={href('/about')}
-                  className="text-label-lg hover:text-surface-container-lowest transition-colors"
-                >
-                  {m['footer.company.about']}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href={href('/terms')}
-                  className="text-label-lg hover:text-surface-container-lowest transition-colors"
-                >
-                  {m['footer.company.terms']}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href={href('/privacy')}
-                  className="text-label-lg hover:text-surface-container-lowest transition-colors"
-                >
-                  {m['footer.company.privacy']}
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="font-archivo text-title-md mb-4">
-              {m['footer.stayInTouch.heading']}
-            </h3>
-            <p className="text-label-md">{m['footer.stayInTouch.body']}</p>
-          </div>
+        <div>
+          <h3 className="font-archivo text-title-md mb-4">
+            {m['footer.company.heading']}
+          </h3>
+          <ul className="space-y-2">
+            <li>
+              <Link
+                href={href('/terms')}
+                className="text-label-lg hover:text-surface-container-lowest transition-colors"
+              >
+                {m['footer.company.terms']}
+              </Link>
+            </li>
+            <li>
+              <Link
+                href={href('/privacy')}
+                className="text-label-lg hover:text-surface-container-lowest transition-colors"
+              >
+                {m['footer.company.privacy']}
+              </Link>
+            </li>
+          </ul>
         </div>
 
         <div className="mt-12 pt-8 border-t border-primary-on-container/20">
