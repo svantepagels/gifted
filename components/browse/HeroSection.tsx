@@ -1,17 +1,6 @@
 import { Zap } from 'lucide-react';
 import type { Messages } from '@/lib/i18n/useMessages';
 
-const HERO_INITIALS = [
-  { letter: 'N', gradient: 'from-category-entertainment to-purple-400' },
-  { letter: 'G', gradient: 'from-category-shopping to-blue-400' },
-  { letter: 'A', gradient: 'from-category-shopping to-blue-400' },
-  { letter: 'S', gradient: 'from-category-food to-orange-400' },
-  { letter: 'X', gradient: 'from-category-gaming to-pink-400' },
-  { letter: 'T', gradient: 'from-category-travel to-cyan-400' },
-  { letter: 'U', gradient: 'from-category-lifestyle to-green-400' },
-  { letter: 'P', gradient: 'from-category-gaming to-pink-400' },
-];
-
 interface HeroSectionProps {
   messages: Messages;
 }
@@ -34,7 +23,7 @@ export function HeroSection({ messages }: HeroSectionProps) {
 
       <div className="relative grid grid-cols-1 md:grid-cols-12 md:gap-8 items-center">
         {/* Copy column */}
-        <div className="md:col-span-7 lg:col-span-7 text-center md:text-start">
+        <div className="md:col-span-12 lg:col-span-12 text-center md:text-start">
           <div
             className="inline-flex items-center gap-2 px-4 py-2 mb-6 bg-white/80 backdrop-blur-sm rounded-full shadow-sm border border-purple-100 animate-fade-in-up"
           >
@@ -69,20 +58,6 @@ export function HeroSection({ messages }: HeroSectionProps) {
           </a>
         </div>
 
-        {/* Decorative brand-initial rail — desktop/tablet only */}
-        <div className="hidden md:flex md:col-span-5 lg:col-span-5 items-center justify-end">
-          <div className="grid grid-cols-4 gap-3">
-            {HERO_INITIALS.map((b, i) => (
-              <div
-                key={i}
-                aria-hidden
-                className={`w-16 h-16 lg:w-20 lg:h-20 rounded-2xl bg-gradient-to-br ${b.gradient} flex items-center justify-center text-white font-archivo font-black text-2xl lg:text-3xl shadow-ambient`}
-              >
-                {b.letter}
-              </div>
-            ))}
-          </div>
-        </div>
       </div>
     </section>
   );
