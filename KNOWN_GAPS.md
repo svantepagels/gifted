@@ -56,6 +56,38 @@ The fulfillment email itself is delivered by Reloadly and is currently
 English-only. If we move email delivery in-house we can localize it; for
 now this is upstream-controlled.
 
+### Gifted-branded confirmation email (not yet built)
+
+Today the *only* email a customer receives after a successful purchase
+is the gift-card redemption email sent **by Reloadly** (from Reloadly's
+mail infrastructure, English-only, contains the code + PIN + brand
+instructions). Our `/success` page tells the customer their card is on
+the way, but we don't send a Gifted-branded confirmation of our own.
+
+**What's missing**
+
+- A Gifted-branded order confirmation email (sent from us, in the user's
+  locale, with order summary + reference number + support contact).
+- Optional: a follow-up "your code should have arrived — didn't get it?"
+  nudge after 1 hour.
+
+**Recommendation**
+
+Use **Resend** (https://resend.com). It's the cleanest fit: native React
+Email templates, one-line Next.js integration, EU region available,
+generous free tier (3k/month), and per-email pricing scales well at our
+forecast volume. Postmark and SendGrid are viable alternatives but
+heavier to integrate.
+
+**Why this is not blocking today**
+
+Reloadly's email delivers the actual redemption code — customers do
+receive what they bought. The gap is brand experience and locale
+coverage, not functionality.
+
+**Estimated work**: ~half a day for the integration, a day for templates
+across 6 locales.
+
 ### Locale-switcher persistence (cookie / middleware)
 
 The locale switcher still updates the URL prefix only. There is no

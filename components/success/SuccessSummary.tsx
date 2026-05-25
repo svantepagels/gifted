@@ -18,7 +18,9 @@ export function SuccessSummary({ order }: SuccessSummaryProps) {
   const m = getMessages(locale)
 
   // The transaction ID is the support reference; not redeemable on its own.
-  // The redemption code is emailed by Reloadly.
+  // The redemption code is emailed to the recipient. We surface the transaction
+  // reference here as a support handle, not a redeemable code.
+  // (Internal note: the actual email is dispatched by Reloadly today; see KNOWN_GAPS.md.)
   const transactionReference = order.fulfillment?.cardCode ?? order.paymentId ?? order.id
   const deliveryEmail =
     order.deliveryMethod === 'gift' && order.recipientEmail
