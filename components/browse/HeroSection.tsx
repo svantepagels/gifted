@@ -1,7 +1,3 @@
-'use client';
-
-import { motion } from 'framer-motion';
-import { fadeInUp, badgePulse } from '@/lib/animations/variants';
 import { Zap } from 'lucide-react';
 import type { Messages } from '@/lib/i18n/useMessages';
 
@@ -39,24 +35,18 @@ export function HeroSection({ messages }: HeroSectionProps) {
       <div className="relative grid grid-cols-1 md:grid-cols-12 md:gap-8 items-center">
         {/* Copy column */}
         <div className="md:col-span-7 lg:col-span-7 text-center md:text-start">
-          <motion.div
-            variants={badgePulse}
-            initial="initial"
-            animate="animate"
-            className="inline-flex items-center gap-2 px-4 py-2 mb-6 bg-white/80 backdrop-blur-sm rounded-full shadow-sm border border-purple-100"
+          <div
+            className="inline-flex items-center gap-2 px-4 py-2 mb-6 bg-white/80 backdrop-blur-sm rounded-full shadow-sm border border-purple-100 animate-fade-in-up"
           >
             <Zap className="w-4 h-4 text-accent-purple fill-accent-purple" />
             <span className="text-label-md text-primary font-medium">
               {messages['hero.badge']}
             </span>
-          </motion.div>
+          </div>
 
-          <motion.h1
-            variants={fadeInUp}
-            initial="initial"
-            animate="animate"
-            transition={{ duration: 0.5 }}
-            className="font-archivo text-hero text-primary mb-4 uppercase leading-[0.95] tracking-tight break-words hyphens-auto"
+          <h1
+            className="font-archivo text-hero text-primary mb-4 uppercase leading-[0.95] tracking-tight break-words hyphens-auto animate-fade-in-up"
+            style={{ animationDelay: '60ms' }}
           >
             {messages['hero.title.line1']}
             <br />
@@ -65,7 +55,7 @@ export function HeroSection({ messages }: HeroSectionProps) {
             </span>
             <br className="md:hidden" />
             <span className="md:ml-3">{messages['hero.title.line3']}</span>
-          </motion.h1>
+          </h1>
 
           <p className="font-inter text-hero-sub text-surface-on-surface-variant max-w-xl mx-auto md:mx-0 mb-6">
             {messages['hero.subtitle']}

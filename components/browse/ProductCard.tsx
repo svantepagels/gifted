@@ -1,12 +1,11 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { useState } from 'react';
-import { motion } from 'framer-motion';
 import { GiftCardProduct } from '@/lib/giftcards/types';
 import { useApp } from '@/contexts/AppContext';
 import { formatCurrencyForLocale } from '@/lib/i18n/format-currency';
-import { cardHover } from '@/lib/animations/variants';
 import {
   Zap,
   ShoppingBag,
@@ -27,6 +26,8 @@ import { categoryDisplayLabel } from '@/lib/i18n/category-label';
 interface ProductCardProps {
   product: GiftCardProduct;
   index?: number;
+  /** When true, render the logo with `priority` and `loading=eager`. Used for the first ~6 above-the-fold cards. */
+  priority?: boolean;
 }
 
 // Category Icon Mapping
@@ -100,7 +101,7 @@ const categoryColors: Record<
   },
 };
 
-export function ProductCard({ product, index = 0 }: ProductCardProps) {
+export function ProductCard({ product, index = 0, priority = false }: ProductCardProps) {
   const { selectedCountry } = useApp();
   const locale = useLocale();
   const m = getMessages(locale);
@@ -128,11 +129,9 @@ export function ProductCard({ product, index = 0 }: ProductCardProps) {
 
   return (
     <Link href={localeHref(locale, `/gift-card/${product.slug}`)}>
-      <motion.div
-        variants={cardHover}
-        initial="initial"
-        whileHover="hover"
-        className="group h-full"
+      <div
+        className="group h-full animate-card-in"
+        style={{ animationDelay: `${Math.min(index, 12) * 30}ms` }}
       >
         <div className="relative bg-surface-container-lowest rounded-xl overflow-hidden shadow-ambient hover:shadow-ambient-lg transition-all duration-300 h-full flex flex-col">
           {/* Category Gradient Accent Bar */}
@@ -158,13 +157,16 @@ export function ProductCard({ product, index = 0 }: ProductCardProps) {
 
             <div className="relative w-full h-full flex items-center justify-center">
               {showLogo ? (
-                /* eslint-disable-next-line @next/next/no-img-element */
-                <img
-                  src={product.logoUrl}
+                <Image
+                  src={product.logoUrl as string}
                   alt={`${product.brandName} logo`}
-                  loading="lazy"
+                  width={88}
+                  height={88}
+                  sizes="(min-width: 1280px) 96px, (min-width: 768px) 128px, 30vw"
+                  priority={priority}
+                  loading={priority ? 'eager' : 'lazy'}
                   onError={() => setLogoFailed(true)}
-                  className="max-w-[88px] max-h-[88px] object-contain transform group-hover:scale-105 transition-transform duration-300"
+                  className="max-w-[88px] max-h-[88px] w-auto h-auto object-contain transform group-hover:scale-105 transition-transform duration-300"
                 />
               ) : (
                 <div
@@ -224,7 +226,7 @@ export function ProductCard({ product, index = 0 }: ProductCardProps) {
             className={`absolute inset-0 rounded-xl border-2 border-transparent group-hover:border-current ${categoryStyle.text} opacity-0 group-hover:opacity-20 transition-opacity duration-300 pointer-events-none`}
           />
         </div>
-      </motion.div>
+      </div>
     </Link>
   );
 }

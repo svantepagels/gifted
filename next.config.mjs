@@ -3,7 +3,26 @@ import { withSentryConfig } from "@sentry/nextjs";
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: [],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'cdn.reloadly.com',
+        pathname: '/**',
+      },
+    ],
+    formats: ['image/avif', 'image/webp'],
+    // Logos render up to ~96px in cards, ~200px on PDP. Constrain the
+    // responsive sizes Next.js generates so the optimizer doesn't make
+    // huge variants we'll never serve.
+    imageSizes: [64, 96, 128, 192, 256],
+    deviceSizes: [640, 750, 828, 1080, 1200],
+  },
+  // Tree-shake lucide-react down to per-icon imports.
+  modularizeImports: {
+    'lucide-react': {
+      transform: 'lucide-react/dist/esm/icons/{{kebabCase member}}',
+      preventFullImport: true,
+    },
   },
   // Enable instrumentation for Sentry
   experimental: {
@@ -24,15 +43,9 @@ export default withSentryConfig(nextConfig, {
   org: "gifted-marketplace",
   project: "gifted",
 }, {
-  // Automatically tree-shake Sentry logger statements
-  widenClientFileUpload: true,
-  
-  // Transpile SDK to be compatible with IE11
-  transpileClientSDK: true,
-  
   // Hide source maps from generated client bundles
   hideSourceMaps: true,
-  
+
   // Automatically instrument Next.js data fetching methods
   automaticVercelMonitors: true,
 });

@@ -12,31 +12,24 @@ import { giftCardService } from '@/lib/giftcards/service'
 import { isLocale, type Locale } from '@/lib/i18n/config'
 import { getMessages } from '@/lib/i18n/useMessages'
 
-async function getProducts(searchParams: { q?: string; category?: string; country?: string }) {
-  return await giftCardService.getProducts({
-    search: searchParams.q,
-    category: searchParams.category,
-    countryCode: searchParams.country,
-  })
-}
-
-async function getCategories() {
-  return await giftCardService.getCategories()
-}
+// Make the home page statically rendered with ISR. Filtering by
+// search/category is done client-side in ProductGrid using
+// useSearchParams, so the server payload is the same for everyone.
+export const dynamic = 'force-static'
+export const revalidate = 600 // 10 min — Reloadly catalog rarely changes
 
 interface HomePageProps {
   params: { locale: string }
-  searchParams: { q?: string; category?: string; country?: string }
 }
 
-export default async function HomePage({ params, searchParams }: HomePageProps) {
+export default async function HomePage({ params }: HomePageProps) {
   if (!isLocale(params.locale)) notFound()
   const locale: Locale = params.locale
   const messages = getMessages(locale)
 
   const [products, categories] = await Promise.all([
-    getProducts(searchParams),
-    getCategories(),
+    giftCardService.getProducts({}),
+    giftCardService.getCategories(),
   ])
 
   return (
@@ -80,9 +73,7 @@ export default async function HomePage({ params, searchParams }: HomePageProps) 
             <ProductGrid products={products} />
           </div>
 
-          {/* Internal-link block to per-locale brand landing pages.
-              Wrapped in Suspense because PopularBrands is async and may
-              hit Reloadly during initial build. */}
+          {/* Internal-link block to per-locale brand landing pages. */}
           <Suspense fallback={null}>
             <PopularBrands locale={locale} messages={messages} />
           </Suspense>

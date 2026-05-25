@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from 'next'
 import type { ReactNode } from 'react'
 import { notFound } from 'next/navigation'
-import { Archivo, Inter, Playfair_Display } from 'next/font/google'
+import { Archivo, Inter } from 'next/font/google'
 import { AppProvider } from '@/contexts/AppContext'
 import { getAllCountries } from '@/lib/countries/data'
 import {
@@ -15,19 +15,15 @@ import '../globals.css'
 
 const archivo = Archivo({
   subsets: ['latin'],
+  weight: ['400', '600', '700', '900'],
   variable: '--font-archivo',
   display: 'swap',
 })
 
 const inter = Inter({
   subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
   variable: '--font-inter',
-  display: 'swap',
-})
-
-const playfair = Playfair_Display({
-  subsets: ['latin'],
-  variable: '--font-playfair',
   display: 'swap',
 })
 
@@ -118,7 +114,7 @@ export default async function LocaleLayout({
     <html
       lang={meta.hreflang}
       dir={meta.direction}
-      className={`${archivo.variable} ${inter.variable} ${playfair.variable}`}
+      className={`${archivo.variable} ${inter.variable}`}
     >
       <body>
         <AppProvider countries={countries}>{children}</AppProvider>

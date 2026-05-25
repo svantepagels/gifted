@@ -1,0 +1,1362 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Gifted — Pre-Launch Review</title>
+<style>
+  :root {
+    --ink: #0A1320;
+    --paper: #fbfaf7;
+    --muted: #6b7280;
+    --line: #e5e7eb;
+    --line-strong: #cdd2d8;
+    --accent: #1f4f8b;
+
+    --blocker-bg: #fde7e7;
+    --blocker-fg: #8a1212;
+    --blocker-border: #f3b8b8;
+
+    --high-bg: #ffe9d6;
+    --high-fg: #8a4a00;
+    --high-border: #f0c899;
+
+    --medium-bg: #fff5cc;
+    --medium-fg: #6e5500;
+    --medium-border: #ead389;
+
+    --low-bg: #e3f0e1;
+    --low-fg: #2b5f25;
+    --low-border: #b9d6b3;
+
+    --red-amber-green-red: #b91c1c;
+    --red-amber-green-amber: #b45309;
+    --red-amber-green-green: #166534;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, "Helvetica Neue", Arial, sans-serif;
+    color: var(--ink);
+    background: var(--paper);
+    line-height: 1.55;
+    font-size: 15px;
+  }
+  .page {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 48px 56px 96px;
+  }
+
+  header.masthead {
+    border-bottom: 2px solid var(--ink);
+    padding-bottom: 18px;
+    margin-bottom: 36px;
+  }
+  header.masthead .eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-size: 11px;
+    color: var(--muted);
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+  header.masthead h1 {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 42px;
+    line-height: 1.05;
+    margin: 0 0 6px;
+    letter-spacing: -0.01em;
+  }
+  header.masthead .meta {
+    font-size: 13px;
+    color: var(--muted);
+  }
+
+  h2 {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 26px;
+    margin: 48px 0 14px;
+    border-bottom: 1px solid var(--line-strong);
+    padding-bottom: 8px;
+    letter-spacing: -0.01em;
+  }
+  h3 {
+    font-size: 17px;
+    margin: 28px 0 8px;
+    letter-spacing: -0.005em;
+  }
+  h4 {
+    font-size: 14px;
+    margin: 20px 0 6px;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: var(--muted);
+    font-weight: 700;
+  }
+
+  p { margin: 0 0 12px; }
+  code, .code, .path {
+    font-family: "SF Mono", "JetBrains Mono", Menlo, Consolas, monospace;
+    font-size: 12.5px;
+    background: #f1efe9;
+    border: 1px solid var(--line);
+    padding: 1px 5px;
+    border-radius: 3px;
+    color: #2b2b2b;
+    white-space: nowrap;
+  }
+  .path { white-space: nowrap; }
+  pre {
+    background: #1b212b;
+    color: #f1f5fb;
+    padding: 14px 16px;
+    border-radius: 4px;
+    overflow-x: auto;
+    font-family: "SF Mono", "JetBrains Mono", Menlo, Consolas, monospace;
+    font-size: 12.5px;
+    line-height: 1.5;
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 13.5px;
+    margin: 6px 0 18px;
+  }
+  th, td {
+    border: 1px solid var(--line);
+    padding: 8px 10px;
+    text-align: left;
+    vertical-align: top;
+  }
+  th {
+    background: #efece5;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: 1px;
+  }
+  tr:nth-child(even) td { background: #fafaf6; }
+
+  .pill {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 999px;
+    font-size: 10.5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    border: 1px solid transparent;
+    white-space: nowrap;
+  }
+  .pill.blocker  { background: var(--blocker-bg); color: var(--blocker-fg); border-color: var(--blocker-border); }
+  .pill.high     { background: var(--high-bg);    color: var(--high-fg);    border-color: var(--high-border); }
+  .pill.medium   { background: var(--medium-bg);  color: var(--medium-fg);  border-color: var(--medium-border); }
+  .pill.low      { background: var(--low-bg);     color: var(--low-fg);     border-color: var(--low-border); }
+  .pill.s, .pill.m, .pill.l { background: #efece5; color: #2b2b2b; border-color: var(--line-strong); }
+
+  .verdict {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 20px;
+    border-radius: 6px;
+    border: 2px solid;
+    margin: 8px 0 20px;
+  }
+  .verdict.red   { background: #fde7e7; border-color: var(--red-amber-green-red); }
+  .verdict.amber { background: #fff5cc; border-color: var(--red-amber-green-amber); }
+  .verdict.green { background: #e3f0e1; border-color: var(--red-amber-green-green); }
+  .verdict .dot {
+    width: 24px; height: 24px; border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .verdict.red   .dot { background: var(--red-amber-green-red); }
+  .verdict.amber .dot { background: var(--red-amber-green-amber); }
+  .verdict.green .dot { background: var(--red-amber-green-green); }
+  .verdict .label {
+    font-weight: 800;
+    font-size: 18px;
+    letter-spacing: 0.5px;
+  }
+  .verdict.red   .label { color: var(--red-amber-green-red); }
+  .verdict.amber .label { color: var(--red-amber-green-amber); }
+  .verdict.green .label { color: var(--red-amber-green-green); }
+
+  .tldr {
+    background: #ffffff;
+    border: 1px solid var(--line-strong);
+    border-left: 6px solid var(--ink);
+    padding: 18px 22px;
+    border-radius: 4px;
+    margin-bottom: 18px;
+    font-size: 15px;
+  }
+  .tldr strong { font-weight: 700; }
+
+  ol.top5 {
+    counter-reset: t;
+    list-style: none;
+    padding-left: 0;
+    margin: 8px 0 24px;
+  }
+  ol.top5 li {
+    counter-increment: t;
+    padding: 12px 14px 12px 56px;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    margin-bottom: 10px;
+    background: #ffffff;
+    position: relative;
+  }
+  ol.top5 li::before {
+    content: counter(t);
+    position: absolute;
+    left: 14px; top: 11px;
+    width: 30px; height: 30px;
+    border-radius: 50%;
+    background: var(--ink);
+    color: #fff;
+    font-weight: 800;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px;
+  }
+  ol.top5 li .why {
+    color: var(--muted);
+    font-size: 13px;
+    margin-top: 4px;
+  }
+
+  .risk-card {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 14px 18px;
+    background: #ffffff;
+    margin-bottom: 14px;
+  }
+  .risk-card .head {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+    margin-bottom: 4px;
+  }
+  .risk-card .head h4 {
+    margin: 0;
+    color: var(--ink);
+    text-transform: none;
+    font-size: 16px;
+    letter-spacing: 0;
+    font-weight: 700;
+    flex: 1 1 auto;
+  }
+  .risk-card .grid {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 6px 14px;
+    margin-top: 8px;
+    font-size: 13.5px;
+  }
+  .risk-card .grid div.k {
+    color: var(--muted);
+    font-size: 11.5px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    padding-top: 2px;
+  }
+
+  .legend {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin: 0 0 14px;
+  }
+
+  .callout {
+    background: #fff;
+    border: 1px solid var(--line-strong);
+    padding: 12px 16px;
+    border-radius: 4px;
+    margin: 14px 0;
+    font-size: 13.5px;
+  }
+  .callout.warn { border-left: 4px solid var(--red-amber-green-amber); }
+  .callout.fail { border-left: 4px solid var(--red-amber-green-red); }
+  .callout.ok   { border-left: 4px solid var(--red-amber-green-green); }
+
+  hr {
+    border: none;
+    border-top: 1px solid var(--line);
+    margin: 32px 0;
+  }
+
+  footer.colophon {
+    margin-top: 64px;
+    border-top: 2px solid var(--ink);
+    padding-top: 14px;
+    font-size: 12px;
+    color: var(--muted);
+  }
+
+  @media print {
+    body { background: #fff; }
+    .page { padding: 24px 32px; max-width: none; }
+    .risk-card, .callout, ol.top5 li { break-inside: avoid; }
+    pre, table { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+<header class="masthead">
+  <div class="eyebrow">CONFIDENTIAL · PRE-LAUNCH AUDIT</div>
+  <h1>Gifted — Pre-Launch Review</h1>
+  <div class="meta">
+    Repository: <code>gifted-project</code> ·
+    Tag: <code>d4e2e23</code> ·
+    Stack: Next.js 14.2.18 (App Router) · TypeScript · Upstash Redis · Reloadly · Sentry ·
+    Reviewed: 2026-05-22
+  </div>
+</header>
+
+<!-- ========= EXECUTIVE SUMMARY ========= -->
+<h2>Executive Summary</h2>
+
+<div class="tldr">
+<strong>TL;DR.</strong> Gifted is a polished, well-typed, internationalized
+Next.js front end sitting on top of a checkout flow that is <strong>not yet
+safe to put in front of paying customers</strong>. The single largest issue
+is unchanged from the April code review: there is no payment processor in
+the loop &mdash; the &ldquo;Complete Purchase&rdquo; CTA charges nothing and
+dispenses a real Reloadly gift card. Several structural blockers remain on
+top of that: no Upstash Redis credentials in Vercel production (so the
+order repo falls back to per-instance in-memory <code>Map</code>), no
+security headers, no legal pages despite the footer linking to them, an
+IDOR-style order lookup, and four <code>npm audit</code> vulnerabilities
+including a Next.js critical (cache poisoning) and high (DoS via Server
+Components).
+</div>
+
+<div class="verdict red" role="status" aria-label="Launch readiness: RED">
+  <div class="dot" aria-hidden="true"></div>
+  <div>
+    <div class="label">LAUNCH READINESS: RED — DO NOT LAUNCH</div>
+    <div style="font-size: 13px; color: var(--ink); opacity: 0.8;">
+      At least one finding (no payment capture) makes paid launch
+      financially catastrophic. Resolve all five must-fix items below before
+      any external traffic.
+    </div>
+  </div>
+</div>
+
+<h3 style="margin-top: 24px;">Top 5 must-fix-before-launch</h3>
+<ol class="top5">
+  <li>
+    <strong>Wire a real payment processor before <code>/api/reloadly/order</code> can be reached.</strong>
+    <div class="why">
+      Right now the checkout button calls <code>processOrder()</code>
+      &rarr; <code>POST /api/reloadly/order</code> &rarr; Reloadly
+      fulfillment, with no payment capture anywhere in between. Self-acknowledged
+      in <span class="path">lib/orders/api.ts:64&ndash;67</span>:
+      &ldquo;will happily charge $0 to the customer and hand out a real gift card &mdash;
+      do not expose publicly.&rdquo; This is the same blocker the April Opus
+      code review flagged; <span class="path">P0_FIXES_REPORT.md</span> confirms
+      it is still open.
+    </div>
+  </li>
+  <li>
+    <strong>Set <code>UPSTASH_REDIS_REST_URL</code> + <code>UPSTASH_REDIS_REST_TOKEN</code> in Vercel production.</strong>
+    <div class="why">
+      Verified via <code>vercel env ls production</code> — only Reloadly creds are present.
+      Without Redis env, <span class="path">lib/orders/repository.ts:178&ndash;199</span> falls
+      back to an in-memory <code>Map</code>, which loses orders across
+      serverless instances. Same applies to rate limiting:
+      <span class="path">lib/rate-limit.ts:93&ndash;100</span> explicitly disables
+      rate limiting in production when Redis is absent — endpoints become
+      fully open.
+    </div>
+  </li>
+  <li>
+    <strong>Add security headers (CSP, HSTS, X-Frame-Options, Referrer-Policy, Permissions-Policy).</strong>
+    <div class="why">
+      <span class="path">next.config.mjs</span> has no <code>headers()</code>
+      export and <span class="path">middleware.ts</span> sets no response
+      headers. A gift-card site with no CSP and no clickjacking protection
+      is a no-go. ~30 min to add.
+    </div>
+  </li>
+  <li>
+    <strong>Write and publish legal pages: Terms, Privacy, Cookie Policy, Refund Policy. Stop linking to 404s.</strong>
+    <div class="why">
+      Footer (<span class="path">components/layout/Footer.tsx:120,128</span>) links to
+      <code>/[locale]/terms</code>, <code>/[locale]/privacy</code>, <code>/[locale]/help</code>,
+      <code>/[locale]/contact</code>, <code>/[locale]/faq</code>, <code>/[locale]/about</code>
+      &mdash; none of which exist under <span class="path">app/[locale]/</span>. They all
+      return the localized 404. GDPR (EU locales: fi-FI, en-IE, pl-PL, el-GR, en-MT)
+      requires Privacy + Cookie at minimum, and gift-card resale typically
+      requires explicit Terms and a No-Refund clause.
+    </div>
+  </li>
+  <li>
+    <strong>Rotate the Reloadly credentials that have been sitting in <code>.env.local</code> and in dev/swarm contexts.</strong>
+    <div class="why">
+      The <code>RELOADLY_CLIENT_SECRET</code> in
+      <span class="path">.env.local</span> has been in committed development
+      artifacts and shared agent contexts for 41+ days
+      (<code>vercel env ls</code> shows it was uploaded 41d ago). The file
+      itself is <code>.gitignore</code>'d, but a credential that has been on
+      multiple disks and agent inputs should not be the one that touches
+      production. Rotate in the Reloadly dashboard, push the new value to
+      Vercel, redeploy.
+    </div>
+  </li>
+</ol>
+
+<!-- ========= LAUNCH READINESS CHECKLIST ========= -->
+<h2>1. Launch Readiness Checklist</h2>
+
+<div class="legend">
+  <span class="pill blocker">Blocker</span>
+  <span class="pill high">High</span>
+  <span class="pill medium">Medium</span>
+  <span class="pill low">Low</span>
+</div>
+
+<h3>1.1 Checkout & Order Lifecycle</h3>
+<table>
+  <thead>
+    <tr>
+      <th style="width: 100px;">Severity</th>
+      <th>Finding</th>
+      <th style="width: 250px;">Location</th>
+      <th>What to do</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><span class="pill blocker">Blocker</span></td>
+      <td>No payment capture. <code>POST /api/reloadly/order</code> validates a
+      pending order against Reloadly denominations and immediately calls
+      <code>reloadlyClient.placeOrder()</code> with the full unit price. No
+      charge, no auth, no idempotency token.</td>
+      <td class="path">app/api/reloadly/order/route.ts:148&ndash;186<br>lib/orders/api.ts:64&ndash;82</td>
+      <td>Integrate a PSP (Stripe Payment Element recommended) with 3DS
+      enforced and webhook-driven fulfillment. Gate Reloadly call behind a
+      confirmed <code>payment_intent.succeeded</code>. Add idempotency key
+      (Redis <code>SETNX</code> on <code>orderId</code>) so the call can't
+      run twice.</td>
+    </tr>
+    <tr>
+      <td><span class="pill blocker">Blocker</span></td>
+      <td>Order repository silently falls back to per-instance
+      <code>Map</code> in production when Upstash env vars are missing.
+      Each warm Lambda has its own Map; orders created on instance A may
+      404 from instance B.</td>
+      <td class="path">lib/orders/repository.ts:178&ndash;199</td>
+      <td>Configure <code>UPSTASH_REDIS_REST_URL</code> /
+      <code>UPSTASH_REDIS_REST_TOKEN</code> in Vercel. Change the fallback
+      from a console warning + <code>MemoryOrderRepository</code> to a hard
+      throw in <code>NODE_ENV=production</code>. Today this is documented
+      but not enforced, and the comment in code disagrees with
+      <span class="path">P0_FIXES_REPORT.md</span> which claims it
+      &ldquo;throws&rdquo;.</td>
+    </tr>
+    <tr>
+      <td><span class="pill blocker">Blocker</span></td>
+      <td>Rate limiting disabled in production when Redis env is missing
+      (see above). <code>/api/reloadly/order</code> would be completely
+      open at launch given current Vercel env.</td>
+      <td class="path">lib/rate-limit.ts:93&ndash;100, 132&ndash;160</td>
+      <td>Same fix as #1.2 above: configure Upstash. The strict limiter
+      (3 req/min) is correctly designed; it just isn't running.</td>
+    </tr>
+    <tr>
+      <td><span class="pill high">High</span></td>
+      <td>No Reloadly webhook handler. PENDING orders that later flip to
+      FAILED at Reloadly leave the user on a success page with no
+      recourse and no email. Acknowledged in
+      <span class="path">app/api/reloadly/order/route.ts:213&ndash;215</span>.</td>
+      <td class="path">no <code>app/api/webhooks/reloadly/*</code></td>
+      <td>Add <code>POST /api/webhooks/reloadly/transaction-status</code>
+      with HMAC signature verification. On FAILED: <code>updateStatus</code>
+      &rarr; <code>'failed'</code>, trigger refund-or-credit flow, email
+      buyer.</td>
+    </tr>
+    <tr>
+      <td><span class="pill high">High</span></td>
+      <td>Idempotency: only a 409 short-circuit on already-<code>completed</code>
+      orders. Double-click between &ldquo;processing&rdquo; status update and
+      Reloadly response can still result in two real fulfillments.</td>
+      <td class="path">app/api/reloadly/order/route.ts:151&ndash;156</td>
+      <td>Acquire a distributed lock (Upstash <code>SET key NX EX</code>)
+      keyed on <code>orderId</code> before
+      <code>updateStatus('processing')</code>. Release on completion or
+      failure. Reloadly already accepts a <code>customIdentifier</code> —
+      use it as the lock key.</td>
+    </tr>
+    <tr>
+      <td><span class="pill high">High</span></td>
+      <td>Order GET endpoint has no ownership check. Anyone with a valid
+      <code>ORD-&lt;uuid&gt;</code> can fetch the order including
+      <code>customerEmail</code>, <code>recipientEmail</code>,
+      <code>giftMessage</code>, <code>paymentId</code>. UUIDv4 unguessability
+      is the only protection.</td>
+      <td class="path">app/api/orders/[id]/route.ts:18&ndash;48</td>
+      <td>Either: (a) issue a short-lived signed JWT (HS256, 15&nbsp;min, claim
+      <code>{orderId}</code>) when the order is created and require it as a
+      header/cookie on subsequent GETs; or (b) store an HMAC of the order
+      ID in an httpOnly cookie at creation and check on GET. Option (b) is
+      simpler and matches the guest-checkout flow.</td>
+    </tr>
+    <tr>
+      <td><span class="pill high">High</span></td>
+      <td>Sender name is derived from email local-part
+      (<code>customerEmail.split('@')[0]</code>) and shipped to Reloadly /
+      printed on the gift card email. Looks unprofessional and leaks email
+      shape.</td>
+      <td class="path">app/api/reloadly/order/route.ts:178&ndash;181</td>
+      <td>Add a <code>senderName</code> field to the checkout form (Zod
+      schema in <span class="path">components/checkout/CheckoutForm.tsx</span>),
+      max 60 chars, validated. Required only for <code>deliveryMethod === 'gift'</code>.</td>
+    </tr>
+    <tr>
+      <td><span class="pill medium">Medium</span></td>
+      <td>Error UX uses native <code>alert()</code> in checkout.</td>
+      <td class="path">app/[locale]/checkout/page.tsx:50</td>
+      <td>Replace with toast/inline error banner. Already flagged P1 in
+      <span class="path">P0_FIXES_REPORT.md</span> &ldquo;Known issues, still open&rdquo;.</td>
+    </tr>
+    <tr>
+      <td><span class="pill medium">Medium</span></td>
+      <td>Hard-coded fallback hostname <code>https://gifted.app</code> used
+      as <code>metadataBase</code> if <code>NEXT_PUBLIC_SITE_URL</code> is
+      unset. Will produce wrong OG/Twitter image URLs at preview/staging.</td>
+      <td class="path">app/[locale]/layout.tsx:67</td>
+      <td>Set <code>NEXT_PUBLIC_SITE_URL</code> in Vercel for every
+      environment. Add a build-time check.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>1.2 Security & Headers</h3>
+<table>
+  <thead>
+    <tr><th style="width: 100px;">Severity</th><th>Finding</th><th style="width: 250px;">Location</th><th>What to do</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><span class="pill blocker">Blocker</span></td>
+      <td>No security response headers anywhere: no CSP, no HSTS, no
+      X-Frame-Options / <code>frame-ancestors</code>, no Referrer-Policy,
+      no Permissions-Policy, no X-Content-Type-Options.</td>
+      <td class="path">next.config.mjs (no <code>headers()</code>)<br>middleware.ts (no headers set)</td>
+      <td>Add a <code>headers()</code> export in <code>next.config.mjs</code>:
+      <pre>async headers() {
+  return [{ source: '/(.*)', headers: [
+    { key: 'Strict-Transport-Security', value: 'max-age=63072000; includeSubDomains; preload' },
+    { key: 'X-Frame-Options', value: 'DENY' },
+    { key: 'X-Content-Type-Options', value: 'nosniff' },
+    { key: 'Referrer-Policy', value: 'strict-origin-when-cross-origin' },
+    { key: 'Permissions-Policy', value: 'camera=(), microphone=(), geolocation=()' },
+    { key: 'Content-Security-Policy', value: "default-src 'self'; script-src 'self' 'unsafe-inline' https://*.sentry.io; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://*.sentry.io https://*.upstash.io https://*.reloadly.com; frame-ancestors 'none'" },
+  ]}];
+}</pre>
+      Tune CSP nonces once the inline script footprint is known. The
+      Next.js <code>next/font</code> integration emits inline styles —
+      <code>'unsafe-inline'</code> on <code>style-src</code> stays until you wire nonces.</td>
+    </tr>
+    <tr>
+      <td><span class="pill blocker">Blocker</span></td>
+      <td>4 <code>npm audit</code> vulnerabilities in production
+      dependencies on the current Next 14.2.18: <strong>1 critical</strong>
+      (cache poisoning in RSC responses, <code>GHSA-wfc6-r584-vfw7</code>),
+      <strong>1 high</strong> (DoS via Server Components,
+      <code>GHSA-q4gf-8mx6-v5v3</code>), <strong>2 moderate</strong>
+      including PostCSS XSS via unescaped <code>&lt;/style&gt;</code>.</td>
+      <td class="path">package.json (next 14.2.18)</td>
+      <td>Pin Next to the latest <strong>14.2.x</strong> patch
+      (14.2.32+) which carries the security fixes without the v15/v16
+      breaking change. <code>npm audit fix</code> proposes <code>next@16.2.6</code>
+      which is a major upgrade — defer that to a follow-up.</td>
+    </tr>
+    <tr>
+      <td><span class="pill high">High</span></td>
+      <td>No CSRF protection on state-changing endpoints. Both
+      <code>POST /api/orders</code> and <code>POST /api/reloadly/order</code>
+      accept JSON from any origin, and no <code>Origin</code> /
+      <code>Referer</code> check exists.</td>
+      <td class="path">app/api/orders/route.ts<br>app/api/reloadly/order/route.ts</td>
+      <td>Once payment is in place this is partly mitigated by the PSP
+      flow, but add an explicit <code>Origin</code> allowlist for non-GET
+      requests in <code>middleware.ts</code>. Reject cross-origin POSTs.
+      Also consider <code>SameSite=Lax</code> session cookie if/when
+      sessions are added.</td>
+    </tr>
+    <tr>
+      <td><span class="pill high">High</span></td>
+      <td>Real-looking Reloadly client secret has been on disk in
+      <code>.env.local</code> for 41+ days and has likely been visible to
+      agent/swarm contexts. The current Vercel production secret was
+      uploaded the same day (41d ago).</td>
+      <td class="path">.env.local:3</td>
+      <td>Rotate now: regenerate in Reloadly dashboard, update Vercel
+      production via <code>vercel env add</code>, redeploy. Confirmed
+      <code>.gitignore</code> excludes <code>.env*.local</code> — not in
+      git history — but rotation is still the right move.</td>
+    </tr>
+    <tr>
+      <td><span class="pill medium">Medium</span></td>
+      <td>API endpoints share rate-limit buckets only by IP. Behind
+      Cloudflare/Vercel headers the IP can be the same for an entire
+      mobile carrier NAT range; legitimate traffic spikes can hit the
+      strict 3/min limit.</td>
+      <td class="path">lib/rate-limit.ts:204&ndash;220</td>
+      <td>Composite key: <code>${ip}:${orderId or productId}</code>. Keeps
+      one bad actor from blocking a whole carrier. Also: the
+      <code>getIP</code> &ldquo;use last&rdquo; rule on <code>X-Forwarded-For</code>
+      is correct for Vercel but worth a unit test.</td>
+    </tr>
+    <tr>
+      <td><span class="pill medium">Medium</span></td>
+      <td>No bot protection on <code>POST /api/orders</code>. An attacker
+      can mass-create pending orders (Redis SET writes, 7-day TTL) cheaply.</td>
+      <td class="path">app/api/orders/route.ts:39&ndash;52</td>
+      <td>Add Cloudflare Turnstile / hCaptcha on the
+      &ldquo;Continue to Checkout&rdquo; CTA. Or, cheaper: lower the per-IP
+      ceiling on <code>/api/orders</code> from 10/10s to 3/min and require
+      a Vercel-issued ephemeral token from the PDP page (signed in a
+      hidden form field).</td>
+    </tr>
+    <tr>
+      <td><span class="pill medium">Medium</span></td>
+      <td>No request ID propagated to the client on errors. The 500
+      response includes a server-generated <code>requestId</code>
+      (good) but it is not echoed to support docs, and there is no
+      <code>X-Request-Id</code> response header for the client/log
+      correlation.</td>
+      <td class="path">app/api/reloadly/order/route.ts:243&ndash;249</td>
+      <td>Add <code>X-Request-Id</code> response header on all routes,
+      render it on error states in the UI so support can grep Sentry.</td>
+    </tr>
+    <tr>
+      <td><span class="pill low">Low</span></td>
+      <td><code>console.log</code> noise still present (50 hits across
+      <code>app/</code>, <code>lib/</code>, <code>components/</code>),
+      including <code>[ReloadlyClient] Placing order:</code> with full
+      order payload in <span class="path">lib/reloadly/client.ts:250</span>.
+      Goes to Vercel logs, which are visible to anyone with project
+      access.</td>
+      <td class="path">grep -rn 'console.log' app/ lib/ components/</td>
+      <td>Sweep all <code>console.log</code> calls. Replace with
+      structured logger (e.g. <code>pino</code>) or remove. Sentry breadcrumbs
+      already cover errors. Already flagged P1 in
+      <span class="path">P0_FIXES_REPORT.md</span> "Known issues, still open".</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>1.3 Legal, Compliance & Content</h3>
+<table>
+  <thead>
+    <tr><th style="width: 100px;">Severity</th><th>Finding</th><th style="width: 250px;">Location</th><th>What to do</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><span class="pill blocker">Blocker</span></td>
+      <td>Footer links to legal pages that don't exist. Clicking
+      &ldquo;Terms&rdquo; / &ldquo;Privacy&rdquo; / &ldquo;Help Center&rdquo; /
+      &ldquo;Contact&rdquo; / &ldquo;FAQ&rdquo; / &ldquo;About&rdquo; all
+      route to the localized 404 page. <code>app/[locale]/</code> contains
+      only <code>buy/</code>, <code>checkout/</code>, <code>gift-card/</code>,
+      <code>success/</code>, <code>page.tsx</code>, <code>layout.tsx</code>,
+      <code>not-found.tsx</code>.</td>
+      <td class="path">components/layout/Footer.tsx:84,93,102,112,120,128<br>app/[locale]/</td>
+      <td>At minimum publish: Terms of Service, Privacy Policy, Cookie
+      Policy, Refund Policy, Contact, FAQ. Translate to all 9 launch
+      locales or ship en + an &ldquo;available in English&rdquo; banner. EU
+      locales (fi-FI, en-IE, pl-PL, el-GR, en-MT) need GDPR-compliant
+      Privacy + cookie banner before serving traffic.</td>
+    </tr>
+    <tr>
+      <td><span class="pill blocker">Blocker</span></td>
+      <td>No cookie consent banner. Sentry session cookie + future
+      analytics cookies require consent under GDPR/ePrivacy in EU
+      locales.</td>
+      <td class="path">no consent banner in components/</td>
+      <td>Add Cookiebot, Klaro, or a custom banner. Block Sentry replay
+      (currently not used &mdash; verify) and any future PostHog
+      <code>autocapture</code> until consent is given.</td>
+    </tr>
+    <tr>
+      <td><span class="pill high">High</span></td>
+      <td>No explicit "no refund / digital goods exception" disclosure.
+      Gift cards are typically non-refundable, but EU consumer law
+      requires this be stated <em>before</em> purchase, with the buyer
+      explicitly waiving the 14-day right of withdrawal. Currently no
+      checkbox, no disclosure.</td>
+      <td class="path">components/checkout/CheckoutForm.tsx</td>
+      <td>Add a required &ldquo;I agree to the Terms and waive my right of
+      withdrawal&rdquo; checkbox. Default unchecked. Disable submit until
+      checked. Mirror the language used by Steam / Apple App Store gift
+      cards.</td>
+    </tr>
+    <tr>
+      <td><span class="pill high">High</span></td>
+      <td>No age gate / age confirmation. Some gift-card brands (alcohol,
+      gambling adjacent) require 18+ confirmation. Reloadly's catalog
+      includes brands like Just Eat / Uber, which carry age-restricted
+      sub-categories.</td>
+      <td class="path">checkout flow</td>
+      <td>Defer until/unless catalog includes age-restricted brands.
+      Flag for legal review pre-launch given Reloadly's full
+      product set.</td>
+    </tr>
+    <tr>
+      <td><span class="pill medium">Medium</span></td>
+      <td>Brand marketing copy on <code>/[locale]/buy/[brand]</code> is
+      English-only by design (documented in <span class="path">KNOWN_GAPS.md</span>).
+      Up to 5 sentinel hits allowed in the locale leak test.</td>
+      <td class="path">lib/landing-pages/copy.ts</td>
+      <td>Acceptable for launch per existing decision. Lower the
+      sentinel allowance to zero once marketing input arrives.</td>
+    </tr>
+    <tr>
+      <td><span class="pill medium">Medium</span></td>
+      <td>Reloadly-supplied per-brand <code>redemptionInstructions</code>
+      and the post-purchase fulfillment email are English-only.</td>
+      <td class="path">documented in KNOWN_GAPS.md</td>
+      <td>Acceptable for v1 (upstream-controlled). Add a localized "the
+      full instructions in the email are in English" disclaimer on the
+      PDP for non-en locales. Plan to move email in-house post-launch.</td>
+    </tr>
+    <tr>
+      <td><span class="pill low">Low</span></td>
+      <td><code>robots.txt</code> and <code>sitemap.xml</code> both 404.</td>
+      <td class="path">middleware.ts:18 (route declared, file absent)</td>
+      <td>Add <code>app/robots.ts</code> and <code>app/sitemap.ts</code>
+      (Next.js file conventions). For 9 locales &times; viable brands +
+      static pages this is a 30-line script. Documented in
+      <span class="path">KNOWN_GAPS.md</span>.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>1.4 Analytics & Observability</h3>
+<table>
+  <thead>
+    <tr><th style="width: 100px;">Severity</th><th>Finding</th><th style="width: 250px;">Location</th><th>What to do</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><span class="pill high">High</span></td>
+      <td>No product analytics. Comment in code &ldquo;Route this through
+      PostHog or a dedicated analytics pipeline when we wire one up&rdquo; is
+      still accurate &mdash; nothing is wired.</td>
+      <td class="path">app/api/reloadly/order/route.ts:217&ndash;220</td>
+      <td>Add server-side PostHog (or Segment) for: order created, order
+      processed, fulfillment succeeded/failed, page views (server-side to
+      avoid GDPR consent gating). Decide owner: probably PostHog given
+      <span class="path">.env.example</span> already includes
+      <code>NEXT_PUBLIC_POSTHOG_KEY</code> placeholders.</td>
+    </tr>
+    <tr>
+      <td><span class="pill high">High</span></td>
+      <td>Sentry DSN not configured in Vercel production
+      (<code>NEXT_PUBLIC_SENTRY_DSN</code> absent from
+      <code>vercel env ls production</code>). The
+      <code>captureException</code> calls fire into the void.</td>
+      <td class="path">sentry.server.config.ts:31<br>vercel env (verified)</td>
+      <td>Create the Sentry project under
+      <code>gifted-marketplace/gifted</code> (already configured in
+      <span class="path">next.config.mjs:24&ndash;25</span>), copy the DSN to
+      Vercel, redeploy. Without this, the only production error visibility
+      is Vercel logs.</td>
+    </tr>
+    <tr>
+      <td><span class="pill medium">Medium</span></td>
+      <td>Instrumentation references mismatched env var name
+      (<code>SENTRY_DSN</code> in
+      <span class="path">instrumentation.ts:30</span> but the actual
+      Sentry init uses <code>NEXT_PUBLIC_SENTRY_DSN</code>). Warning will
+      always fire even when Sentry is configured correctly.</td>
+      <td class="path">instrumentation.ts:30</td>
+      <td>Change to <code>NEXT_PUBLIC_SENTRY_DSN</code>. Already flagged
+      open in <span class="path">P0_FIXES_REPORT.md</span>.</td>
+    </tr>
+    <tr>
+      <td><span class="pill medium">Medium</span></td>
+      <td>No uptime monitor / synthetic checkout test. A broken Reloadly
+      auth flow would only surface when a customer fails to buy.</td>
+      <td>—</td>
+      <td>Vercel monitors (already enabled via
+      <span class="path">next.config.mjs:33</span> <code>automaticVercelMonitors</code>)
+      cover route health. Add an external check
+      (Better Stack / Checkly) that exercises <code>GET /api/reloadly/products?country=IE</code>
+      every 5 min.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>1.5 UX, A11y, Mobile, Performance</h3>
+<table>
+  <thead>
+    <tr><th style="width: 100px;">Severity</th><th>Finding</th><th style="width: 250px;">Location</th><th>What to do</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><span class="pill medium">Medium</span></td>
+      <td>No skeleton/loading states on key transitions; the checkout
+      page shows a spinner-only state while the order is fetched. On
+      slow networks the user sees a blank screen for several seconds.</td>
+      <td class="path">app/[locale]/checkout/page.tsx:80&ndash;90</td>
+      <td>Skeletonize the order-review block. The data needed for the
+      skeleton (productName, amount, currency) is in
+      <code>browserOrderStorage</code> as an optimistic cache —
+      use it.</td>
+    </tr>
+    <tr>
+      <td><span class="pill medium">Medium</span></td>
+      <td>Brand logo cells render a single-letter placeholder for every
+      product (still flagged "Untouched" in P0). The catalog has
+      thousands of brands; missing logos hurt conversion.</td>
+      <td class="path">components/browse/ProductCard.tsx + P0_FIXES_REPORT.md</td>
+      <td>Use Reloadly's <code>logoUrls[]</code> from the product payload,
+      with <code>next/image</code> + remote pattern allowlist. Fallback to
+      letter only if all URLs 404.</td>
+    </tr>
+    <tr>
+      <td><span class="pill medium">Medium</span></td>
+      <td>No "no-JS" graceful degradation on PDP. <code>'use client'</code>
+      on the product-detail client means denomination selection and CTA
+      don't work without JS. SEO crawlers see the server-rendered shell
+      (good) but a user with a JS error sees a dead button.</td>
+      <td class="path">app/[locale]/gift-card/[slug]/ + components/product/</td>
+      <td>Acceptable for v1 given target audience, but add an
+      <code>&lt;noscript&gt;</code> banner that says "JavaScript is
+      required to complete checkout".</td>
+    </tr>
+    <tr>
+      <td><span class="pill medium">Medium</span></td>
+      <td>Translation confidence: el-GR and Arabic (ar-AE/ar-SA) are
+      rated "medium" in <span class="path">KNOWN_GAPS.md</span> — formally
+      correct but not native-edited. Acceptable for soft launch, risky
+      for paid acquisition spend.</td>
+      <td class="path">lib/i18n/messages/{el-GR,ar-AE,ar-SA}.json</td>
+      <td>Get native review before turning on paid traffic in those
+      locales. Already known.</td>
+    </tr>
+    <tr>
+      <td><span class="pill low">Low</span></td>
+      <td>RTL geometry not asserted in tests — only
+      <code>html[dir="rtl"]</code> and computed direction. Visual RTL
+      regressions could slip through.</td>
+      <td class="path">e2e/all-locales/* (KNOWN_GAPS.md)</td>
+      <td>Add a bounding-box assertion (locale-switcher left edge &lt; logo
+      right edge in RTL). Already documented as low priority.</td>
+    </tr>
+    <tr>
+      <td><span class="pill low">Low</span></td>
+      <td>Locale switcher does not persist via cookie/middleware. After
+      switching, hitting <code>/</code> re-detects from
+      <code>Accept-Language</code>.</td>
+      <td class="path">KNOWN_GAPS.md, middleware.ts</td>
+      <td>Acceptable behavior for launch given the URL-prefix model.
+      Defer pending product decision on cookie name/TTL/GDPR alignment.</td>
+    </tr>
+    <tr>
+      <td><span class="pill low">Low</span></td>
+      <td>Static catalog fetch on cold-start can hit 240s timeout
+      (configured in <span class="path">next.config.mjs:13</span>). First
+      production cold build will be slow.</td>
+      <td class="path">next.config.mjs:13</td>
+      <td>Configure ISR <code>revalidate</code> per route. Already in
+      place on the PDP via <code>generateStaticParams</code> + paginated
+      catalog fetch. Just be aware on the first deploy.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>1.6 Testing</h3>
+<table>
+  <thead>
+    <tr><th style="width: 100px;">Severity</th><th>Finding</th><th style="width: 250px;">Location</th><th>What to do</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><span class="pill high">High</span></td>
+      <td>Pre-existing TypeScript errors in
+      <span class="path">lib/__tests__/rate-limit.security.test.ts</span>
+      (documented in P0). Means the security test suite is not running
+      cleanly.</td>
+      <td class="path">lib/__tests__/rate-limit.security.test.ts</td>
+      <td>Fix the 4 TS errors. Run the security test in CI on every PR
+      and on main.</td>
+    </tr>
+    <tr>
+      <td><span class="pill high">High</span></td>
+      <td>No end-to-end test for the actual checkout (gift card
+      fulfillment) flow. The <code>e2e/checkout-flow.spec.ts</code> stops
+      short of the Reloadly call.</td>
+      <td class="path">e2e/checkout-flow.spec.ts</td>
+      <td>Once payment is wired in, add a Reloadly-sandbox-backed E2E
+      that goes all the way to fulfillment. Currently impossible because
+      payment doesn't exist.</td>
+    </tr>
+    <tr>
+      <td><span class="pill medium">Medium</span></td>
+      <td>No load test. Reloadly auth token has rate limits; the
+      module-level singleton <code>reloadlyClient</code> caches the token,
+      but cold-start storms or token expiry under traffic have not been
+      simulated.</td>
+      <td class="path">lib/reloadly/client.ts</td>
+      <td>k6 or Artillery script hitting
+      <code>GET /api/reloadly/products?country=IE</code> at 50 req/s for
+      5 minutes. Confirm rate-limit behavior, token refresh,
+      Sentry/log volume.</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- ========= RISKS ========= -->
+<h2>2. Risks &amp; Mitigations</h2>
+
+<h3>2.1 Cybersecurity</h3>
+
+<div class="risk-card">
+  <div class="head">
+    <h4>R-SEC-01 &middot; Missing CSP / clickjacking protection</h4>
+    <span class="pill blocker">Blocker</span>
+  </div>
+  <div class="grid">
+    <div class="k">Likelihood &times; Impact</div><div>High &times; High &mdash; checkout pages can be iframed and overlaid; reflected XSS payload from any future input would not be blocked.</div>
+    <div class="k">Current state</div><div>Zero security headers (verified: no <code>headers()</code> in <code>next.config.mjs</code>, no header logic in <code>middleware.ts</code>).</div>
+    <div class="k">Mitigation</div><div>See checklist 1.2. CSP + HSTS + <code>X-Frame-Options: DENY</code> + Referrer-Policy + Permissions-Policy.</div>
+    <div class="k">Effort</div><div><span class="pill s">S</span> 30 min for headers, +1&ndash;2&nbsp;h for CSP tuning under <code>next/font</code> + Sentry.</div>
+  </div>
+</div>
+
+<div class="risk-card">
+  <div class="head">
+    <h4>R-SEC-02 &middot; Next.js critical/high CVEs in current pin</h4>
+    <span class="pill blocker">Blocker</span>
+  </div>
+  <div class="grid">
+    <div class="k">Likelihood &times; Impact</div><div>Medium &times; High &mdash; cache poisoning of RSC responses (<code>GHSA-wfc6-r584-vfw7</code>, critical) is publicly exploitable. App Router CSP-nonce XSS (<code>GHSA-ffhc-5mcf-pf4q</code>) is relevant once we add a real CSP.</div>
+    <div class="k">Current state</div><div><code>next@14.2.18</code>; 4 advisories open (<code>npm audit --production</code>).</div>
+    <div class="k">Mitigation</div><div>Bump to latest <code>14.2.x</code> patch (currently 14.2.32+). Skip <code>npm audit fix --force</code> which proposes Next 16 (major).</div>
+    <div class="k">Effort</div><div><span class="pill s">S</span> 1&nbsp;h including regression test run.</div>
+  </div>
+</div>
+
+<div class="risk-card">
+  <div class="head">
+    <h4>R-SEC-03 &middot; IDOR on order lookup</h4>
+    <span class="pill high">High</span>
+  </div>
+  <div class="grid">
+    <div class="k">Likelihood &times; Impact</div><div>Low &times; Medium &mdash; UUIDv4 unguessable in practice; impact is PII disclosure if an order ID leaks (browser history, referrer header, share link).</div>
+    <div class="k">Current state</div><div><code>GET /api/orders/[id]</code> rate-limits but has no ownership check; response includes <code>customerEmail</code>, <code>recipientEmail</code>, <code>giftMessage</code>, <code>paymentId</code>, <code>fulfillment.cardCode</code>.</div>
+    <div class="k">Mitigation</div><div>HMAC-signed httpOnly cookie at order creation; check on GET. Or short-lived JWT in URL fragment.</div>
+    <div class="k">Effort</div><div><span class="pill s">S</span> 2&ndash;3&nbsp;h.</div>
+  </div>
+</div>
+
+<div class="risk-card">
+  <div class="head">
+    <h4>R-SEC-04 &middot; Exposed/stale credentials</h4>
+    <span class="pill high">High</span>
+  </div>
+  <div class="grid">
+    <div class="k">Likelihood &times; Impact</div><div>Medium &times; High &mdash; a leaked Reloadly secret in a sandbox tenant funds is recoverable, in production tenant means real card spend.</div>
+    <div class="k">Current state</div><div>Same secret on disk and in Vercel production for 41+ days, in multiple agent contexts.</div>
+    <div class="k">Mitigation</div><div>Rotate Reloadly credentials in dashboard. Push new value to Vercel. Redeploy. Adopt 90-day rotation policy with calendar reminder.</div>
+    <div class="k">Effort</div><div><span class="pill s">S</span> 30&nbsp;min.</div>
+  </div>
+</div>
+
+<div class="risk-card">
+  <div class="head">
+    <h4>R-SEC-05 &middot; No CSRF / origin enforcement</h4>
+    <span class="pill medium">Medium</span>
+  </div>
+  <div class="grid">
+    <div class="k">Likelihood &times; Impact</div><div>Low &times; Medium today (guest checkout, no session) &mdash; rises to High when accounts are introduced.</div>
+    <div class="k">Current state</div><div>JSON-only endpoints, no <code>Origin</code> check. CORS is closed by Vercel default (browsers will block cross-origin <code>application/json</code> on Fetch without CORS), but server-to-server cross-origin requests are unaffected.</div>
+    <div class="k">Mitigation</div><div>Add an allowlist in middleware: require <code>Origin</code> header to match
+      <code>NEXT_PUBLIC_SITE_URL</code> on all <code>POST /api/*</code>.</div>
+    <div class="k">Effort</div><div><span class="pill s">S</span> 1&nbsp;h.</div>
+  </div>
+</div>
+
+<div class="risk-card">
+  <div class="head">
+    <h4>R-SEC-06 &middot; Dependency-chain exposure (Upstash, Reloadly, Sentry)</h4>
+    <span class="pill medium">Medium</span>
+  </div>
+  <div class="grid">
+    <div class="k">Likelihood &times; Impact</div><div>Low &times; High &mdash; a Reloadly outage means the catalog and the fulfillment path both fail; a Sentry outage degrades observability silently.</div>
+    <div class="k">Current state</div><div>No circuit breaker on Reloadly calls; long-running module-level singleton retries from scratch on any failure. Sentry is fire-and-forget.</div>
+    <div class="k">Mitigation</div><div>Add timeout (10&nbsp;s) on every Reloadly fetch with <code>AbortController</code>. Cache the previous successful product list in Redis with a 1-hour TTL for read-through fallback. Surface a "catalog temporarily unavailable" UI instead of a 500.</div>
+    <div class="k">Effort</div><div><span class="pill m">M</span> 1&ndash;2 days for proper fallbacks.</div>
+  </div>
+</div>
+
+<h3>2.2 Payment Fraud (Stolen Cards)</h3>
+
+<div class="callout fail">
+<strong>Foundational note.</strong> There is currently no payment processor in
+the flow at all, so "fraud signals" cannot be evaluated against a real
+implementation. Every recommendation below is contingent on first wiring a
+PSP (R-PAY-01). The whole class of fraud risk only becomes real on the day
+charges start.
+</div>
+
+<div class="risk-card">
+  <div class="head">
+    <h4>R-PAY-01 &middot; No payment capture</h4>
+    <span class="pill blocker">Blocker</span>
+  </div>
+  <div class="grid">
+    <div class="k">Likelihood &times; Impact</div><div>Certain &times; Catastrophic &mdash; every successful checkout costs the business the full card value.</div>
+    <div class="k">Current state</div><div><code>processOrder</code> in <span class="path">lib/orders/api.ts:64&ndash;82</span> calls Reloadly directly. No <code>PaymentIntent</code>, no Lemon Squeezy webhook gate (despite Lemon Squeezy being in <span class="path">.env.example</span>).</div>
+    <div class="k">Recommendation</div><div>Stripe Payment Element with <code>setup_future_usage</code>=off, 3DS = required for any non-EU card and "automatic" for EU (SCA-compliant). Webhook <code>payment_intent.succeeded</code> &rarr; Reloadly call.</div>
+    <div class="k">Effort</div><div><span class="pill m">M</span> 3&ndash;5 engineer-days end-to-end including webhook signature verification, idempotent fulfillment, and the refund path.</div>
+  </div>
+</div>
+
+<div class="risk-card">
+  <div class="head">
+    <h4>R-PAY-02 &middot; No fraud signals captured at checkout</h4>
+    <span class="pill blocker">Blocker</span>
+  </div>
+  <div class="grid">
+    <div class="k">Likelihood &times; Impact</div><div>High &times; High &mdash; gift-card marketplaces are top targets for stolen-card monetization (fast, anonymous, irreversible).</div>
+    <div class="k">Current state</div><div>Checkout collects only email. No device fingerprint, no IP, no AVS/CVV results, no behavioral signals, no email-age check.</div>
+    <div class="k">MVP signals to capture</div>
+    <div>
+      <ul style="margin: 0; padding-left: 18px;">
+        <li>Device fingerprint (Stripe Radar / Fingerprint.com) — required to differentiate one buyer from a card-testing botnet.</li>
+        <li>IP &harr; billing country mismatch.</li>
+        <li>Email domain reputation (e.g. <code>emailable</code>, <code>kickbox</code>) &mdash; reject disposable domains for orders &gt; &euro;25.</li>
+        <li>Velocity: same card &gt; 1 order/24&nbsp;h, same email &gt; 3 orders/24&nbsp;h, same IP &gt; 5 orders/24&nbsp;h.</li>
+        <li>AVS + CVV result codes from the PSP &mdash; reject on AVS_NO_MATCH for orders &gt; &euro;50.</li>
+      </ul>
+    </div>
+    <div class="k">Mitigation</div><div>Enable Stripe Radar (free with Stripe Payments). Add custom Radar rules for gift-card velocity. Reject all sub-3DS Visa/MC transactions over &euro;25.</div>
+    <div class="k">Effort</div><div><span class="pill m">M</span> 2&ndash;3 days of Radar tuning + 1 sprint of monitoring.</div>
+  </div>
+</div>
+
+<div class="risk-card">
+  <div class="head">
+    <h4>R-PAY-03 &middot; 3DS / SCA not enforced</h4>
+    <span class="pill high">High</span>
+  </div>
+  <div class="grid">
+    <div class="k">Likelihood &times; Impact</div><div>High &times; High &mdash; without 3DS, the liability for fraudulent transactions stays with the merchant (you).</div>
+    <div class="k">Current state</div><div>No PSP, so no 3DS. EU launch locales (fi-FI, en-IE, pl-PL, el-GR, en-MT) <em>require</em> SCA under PSD2.</div>
+    <div class="k">Mitigation</div><div>Configure Stripe to require 3DS = <code>automatic</code> in EU (PSP picks based on PSD2 rules) and force <code>any</code> for non-EU cards &gt; &euro;25. Liability shifts to issuer.</div>
+    <div class="k">Effort</div><div><span class="pill s">S</span> Configuration in Stripe + 1&nbsp;h test coverage.</div>
+  </div>
+</div>
+
+<div class="risk-card">
+  <div class="head">
+    <h4>R-PAY-04 &middot; No velocity limits / order ceilings</h4>
+    <span class="pill high">High</span>
+  </div>
+  <div class="grid">
+    <div class="k">Likelihood &times; Impact</div><div>High &times; High &mdash; fraudsters automate to maximize cards bought per stolen card before block.</div>
+    <div class="k">Current state</div><div>No per-card / per-email / per-IP daily ceiling. <code>fixedDenominations</code> top out at the brand's max but a single card can buy 100&times;&euro;100 Amazon GBs in a minute.</div>
+    <div class="k">Mitigation</div>
+    <div>
+      Server-side limits keyed in Redis:
+      <ul style="margin: 0; padding-left: 18px;">
+        <li>Per email: max &euro;200 / 24h &middot; max 3 orders / 24h.</li>
+        <li>Per IP: max &euro;500 / 24h &middot; max 8 orders / 24h.</li>
+        <li>Per PaymentMethod fingerprint (Stripe gives this): max &euro;200 / 7d on first-touch.</li>
+        <li>Per recipient email: max 2 distinct sender emails / 7d (catches "scrub" pattern).</li>
+      </ul>
+      Tunable from config; start aggressive, loosen after 4 weeks of clean traffic.
+    </div>
+    <div class="k">Effort</div><div><span class="pill m">M</span> 1&ndash;2 days.</div>
+  </div>
+</div>
+
+<div class="risk-card">
+  <div class="head">
+    <h4>R-PAY-05 &middot; Chargeback exposure</h4>
+    <span class="pill high">High</span>
+  </div>
+  <div class="grid">
+    <div class="k">Likelihood &times; Impact</div><div>High once charges start &times; Catastrophic for unit economics &mdash; chargeback fees are ~&euro;15&ndash;25 each and Reloadly will not reverse the gift card.</div>
+    <div class="k">Current state</div><div>No chargeback dispute handling, no proof-of-delivery archive.</div>
+    <div class="k">Mitigation</div><div>For each successful order: archive (in Redis with 90-day TTL or in object storage) the IP, user-agent, device fingerprint, AVS/CVV result, 3DS auth code, recipient email, and timestamp. On dispute: Stripe accepts this in evidence. Set an internal chargeback-rate threshold (1.0%) and an alert.</div>
+    <div class="k">Effort</div><div><span class="pill m">M</span> 1 day for archive; ongoing ops.</div>
+  </div>
+</div>
+
+<div class="risk-card">
+  <div class="head">
+    <h4>R-PAY-06 &middot; Refund-flow abuse</h4>
+    <span class="pill medium">Medium</span>
+  </div>
+  <div class="grid">
+    <div class="k">Likelihood &times; Impact</div><div>Medium &times; Medium &mdash; "I never got the card" social-engineering ploy.</div>
+    <div class="k">Current state</div><div>No refund flow exists; Reloadly fulfillment is irreversible.</div>
+    <div class="k">Mitigation</div><div>Document a clear no-refund policy (R-LEG-02). On disputed claims, archive Reloadly's <code>customIdentifier</code> + delivery confirmation, manually verify, only refund after Reloadly confirms the card is unredeemed and can be cancelled.</div>
+    <div class="k">Effort</div><div><span class="pill s">S</span> Policy decision + SOP. No code.</div>
+  </div>
+</div>
+
+<div class="risk-card">
+  <div class="head">
+    <h4>R-PAY-07 &middot; Gift recipient is unverified</h4>
+    <span class="pill medium">Medium</span>
+  </div>
+  <div class="grid">
+    <div class="k">Likelihood &times; Impact</div><div>Medium &times; Medium &mdash; recipient-email manipulation is the standard pattern for stolen-card cashout (buy gift card, send to attacker-controlled email).</div>
+    <div class="k">Current state</div><div><code>recipientEmail</code> is collected, validated for format, never verified.</div>
+    <div class="k">Mitigation</div><div>Optional MVP: hold the fulfillment for 60 minutes if <code>customerEmail !== recipientEmail</code> and the buyer is a first-touch. Send the recipient a "you have a pending gift" notification — only release after either (a) 60 min, or (b) recipient clicks a confirmation link. Caveat: hurts gift UX; defer if Radar + velocity catches enough.</div>
+    <div class="k">Effort</div><div><span class="pill m">M</span> 2 days. Skip in MVP unless chargeback rate exceeds 0.5%.</div>
+  </div>
+</div>
+
+<h3>2.3 Operational Risk</h3>
+
+<div class="risk-card">
+  <div class="head">
+    <h4>R-OPS-01 &middot; No production observability stack live</h4>
+    <span class="pill high">High</span>
+  </div>
+  <div class="grid">
+    <div class="k">Likelihood &times; Impact</div><div>High &times; High &mdash; Sentry DSN missing in Vercel; Upstash missing; no PostHog. The team will not know if checkout is broken.</div>
+    <div class="k">Current state</div><div>Code is wired correctly (Sentry init, PII scrub, breadcrumb hooks); env vars missing.</div>
+    <div class="k">Mitigation</div><div>See checklist 1.4. Wire Sentry, Upstash, PostHog. Add a Vercel deploy webhook that posts to a Slack/Discord on failure.</div>
+    <div class="k">Effort</div><div><span class="pill s">S</span> 1&ndash;2&nbsp;h.</div>
+  </div>
+</div>
+
+<div class="risk-card">
+  <div class="head">
+    <h4>R-OPS-02 &middot; No backups of order data</h4>
+    <span class="pill medium">Medium</span>
+  </div>
+  <div class="grid">
+    <div class="k">Likelihood &times; Impact</div><div>Low &times; Medium &mdash; Upstash is reasonably durable, but the 7-day TTL on orders means recovery beyond that window is impossible if a problem is found late.</div>
+    <div class="k">Current state</div><div><span class="path">lib/orders/repository.ts:24</span> sets <code>ORDER_TTL_SECONDS = 7d</code>.</div>
+    <div class="k">Mitigation</div><div>Mirror successful orders to S3/R2 (JSON-per-order, no PII fields beyond what's needed for support). 90-day retention covers chargeback window. Lifecycle to delete.</div>
+    <div class="k">Effort</div><div><span class="pill m">M</span> 1 day.</div>
+  </div>
+</div>
+
+<div class="risk-card">
+  <div class="head">
+    <h4>R-OPS-03 &middot; No secret rotation cadence</h4>
+    <span class="pill medium">Medium</span>
+  </div>
+  <div class="grid">
+    <div class="k">Likelihood &times; Impact</div><div>Medium &times; Medium &mdash; over time the secret drifts to more places (CI, agent prompts, screen-shares).</div>
+    <div class="k">Current state</div><div>One Reloadly secret, no rotation history, no calendar reminder.</div>
+    <div class="k">Mitigation</div><div>Quarterly rotation, calendar reminder, runbook entry.</div>
+    <div class="k">Effort</div><div><span class="pill s">S</span> 30&nbsp;min.</div>
+  </div>
+</div>
+
+<div class="risk-card">
+  <div class="head">
+    <h4>R-OPS-04 &middot; No customer-support flow</h4>
+    <span class="pill medium">Medium</span>
+  </div>
+  <div class="grid">
+    <div class="k">Likelihood &times; Impact</div><div>High &times; Medium &mdash; gift-card delivery has predictable support edges: "didn't arrive", "wrong recipient", "redeemed already".</div>
+    <div class="k">Current state</div><div>Footer links to <code>/contact</code> and <code>/help</code> — both 404. No inbox, no helpdesk.</div>
+    <div class="k">Mitigation</div><div>Stand up a single shared inbox (e.g. <code>support@gifted.app</code>) routed to a Front/Zendesk/Plain instance. Write a 1-page runbook covering: lookup order by <code>orderId</code> in Redis, query Reloadly transaction status, escalate to Reloadly support if needed.</div>
+    <div class="k">Effort</div><div><span class="pill s">S</span> 1 day to set up + ongoing.</div>
+  </div>
+</div>
+
+<div class="risk-card">
+  <div class="head">
+    <h4>R-OPS-05 &middot; GDPR / data handling gaps</h4>
+    <span class="pill high">High</span>
+  </div>
+  <div class="grid">
+    <div class="k">Likelihood &times; Impact</div><div>Medium &times; High &mdash; EU locales are 4 of 9; ePrivacy + GDPR fines start at &euro;20M / 4% revenue.</div>
+    <div class="k">Current state</div><div>Privacy policy 404. No cookie banner. PII scrubbing in Sentry is solid (verified in <code>sentry.server.config.ts</code>). But no Data Protection record, no DPA with Reloadly/Upstash/Vercel referenced, no SAR (Subject Access Request) flow.</div>
+    <div class="k">Mitigation</div>
+    <div>
+      <ul style="margin: 0; padding-left: 18px;">
+        <li>Privacy Policy on <code>/[locale]/privacy</code> covering data collected (email, recipient email, IP, payment metadata), retention, third parties (Reloadly, Upstash, Stripe/Lemon Squeezy, Vercel, Sentry, PostHog).</li>
+        <li>Cookie banner with explicit consent for Sentry/PostHog cookies.</li>
+        <li>Sign DPAs with each processor.</li>
+        <li>Email-based SAR: customer emails <code>privacy@gifted.app</code> with their order email; team manually pulls Redis records + Reloadly transactions; replies within 30 days.</li>
+      </ul>
+    </div>
+    <div class="k">Effort</div><div><span class="pill l">L</span> 1&ndash;2 weeks legal + 2 days implementation.</div>
+  </div>
+</div>
+
+<div class="risk-card">
+  <div class="head">
+    <h4>R-OPS-06 &middot; Abuse / fraud response process not defined</h4>
+    <span class="pill medium">Medium</span>
+  </div>
+  <div class="grid">
+    <div class="k">Likelihood &times; Impact</div><div>Medium &times; Medium &mdash; once fraud arrives there is no playbook.</div>
+    <div class="k">Current state</div><div>None.</div>
+    <div class="k">Mitigation</div><div>One-page runbook: how to read Stripe Radar alerts, how to block a card, how to flag an email, who has access to refund, escalation to Reloadly for transaction reversal.</div>
+    <div class="k">Effort</div><div><span class="pill s">S</span> Half-day.</div>
+  </div>
+</div>
+
+<h3>2.4 Reputation &amp; Legal</h3>
+
+<div class="risk-card">
+  <div class="head">
+    <h4>R-LEG-01 &middot; No Terms / Privacy / Cookie / Refund pages</h4>
+    <span class="pill blocker">Blocker</span>
+  </div>
+  <div class="grid">
+    <div class="k">Likelihood &times; Impact</div><div>Certain &times; High &mdash; the footer already advertises these as available; clicking gives a 404.</div>
+    <div class="k">Current state</div><div>Verified missing in <code>app/[locale]/</code>.</div>
+    <div class="k">Mitigation</div><div>Draft and publish. Lemon Squeezy / Stripe both ship templated boilerplate that's usable as a starting point. Have a lawyer review before paid traffic.</div>
+    <div class="k">Effort</div><div><span class="pill m">M</span> 1&ndash;2 weeks including legal review.</div>
+  </div>
+</div>
+
+<div class="risk-card">
+  <div class="head">
+    <h4>R-LEG-02 &middot; No "digital goods / no refunds" acknowledgement at checkout</h4>
+    <span class="pill high">High</span>
+  </div>
+  <div class="grid">
+    <div class="k">Likelihood &times; Impact</div><div>High &times; Medium &mdash; under EU consumer law a buyer keeps a 14-day right of withdrawal unless they explicitly waive it for digital goods delivered immediately.</div>
+    <div class="k">Current state</div><div>No checkbox. Gift card is delivered seconds after &ldquo;Complete Purchase&rdquo; with no waiver.</div>
+    <div class="k">Mitigation</div><div>Required checkbox above the submit button, untranslated key: &ldquo;I understand I am buying a digital gift card that is delivered immediately and that I waive my 14-day right of withdrawal&rdquo;. Disable submit until checked.</div>
+    <div class="k">Effort</div><div><span class="pill s">S</span> 1 hour.</div>
+  </div>
+</div>
+
+<div class="risk-card">
+  <div class="head">
+    <h4>R-LEG-03 &middot; Geo-restriction not enforced</h4>
+    <span class="pill medium">Medium</span>
+  </div>
+  <div class="grid">
+    <div class="k">Likelihood &times; Impact</div><div>Low &times; Medium &mdash; Reloadly enforces per-product geography, but the marketplace site itself is reachable from everywhere with any browser locale.</div>
+    <div class="k">Current state</div><div>Middleware redirects to <code>defaultLocale</code> when nothing matches. No country restriction on purchase.</div>
+    <div class="k">Mitigation</div><div>If launch is intentionally a subset of countries, geo-block the rest at Vercel edge (or use Cloudflare). Otherwise document the absence as deliberate.</div>
+    <div class="k">Effort</div><div><span class="pill s">S</span> 1&ndash;2 hours.</div>
+  </div>
+</div>
+
+<div class="risk-card">
+  <div class="head">
+    <h4>R-LEG-04 &middot; Content moderation N/A for v1</h4>
+    <span class="pill low">Low</span>
+  </div>
+  <div class="grid">
+    <div class="k">Likelihood &times; Impact</div><div>Low &times; Low &mdash; the only user-generated content is the gift message (max 500 chars, validated). Goes only to the recipient by email via Reloadly.</div>
+    <div class="k">Current state</div><div>Zod validation present at <span class="path">app/api/orders/route.ts:18</span>; no content scan.</div>
+    <div class="k">Mitigation</div><div>Optional: profanity filter (OpenAI Moderation API, free) on <code>giftMessage</code>. Reject on hate/sexual/self-harm category. Acceptable to defer.</div>
+    <div class="k">Effort</div><div><span class="pill s">S</span> 2 hours.</div>
+  </div>
+</div>
+
+<div class="risk-card">
+  <div class="head">
+    <h4>R-LEG-05 &middot; Age verification N/A for v1</h4>
+    <span class="pill low">Low</span>
+  </div>
+  <div class="grid">
+    <div class="k">Likelihood &times; Impact</div><div>Low &times; Medium &mdash; Reloadly catalog could include brands tied to age-restricted goods (some food delivery, some music platforms abroad).</div>
+    <div class="k">Current state</div><div>None.</div>
+    <div class="k">Mitigation</div><div>Audit the Reloadly catalog for adult-only brands; if present, add a self-attestation checkbox on those PDPs.</div>
+    <div class="k">Effort</div><div><span class="pill s">S</span> Half-day audit; if needed, S more.</div>
+  </div>
+</div>
+
+<!-- ========= APPENDIX ========= -->
+<h2>Appendix A &middot; What's already good</h2>
+
+<div class="callout ok">
+<strong>Credit where it's due.</strong> A lot was already cleaned up in the
+April P0 sweep. The architectural skeleton is sound. The bullets below are
+not "issues" — they are things that should <em>stay</em> as the launch work
+continues.
+</div>
+
+<ul>
+  <li>Zod validation on both API entry points (<code>POST /api/orders</code>,
+  <code>POST /api/reloadly/order</code>) with strict shape and length caps.</li>
+  <li>Server-side re-validation of <code>unitPrice</code> against the cached
+  product catalog &mdash; defends against client tampering on the amount.
+  See <span class="path">app/api/reloadly/order/route.ts:158&ndash;172</span>.</li>
+  <li>Sentry PII scrubbing as defense-in-depth, with a clean
+  <code>PII_KEYS</code> set and an opt-out
+  <code>scrubPII</code> beforeSend hook. See
+  <span class="path">sentry.server.config.ts:8&ndash;28</span>.</li>
+  <li>Reloadly credentials are server-only (no <code>NEXT_PUBLIC_</code>
+  prefix; verified across <span class="path">lib/reloadly/client.ts</span>).</li>
+  <li><code>.gitignore</code> correctly excludes <code>.env*.local</code>;
+  no env file in <code>git ls-files</code>.</li>
+  <li>The 9-locale i18n implementation is the most thoroughly engineered
+  part of the codebase: full locale-aware currency formatting, RTL support,
+  per-locale OG/Twitter metadata via <code>generateMetadata</code>,
+  Negotiator + intl-localematcher in middleware, sentinel-leak tests.
+  See <span class="path">app/[locale]/layout.tsx</span> and
+  <span class="path">e2e/all-locales/</span>.</li>
+  <li>Known gaps are explicitly tracked in
+  <span class="path">KNOWN_GAPS.md</span> &mdash; rare and welcome.</li>
+  <li><span class="path">P0_FIXES_REPORT.md</span> is candid about the
+  remaining payment blocker. Don't lose that habit.</li>
+  <li>Service-fee math has a single source of truth
+  (<span class="path">lib/utils/currency.ts</span>) per the April cleanup.</li>
+  <li>Brand wordmark wired across header, footer, favicons, manifest,
+  OpenGraph, Twitter, and error pages.</li>
+</ul>
+
+<h2>Appendix B &middot; Effort summary</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Workstream</th>
+      <th>Effort to launch-ready</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Payment integration (Stripe)</td><td><span class="pill m">M</span> 3&ndash;5 days</td><td>PaymentIntent + 3DS + webhook + idempotency. Largest single block.</td></tr>
+    <tr><td>Fraud guardrails (Radar + velocity)</td><td><span class="pill m">M</span> 2&ndash;3 days</td><td>Mostly Stripe Radar rule config + Redis velocity keys.</td></tr>
+    <tr><td>Security headers + Next 14.2 patch</td><td><span class="pill s">S</span> 1 day</td><td>Boring but mandatory.</td></tr>
+    <tr><td>Vercel env + Sentry/Upstash/PostHog wiring</td><td><span class="pill s">S</span> Half day</td><td>Config, not code.</td></tr>
+    <tr><td>Legal pages + cookie banner + refund waiver</td><td><span class="pill l">L</span> 1&ndash;2 weeks</td><td>Mostly legal-review wall-clock, not engineering.</td></tr>
+    <tr><td>Order GET ownership check (IDOR fix)</td><td><span class="pill s">S</span> 2&ndash;3 hours</td><td>HMAC cookie at order create.</td></tr>
+    <tr><td>Webhook handler for Reloadly status</td><td><span class="pill m">M</span> 1 day</td><td>PENDING&rarr;FAILED path.</td></tr>
+    <tr><td>Support inbox + runbook</td><td><span class="pill s">S</span> 1 day</td><td>External tool + SOP.</td></tr>
+    <tr><td>UX polish (loaders, real brand logos, alert replacement)</td><td><span class="pill m">M</span> 1&ndash;2 days</td><td>Conversion impact, not safety.</td></tr>
+    <tr><td>Test gaps (security tests, E2E checkout)</td><td><span class="pill m">M</span> 1 day</td><td>Mostly fixing TS errors + adding fulfillment E2E.</td></tr>
+  </tbody>
+</table>
+
+<p style="margin-top: 18px;">
+Estimated total engineering effort to GREEN: <strong>2.5&ndash;3 calendar
+weeks</strong> with one dedicated engineer, assuming legal work runs in
+parallel. The payment + fraud workstream is on the critical path.
+</p>
+
+<footer class="colophon">
+  Prepared by the ARCHITECT agent (Opus 4.7) for the CPO &middot; Read at
+  the working tree of <code>gifted-project</code> commit <code>d4e2e23</code>
+  &middot; All file references are line-numbered against that tree.
+</footer>
+
+</div><!-- /.page -->
+</body>
+</html>
