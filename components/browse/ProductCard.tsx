@@ -7,7 +7,6 @@ import { GiftCardProduct } from '@/lib/giftcards/types';
 import { useApp } from '@/contexts/AppContext';
 import { formatCurrencyForLocale } from '@/lib/i18n/format-currency';
 import {
-  Zap,
   ShoppingBag,
   Film,
   Utensils,
@@ -139,16 +138,6 @@ export function ProductCard({ product, index = 0, priority = false }: ProductCar
             className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${categoryStyle.gradient}`}
           />
 
-          {/* Instant Delivery Badge */}
-          <div className="absolute top-3 right-3 rtl:right-auto rtl:left-3 z-10">
-            <div className="flex items-center gap-1.5 px-2.5 py-1 bg-white/95 backdrop-blur-sm rounded-full shadow-sm">
-              <Zap className="w-3.5 h-3.5 text-accent-purple fill-accent-purple" />
-              <span className="text-[11px] font-medium text-primary">
-                {m['browse.productCard.instant']}
-              </span>
-            </div>
-          </div>
-
           {/* Logo Container */}
           <div className="aspect-video bg-white flex items-center justify-center p-6 relative overflow-hidden">
             <div
@@ -217,7 +206,7 @@ export function ProductCard({ product, index = 0, priority = false }: ProductCar
                 <span>{m['browse.productCard.digitalDelivery']}</span>
               </div>
               <span className="text-surface-on-surface-variant/40">•</span>
-              <span>{t(m, 'browse.productCard.deliveryEta', { minutes: '5' })}</span>
+              <span>{m['browse.productCard.instant']}</span>
             </div>
           </div>
 
