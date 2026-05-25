@@ -1,5 +1,7 @@
 'use client'
 
+import { useMemo } from 'react'
+import { useSearchParams } from 'next/navigation'
 import { GiftCardProduct } from '@/lib/giftcards/types'
 import { ProductCard } from './ProductCard'
 import { Search } from 'lucide-react'
@@ -14,6 +16,22 @@ interface ProductGridProps {
 export function ProductGrid({ products, isLoading = false }: ProductGridProps) {
   const locale = useLocale()
   const m = getMessages(locale)
+  const searchParams = useSearchParams()
+
+  const q = (searchParams.get('q') || '').toLowerCase().trim()
+  const category = (searchParams.get('category') || '').toLowerCase().trim()
+
+  const visible = useMemo(() => {
+    if (!q && !category) return products
+    return products.filter((p) => {
+      if (category && p.category?.toLowerCase() !== category) return false
+      if (q) {
+        const hay = p.brandName.toLowerCase()
+        if (!hay.includes(q)) return false
+      }
+      return true
+    })
+  }, [products, q, category])
 
   if (isLoading) {
     return (
@@ -34,7 +52,7 @@ export function ProductGrid({ products, isLoading = false }: ProductGridProps) {
     )
   }
 
-  if (products.length === 0) {
+  if (visible.length === 0) {
     return (
       <div className="py-24 text-center">
         <Search className="h-16 w-16 text-surface-on-surface-variant mx-auto mb-4 opacity-50" />
@@ -50,8 +68,13 @@ export function ProductGrid({ products, isLoading = false }: ProductGridProps) {
 
   return (
     <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 2xl:grid-cols-7 gap-4">
-      {products.map((product) => (
-        <ProductCard key={product.id} product={product} />
+      {visible.map((product, idx) => (
+        <ProductCard
+          key={product.id}
+          product={product}
+          index={idx}
+          priority={idx < 6}
+        />
       ))}
     </div>
   )

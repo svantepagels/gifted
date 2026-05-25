@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Image from 'next/image'
 import { GiftCardProduct } from '@/lib/giftcards/types'
 import { Clock } from 'lucide-react'
 import { useLocale } from '@/lib/i18n/useLocale'
@@ -28,14 +29,15 @@ export function ProductHero({ product, countryCode }: ProductHeroProps) {
       {/* Logo — mirrors ProductCard's image contract so card and detail use the same source */}
       <div className="w-32 h-32 mx-auto mb-6 rounded-lg bg-white border border-outline-variant flex items-center justify-center overflow-hidden p-4">
         {showLogo ? (
-          /* eslint-disable-next-line @next/next/no-img-element */
-          <img
-            src={product.logoUrl}
+          <Image
+            src={product.logoUrl as string}
             alt={`${product.brandName} logo`}
-            loading="eager"
-            fetchPriority="high"
+            width={128}
+            height={128}
+            sizes="128px"
+            priority
             onError={() => setLogoFailed(true)}
-            className="max-w-full max-h-full object-contain"
+            className="max-w-full max-h-full w-auto h-auto object-contain"
           />
         ) : (
           <span className="text-display-sm font-archivo text-surface-on-surface-variant">

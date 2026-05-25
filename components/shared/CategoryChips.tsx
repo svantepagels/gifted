@@ -1,7 +1,6 @@
 'use client';
 
 import { useRouter, useSearchParams } from 'next/navigation';
-import { motion } from 'framer-motion';
 import {
   ShoppingBag,
   Film,
@@ -118,14 +117,12 @@ export function CategoryChips({ categories }: CategoryChipsProps) {
           const Icon = config.icon;
 
           return (
-            <motion.button
+            <button
               key={category}
               onClick={() => handleCategoryClick(category)}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.98 }}
               className={`
                 flex items-center gap-2 px-5 py-2.5 rounded-full text-[13px] font-medium uppercase tracking-[0.5px] whitespace-nowrap
-                transition-all duration-200 shadow-sm
+                transition-all duration-200 shadow-sm hover:scale-[1.05] active:scale-[0.98]
                 ${
                   isActive
                     ? `${config.bg} text-white`
@@ -139,7 +136,7 @@ export function CategoryChips({ categories }: CategoryChipsProps) {
                 }`}
               />
               {categoryDisplayLabel(category, m)}
-            </motion.button>
+            </button>
           );
         })}
       </div>

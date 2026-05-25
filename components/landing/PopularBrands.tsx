@@ -9,6 +9,7 @@
  */
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { ChevronRight } from 'lucide-react'
 import type { Locale } from '@/lib/i18n/config'
 import { localeHref } from '@/lib/i18n/href'
@@ -77,12 +78,14 @@ export async function PopularBrands({ locale, messages }: PopularBrandsProps) {
               >
                 <div className="w-12 h-12 md:w-14 md:h-14 rounded-lg bg-white border border-outline-variant flex items-center justify-center overflow-hidden mb-2 md:mb-3 p-1.5">
                   {logoUrl ? (
-                    /* eslint-disable-next-line @next/next/no-img-element */
-                    <img
+                    <Image
                       src={logoUrl}
                       alt={`${display} logo`}
+                      width={56}
+                      height={56}
+                      sizes="56px"
                       loading="lazy"
-                      className="max-w-full max-h-full object-contain"
+                      className="max-w-full max-h-full w-auto h-auto object-contain"
                     />
                   ) : (
                     <span

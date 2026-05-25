@@ -15,8 +15,7 @@
  */
 
 import { useState } from 'react'
-import { motion } from 'framer-motion'
-import { fadeInUp } from '@/lib/animations/variants'
+import Image from 'next/image'
 import { formatCurrencyForLocale } from '@/lib/i18n/format-currency'
 import { useLocale } from '@/lib/i18n/useLocale'
 import type { BrandConfig, BrandCopy } from '@/lib/landing-pages/types'
@@ -60,14 +59,15 @@ export function BrandHero({
         <div className="order-1 md:order-2 md:col-span-5 mb-6 md:mb-0 flex md:justify-end">
           <div className="w-32 h-32 md:w-48 md:h-48 rounded-2xl bg-white border border-outline-variant shadow-ambient flex items-center justify-center overflow-hidden p-4 md:p-6">
             {showLogo ? (
-              /* eslint-disable-next-line @next/next/no-img-element */
-              <img
-                src={heroLogoUrl}
+              <Image
+                src={heroLogoUrl as string}
                 alt={`${displayName} gift card logo`}
-                loading="eager"
-                fetchPriority="high"
+                width={192}
+                height={192}
+                sizes="(min-width: 768px) 192px, 128px"
+                priority
                 onError={() => setLogoFailed(true)}
-                className="max-w-full max-h-full object-contain"
+                className="max-w-full max-h-full w-auto h-auto object-contain"
               />
             ) : (
               <span
@@ -82,15 +82,11 @@ export function BrandHero({
 
         {/* Copy column */}
         <div className="order-2 md:order-1 md:col-span-7 text-start">
-          <motion.h1
-            variants={fadeInUp}
-            initial="initial"
-            animate="animate"
-            transition={{ duration: 0.5 }}
-            className="font-archivo text-display-sm md:text-display-md lg:text-display-lg text-surface-on-surface uppercase leading-[0.95] tracking-tight mb-3 md:mb-4"
+          <h1
+            className="font-archivo text-display-sm md:text-display-md lg:text-display-lg text-surface-on-surface uppercase leading-[0.95] tracking-tight mb-3 md:mb-4 animate-fade-in-up"
           >
             {copy.heroTitle}
-          </motion.h1>
+          </h1>
 
           <p className="font-inter text-body-lg md:text-headline-sm text-surface-on-surface-variant max-w-xl leading-relaxed mb-5 md:mb-6">
             {copy.heroSubtitle}
