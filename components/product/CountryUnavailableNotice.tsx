@@ -52,7 +52,7 @@ export function CountryUnavailableNotice({
       </div>
       <button
         onClick={onBrowseAll}
-        className="w-full flex items-center justify-center gap-2 px-4 py-3 rounded-md bg-primary text-primary-on-primary text-label-lg hover:opacity-90 transition-opacity"
+        className="w-full flex items-center justify-center gap-2 px-4 py-3 rounded-md bg-secondary text-secondary-on-secondary text-label-lg hover:bg-secondary-hover transition-colors"
       >
         {m['pdp.unavailable.cta']}
         <ArrowRight className="h-4 w-4" />
