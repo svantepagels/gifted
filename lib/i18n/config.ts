@@ -123,6 +123,57 @@ export const localeMeta: Record<Locale, LocaleMeta> = {
   },
 }
 
+/**
+ * Language-only options shown in <LocaleSwitcher>. One entry per
+ * supported UI language. The dropdown switches LANGUAGE only; the
+ * country/currency portion of the locale (and therefore the catalog
+ * shown by <CountrySelector>) is preserved on language change.
+ */
+export const languages = [
+  { code: 'en', displayName: 'English' },
+  { code: 'fi', displayName: 'Suomi' },
+  { code: 'ar', displayName: 'العربية' },
+  { code: 'pl', displayName: 'Polski' },
+  { code: 'el', displayName: 'Ελληνικά' },
+] as const
+
+export type LanguageCode = (typeof languages)[number]['code']
+
+/**
+ * For each supported UI language, the locale to use when the user
+ * picks that language and the current locale's country is not
+ * compatible with it. Picked to keep currency/region reasonable.
+ */
+export const defaultLocaleForLanguage: Record<LanguageCode, Locale> = {
+  en: 'en-IE',
+  fi: 'fi-FI',
+  ar: 'ar-AE',
+  pl: 'pl-PL',
+  el: 'el-GR',
+}
+
+/**
+ * Resolve which Locale to navigate to when the user picks `lang`
+ * from the language dropdown while currently on `currentLocale`.
+ *
+ * Rule: if there exists a locale with this language AND the same
+ * country as `currentLocale`, prefer it (keeps country/currency
+ * stable). Otherwise fall back to `defaultLocaleForLanguage[lang]`.
+ */
+export function localeForLanguageChange(
+  currentLocale: Locale,
+  lang: LanguageCode,
+): Locale {
+  const currentCountry = localeMeta[currentLocale].country
+  const sameCountry = (locales as readonly Locale[]).find(
+    (l) =>
+      localeMeta[l].language === lang &&
+      localeMeta[l].country === currentCountry,
+  )
+  if (sameCountry) return sameCountry
+  return defaultLocaleForLanguage[lang]
+}
+
 /** Type-guard for runtime values that may or may not be a Locale. */
 export function isLocale(value: string): value is Locale {
   return (locales as readonly string[]).includes(value)
