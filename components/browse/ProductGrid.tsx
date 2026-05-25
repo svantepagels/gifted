@@ -6,7 +6,9 @@ import { GiftCardProduct } from '@/lib/giftcards/types'
 import { ProductCard } from './ProductCard'
 import { Search } from 'lucide-react'
 import { useLocale } from '@/lib/i18n/useLocale'
-import { getMessages } from '@/lib/i18n/useMessages'
+import { getMessages, t } from '@/lib/i18n/useMessages'
+import { useApp } from '@/contexts/AppContext'
+import { localizedCountryName } from '@/lib/i18n/country-name'
 
 interface ProductGridProps {
   products: GiftCardProduct[]
@@ -17,21 +19,29 @@ export function ProductGrid({ products, isLoading = false }: ProductGridProps) {
   const locale = useLocale()
   const m = getMessages(locale)
   const searchParams = useSearchParams()
+  const { selectedCountry } = useApp()
 
   const q = (searchParams.get('q') || '').toLowerCase().trim()
   const category = (searchParams.get('category') || '').toLowerCase().trim()
+  const countryCode = selectedCountry.code.toUpperCase()
 
   const visible = useMemo(() => {
-    if (!q && !category) return products
     return products.filter((p) => {
+      // Country availability — a product whose `countryCodes` array
+      // doesn't include the user's selected country is hidden.
+      // Defensive: missing/empty list also hides (Reloadly catalog
+      // always sets this, but guard against malformed input).
+      const codes = p.countryCodes ?? []
+      const matchesCountry = codes.some(
+        (c) => c.toUpperCase() === countryCode
+      )
+      if (!matchesCountry) return false
+
       if (category && p.category?.toLowerCase() !== category) return false
-      if (q) {
-        const hay = p.brandName.toLowerCase()
-        if (!hay.includes(q)) return false
-      }
+      if (q && !p.brandName.toLowerCase().includes(q)) return false
       return true
     })
-  }, [products, q, category])
+  }, [products, q, category, countryCode])
 
   if (isLoading) {
     return (
@@ -53,8 +63,28 @@ export function ProductGrid({ products, isLoading = false }: ProductGridProps) {
   }
 
   if (visible.length === 0) {
+    // When the empty state is caused by country filtering alone (no
+    // search query, no category filter), show a country-specific
+    // message. Otherwise fall back to the generic "no match" copy.
+    const isCountryOnlyEmpty = !q && !category
+    if (isCountryOnlyEmpty) {
+      const countryName =
+        localizedCountryName(locale, selectedCountry.code) ||
+        selectedCountry.name
+      return (
+        <div className="py-24 text-center" data-testid="empty-state-country">
+          <Search className="h-16 w-16 text-surface-on-surface-variant mx-auto mb-4 opacity-50" />
+          <h3 className="font-archivo text-headline-md text-surface-on-surface mb-2">
+            {t(m, 'browse.empty.countryTitle', { country: countryName })}
+          </h3>
+          <p className="text-body-lg text-surface-on-surface-variant max-w-md mx-auto">
+            {m['browse.empty.countryBody']}
+          </p>
+        </div>
+      )
+    }
     return (
-      <div className="py-24 text-center">
+      <div className="py-24 text-center" data-testid="empty-state-generic">
         <Search className="h-16 w-16 text-surface-on-surface-variant mx-auto mb-4 opacity-50" />
         <h3 className="font-archivo text-headline-md text-surface-on-surface mb-2">
           {m['browse.empty.title']}

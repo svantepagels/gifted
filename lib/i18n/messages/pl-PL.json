@@ -73,17 +73,16 @@
   "footer.copyright": "© {year} Gifted. Wszelkie prawa zastrzeżone.",
   "checkout.trust.securePayment": "Bezpieczna płatność",
   "checkout.trust.instantDelivery": "Natychmiastowa dostawa",
-
   "browse.productCard.instant": "Natychmiast",
   "browse.productCard.digitalDelivery": "Dostawa cyfrowa",
   "browse.productCard.deliveryEta": "~{minutes} min",
   "browse.empty.title": "Nie znaleziono kart podarunkowych",
   "browse.empty.body": "Spróbuj zmienić filtry lub zapytanie, aby znaleźć odpowiednią kartę podarunkową.",
-
+  "browse.empty.countryTitle": "Brak kart podarunkowych dostępnych w {country}",
+  "browse.empty.countryBody": "Nie mamy jeszcze cyfrowych kart podarunkowych dla tego kraju. Wypróbuj inny kraj lub wróć później — stale dodajemy nowe opcje.",
   "countrySelector.searchPlaceholder": "Szukaj krajów...",
   "countrySelector.searchAriaLabel": "Szukaj krajów",
-  "countrySelector.noMatch": "Brak krajów pasujących do \u201C{query}\u201D",
-
+  "countrySelector.noMatch": "Brak krajów pasujących do “{query}”",
   "pdp.badge.digitalDelivery": "Dostawa cyfrowa",
   "pdp.redemption.heading": "Jak zrealizować",
   "pdp.redemption.generic": "Wprowadź kod na stronie realizacji marki lub w jej aplikacji. Pełne instrukcje znajdziesz w wiadomości e-mail.",
@@ -110,7 +109,6 @@
   "pdp.error.recipientRequired": "Wprowadź adres e-mail odbiorcy.",
   "pdp.error.productConfig": "Błąd konfiguracji produktu. Wybierz inny produkt.",
   "pdp.error.orderCreate": "Nie udało się utworzyć zamówienia. Spróbuj ponownie.",
-
   "orderSummary.heading": "Podsumowanie zamówienia",
   "orderSummary.giftCard": "Karta podarunkowa",
   "orderSummary.amount": "Kwota",
@@ -118,7 +116,6 @@
   "orderSummary.total": "Łącznie",
   "orderSummary.continueAsGuest": "Kontynuuj jako gość",
   "orderSummary.signIn": "Zaloguj się",
-
   "checkout.title": "Kasa",
   "checkout.backToProduct": "Wróć do produktu",
   "checkout.orderReview.heading": "Przegląd zamówienia",
@@ -130,7 +127,6 @@
   "checkout.security.note": "Twoja płatność jest zabezpieczona szyfrowaniem bankowym",
   "checkout.loading": "Ładowanie...",
   "checkout.error.productConfig": "Błąd konfiguracji produktu. Wybierz produkt ponownie.",
-
   "checkoutForm.heading": "Twoje dane",
   "checkoutForm.giftBanner.label": "Wysyłka prezentu do:",
   "checkoutForm.email.label": "Twój e-mail",
@@ -143,7 +139,6 @@
   "checkoutForm.submitProcessing": "Przetwarzanie...",
   "checkoutForm.legal": "Dokonując zakupu, akceptujesz nasz Regulamin i Politykę prywatności",
   "checkoutForm.error.generic": "Wystąpił błąd",
-
   "success.title": "Zamówienie potwierdzone",
   "success.subtitle": "Twoja karta podarunkowa jest w drodze.",
   "success.delivery.intro": "Kod karty podarunkowej zostanie wysłany na adres {email}.",
@@ -159,9 +154,11 @@
   "success.details.serviceFee": "Opłata za usługę",
   "success.details.total": "Łącznie",
   "success.cta.buyAnother": "Kup kolejną kartę podarunkową",
-
   "meta.home.title": "Gifted — Cyfrowe karty podarunkowe",
   "meta.home.description": "Kupuj cyfrowe karty podarunkowe ulubionych marek. Natychmiastowa dostawa na całym świecie.",
   "meta.home.ogTitle": "Gifted — Cyfrowe karty podarunkowe",
-  "meta.home.ogDescription": "Kupuj cyfrowe karty podarunkowe ulubionych marek. Natychmiastowa dostawa na całym świecie."
+  "meta.home.ogDescription": "Kupuj cyfrowe karty podarunkowe ulubionych marek. Natychmiastowa dostawa na całym świecie.",
+  "pdp.unavailable.title": "Niedostępne w {country}",
+  "pdp.unavailable.body": "Tej karty podarunkowej nie można zrealizować w {country}. Można ją zrealizować w {count} innych krajach. Zmień kraj u góry strony lub przeglądaj karty dostępne w Twoim regionie.",
+  "pdp.unavailable.cta": "Przeglądaj dostępne karty"
 }

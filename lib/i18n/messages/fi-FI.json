@@ -73,17 +73,16 @@
   "footer.copyright": "© {year} Gifted. Kaikki oikeudet pidätetään.",
   "checkout.trust.securePayment": "Turvallinen maksu",
   "checkout.trust.instantDelivery": "Välitön toimitus",
-
   "browse.productCard.instant": "Heti",
   "browse.productCard.digitalDelivery": "Digitaalinen toimitus",
   "browse.productCard.deliveryEta": "~{minutes} min",
   "browse.empty.title": "Lahjakortteja ei löytynyt",
   "browse.empty.body": "Tarkista suodattimet tai hakusana ja yritä uudelleen.",
-
+  "browse.empty.countryTitle": "Maassa {country} ei ole saatavilla lahjakortteja",
+  "browse.empty.countryBody": "Tähän maahan ei ole vielä digitaalisia lahjakortteja. Kokeile toista maata tai palaa myöhemmin — uusia vaihtoehtoja lisätään jatkuvasti.",
   "countrySelector.searchPlaceholder": "Hae maita...",
   "countrySelector.searchAriaLabel": "Hae maita",
-  "countrySelector.noMatch": "Mikään maa ei vastaa hakua \u201C{query}\u201D",
-
+  "countrySelector.noMatch": "Mikään maa ei vastaa hakua “{query}”",
   "pdp.badge.digitalDelivery": "Digitaalinen toimitus",
   "pdp.redemption.heading": "Käyttöohjeet",
   "pdp.redemption.generic": "Anna koodi brändin lunastussivulla tai sovelluksessa. Täydet ohjeet löytyvät saamastasi sähköpostista.",
@@ -110,7 +109,6 @@
   "pdp.error.recipientRequired": "Anna vastaanottajan sähköpostiosoite.",
   "pdp.error.productConfig": "Tuotteen määritysvirhe. Kokeile toista tuotetta.",
   "pdp.error.orderCreate": "Tilausta ei voitu luoda. Yritä uudelleen.",
-
   "orderSummary.heading": "Tilauksen yhteenveto",
   "orderSummary.giftCard": "Lahjakortti",
   "orderSummary.amount": "Summa",
@@ -118,7 +116,6 @@
   "orderSummary.total": "Yhteensä",
   "orderSummary.continueAsGuest": "Jatka vieraana",
   "orderSummary.signIn": "Kirjaudu",
-
   "checkout.title": "Kassa",
   "checkout.backToProduct": "Takaisin tuotteeseen",
   "checkout.orderReview.heading": "Tilauksen tarkistus",
@@ -130,7 +127,6 @@
   "checkout.security.note": "Maksusi on suojattu pankkitason salauksella",
   "checkout.loading": "Ladataan...",
   "checkout.error.productConfig": "Tuotteen määritysvirhe. Valitse tuote uudelleen.",
-
   "checkoutForm.heading": "Tietosi",
   "checkoutForm.giftBanner.label": "Lähetetään lahja osoitteeseen:",
   "checkoutForm.email.label": "Sähköpostisi",
@@ -143,7 +139,6 @@
   "checkoutForm.submitProcessing": "Käsitellään...",
   "checkoutForm.legal": "Vahvistamalla oston hyväksyt käyttöehtomme ja tietosuojakäytäntömme",
   "checkoutForm.error.generic": "Tapahtui virhe",
-
   "success.title": "Tilaus vahvistettu",
   "success.subtitle": "Lahjakorttisi on tulossa.",
   "success.delivery.intro": "Lahjakortin koodi lähetetään osoitteeseen {email}.",
@@ -159,9 +154,11 @@
   "success.details.serviceFee": "Palvelumaksu",
   "success.details.total": "Yhteensä",
   "success.cta.buyAnother": "Osta toinen lahjakortti",
-
   "meta.home.title": "Gifted — Digitaaliset lahjakortit",
   "meta.home.description": "Osta digitaalisia lahjakortteja suosikkibrändeillesi. Välitön toimitus ympäri maailman.",
   "meta.home.ogTitle": "Gifted — Digitaaliset lahjakortit",
-  "meta.home.ogDescription": "Osta digitaalisia lahjakortteja suosikkibrändeillesi. Välitön toimitus ympäri maailman."
+  "meta.home.ogDescription": "Osta digitaalisia lahjakortteja suosikkibrändeillesi. Välitön toimitus ympäri maailman.",
+  "pdp.unavailable.title": "Ei saatavilla maassa {country}",
+  "pdp.unavailable.body": "Tätä lahjakorttia ei voi lunastaa maassa {country}. Se on lunastettavissa {count} muussa maassa. Vaihda maa sivun yläreunasta tai selaa kortteja, jotka ovat saatavilla maassasi.",
+  "pdp.unavailable.cta": "Selaa saatavilla olevia kortteja"
 }

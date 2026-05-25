@@ -73,17 +73,16 @@
   "footer.copyright": "© {year} Gifted. جميع الحقوق محفوظة.",
   "checkout.trust.securePayment": "دفع آمن",
   "checkout.trust.instantDelivery": "توصيل فوري",
-
   "browse.productCard.instant": "فوري",
   "browse.productCard.digitalDelivery": "تسليم رقمي",
   "browse.productCard.deliveryEta": "~{minutes} دقيقة",
   "browse.empty.title": "لم يتم العثور على بطاقات هدايا",
   "browse.empty.body": "حاول تعديل الفلاتر أو كلمات البحث للعثور على البطاقة المناسبة.",
-
+  "browse.empty.countryTitle": "لا تتوفر بطاقات هدايا في {country}",
+  "browse.empty.countryBody": "لا توجد لدينا بطاقات هدايا رقمية لهذه الوجهة بعد. جرّب دولة أخرى أو عد لاحقاً — نضيف خيارات جديدة باستمرار.",
   "countrySelector.searchPlaceholder": "ابحث عن البلدان...",
   "countrySelector.searchAriaLabel": "ابحث عن البلدان",
-  "countrySelector.noMatch": "لا توجد بلدان تطابق \u201C{query}\u201D",
-
+  "countrySelector.noMatch": "لا توجد بلدان تطابق “{query}”",
   "pdp.badge.digitalDelivery": "تسليم رقمي",
   "pdp.redemption.heading": "كيفية الاستخدام",
   "pdp.redemption.generic": "أدخل الرمز في صفحة الاستبدال الخاصة بالعلامة التجارية أو في تطبيقها. التعليمات الكاملة موجودة في البريد الإلكتروني الذي ستتلقاه.",
@@ -110,7 +109,6 @@
   "pdp.error.recipientRequired": "يرجى إدخال البريد الإلكتروني للمستلم.",
   "pdp.error.productConfig": "خطأ في إعدادات المنتج. يرجى تجربة منتج آخر.",
   "pdp.error.orderCreate": "تعذر إنشاء طلبك. يرجى المحاولة مرة أخرى.",
-
   "orderSummary.heading": "ملخص الطلب",
   "orderSummary.giftCard": "بطاقة هدية",
   "orderSummary.amount": "المبلغ",
@@ -118,7 +116,6 @@
   "orderSummary.total": "الإجمالي",
   "orderSummary.continueAsGuest": "المتابعة كضيف",
   "orderSummary.signIn": "تسجيل الدخول",
-
   "checkout.title": "الدفع",
   "checkout.backToProduct": "العودة إلى المنتج",
   "checkout.orderReview.heading": "مراجعة الطلب",
@@ -130,7 +127,6 @@
   "checkout.security.note": "دفعتك محمية بتشفير بمستوى البنوك",
   "checkout.loading": "جارٍ التحميل...",
   "checkout.error.productConfig": "خطأ في إعدادات المنتج. يرجى اختيار المنتج مرة أخرى.",
-
   "checkoutForm.heading": "معلوماتك",
   "checkoutForm.giftBanner.label": "يتم إرسال الهدية إلى:",
   "checkoutForm.email.label": "بريدك الإلكتروني",
@@ -143,7 +139,6 @@
   "checkoutForm.submitProcessing": "جارٍ المعالجة...",
   "checkoutForm.legal": "بإتمام عملية الشراء، فإنك توافق على شروط الخدمة وسياسة الخصوصية",
   "checkoutForm.error.generic": "حدث خطأ",
-
   "success.title": "تم تأكيد الطلب",
   "success.subtitle": "بطاقة الهدية في الطريق إليك.",
   "success.delivery.intro": "سيتم إرسال رمز بطاقة الهدية إلى {email}.",
@@ -159,9 +154,11 @@
   "success.details.serviceFee": "رسوم الخدمة",
   "success.details.total": "الإجمالي",
   "success.cta.buyAnother": "اشترِ بطاقة هدية أخرى",
-
   "meta.home.title": "Gifted — بطاقات هدايا رقمية",
   "meta.home.description": "اشترِ بطاقات هدايا رقمية لعلاماتك المفضلة. تسليم فوري في جميع أنحاء العالم.",
   "meta.home.ogTitle": "Gifted — بطاقات هدايا رقمية",
-  "meta.home.ogDescription": "اشترِ بطاقات هدايا رقمية لعلاماتك المفضلة. تسليم فوري في جميع أنحاء العالم."
+  "meta.home.ogDescription": "اشترِ بطاقات هدايا رقمية لعلاماتك المفضلة. تسليم فوري في جميع أنحاء العالم.",
+  "pdp.unavailable.title": "غير متوفرة في {country}",
+  "pdp.unavailable.body": "لا يمكن استبدال بطاقة الهدايا هذه في {country}. يمكن استبدالها في {count} دول أخرى. غيّر بلدك من أعلى الصفحة أو تصفّح البطاقات المتوفرة في منطقتك.",
+  "pdp.unavailable.cta": "تصفّح البطاقات المتوفرة"
 }

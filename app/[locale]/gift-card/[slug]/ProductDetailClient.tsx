@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useMemo, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
@@ -8,6 +8,7 @@ import { ProductHero } from '@/components/product/ProductHero'
 import { AmountSelector } from '@/components/product/AmountSelector'
 import { DeliveryMethodToggle } from '@/components/product/DeliveryMethodToggle'
 import { GiftDetailsForm } from '@/components/product/GiftDetailsForm'
+import { CountryUnavailableNotice } from '@/components/product/CountryUnavailableNotice'
 import { GiftCardProduct } from '@/lib/giftcards/types'
 import { useApp } from '@/contexts/AppContext'
 import { DeliveryMethod } from '@/lib/orders/types'
@@ -19,6 +20,7 @@ import { ArrowRight, Loader2 } from 'lucide-react'
 import { useLocale } from '@/lib/i18n/useLocale'
 import { localeHref } from '@/lib/i18n/href'
 import { getMessages } from '@/lib/i18n/useMessages'
+import { localizedCountryName } from '@/lib/i18n/country-name'
 
 interface ProductDetailClientProps {
   product: GiftCardProduct
@@ -43,6 +45,16 @@ export function ProductDetailClient({ product }: ProductDetailClientProps) {
     setCartProduct(product)
   })
 
+  /**
+   * Availability gate — recomputed whenever the user changes country
+   * via the Header selector. When false, the purchase UI is replaced
+   * with `CountryUnavailableNotice`.
+   */
+  const isAvailableInCountry = useMemo(() => {
+    const codes = (product.countryCodes ?? []).map((c) => c.toUpperCase())
+    return codes.includes(selectedCountry.code.toUpperCase())
+  }, [product.countryCodes, selectedCountry.code])
+
   const handleAmountChange = (amount: number) => {
     setSelectedAmount(amount)
     setCartAmount(amount)
@@ -61,6 +73,10 @@ export function ProductDetailClient({ product }: ProductDetailClientProps) {
 
   const handleContinue = async () => {
     if (!product || !selectedAmount || isCreatingOrder) return
+    // Defensive: if availability flipped between render and click,
+    // bail out rather than starting an order that will fail at
+    // fulfillment.
+    if (!isAvailableInCountry) return
 
     // Clear any prior errors
     setOrderError(null)
@@ -112,7 +128,16 @@ export function ProductDetailClient({ product }: ProductDetailClientProps) {
   }
 
   const totalAmount = selectedAmount ? selectedAmount + calculateServiceFee(selectedAmount) : null
-  const canContinue = product && selectedAmount && (deliveryMethod === 'self' || recipientEmail) && !isCreatingOrder
+  const canContinue =
+    product &&
+    selectedAmount &&
+    (deliveryMethod === 'self' || recipientEmail) &&
+    !isCreatingOrder &&
+    isAvailableInCountry
+
+  const countryName =
+    localizedCountryName(locale, selectedCountry.code) || selectedCountry.name
+  const availableCountryCount = (product.countryCodes ?? []).length
 
   return (
     <>
@@ -127,91 +152,101 @@ export function ProductDetailClient({ product }: ProductDetailClientProps) {
 
             {/* Right column — sticky purchase panel on lg+ */}
             <aside className="lg:sticky lg:top-[88px] lg:self-start space-y-4">
-              <div className="bg-surface-container-lowest rounded-lg p-6 space-y-6">
-                <AmountSelector
-                  product={product}
-                  currency={selectedCountry.currency}
-                  selectedAmount={selectedAmount}
-                  onAmountChange={handleAmountChange}
+              {!isAvailableInCountry ? (
+                <CountryUnavailableNotice
+                  countryName={countryName}
+                  availableCountryCount={availableCountryCount}
+                  onBrowseAll={() => router.push(localeHref(locale, '/'))}
                 />
+              ) : (
+                <div className="bg-surface-container-lowest rounded-lg p-6 space-y-6">
+                  <AmountSelector
+                    product={product}
+                    currency={selectedCountry.currency}
+                    selectedAmount={selectedAmount}
+                    onAmountChange={handleAmountChange}
+                  />
 
-                <DeliveryMethodToggle
-                  value={deliveryMethod}
-                  onChange={handleDeliveryMethodChange}
-                />
+                  <DeliveryMethodToggle
+                    value={deliveryMethod}
+                    onChange={handleDeliveryMethodChange}
+                  />
 
-                {deliveryMethod === 'gift' && (
-                  <GiftDetailsForm onChange={handleGiftDetailsChange} />
-                )}
+                  {deliveryMethod === 'gift' && (
+                    <GiftDetailsForm onChange={handleGiftDetailsChange} />
+                  )}
 
-                {/* Inline validation / order creation error */}
-                {(orderError || recipientEmailError) && (
-                  <div
-                    role="alert"
-                    aria-live="polite"
-                    className="rounded-lg border border-error/40 bg-error/10 px-4 py-3 text-sm text-error"
-                  >
-                    {recipientEmailError || orderError}
+                  {/* Inline validation / order creation error */}
+                  {(orderError || recipientEmailError) && (
+                    <div
+                      role="alert"
+                      aria-live="polite"
+                      className="rounded-lg border border-error/40 bg-error/10 px-4 py-3 text-sm text-error"
+                    >
+                      {recipientEmailError || orderError}
+                    </div>
+                  )}
+
+                  {/* Desktop Continue Button — inside the sticky panel */}
+                  <div className="hidden md:block">
+                    <button
+                      onClick={handleContinue}
+                      disabled={!canContinue}
+                      className="w-full inline-flex items-center justify-center gap-2 px-8 py-4 bg-secondary text-secondary-on-secondary rounded-full font-archivo-black text-[14px] uppercase tracking-[1.5px] hover:bg-secondary-hover transition-all disabled:bg-surface-container-high disabled:text-surface-on-surface-variant disabled:cursor-not-allowed shadow-lg disabled:shadow-none"
+                    >
+                      {isCreatingOrder ? (
+                        <>
+                          <Loader2 className="h-5 w-5 animate-spin" />
+                          {m['pdp.cta.processing']}
+                        </>
+                      ) : (
+                        <>
+                          {m['pdp.cta.continue']}
+                          {totalAmount && (
+                            <span className="ml-2 px-3 py-1 bg-white/15 rounded-full">
+                              {formatCurrencyForLocale(totalAmount, selectedCountry.currency, locale)}
+                            </span>
+                          )}
+                          <ArrowRight className="h-5 w-5" />
+                        </>
+                      )}
+                    </button>
                   </div>
-                )}
-
-                {/* Desktop Continue Button — inside the sticky panel */}
-                <div className="hidden md:block">
-                  <button
-                    onClick={handleContinue}
-                    disabled={!canContinue}
-                    className="w-full inline-flex items-center justify-center gap-2 px-8 py-4 bg-secondary text-secondary-on-secondary rounded-full font-archivo-black text-[14px] uppercase tracking-[1.5px] hover:bg-secondary-hover transition-all disabled:bg-surface-container-high disabled:text-surface-on-surface-variant disabled:cursor-not-allowed shadow-lg disabled:shadow-none"
-                  >
-                    {isCreatingOrder ? (
-                      <>
-                        <Loader2 className="h-5 w-5 animate-spin" />
-                        {m['pdp.cta.processing']}
-                      </>
-                    ) : (
-                      <>
-                        {m['pdp.cta.continue']}
-                        {totalAmount && (
-                          <span className="ml-2 px-3 py-1 bg-white/15 rounded-full">
-                            {formatCurrencyForLocale(totalAmount, selectedCountry.currency, locale)}
-                          </span>
-                        )}
-                        <ArrowRight className="h-5 w-5" />
-                      </>
-                    )}
-                  </button>
                 </div>
-              </div>
+              )}
             </aside>
           </div>
         </div>
 
-        {/* Mobile Sticky CTA */}
-        <div className="md:hidden fixed bottom-0 left-0 right-0 p-4 bg-surface-container-lowest/95 backdrop-blur border-t border-outline-variant z-30">
-          <button
-            onClick={handleContinue}
-            disabled={!canContinue}
-            className="w-full flex items-center justify-between px-6 py-4 bg-secondary text-secondary-on-secondary rounded-full font-archivo-black text-[14px] uppercase tracking-[1.5px] hover:bg-secondary-hover transition-all disabled:bg-surface-container-high disabled:text-surface-on-surface-variant disabled:cursor-not-allowed shadow-lg disabled:shadow-none"
-          >
-            {isCreatingOrder ? (
-              <>
-                <Loader2 className="h-5 w-5 animate-spin" />
-                <span>{m['pdp.cta.processing']}</span>
-              </>
-            ) : (
-              <>
-                <span>{m['pdp.cta.continue']}</span>
-                <div className="flex items-center gap-2">
-                  {totalAmount && (
-                    <span className="px-3 py-1 bg-white/15 rounded-full text-[12px]">
-                      {formatCurrencyForLocale(totalAmount, selectedCountry.currency, locale)}
-                    </span>
-                  )}
-                  <ArrowRight className="h-5 w-5" />
-                </div>
-              </>
-            )}
-          </button>
-        </div>
+        {/* Mobile Sticky CTA — hidden when product unavailable */}
+        {isAvailableInCountry && (
+          <div className="md:hidden fixed bottom-0 left-0 right-0 p-4 bg-surface-container-lowest/95 backdrop-blur border-t border-outline-variant z-30">
+            <button
+              onClick={handleContinue}
+              disabled={!canContinue}
+              className="w-full flex items-center justify-between px-6 py-4 bg-secondary text-secondary-on-secondary rounded-full font-archivo-black text-[14px] uppercase tracking-[1.5px] hover:bg-secondary-hover transition-all disabled:bg-surface-container-high disabled:text-surface-on-surface-variant disabled:cursor-not-allowed shadow-lg disabled:shadow-none"
+            >
+              {isCreatingOrder ? (
+                <>
+                  <Loader2 className="h-5 w-5 animate-spin" />
+                  <span>{m['pdp.cta.processing']}</span>
+                </>
+              ) : (
+                <>
+                  <span>{m['pdp.cta.continue']}</span>
+                  <div className="flex items-center gap-2">
+                    {totalAmount && (
+                      <span className="px-3 py-1 bg-white/15 rounded-full text-[12px]">
+                        {formatCurrencyForLocale(totalAmount, selectedCountry.currency, locale)}
+                      </span>
+                    )}
+                    <ArrowRight className="h-5 w-5" />
+                  </div>
+                </>
+              )}
+            </button>
+          </div>
+        )}
       </main>
       <Footer />
     </>

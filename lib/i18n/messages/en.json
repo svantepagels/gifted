@@ -5,21 +5,17 @@
   "common.cart": "Cart",
   "common.continue": "Continue",
   "common.loading": "Loading...",
-
   "header.shoppingCart": "Shopping cart",
   "header.localeSwitcher.label": "Language",
-
   "hero.badge": "Instant Digital Delivery",
   "hero.title.line1": "Buy Digital",
   "hero.title.line2": "Gift Cards",
   "hero.title.line3": "Instantly.",
   "hero.subtitle": "Gift cards for your favorite brands. Delivered in minutes.",
   "hero.browseCta": "Browse all gift cards",
-
   "search.placeholder": "Search brands...",
   "search.clearAriaLabel": "Clear search",
   "search.submit": "SEARCH",
-
   "categories.all": "All",
   "categories.shopping": "Shopping",
   "categories.media": "Media",
@@ -31,17 +27,14 @@
   "categories.tech": "Tech",
   "categories.entertainment": "Entertainment",
   "categories.other": "Other",
-
   "product.from": "From",
   "product.range": "{min} - {max}",
   "product.buyCta": "Buy",
   "product.deliveryFast": "Instant delivery",
-
   "notFound.title": "Product Not Found",
   "notFound.message": "Sorry, we couldn't find the gift card you're looking for. It may have been removed or is no longer available.",
   "notFound.homeCta": "Back to home",
   "notFound.searchCta": "Browse all",
-
   "landing.featureBenefits.heading": "Why buy from Gifted",
   "landing.featureBenefits.instant.title": "Instant delivery",
   "landing.featureBenefits.instant.body": "Codes delivered to your inbox in minutes — usually under 5.",
@@ -58,14 +51,12 @@
   "landing.notFound.title": "Brand not available in this region",
   "landing.notFound.message": "We couldn't find this brand for your locale. It may not be available in this country, or the URL might be wrong.",
   "landing.notFound.homeCta": "Back to home",
-
   "trust.instant.title": "Instant Delivery",
   "trust.instant.description": "Gift cards delivered to your inbox within minutes",
   "trust.secure.title": "Secure & Trusted",
   "trust.secure.description": "Bank-level encryption and fraud protection",
   "trust.perfect.title": "Perfect Every Time",
   "trust.perfect.description": "No expiration dates on our digital gift cards",
-
   "footer.tagline": "Digital gift cards, instantly delivered.",
   "footer.products.heading": "Products",
   "footer.products.browse": "Browse All",
@@ -80,20 +71,18 @@
   "footer.stayInTouch.heading": "Stay in touch",
   "footer.stayInTouch.body": "Follow updates and new brands.",
   "footer.copyright": "© {year} Gifted. All rights reserved.",
-
   "checkout.trust.securePayment": "Secure payment",
   "checkout.trust.instantDelivery": "Instant delivery",
-
   "browse.productCard.instant": "Instant",
   "browse.productCard.digitalDelivery": "Digital delivery",
   "browse.productCard.deliveryEta": "~{minutes} min",
   "browse.empty.title": "No gift cards found",
   "browse.empty.body": "Try adjusting your filters or search query to find the perfect gift card.",
-
+  "browse.empty.countryTitle": "No gift cards available in {country}",
+  "browse.empty.countryBody": "We don't have any digital gift cards for this destination yet. Try a different country, or check back soon — we're adding new options all the time.",
   "countrySelector.searchPlaceholder": "Search countries...",
   "countrySelector.searchAriaLabel": "Search countries",
-  "countrySelector.noMatch": "No countries match \u201C{query}\u201D",
-
+  "countrySelector.noMatch": "No countries match “{query}”",
   "pdp.badge.digitalDelivery": "Digital Delivery",
   "pdp.redemption.heading": "How to redeem",
   "pdp.redemption.generic": "Enter the code on the brand's redemption page or in their app. Full instructions are included in the email you receive.",
@@ -120,7 +109,6 @@
   "pdp.error.recipientRequired": "Please enter a recipient email address.",
   "pdp.error.productConfig": "Product configuration error. Please try another product.",
   "pdp.error.orderCreate": "Couldn't create your order. Please try again.",
-
   "orderSummary.heading": "Order summary",
   "orderSummary.giftCard": "Gift card",
   "orderSummary.amount": "Amount",
@@ -128,7 +116,6 @@
   "orderSummary.total": "Total",
   "orderSummary.continueAsGuest": "Continue as guest",
   "orderSummary.signIn": "Sign in",
-
   "checkout.title": "Checkout",
   "checkout.backToProduct": "Back to product",
   "checkout.orderReview.heading": "Order review",
@@ -140,7 +127,6 @@
   "checkout.security.note": "Your payment is secured with bank-level encryption",
   "checkout.loading": "Loading...",
   "checkout.error.productConfig": "Product configuration error. Please try selecting the product again.",
-
   "checkoutForm.heading": "Your information",
   "checkoutForm.giftBanner.label": "Sending gift to:",
   "checkoutForm.email.label": "Your email",
@@ -153,7 +139,6 @@
   "checkoutForm.submitProcessing": "Processing...",
   "checkoutForm.legal": "By completing this purchase, you agree to our Terms of Service and Privacy Policy",
   "checkoutForm.error.generic": "An error occurred",
-
   "success.title": "Order confirmed",
   "success.subtitle": "Your gift card is on its way.",
   "success.delivery.intro": "The gift card code will be emailed to {email}.",
@@ -169,9 +154,11 @@
   "success.details.serviceFee": "Service fee",
   "success.details.total": "Total",
   "success.cta.buyAnother": "Buy another gift card",
-
   "meta.home.title": "Gifted — Digital gift cards",
   "meta.home.description": "Buy digital gift cards for brands you love. Instant delivery worldwide.",
   "meta.home.ogTitle": "Gifted — Digital gift cards",
-  "meta.home.ogDescription": "Buy digital gift cards for brands you love. Instant delivery worldwide."
+  "meta.home.ogDescription": "Buy digital gift cards for brands you love. Instant delivery worldwide.",
+  "pdp.unavailable.title": "Not available in {country}",
+  "pdp.unavailable.body": "This gift card can't be redeemed in {country}. It's redeemable in {count} other countries. Switch your country at the top of the page, or browse cards available where you are.",
+  "pdp.unavailable.cta": "Browse available cards"
 }

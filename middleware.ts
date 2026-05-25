@@ -2,6 +2,11 @@ import { NextRequest, NextResponse } from 'next/server'
 import { match as matchLocale } from '@formatjs/intl-localematcher'
 import Negotiator from 'negotiator'
 import { locales, defaultLocale } from '@/lib/i18n/config'
+import {
+  COUNTRY_COOKIE_NAME,
+  COUNTRY_COOKIE_MAX_AGE,
+  parseCountryCookie,
+} from '@/lib/countries/cookie'
 
 /**
  * Matches any path that contains a "." — i.e. a file with an extension
@@ -53,6 +58,44 @@ function getLocaleFromRequest(req: NextRequest): string {
   }
 }
 
+/**
+ * If the `gifted_country` cookie isn't set yet, derive it from Vercel's
+ * geo-IP data. On preview/prod, Vercel exposes both:
+ *   - `req.geo.country` (typed) — preferred
+ *   - `x-vercel-ip-country` request header — fallback for older runtimes
+ *
+ * We never overwrite an existing cookie. The client-side write (via
+ * `setSelectedCountry`) is the source of truth once the user has
+ * expressed a preference.
+ */
+function deriveGeoCountry(req: NextRequest): string | undefined {
+  const existing = parseCountryCookie(req.cookies.get(COUNTRY_COOKIE_NAME)?.value)
+  if (existing) return undefined
+
+  // `geo` is non-standard but supplied by Vercel's edge runtime.
+  const geoCountry =
+    (req as unknown as { geo?: { country?: string } }).geo?.country ??
+    req.headers.get('x-vercel-ip-country') ??
+    undefined
+
+  if (!geoCountry) return undefined
+  const upper = geoCountry.toUpperCase()
+  return /^[A-Z]{2}$/.test(upper) ? upper : undefined
+}
+
+function attachGeoCookie(
+  res: NextResponse,
+  geoCountry: string | undefined
+): NextResponse {
+  if (!geoCountry) return res
+  res.cookies.set(COUNTRY_COOKIE_NAME, geoCountry, {
+    maxAge: COUNTRY_COOKIE_MAX_AGE,
+    path: '/',
+    sameSite: 'lax',
+  })
+  return res
+}
+
 export function middleware(req: NextRequest) {
   const { pathname } = req.nextUrl
 
@@ -66,17 +109,23 @@ export function middleware(req: NextRequest) {
     return NextResponse.next()
   }
 
+  // Compute the geo cookie once — same value attached to whichever
+  // response we end up returning below.
+  const geoCookieToSet = deriveGeoCountry(req)
+
   // If pathname already has a supported locale prefix, pass through.
   const pathnameHasLocale = (locales as readonly string[]).some(
     (loc) => pathname === `/${loc}` || pathname.startsWith(`/${loc}/`)
   )
-  if (pathnameHasLocale) return NextResponse.next()
+  if (pathnameHasLocale) {
+    return attachGeoCookie(NextResponse.next(), geoCookieToSet)
+  }
 
   // Otherwise, negotiate from Accept-Language and 308-redirect.
   const locale = getLocaleFromRequest(req)
   const url = req.nextUrl.clone()
   url.pathname = `/${locale}${pathname === '/' ? '' : pathname}`
-  return NextResponse.redirect(url, 308)
+  return attachGeoCookie(NextResponse.redirect(url, 308), geoCookieToSet)
 }
 
 export const config = {

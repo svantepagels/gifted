@@ -73,17 +73,16 @@
   "footer.copyright": "© {year} Gifted. Με την επιφύλαξη παντός δικαιώματος.",
   "checkout.trust.securePayment": "Ασφαλής πληρωμή",
   "checkout.trust.instantDelivery": "Άμεση παράδοση",
-
   "browse.productCard.instant": "Άμεσα",
   "browse.productCard.digitalDelivery": "Ψηφιακή παράδοση",
   "browse.productCard.deliveryEta": "~{minutes} λεπτά",
   "browse.empty.title": "Δεν βρέθηκαν δωροκάρτες",
   "browse.empty.body": "Δοκιμάστε να προσαρμόσετε τα φίλτρα ή την αναζήτηση για να βρείτε την κατάλληλη δωροκάρτα.",
-
+  "browse.empty.countryTitle": "Δεν υπάρχουν διαθέσιμες δωροκάρτες στην {country}",
+  "browse.empty.countryBody": "Δεν διαθέτουμε ακόμη ψηφιακές δωροκάρτες για αυτόν τον προορισμό. Δοκιμάστε άλλη χώρα ή ελέγξτε ξανά σύντομα — προσθέτουμε συνεχώς νέες επιλογές.",
   "countrySelector.searchPlaceholder": "Αναζήτηση χωρών...",
   "countrySelector.searchAriaLabel": "Αναζήτηση χωρών",
-  "countrySelector.noMatch": "Δεν βρέθηκαν χώρες για \u201C{query}\u201D",
-
+  "countrySelector.noMatch": "Δεν βρέθηκαν χώρες για “{query}”",
   "pdp.badge.digitalDelivery": "Ψηφιακή παράδοση",
   "pdp.redemption.heading": "Πώς εξαργυρώνεται",
   "pdp.redemption.generic": "Καταχωρίστε τον κωδικό στη σελίδα εξαργύρωσης της μάρκας ή στην εφαρμογή της. Όλες οι οδηγίες περιλαμβάνονται στο email που θα λάβετε.",
@@ -110,7 +109,6 @@
   "pdp.error.recipientRequired": "Εισάγετε τη διεύθυνση email του παραλήπτη.",
   "pdp.error.productConfig": "Σφάλμα ρύθμισης προϊόντος. Δοκιμάστε άλλο προϊόν.",
   "pdp.error.orderCreate": "Δεν ήταν δυνατή η δημιουργία της παραγγελίας. Δοκιμάστε ξανά.",
-
   "orderSummary.heading": "Σύνοψη παραγγελίας",
   "orderSummary.giftCard": "Δωροκάρτα",
   "orderSummary.amount": "Ποσό",
@@ -118,7 +116,6 @@
   "orderSummary.total": "Σύνολο",
   "orderSummary.continueAsGuest": "Συνέχεια ως επισκέπτης",
   "orderSummary.signIn": "Σύνδεση",
-
   "checkout.title": "Ολοκλήρωση",
   "checkout.backToProduct": "Επιστροφή στο προϊόν",
   "checkout.orderReview.heading": "Επισκόπηση παραγγελίας",
@@ -130,7 +127,6 @@
   "checkout.security.note": "Η πληρωμή σας προστατεύεται με τραπεζική κρυπτογράφηση",
   "checkout.loading": "Φόρτωση...",
   "checkout.error.productConfig": "Σφάλμα ρύθμισης προϊόντος. Επιλέξτε ξανά το προϊόν.",
-
   "checkoutForm.heading": "Τα στοιχεία σας",
   "checkoutForm.giftBanner.label": "Αποστολή δώρου στον/στην:",
   "checkoutForm.email.label": "Το email σας",
@@ -143,7 +139,6 @@
   "checkoutForm.submitProcessing": "Επεξεργασία...",
   "checkoutForm.legal": "Ολοκληρώνοντας την αγορά, αποδέχεστε τους Όρους Χρήσης και την Πολιτική Απορρήτου",
   "checkoutForm.error.generic": "Παρουσιάστηκε σφάλμα",
-
   "success.title": "Η παραγγελία επιβεβαιώθηκε",
   "success.subtitle": "Η δωροκάρτα σας είναι καθ' οδόν.",
   "success.delivery.intro": "Ο κωδικός της δωροκάρτας θα σταλεί στο {email}.",
@@ -159,9 +154,11 @@
   "success.details.serviceFee": "Χρέωση υπηρεσίας",
   "success.details.total": "Σύνολο",
   "success.cta.buyAnother": "Αγοράστε άλλη δωροκάρτα",
-
   "meta.home.title": "Gifted — Ψηφιακές δωροκάρτες",
   "meta.home.description": "Αγοράστε ψηφιακές δωροκάρτες για τις αγαπημένες σας μάρκες. Άμεση παράδοση παγκοσμίως.",
   "meta.home.ogTitle": "Gifted — Ψηφιακές δωροκάρτες",
-  "meta.home.ogDescription": "Αγοράστε ψηφιακές δωροκάρτες για τις αγαπημένες σας μάρκες. Άμεση παράδοση παγκοσμίως."
+  "meta.home.ogDescription": "Αγοράστε ψηφιακές δωροκάρτες για τις αγαπημένες σας μάρκες. Άμεση παράδοση παγκοσμίως.",
+  "pdp.unavailable.title": "Μη διαθέσιμη στην {country}",
+  "pdp.unavailable.body": "Αυτή η δωροκάρτα δεν μπορεί να εξαργυρωθεί στην {country}. Είναι εξαργυρώσιμη σε {count} άλλες χώρες. Αλλάξτε χώρα στο επάνω μέρος της σελίδας ή αναζητήστε δωροκάρτες διαθέσιμες στη χώρα σας.",
+  "pdp.unavailable.cta": "Δείτε διαθέσιμες δωροκάρτες"
 }
