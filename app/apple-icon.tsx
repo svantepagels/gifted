@@ -6,8 +6,7 @@ export const dynamic = 'force-static'
 export const revalidate = false
 
 /**
- * 180×180 Apple Touch Icon. White background, ink wordmark.
- * The full lowercase wordmark fits comfortably at this size.
+ * 180×180 Apple Touch Icon. White lowercase `g` on solid black.
  */
 export default function AppleIcon() {
   return new ImageResponse(
@@ -16,18 +15,19 @@ export default function AppleIcon() {
         style={{
           width: '100%',
           height: '100%',
-          background: '#ffffff',
+          background: '#000000',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          color: '#0A1320',
-          fontSize: 56,
+          color: '#ffffff',
+          fontSize: 140,
           fontWeight: 800,
           fontFamily: 'system-ui, -apple-system, sans-serif',
           letterSpacing: '-0.05em',
+          paddingBottom: 10,
         }}
       >
-        gifted
+        g
       </div>
     ),
     { ...size }

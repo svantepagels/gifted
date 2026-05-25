@@ -6,9 +6,8 @@ export const dynamic = 'force-static'
 export const revalidate = false
 
 /**
- * 32×32 favicon. Single lowercase `g` glyph — the full `gifted`
- * wordmark is illegible at this size, so the lead glyph stands in.
- * Standard favicon compromise (Stripe, Linear, Vercel do the same).
+ * 32×32 favicon. White lowercase `g` on solid black.
+ * Matches the Gifted wordmark glyph.
  */
 export default function Icon() {
   return new ImageResponse(
@@ -17,15 +16,16 @@ export default function Icon() {
         style={{
           width: '100%',
           height: '100%',
-          background: '#ffffff',
+          background: '#000000',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          color: '#0A1320',
-          fontSize: 22,
+          color: '#ffffff',
+          fontSize: 24,
           fontWeight: 800,
           fontFamily: 'system-ui, -apple-system, sans-serif',
           letterSpacing: '-0.05em',
+          paddingBottom: 2,
         }}
       >
         g
