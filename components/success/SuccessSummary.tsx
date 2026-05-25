@@ -1,5 +1,7 @@
 'use client'
 
+import { useState } from 'react'
+import Image from 'next/image'
 import { Order } from '@/lib/orders/types'
 import { formatCurrencyForLocale } from '@/lib/i18n/format-currency'
 import { CheckCircle, Mail, Clock, Copy } from 'lucide-react'
@@ -28,6 +30,9 @@ export function SuccessSummary({ order }: SuccessSummaryProps) {
       : order.customerEmail
 
   const fmt = (n: number) => formatCurrencyForLocale(n, order.currency, locale)
+
+  const [logoFailed, setLogoFailed] = useState(false)
+  const showLogo = Boolean(order.productLogoUrl) && !logoFailed
 
   const handleCopyReference = () => {
     if (transactionReference) {
@@ -64,10 +69,22 @@ export function SuccessSummary({ order }: SuccessSummaryProps) {
       {/* Product + delivery */}
       <div className="bg-surface-container-lowest rounded-lg p-6 mb-6">
         <div className="flex items-start gap-4 mb-6 pb-6 border-b border-outline-variant">
-          <div className="w-16 h-16 rounded-lg bg-surface-container flex items-center justify-center flex-shrink-0">
-            <span className="text-headline-md font-archivo text-surface-on-surface-variant">
-              {order.productName[0]}
-            </span>
+          <div className="w-16 h-16 rounded-lg bg-white border border-outline-variant flex items-center justify-center flex-shrink-0 overflow-hidden p-2">
+            {showLogo ? (
+              <Image
+                src={order.productLogoUrl}
+                alt={`${order.productName} logo`}
+                width={56}
+                height={56}
+                sizes="56px"
+                onError={() => setLogoFailed(true)}
+                className="max-w-full max-h-full w-auto h-auto object-contain"
+              />
+            ) : (
+              <span className="text-headline-md font-archivo text-surface-on-surface-variant">
+                {order.productName[0]}
+              </span>
+            )}
           </div>
           <div className="flex-1">
             <h2 className="font-archivo text-title-lg text-surface-on-surface mb-1">
