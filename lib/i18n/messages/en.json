@@ -179,5 +179,6 @@
   "consent.modal.marketingTitle": "Marketing",
   "consent.modal.marketingDesc": "Used to measure ad campaign performance and to show relevant gift card promotions on other sites.",
   "consent.modal.close": "Close",
-  "consent.modal.save": "Save preferences"
+  "consent.modal.save": "Save preferences",
+  "landing.marquee.aria": "Available gift card brands"
 }

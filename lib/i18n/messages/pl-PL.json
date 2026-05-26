@@ -160,5 +160,6 @@
   "meta.home.ogDescription": "Kupuj cyfrowe karty podarunkowe ulubionych marek. Natychmiastowa dostawa na całym świecie.",
   "pdp.unavailable.title": "Niedostępne w {country}",
   "pdp.unavailable.body": "Tej karty podarunkowej nie można zrealizować w {country}. Można ją zrealizować w {count} innych krajach. Zmień kraj u góry strony lub przeglądaj karty dostępne w Twoim regionie.",
-  "pdp.unavailable.cta": "Przeglądaj dostępne karty"
+  "pdp.unavailable.cta": "Przeglądaj dostępne karty",
+  "landing.marquee.aria": "Dostępne marki kart podarunkowych"
 }

@@ -160,5 +160,6 @@
   "meta.home.ogDescription": "Osta digitaalisia lahjakortteja suosikkibrändeillesi. Välitön toimitus ympäri maailman.",
   "pdp.unavailable.title": "Ei saatavilla maassa {country}",
   "pdp.unavailable.body": "Tätä lahjakorttia ei voi lunastaa maassa {country}. Se on lunastettavissa {count} muussa maassa. Vaihda maa sivun yläreunasta tai selaa kortteja, jotka ovat saatavilla maassasi.",
-  "pdp.unavailable.cta": "Selaa saatavilla olevia kortteja"
+  "pdp.unavailable.cta": "Selaa saatavilla olevia kortteja",
+  "landing.marquee.aria": "Saatavilla olevat lahjakorttibrändit"
 }

@@ -69,3 +69,50 @@
 @media (prefers-reduced-motion: reduce) {
   .animate-fade-in-up { animation: none; }
 }
+
+/* Brand marquee — infinite horizontal scroll between hero and search */
+@keyframes marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    /* Track holds two copies of the brand list. -50% lands the second
+       copy on the first copy's start pixel → seamless loop. */
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-section .marquee-track {
+  animation: marquee-scroll 40s linear infinite;
+  will-change: transform;
+}
+
+/* Faster on mobile — fewer visible logos at once, the loop should
+   feel comparable in cadence. */
+@media (max-width: 767px) {
+  .marquee-section .marquee-track {
+    animation-duration: 28s;
+  }
+}
+
+/* Desktop only: pause on hover. Mobile / touch keeps scrolling. */
+@media (hover: hover) and (pointer: fine) {
+  .marquee-section:hover .marquee-track {
+    animation-play-state: paused;
+  }
+}
+
+/* Pause when a logo inside it receives keyboard focus. */
+.marquee-section:focus-within .marquee-track {
+  animation-play-state: paused;
+}
+
+/* Accessibility — respect reduced-motion preference. */
+@media (prefers-reduced-motion: reduce) {
+  .marquee-section .marquee-track {
+    animation: none;
+  }
+  .marquee-section {
+    overflow-x: auto;
+  }
+}

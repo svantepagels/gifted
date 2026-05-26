@@ -8,6 +8,7 @@ import { CategoryChips } from '@/components/shared/CategoryChips'
 import { ProductGrid } from '@/components/browse/ProductGrid'
 import { TrustSection } from '@/components/browse/TrustSection'
 import { PopularBrands } from '@/components/landing/PopularBrands'
+import { BrandMarquee } from '@/components/landing/BrandMarquee'
 import { giftCardService } from '@/lib/giftcards/service'
 import { isLocale, type Locale } from '@/lib/i18n/config'
 import { getMessages } from '@/lib/i18n/useMessages'
@@ -38,6 +39,19 @@ export default async function HomePage({ params }: HomePageProps) {
       <main className="min-h-screen pb-16">
         <div className="max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-8">
           <HeroSection messages={messages} />
+
+          {/* Brand-logo marquee — social proof of catalogue coverage.
+              Fixed-height fallback reserves layout space → no CLS. */}
+          <Suspense
+            fallback={
+              <div
+                aria-hidden="true"
+                className="my-6 md:my-8 h-[72px] md:h-[96px]"
+              />
+            }
+          >
+            <BrandMarquee locale={locale} messages={messages} />
+          </Suspense>
 
           {/* Mobile-only stacked controls — preserves the original mobile fold layout */}
           <div className="md:hidden">
