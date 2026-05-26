@@ -38,7 +38,10 @@ export default async function HomePage({ params }: HomePageProps) {
       <Header />
       <main className="min-h-screen pb-16">
         <div className="max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-8">
-          <HeroSection messages={messages} />
+          {/* Hero — edge-to-edge on mobile, contained on desktop */}
+          <div className="-mx-4 sm:mx-0">
+            <HeroSection messages={messages} />
+          </div>
 
           {/* Brand-logo marquee — social proof of catalogue coverage.
               Fixed-height fallback reserves layout space → no CLS. */}
@@ -53,8 +56,8 @@ export default async function HomePage({ params }: HomePageProps) {
             <BrandMarquee locale={locale} messages={messages} />
           </Suspense>
 
-          {/* Mobile-only stacked controls — preserves the original mobile fold layout */}
-          <div className="md:hidden">
+          {/* Mobile-only stacked controls — edge-to-edge on mobile */}
+          <div className="md:hidden -mx-4 sm:mx-0">
             <div className="mb-6">
               <Suspense fallback={<div className="h-12" />}>
                 <SearchBar />

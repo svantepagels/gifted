@@ -109,7 +109,7 @@ export function CategoryChips({ categories }: CategoryChipsProps) {
       <div className="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-surface-container-lowest to-transparent z-10 pointer-events-none" />
 
       {/* Scrollable Container */}
-      <div className="flex gap-3 overflow-x-auto pb-3 scrollbar-hide px-4 sm:px-6">
+      <div className="flex gap-3 overflow-x-auto pb-3 scrollbar-hide px-4 sm:px-6 [padding-left:max(1rem,env(safe-area-inset-left))] sm:[padding-left:1.5rem] [padding-right:max(1rem,env(safe-area-inset-right))] sm:[padding-right:1.5rem]">
         {categories.map((category) => {
           const isActive = category === activeCategory;
           const categoryKey = category.toLowerCase();

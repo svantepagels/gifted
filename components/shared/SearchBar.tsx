@@ -45,7 +45,7 @@ export function SearchBar({ compact = false }: SearchBarProps) {
 
   const wrapperClass = compact
     ? 'w-full max-w-[480px]'
-    : 'w-full max-w-[540px] mx-auto px-4';
+    : 'w-full max-w-[540px] mx-auto px-4 [padding-left:max(1rem,env(safe-area-inset-left))] [padding-right:max(1rem,env(safe-area-inset-right))]';
   const fieldHeight = compact ? 'h-11' : 'h-[52px]';
   const buttonHeight = compact ? 'h-9' : 'h-[44px]';
   const buttonPadding = compact ? 'px-5' : 'px-6';

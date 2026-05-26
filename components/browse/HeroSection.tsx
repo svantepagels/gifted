@@ -12,16 +12,16 @@ export function HeroSection({ messages }: HeroSectionProps) {
       className="relative py-10 md:py-8 lg:py-10 overflow-hidden"
     >
       {/* Mesh gradient background — mobile only */}
-      <div className="absolute inset-0 -mx-4 sm:-mx-6 bg-gradient-to-br from-purple-50 via-pink-50 to-blue-50 opacity-60 md:hidden" />
+      <div className="absolute inset-0 sm:-mx-6 bg-gradient-to-br from-purple-50 via-pink-50 to-blue-50 opacity-60 md:hidden" />
       <div
-        className="absolute inset-0 -mx-4 sm:-mx-6 opacity-30 md:hidden"
+        className="absolute inset-0 sm:-mx-6 opacity-30 md:hidden"
         style={{
           background:
             'radial-gradient(at 27% 37%, hsla(270, 73%, 66%, 0.3) 0px, transparent 50%), radial-gradient(at 97% 21%, hsla(244, 73%, 66%, 0.3) 0px, transparent 50%), radial-gradient(at 52% 99%, hsla(280, 73%, 66%, 0.3) 0px, transparent 50%)',
         }}
       />
 
-      <div className="relative grid grid-cols-1 md:grid-cols-12 md:gap-8 items-center">
+      <div className="relative grid grid-cols-1 md:grid-cols-12 md:gap-8 items-center px-4 md:px-0 [padding-left:max(1rem,env(safe-area-inset-left))] [padding-right:max(1rem,env(safe-area-inset-right))] md:[padding-left:0] md:[padding-right:0]">
         {/* Copy column */}
         <div className="md:col-span-12 lg:col-span-12 text-center md:text-start">
           <div
