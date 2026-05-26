@@ -5,6 +5,7 @@ import Image from 'next/image'
 import { useLocale } from '@/lib/i18n/useLocale'
 import { localeHref } from '@/lib/i18n/href'
 import { getMessages } from '@/lib/i18n/useMessages'
+import { ConsentPreferencesLink } from '@/components/consent/ConsentPreferencesLink'
 
 export function Footer() {
   const currentYear = new Date().getFullYear()
@@ -57,6 +58,17 @@ export function Footer() {
               >
                 {m['footer.company.privacy']}
               </Link>
+            </li>
+            <li>
+              <Link
+                href={href('/cookie-policy')}
+                className="text-label-lg hover:text-surface-container-lowest transition-colors"
+              >
+                {(m['footer.company.cookiePolicy'] as string) ?? 'Cookie Policy'}
+              </Link>
+            </li>
+            <li>
+              <ConsentPreferencesLink />
             </li>
           </ul>
         </div>

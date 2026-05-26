@@ -3,6 +3,9 @@ import type { ReactNode } from 'react'
 import { notFound } from 'next/navigation'
 import { Archivo, Inter } from 'next/font/google'
 import { AppProvider } from '@/contexts/AppContext'
+import { ConsentProvider } from '@/components/consent/ConsentProvider'
+import { ConsentBanner } from '@/components/consent/ConsentBanner'
+import { ConsentModal } from '@/components/consent/ConsentModal'
 import { getAllCountries } from '@/lib/countries/data'
 import {
   locales,
@@ -116,7 +119,11 @@ export default async function LocaleLayout({
       className={`${archivo.variable} ${inter.variable}`}
     >
       <body>
-        <AppProvider countries={countries}>{children}</AppProvider>
+        <ConsentProvider>
+          <AppProvider countries={countries}>{children}</AppProvider>
+          <ConsentBanner />
+          <ConsentModal />
+        </ConsentProvider>
       </body>
     </html>
   )
