@@ -45,7 +45,7 @@ export function Footer() {
           <ul className="space-y-2">
             <li>
               <Link
-                href={href('/terms')}
+                href={href('/terms-conditions')}
                 className="text-label-lg hover:text-surface-container-lowest transition-colors"
               >
                 {m['footer.company.terms']}
