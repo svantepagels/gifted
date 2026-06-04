@@ -155,11 +155,12 @@ test.describe('landing-page generator', () => {
   // Internal-link block on homepage
   // -------------------------------------------------------------------------
 
-  test('homepage shows PopularBrands block linking to landing pages', async ({
+  test('homepage exposes internal links to brand landing pages', async ({
     page,
   }) => {
     await page.goto('/en-IE', { waitUntil: 'load' })
     // At least one anchor pointing into /en-IE/buy/{brand}
+    // (rendered by the BrandMarquee component)
     const links = page.locator('a[href*="/en-IE/buy/"]')
     expect(await links.count()).toBeGreaterThan(0)
   })

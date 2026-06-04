@@ -3,8 +3,7 @@
  * and the search bar on the homepage.
  *
  * Server component. Pulls real brand data via
- * `getViableCellsForLocale(locale)` (the same cached source
- * `PopularBrands` uses), so every logo links to a real
+ * `getViableCellsForLocale(locale)`, so every logo links to a real
  * `/[locale]/buy/[slug]` landing page.
  *
  * Behavior (CSS-only, no client JS):

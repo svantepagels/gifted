@@ -46,8 +46,6 @@
   "landing.denominations.heading": "Wybierz nominał",
   "landing.denominations.cta": "Kup teraz",
   "landing.denominations.viewAll": "Zobacz wszystkie nominały",
-  "landing.popular.heading": "Popularne karty podarunkowe w {country}",
-  "landing.popular.viewAll": "Przeglądaj wszystkie karty podarunkowe",
   "landing.notFound.title": "Marka niedostępna w tym regionie",
   "landing.notFound.message": "Nie znaleźliśmy tej marki dla Twojego regionu. Może być niedostępna w tym kraju lub adres URL jest nieprawidłowy.",
   "landing.notFound.homeCta": "Powrót do strony głównej",

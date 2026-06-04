@@ -46,8 +46,6 @@
   "landing.denominations.heading": "Επιλέξτε ποσό",
   "landing.denominations.cta": "Αγορά τώρα",
   "landing.denominations.viewAll": "Δείτε όλα τα ποσά",
-  "landing.popular.heading": "Δημοφιλείς δωροκάρτες στην {country}",
-  "landing.popular.viewAll": "Δείτε όλες τις δωροκάρτες",
   "landing.notFound.title": "Η μάρκα δεν είναι διαθέσιμη σε αυτή την περιοχή",
   "landing.notFound.message": "Δεν βρήκαμε αυτή τη μάρκα για την περιοχή σας. Ίσως να μην είναι διαθέσιμη σε αυτή τη χώρα ή το URL να είναι λάθος.",
   "landing.notFound.homeCta": "Επιστροφή στην αρχική",

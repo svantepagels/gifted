@@ -46,8 +46,6 @@
   "landing.denominations.heading": "اختر الفئة",
   "landing.denominations.cta": "اشترِ الآن",
   "landing.denominations.viewAll": "عرض جميع الفئات",
-  "landing.popular.heading": "بطاقات الهدايا الشائعة في {country}",
-  "landing.popular.viewAll": "تصفح كل البطاقات",
   "landing.notFound.title": "العلامة التجارية غير متاحة في هذه المنطقة",
   "landing.notFound.message": "لم نتمكن من العثور على هذه العلامة التجارية للمنطقة الخاصة بك. ربما لا تكون متاحة في هذه الدولة، أو أن عنوان URL غير صحيح.",
   "landing.notFound.homeCta": "العودة إلى الصفحة الرئيسية",

@@ -46,8 +46,6 @@
   "landing.denominations.heading": "Pick a denomination",
   "landing.denominations.cta": "Buy now",
   "landing.denominations.viewAll": "View all denominations",
-  "landing.popular.heading": "Popular gift cards in {country}",
-  "landing.popular.viewAll": "Browse all gift cards",
   "landing.notFound.title": "Brand not available in this region",
   "landing.notFound.message": "We couldn't find this brand for your locale. It may not be available in this country, or the URL might be wrong.",
   "landing.notFound.homeCta": "Back to home",

@@ -46,8 +46,6 @@
   "landing.denominations.heading": "Valitse summa",
   "landing.denominations.cta": "Osta nyt",
   "landing.denominations.viewAll": "Katso kaikki summat",
-  "landing.popular.heading": "Suositut lahjakortit Suomessa",
-  "landing.popular.viewAll": "Selaa kaikkia lahjakortteja",
   "landing.notFound.title": "Brändi ei ole saatavilla tällä alueella",
   "landing.notFound.message": "Tätä brändiä ei löytynyt sinun kielialueellasi. Se ei ehkä ole saatavilla tässä maassa, tai URL on virheellinen.",
   "landing.notFound.homeCta": "Takaisin etusivulle",
