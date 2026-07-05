@@ -24,6 +24,8 @@ jest.mock('@/lib/reloadly/client', () => ({
 
 // Import AFTER the mock so the throwing singleton constructor never runs.
 import { giftCardService } from '../service'
+import { productCache, CacheKeys } from '../cache'
+import { transformReloadlyProduct } from '../transform'
 
 function rawProduct(
   productId: number,
@@ -126,5 +128,56 @@ describe('GiftCardService compliance filtering (Layer 1)', () => {
     // Shopping (plus the unconditional 'All') remains.
     const categories = await giftCardService.getCategories()
     expect(categories).toEqual(['All', 'Shopping'])
+  })
+})
+
+describe('cache-poisoning defense (read-path re-filter)', () => {
+  // Regression: build-countries.ts used to write UNFILTERED products to
+  // CacheKeys.allProducts() — the exact key GiftCardService trusts —
+  // letting open-loop products resurface on every display surface via a
+  // '[Cache] Hit'. The service must re-filter cache reads so ANY future
+  // unfiltered writer is neutralized, not just today's known one.
+  beforeEach(() => {
+    // Prime the shared cache with unfiltered transformed products,
+    // simulating a writer that skips the compliance filter.
+    productCache.set(CacheKeys.allProducts(), RAW_PAGE.map(transformReloadlyProduct))
+  })
+
+  it('getProducts() excludes open-loop products served from a poisoned cache', async () => {
+    const brands = (await giftCardService.getProducts()).map((p) => p.brandName)
+    expect(brands).toContain('Amazon')
+    expect(brands).not.toContain('Visa Prepaid')
+    expect(brands).not.toContain('Crypto Voucher')
+    // Proves the poisoned cache entry was actually served (no refetch).
+    expect(mockGetAllProductsPaginatedWithMeta).not.toHaveBeenCalled()
+  })
+
+  it('getProductBySlug() returns null for poisoned open-loop entries', async () => {
+    expect(await giftCardService.getProductBySlug(VISA_SLUG)).toBeNull()
+    expect(await giftCardService.getProductBySlug(CRYPTO_SLUG)).toBeNull()
+    // Closed-loop control: Amazon still resolves from the same cache.
+    const amazon = await giftCardService.getProductBySlug(AMAZON_SLUG)
+    expect(amazon?.brandName).toBe('Amazon')
+    expect(mockGetAllProductsPaginatedWithMeta).not.toHaveBeenCalled()
+  })
+
+  it('getProductByReloadlyId() returns null for poisoned open-loop entries', async () => {
+    expect(await giftCardService.getProductByReloadlyId(VISA_ID)).toBeNull()
+    expect(await giftCardService.getProductByReloadlyId(CRYPTO_ID)).toBeNull()
+    const amazon = await giftCardService.getProductByReloadlyId(AMAZON_ID)
+    expect(amazon?._meta?.reloadlyProductId).toBe(AMAZON_ID)
+    expect(mockGetAllProductsPaginatedWithMeta).not.toHaveBeenCalled()
+  })
+
+  it('getProducts({ countryCode }) excludes open-loop products from a poisoned country cache', async () => {
+    productCache.set(
+      CacheKeys.countryProducts('US'),
+      RAW_PAGE.map(transformReloadlyProduct)
+    )
+    const brands = (await giftCardService.getProducts({ countryCode: 'US' })).map(
+      (p) => p.brandName
+    )
+    expect(brands).toEqual(['Amazon'])
+    expect(mockGetProducts).not.toHaveBeenCalled()
   })
 })

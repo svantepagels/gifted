@@ -59,7 +59,9 @@ export class GiftCardService {
     const cached = productCache.get<GiftCardProduct[]>(cacheKey, CacheTTL.ALL_PRODUCTS);
     if (cached) {
       console.log('[Cache] Hit: all products');
-      return cached;
+      // Re-filter on read (defense in depth): keeps Layer 1 safe even if
+      // a writer populates this key without the compliance filter.
+      return filterOpenLoopGiftCards(cached);
     }
     
     console.log('[Cache] Miss: all products - fetching from Reloadly');
@@ -96,7 +98,9 @@ export class GiftCardService {
     const cached = productCache.get<GiftCardProduct[]>(cacheKey, CacheTTL.COUNTRY_PRODUCTS);
     if (cached) {
       console.log(`[Cache] Hit: ${countryCode} products`);
-      return this.filterProducts(cached, filters);
+      // Re-filter on read (defense in depth): keeps Layer 1 safe even if
+      // a writer populates this key without the compliance filter.
+      return this.filterProducts(filterOpenLoopGiftCards(cached), filters);
     }
     
     console.log(`[Cache] Miss: ${countryCode} products - fetching from Reloadly`);
