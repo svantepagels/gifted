@@ -6,6 +6,7 @@ import type { OrderRequest } from '@/lib/reloadly/types'
 import { rateLimitCheck, getIP } from '@/lib/rate-limit'
 import { orderRepository } from '@/lib/orders/repository'
 import { giftCardService } from '@/lib/giftcards/service'
+import { isOpenLoopProduct } from '@/lib/giftcards/compliance'
 import type { GiftCardProduct } from '@/lib/giftcards/types'
 import type { OrderFulfillment } from '@/lib/orders/types'
 
@@ -158,6 +159,18 @@ export async function POST(request: NextRequest) {
         { status: 400 }
       )
     }
+
+    // Compliance guard (defense in depth): open-loop / stored-value products
+    // must never be fulfilled, even if one slipped past the catalog filter.
+    // See lib/giftcards/compliance.ts for the rationale.
+    if (isOpenLoopProduct({ brandName: product.brandName })) {
+      await orderRepository.updateStatus(orderId, 'failed')
+      return NextResponse.json(
+        { error: 'This product cannot be ordered' },
+        { status: 403 }
+      )
+    }
+
     const priceError = validateUnitPrice(product, order.amount)
     if (priceError) {
       return NextResponse.json(

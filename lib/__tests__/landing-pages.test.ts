@@ -42,7 +42,9 @@ function makeProduct(
 
 describe('BRANDS registry', () => {
   it('has the documented number of brands', () => {
-    expect(BRANDS.length).toBeGreaterThanOrEqual(20)
+    // 19 after crypto-voucher was removed for compliance
+    // (closed-loop gift cards only — see lib/giftcards/compliance.ts)
+    expect(BRANDS.length).toBeGreaterThanOrEqual(19)
   })
 
   it('has unique slugs', () => {

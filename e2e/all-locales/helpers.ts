@@ -58,13 +58,16 @@ export async function pickProductSlug(
 
 /**
  * Pick a viable brand slug for a brand-landing-page test by looking
- * for a `/buy/<slug>` link in the locale's home page or relying on
- * the well-known global fallback `crypto-voucher`.
+ * for a `/buy/<slug>` link in the locale's home page. Returns null
+ * when the locale ships no brand landing pages (callers should
+ * `test.skip` in that case). There is no guaranteed global fallback
+ * brand anymore — the former `crypto-voucher` fallback was removed
+ * for compliance (closed-loop gift cards only).
  */
 export async function pickBrandSlug(
   page: Page,
   locale: Locale
-): Promise<string> {
+): Promise<string | null> {
   await page.goto(`/${locale}/`, { waitUntil: 'domcontentloaded' })
   const href = await page
     .locator(`a[href*="/${locale}/buy/"]`)
@@ -75,8 +78,5 @@ export async function pickBrandSlug(
     const m = href.match(/\/buy\/([^/?#]+)/)
     if (m?.[1]) return m[1]
   }
-  // Global fallback — `crypto-voucher` is wired into viable-cells.ts
-  // as a `GLOBAL_FALLBACK_SLUGS` brand and is expected to render in
-  // every locale.
-  return 'crypto-voucher'
+  return null
 }

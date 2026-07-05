@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { reloadlyClient } from '@/lib/reloadly/client';
+import { filterOpenLoopReloadlyProducts } from '@/lib/giftcards/compliance';
 import { rateLimitCheck, getIP } from '@/lib/rate-limit';
 import * as Sentry from '@sentry/nextjs';
 
@@ -43,7 +44,11 @@ export async function GET(request: NextRequest) {
       );
     }
 
-    const products = await reloadlyClient.getProducts(countryCode.toUpperCase());
+    const rawProducts = await reloadlyClient.getProducts(countryCode.toUpperCase());
+
+    // Compliance: never expose open-loop / stored-value products, even on
+    // this raw passthrough (see lib/giftcards/compliance.ts)
+    const products = filterOpenLoopReloadlyProducts(rawProducts);
 
     return NextResponse.json(products, {
       headers: {

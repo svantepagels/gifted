@@ -17,7 +17,6 @@ export type BrandSlug =
   | 'xbox'
   | 'mobile-legends'
   | 'world-of-warcraft'
-  | 'crypto-voucher'
   | 'amazon'
   | 'twitch'
   | 'flixbus'

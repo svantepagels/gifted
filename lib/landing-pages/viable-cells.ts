@@ -28,10 +28,12 @@ import type { GiftCardProduct } from '@/lib/giftcards/types'
 
 /**
  * Brand slugs that ship even when no per-country Reloadly SKU is
- * available. Crypto Voucher is genuinely global, so its landing page
- * is meaningful in every locale.
+ * available. Currently empty: the previous sole entry (crypto-voucher)
+ * was removed for compliance — Gifted sells closed-loop gift cards only
+ * (see lib/giftcards/compliance.ts). The mechanism is kept for future
+ * genuinely-global closed-loop brands.
  */
-const GLOBAL_FALLBACK_SLUGS: ReadonlyArray<string> = ['crypto-voucher']
+const GLOBAL_FALLBACK_SLUGS: ReadonlyArray<string> = []
 
 export interface ViableCell {
   brand: BrandConfig

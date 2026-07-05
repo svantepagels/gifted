@@ -127,6 +127,7 @@ test.describe('i18n: runtime leak check', () => {
 
     test(`${locale} brand landing page does not leak English sentinels`, async ({ page }) => {
       const slug = await pickBrandSlug(page, locale)
+      test.skip(!slug, `No /buy/<brand> link on /${locale}/ home`)
       const res = await page.goto(`/${locale}/buy/${slug}`, {
         waitUntil: 'domcontentloaded',
       })

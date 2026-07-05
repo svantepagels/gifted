@@ -367,45 +367,6 @@ const EN: Record<BrandSlug, BrandCopy> = {
     ],
   },
 
-  'crypto-voucher': {
-    heroTitle: 'Buy a Crypto Voucher — Convert to Bitcoin or Ethereum Instantly',
-    heroSubtitle: 'A simple way to gift crypto. No exchange account needed.',
-    description:
-      'A Crypto Voucher is a prepaid code that the recipient can swap for Bitcoin, Ethereum, ' +
-      'Litecoin and other major cryptocurrencies — no exchange registration required for small ' +
-      'amounts. Buy from Gifted, receive the code by email, and gift it as the simplest entry ' +
-      'point into crypto. Region availability varies; check Crypto Voucher’s site for current ' +
-      'supported coins and limits.',
-    keywords: [
-      'crypto voucher',
-      'buy bitcoin gift card',
-      'crypto gift card',
-      'ethereum voucher',
-      'cryptocurrency gift',
-    ],
-    faq: [
-      {
-        question: 'Which cryptocurrencies are supported?',
-        answer:
-          'Crypto Voucher supports a rotating list including Bitcoin, Ethereum, Litecoin, Bitcoin Cash and several others — see crypto-voucher.com for the current list.',
-      },
-      {
-        question: 'Do I need an exchange account?',
-        answer:
-          'For small amounts, no — Crypto Voucher’s redemption flow handles the conversion. Larger amounts may trigger KYC.',
-      },
-      {
-        question: 'Where is the code redeemed?',
-        answer: 'At crypto-voucher.com — paste the code and choose the coin.',
-      },
-      {
-        question: 'Does the code expire?',
-        answer:
-          'Crypto Voucher codes typically remain valid for 12 months from purchase — confirm on their site.',
-      },
-    ],
-  },
-
   amazon: {
     heroTitle: 'Buy an Amazon Gift Card — Use on Any Amazon Region',
     heroSubtitle: 'The most flexible gift card. Pay by card, get the code in minutes.',

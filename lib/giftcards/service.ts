@@ -7,6 +7,7 @@
 
 import { reloadlyClient } from '@/lib/reloadly/client';
 import { transformReloadlyProduct, extractCategories } from './transform';
+import { filterOpenLoopGiftCards } from './compliance';
 import { productCache, CacheTTL, CacheKeys } from './cache';
 import type { GiftCardProduct, GiftCardFilters } from './types';
 
@@ -41,7 +42,7 @@ export class GiftCardService {
       // Fallback to mock data on error (optional)
       if (process.env.FALLBACK_TO_MOCK === 'true') {
         const { MOCK_GIFT_CARDS } = await import('./mock-data');
-        return this.filterProducts(MOCK_GIFT_CARDS, filters);
+        return this.filterProducts(filterOpenLoopGiftCards(MOCK_GIFT_CARDS), filters);
       }
       
       throw error;
@@ -66,14 +67,19 @@ export class GiftCardService {
     // Fetch from Reloadly with pagination
     const reloadlyProducts = await this.fetchAllReloadlyProducts();
     
-    // Transform to our schema
-    const products = reloadlyProducts.map(transformReloadlyProduct);
-    
+    // Transform to our schema, then drop open-loop / stored-value products
+    // (compliance: closed-loop gift cards only — see lib/giftcards/compliance.ts)
+    const transformed = reloadlyProducts.map(transformReloadlyProduct);
+    const products = filterOpenLoopGiftCards(transformed);
+    if (products.length < transformed.length) {
+      console.log(`[Compliance] Excluded ${transformed.length - products.length} open-loop/stored-value products`);
+    }
+
     // Cache the results
     productCache.set(cacheKey, products);
-    
+
     console.log(`[Reloadly] Fetched ${products.length} products`);
-    
+
     return products;
   }
   
@@ -98,12 +104,17 @@ export class GiftCardService {
     // Fetch from Reloadly (no pagination needed for country-specific)
     const reloadlyProducts = await reloadlyClient.getProducts(countryCode.toUpperCase());
     
-    // Transform to our schema
-    const products = reloadlyProducts.map(transformReloadlyProduct);
-    
+    // Transform to our schema, then drop open-loop / stored-value products
+    // (compliance: closed-loop gift cards only — see lib/giftcards/compliance.ts)
+    const transformed = reloadlyProducts.map(transformReloadlyProduct);
+    const products = filterOpenLoopGiftCards(transformed);
+    if (products.length < transformed.length) {
+      console.log(`[Compliance] Excluded ${transformed.length - products.length} open-loop/stored-value products for ${countryCode}`);
+    }
+
     // Cache the results
     productCache.set(cacheKey, products);
-    
+
     console.log(`[Reloadly] Fetched ${products.length} products for ${countryCode}`);
     
     // Apply additional filters
