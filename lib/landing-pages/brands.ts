@@ -150,21 +150,6 @@ export const BRANDS: BrandConfig[] = [
     accentGradient: 'from-amber-600 to-red-500',
   },
   {
-    slug: 'crypto-voucher',
-    reloadlyProductIds: [],
-    reloadlyBrandAliases: ['crypto voucher', 'crypto giftcard', 'cryptovoucher'],
-    displayName: {
-      en: 'Crypto Voucher',
-      'fi-FI': 'Crypto Voucher',
-      'ar-AE': 'كريبتو فاوتشر',
-      'ar-SA': 'كريبتو فاوتشر',
-      'pl-PL': 'Crypto Voucher',
-      'el-GR': 'Crypto Voucher',
-    },
-    category: 'gift',
-    accentGradient: 'from-yellow-500 to-orange-500',
-  },
-  {
     slug: 'amazon',
     reloadlyProductIds: [],
     reloadlyBrandAliases: ['amazon', 'amazon.com'],

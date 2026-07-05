@@ -6,8 +6,8 @@
  * page (`/[locale]/gift-card/[slug]`) which handles checkout.
  *
  * Behaviour:
- *   - Empty `products` (global-fallback brands like Crypto Voucher
- *     when no per-country SKU exists) → render a single "View all
+ *   - Empty `products` (global-fallback brands when no per-country
+ *     SKU exists) → render a single "View all
  *     denominations" card linking to homepage search for the brand.
  *   - Mixed FIXED/RANGE: prefer the longest fixed list; fall back to
  *     range presets when no fixed denominations exist.

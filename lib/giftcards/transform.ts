@@ -124,8 +124,8 @@ export function inferCategory(brandName: string): string {
     return 'Beauty';
   }
   
-  // Tech & Apps (App Stores, Digital Services, Crypto)
-  if (/app store|itunes|google play|paypal|crypto|apple|microsoft|samsung|huawei/i.test(name)) {
+  // Tech & Apps (App Stores, Digital Services)
+  if (/app store|itunes|google play|paypal|apple|microsoft|samsung|huawei/i.test(name)) {
     return 'Tech';
   }
   

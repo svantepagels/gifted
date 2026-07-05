@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server'
 import * as Sentry from '@sentry/nextjs'
 import { z } from 'zod'
 import { orderRepository } from '@/lib/orders/repository'
+import { isOpenLoopProduct } from '@/lib/giftcards/compliance'
 import { rateLimitCheck, getIP } from '@/lib/rate-limit'
 
 export const dynamic = 'force-dynamic'
@@ -53,6 +54,16 @@ export async function POST(request: NextRequest) {
       return NextResponse.json(
         { error: 'Invalid order payload', details: parsed.error.flatten() },
         { status: 400 }
+      )
+    }
+
+    // Compliance fail-fast: refuse to even record intent for open-loop /
+    // stored-value products (see lib/giftcards/compliance.ts). The
+    // authoritative check runs again at fulfillment (POST /api/reloadly/order).
+    if (isOpenLoopProduct({ productName: parsed.data.productName })) {
+      return NextResponse.json(
+        { error: 'This product cannot be ordered' },
+        { status: 403 }
       )
     }
 

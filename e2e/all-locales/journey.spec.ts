@@ -56,6 +56,7 @@ test.describe('brand landing page (one viable brand per locale)', () => {
   for (const locale of LOCALES) {
     test(`${locale}: /buy/<brand> renders or returns 404 cleanly`, async ({ page }) => {
       const slug = await pickBrandSlug(page, locale)
+      test.skip(!slug, `No /buy/<brand> link on /${locale}/ home`)
       const res = await page.goto(`/${locale}/buy/${slug}`, {
         waitUntil: 'domcontentloaded',
       })

@@ -21,6 +21,7 @@ import { cache } from 'react'
 import { reloadlyClient } from '@/lib/reloadly/client'
 import { productCache, CacheTTL, CacheKeys } from '@/lib/giftcards/cache'
 import { transformReloadlyProduct } from '@/lib/giftcards/transform'
+import { filterOpenLoopGiftCards } from '@/lib/giftcards/compliance'
 import { FALLBACK_COUNTRIES } from './fallback'
 import type { GiftCardProduct } from '@/lib/giftcards/types'
 import type { Country } from './types'
@@ -71,7 +72,10 @@ async function buildRedeemableCountries(): Promise<Country[]> {
     )
     if (!products) {
       const raw = await reloadlyClient.getAllProductsComplete()
-      products = raw.map(transformReloadlyProduct)
+      // Compliance: this writes to the exact cache key GiftCardService
+      // trusts — never populate it with unfiltered products
+      // (see lib/giftcards/compliance.ts).
+      products = filterOpenLoopGiftCards(raw.map(transformReloadlyProduct))
       productCache.set(CacheKeys.allProducts(), products)
     }
 
